@@ -8,13 +8,14 @@
     <title></title>
     <link href="browser/static/css/bootstrap.min.css" rel="stylesheet" />
     <link href="browser/static/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="browser/static/css/index/customize.css" rel="stylesheet" />
     <script src="browser/static/js/jquery.min.js"></script>
     <script src="browser/static/js/bootstrap.min.js"></script>
 </head>
 <body>
     <form class="form-horizontal" runat="server" role="form">
-        <%-- 导航栏 s--%>
-        <nav class="navbar navbar-default" style="margin: 8px; position: absolute; width: 99%; z-index: 10">
+        <%-- 导航栏 s --%>
+        <nav class="navbar navbar-default" style="margin: 8px; position: absolute; width: 99%; z-index: 10;">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-2">
@@ -56,14 +57,26 @@
                 </div>
             </div>
         </nav>
-        <%-- 导航栏 e--%>
-        <div id="content" style="position: absolute; width: 100%; z-index: 0">
+        <%-- 导航栏 e --%>
+        <%-- 背景 s --%>
+        <div id="bg_area">
         </div>
+        <%-- 背景 e --%>
+        <%-- 内容区域 s --%>
+        <div id="content">
+        </div>
+        <%-- 内容区域 e --%>
     </form>
     <script type="text/javascript">
         $(document).ready(function () {
+            init();
             loadView("browser/view/Test.aspx")
         });
+
+        function init() {
+            $("#bg_area").css("height", window.screen.height * 1 / 3);
+            $("#content").css("padding-top", $("nav").outerHeight(true));
+        }
 
         //加载页面
         function loadView(url) {
