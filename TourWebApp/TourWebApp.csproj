@@ -57,12 +57,53 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="browser\static\css\bootstrap-theme.min.css" />
+    <Content Include="browser\static\css\bootstrap.min.css" />
+    <Content Include="browser\static\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="browser\static\js\bootstrap.min.js" />
+    <Content Include="browser\static\js\jquery.min.js" />
+    <Content Include="browser\static\js\npm.js" />
+    <Content Include="browser\view\Test.aspx" />
+    <Content Include="extra\tour_database.sql" />
+    <Content Include="Global.asax" />
+    <Content Include="Index.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="browser\view\Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="browser\view\Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="server\db\ORMSupport.cs" />
+    <Compile Include="server\db\SqlHelper.cs" />
+    <Compile Include="server\mode\DevTest.cs" />
+    <Compile Include="server\mode\TokenInfo.cs" />
+    <Compile Include="server\mode\UserInfo.cs" />
+    <Compile Include="server\utils\SLog.cs" />
+    <Compile Include="server\utils\UUID.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="browser\static\css\bootstrap-theme.min.css.map" />
+    <Content Include="browser\static\css\bootstrap.min.css.map" />
+    <Content Include="browser\static\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="browser\static\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="browser\static\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="browser\static\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="extra\旅游网站开发文档.docx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
