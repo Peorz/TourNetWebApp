@@ -27,14 +27,14 @@ namespace TourWebApp
             {
                 field.Append(f.Name);
                 field.Append(" , ");
-                value.Append(ConvertSqlString(f));
+                value.Append(ORMUtils.ConvertSqlString(this, f));
                 value.Append(" , ");
             }
             field.Length = field.Length - 2;
             field.Append(")");
             value.Length = value.Length - 2;
             value.Append(")");
-            String insert = String.Format("insert into {0} {1} {2}", GetTableName(), field.ToString(), value.ToString());
+            String insert = String.Format("insert into {0} {1} {2}", ORMUtils.GetTableName(this), field.ToString(), value.ToString());
             SLog.Out.WriteLine(insert);
             return SqlHelper.ExecuteNonQuery(insert);
         }
@@ -45,27 +45,7 @@ namespace TourWebApp
             {
                 return 0;
             }
-            String sql = String.Format("delete from {0} where id = '{1}'", GetTableName(), id);
-            SLog.Out.WriteLine(sql);
-            return SqlHelper.ExecuteNonQuery(sql);
-        }
-
-        public static void DelAll(Object obj)
-        {
-            Type t = obj.GetType();
-            String sql = String.Format("delect from {0}", t.Name.ToLower());
-            SLog.Out.WriteLine(sql);
-        }
-
-        public static int DelById(Object obj)
-        {
-            Type t = obj.GetType();
-            Object uuid = t.GetField("id").GetValue(obj);
-            if (uuid == null)
-            {
-                return 0;
-            }
-            String sql = String.Format("delect from {0} where id = '{1}'", t.Name.ToLower(), uuid.ToString());
+            String sql = String.Format("delete from {0} where id = '{1}'", ORMUtils.GetTableName(this), id);
             SLog.Out.WriteLine(sql);
             return SqlHelper.ExecuteNonQuery(sql);
         }
@@ -85,18 +65,22 @@ namespace TourWebApp
                 {
                     continue;
                 }
-                String sqlChild = ConvertSqlString(f);
-                if (sqlChild.Equals("null"))
+                if (ORMUtils.IsDefaultValue(this, f))
                 {
                     continue;
                 }
+                String sqlChild = ORMUtils.ConvertSqlString(this, f);
                 sql.Append(f.Name);
                 sql.Append(" = ");
                 sql.Append(sqlChild);
                 sql.Append(" , ");
             }
+            if (sql.Length == 0)
+            {
+                return 0;
+            }
             sql.Length = sql.Length - 2;
-            String update = String.Format("update {0} set {1} where id = '{2}'", GetTableName(), sql.ToString(), id);
+            String update = String.Format("update {0} set {1} where id = '{2}'", ORMUtils.GetTableName(this), sql.ToString(), id);
             SLog.Out.WriteLine(update);
             return SqlHelper.ExecuteNonQuery(update);
         }
@@ -107,7 +91,7 @@ namespace TourWebApp
             {
                 return false;
             }
-            String sql = String.Format("select * from {0} where id = '{1}'", GetTableName(), id);
+            String sql = String.Format("select * from {0} where id = '{1}'", ORMUtils.GetTableName(this), id);
             SLog.Out.WriteLine(sql);
             SqlDataReader dataReader = SqlHelper.ExecuteReader(sql);
             if (!dataReader.HasRows)
@@ -122,7 +106,7 @@ namespace TourWebApp
                 {
                     continue;
                 }
-                SetModelValue(this, f.Name, dataReader[f.Name].ToString());
+                ORMUtils.SetModelValue(this, f, dataReader[f.Name]);
             }
             return false;
         }
@@ -134,47 +118,49 @@ namespace TourWebApp
         }
 
         /**
-         *获得模型对应的表明
+         * 公用方法调用
          */
-        private String GetTableName()
+        public static void DelAll(Object obj)
         {
-            return this.GetType().Name.ToLower();
+            Type t = obj.GetType();
+            String sql = String.Format("delect from {0}", ORMUtils.GetTableName(obj));
+            SLog.Out.WriteLine(sql);
         }
 
-        /**
-         *模型属性转换成 sql 合法字符串
-         */
-        private String ConvertSqlString(FieldInfo field)
+        public static int DelById(Object obj)
         {
-            Object obj = field.GetValue(this);
-            if (obj == null)
+            Type t = obj.GetType();
+            Object uuid = t.GetField("id").GetValue(obj);
+            if (uuid == null)
             {
-                return "null";
+                return 0;
             }
-            String sqlStr = obj.ToString();
-            if (field.FieldType.Name.Equals("String") || field.FieldType.Name.Equals("DateTime"))
-            {
-                sqlStr = String.Format("'{0}'", field.GetValue(this));
-            }
-            return sqlStr;
+            String sql = String.Format("delect from {0} where id = '{1}'", ORMUtils.GetTableName(obj), uuid.ToString());
+            SLog.Out.WriteLine(sql);
+            return SqlHelper.ExecuteNonQuery(sql);
         }
 
-        /**
-         * 反射设置属性值
-         */
-        private bool SetModelValue(Object obj, String fieldName, String value)
+        public static List<T> Select<T>() where T : class, new()
         {
-            try
+            String sql = String.Format("select * from {0}", ORMUtils.GetTableName(new T()));
+            SqlDataReader dataReader = SqlHelper.ExecuteReader(sql);
+            List<T> list = new List<T>();
+            if (!dataReader.HasRows)
             {
-                Type Ts = obj.GetType();
-                object v = Convert.ChangeType(value, Ts.GetField(fieldName).FieldType);
-                Ts.GetField(fieldName).SetValue(obj, v);
-                return true;
+                return list;
             }
-            catch
+            while (dataReader.Read())
             {
-                return false;
+                T t = new T();
+                FieldInfo[] fields = t.GetType().GetFields();
+                foreach (FieldInfo f in fields)
+                {
+                    ORMUtils.SetModelValue(t, f, dataReader[f.Name]);
+                }
+                list.Add(t);
             }
+            dataReader.Close();
+            return list;
         }
     }
 }

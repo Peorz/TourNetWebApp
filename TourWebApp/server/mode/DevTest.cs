@@ -8,7 +8,7 @@ namespace TourWebApp
 {
     public class DevTest : ORMSupport
     {
-        public String name = null;
-        public int? age = null;
+        public String name;
+        public int age;
     }
 }

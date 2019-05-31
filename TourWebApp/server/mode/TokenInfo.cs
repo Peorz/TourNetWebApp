@@ -7,7 +7,7 @@ namespace TourWebApp
 {
     public class TokenInfo : ORMSupport
     {
-        public DateTime loginTime = DateTime.Now;
+        public DateTime loginTime;
         public String token = null;
 
         public TokenInfo()

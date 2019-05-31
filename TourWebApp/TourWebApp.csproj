@@ -89,6 +89,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="server\db\ORMSupport.cs" />
+    <Compile Include="server\db\ORMUtils.cs" />
     <Compile Include="server\db\SqlHelper.cs" />
     <Compile Include="server\mode\DevTest.cs" />
     <Compile Include="server\mode\TokenInfo.cs" />

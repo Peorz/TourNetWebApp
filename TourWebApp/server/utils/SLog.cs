@@ -35,6 +35,11 @@ namespace TourWebApp
                 Debug.Write(BuildOutString(msg));
             }
 
+            public void WriteLine(bool b)
+            {
+                Debug.Write(BuildOutString(b + ""));
+            }
+
             public void WriteLine(Object obj)
             {
                 Type t = obj.GetType();
@@ -72,6 +77,10 @@ namespace TourWebApp
             {
             }
 
+            public void WriteLine(bool b)
+            {
+            }
+
             public void WriteLine(object obj)
             {
                 throw new NotImplementedException();
@@ -81,6 +90,7 @@ namespace TourWebApp
         public interface SLogCore
         {
             void WriteLine(String msg);
+            void WriteLine(bool b);
             void WriteLine(Object obj);
         }
     }
