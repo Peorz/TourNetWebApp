@@ -8,7 +8,11 @@ namespace TourWebApp
 {
     public class DevTest : ORMSupport
     {
-        public String name;
-        public int age;
+        [Colmun(Type = "varchar(255)")]
+        public String Name;
+
+        [Colmun(Type = "int")]
+        public int Age;
     }
 }
+

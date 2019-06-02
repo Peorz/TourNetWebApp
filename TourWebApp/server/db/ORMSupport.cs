@@ -5,16 +5,47 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
 using System.Data.SqlClient;
+using System.Collections;
 
 namespace TourWebApp
 {
     public class ORMSupport
     {
-        public String id;
+        [Colmun(PrimaryKey = true, Type = "varchar(255)")]
+        public String ID;
 
         public ORMSupport()
         {
-            id = UUID.Get("");
+            ID = UUID.Get("");
+        }
+
+        public int CreateTable()
+        {
+            if (SqlHelper.ExistTable(ORMUtils.GetTableName(this)))
+            {
+                return 0;
+            }
+            Type t = this.GetType();
+            FieldInfo[] fields = t.GetFields();
+            StringBuilder sql = new StringBuilder();
+            Hashtable fieldMap;
+            Hashtable colmunMap;
+            ORMUtils.GetColmunInfo(this, out fieldMap, out colmunMap);
+            foreach (String key in fieldMap.Keys)
+            {
+                FieldInfo field = fieldMap[key] as FieldInfo;
+                Colmun colmun = colmunMap[key] as Colmun;
+                String restrain = "";
+                if (colmun.PrimaryKey)
+                {
+                    restrain = "primary key";
+                }
+                sql.Append(String.Format(" {0} {1} {2} ,", field.Name, colmun.Type, restrain));
+            }
+            sql.Length = sql.Length - 2;
+            String create = String.Format("create table {0}({1})", ORMUtils.GetTableName(this), sql.ToString());
+            SLog.Out.WriteLine(create);
+            return SqlHelper.ExecuteNonQuery(create);
         }
 
         public virtual int Save()
@@ -41,18 +72,18 @@ namespace TourWebApp
 
         public int Delete()
         {
-            if (id == null || id.Length == 0)
+            if (ID == null || ID.Length == 0)
             {
                 return 0;
             }
-            String sql = String.Format("delete from {0} where id = '{1}'", ORMUtils.GetTableName(this), id);
+            String sql = String.Format("delete from {0} where ID = '{1}'", ORMUtils.GetTableName(this), ID);
             SLog.Out.WriteLine(sql);
             return SqlHelper.ExecuteNonQuery(sql);
         }
 
         public int Update()
         {
-            if (id == null || id.Length == 0)
+            if (ID == null || ID.Length == 0)
             {
                 return 0;
             }
@@ -61,7 +92,7 @@ namespace TourWebApp
             FieldInfo[] fields = t.GetFields();
             foreach (FieldInfo f in fields)
             {
-                if (f.Name.Equals("id"))
+                if (f.Name.Equals("ID"))
                 {
                     continue;
                 }
@@ -80,18 +111,18 @@ namespace TourWebApp
                 return 0;
             }
             sql.Length = sql.Length - 2;
-            String update = String.Format("update {0} set {1} where id = '{2}'", ORMUtils.GetTableName(this), sql.ToString(), id);
+            String update = String.Format("update {0} set {1} where ID = '{2}'", ORMUtils.GetTableName(this), sql.ToString(), ID);
             SLog.Out.WriteLine(update);
             return SqlHelper.ExecuteNonQuery(update);
         }
 
         public bool Find()
         {
-            if (id == null || id.Length == 0)
+            if (ID == null || ID.Length == 0)
             {
                 return false;
             }
-            String sql = String.Format("select * from {0} where id = '{1}'", ORMUtils.GetTableName(this), id);
+            String sql = String.Format("select * from {0} where ID = '{1}'", ORMUtils.GetTableName(this), ID);
             SLog.Out.WriteLine(sql);
             SqlDataReader dataReader = SqlHelper.ExecuteReader(sql);
             if (!dataReader.HasRows)
@@ -102,7 +133,7 @@ namespace TourWebApp
             FieldInfo[] fields = this.GetType().GetFields();
             foreach (FieldInfo f in fields)
             {
-                if (f.Name.Equals("id"))
+                if (f.Name.Equals("ID"))
                 {
                     continue;
                 }
@@ -111,9 +142,9 @@ namespace TourWebApp
             return false;
         }
 
-        public ORMSupport setId(String id)
+        public ORMSupport setId(String ID)
         {
-            this.id = id;
+            this.ID = ID;
             return this;
         }
 
@@ -130,12 +161,12 @@ namespace TourWebApp
         public static int DelById(Object obj)
         {
             Type t = obj.GetType();
-            Object uuid = t.GetField("id").GetValue(obj);
+            Object uuid = t.GetField("ID").GetValue(obj);
             if (uuid == null)
             {
                 return 0;
             }
-            String sql = String.Format("delect from {0} where id = '{1}'", ORMUtils.GetTableName(obj), uuid.ToString());
+            String sql = String.Format("delect from {0} where ID = '{1}'", ORMUtils.GetTableName(obj), uuid.ToString());
             SLog.Out.WriteLine(sql);
             return SqlHelper.ExecuteNonQuery(sql);
         }

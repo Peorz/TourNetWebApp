@@ -17,9 +17,9 @@ namespace TourWebApp
             connect = str;
         }
 
-        public static void Config(String server,String dataBase)
+        public static void Config(String server, String dataBase)
         {
-            connect = String.Format("Data Source={0};Initial Catalog={1};Integrated Security=True",server,dataBase) ;
+            connect = String.Format("Data Source={0};Initial Catalog={1};Integrated Security=True", server, dataBase);
         }
 
         public static SqlConnection GetIntance()
@@ -65,6 +65,12 @@ namespace TourWebApp
         {
             SqlCommand cmd = new SqlCommand(sql, GetIntance());
             return cmd.ExecuteReader();
+        }
+
+        public static bool ExistTable(String tableName)
+        {
+            int result = Convert.ToInt32(ExecuteScalar(String.Format("SELECT Count(*) FROM sysobjects WHERE name='{0}'", tableName)));
+            return result == 0 ? false : true;
         }
     }
 }

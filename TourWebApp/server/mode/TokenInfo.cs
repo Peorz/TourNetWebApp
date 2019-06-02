@@ -7,8 +7,11 @@ namespace TourWebApp
 {
     public class TokenInfo : ORMSupport
     {
-        public DateTime loginTime;
-        public String token = null;
+        [Colmun(Type = "datetime")]
+        public DateTime LoginTime;
+
+        [Colmun(Type = "varchar(255)")]
+        public String Token;
 
         public TokenInfo()
         {
@@ -18,8 +21,8 @@ namespace TourWebApp
         public TokenInfo(String userId)
         {
             setId(userId);
-            this.loginTime = DateTime.Now;
-            this.token = UUID.Get("token");
+            this.LoginTime = DateTime.Now;
+            this.Token = UUID.Get("token");
         }
     }
 }

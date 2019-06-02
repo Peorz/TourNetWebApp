@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Web;
+using System.Collections;
 
 namespace TourWebApp
 {
@@ -13,7 +14,7 @@ namespace TourWebApp
          */
         public static String GetTableName(Object obj)
         {
-            return obj.GetType().Name.ToLower();
+            return obj.GetType().Name;
         }
 
         /**
@@ -158,6 +159,36 @@ namespace TourWebApp
                     break;
                 default:
                     throw new Exception("类型不匹配:" + field.GetType().FullName);
+            }
+        }
+
+        public static void GetColmunInfo(Object obj, out Hashtable fieldMap, out Hashtable colmunMap)
+        {
+            fieldMap = new Hashtable();
+            colmunMap = new Hashtable();
+            Type t = obj.GetType();
+            FieldInfo[] fields = t.GetFields();
+            foreach (FieldInfo f in fields)
+            {
+                Object[] attrs = f.GetCustomAttributes(false);
+                foreach (Object attrItem in attrs)
+                {
+                    if (!(attrItem is Colmun))
+                    {
+                        continue;
+                    }
+                    Colmun colmun = attrItem as Colmun;
+                    if (colmun.Ignore)
+                    {
+                        continue;
+                    }
+                    if (colmun.Type == null)
+                    {
+                        continue;
+                    }
+                    fieldMap.Add(f.Name, f);
+                    colmunMap.Add(f.Name, attrItem);
+                }
             }
         }
 

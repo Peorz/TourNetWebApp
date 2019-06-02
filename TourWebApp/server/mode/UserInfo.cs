@@ -7,9 +7,15 @@ namespace TourWebApp
 {
     public class UserInfo : ORMSupport
     {
-        public String nick = null;
-        public int? sex = null;
-        public int? type = null;
+        [Colmun(Type = "varchar(255)")]
+        public String Nick;
+
+        [Colmun(Type = "int")]
+        public int Sex;
+
+        [Colmun(Type = "int")]
+        public int Type;
+
         private TokenInfo tokenInfo;
 
         public UserInfo()
@@ -17,12 +23,12 @@ namespace TourWebApp
 
         }
 
-        public UserInfo(String nick, int sex, int type)
+        public UserInfo(String Nick, int Sex, int Type)
         {
-            this.nick = nick;
-            this.sex = sex;
-            this.type = type;
-            this.id = UUID.Get("user");
+            this.Nick = Nick;
+            this.Sex = Sex;
+            this.Type = Type;
+            this.ID = UUID.Get("user");
         }
 
         public override int Save()
@@ -30,7 +36,7 @@ namespace TourWebApp
             int result = base.Save();
             if (result == 1)
             {
-                this.tokenInfo = new TokenInfo(this.id);
+                this.tokenInfo = new TokenInfo(this.ID);
                 tokenInfo.Save();
             }
             else
@@ -43,7 +49,7 @@ namespace TourWebApp
         public TokenInfo GetTokenInfo()
         {
             this.tokenInfo = new TokenInfo();
-            this.tokenInfo.setId(this.id);
+            this.tokenInfo.setId(this.ID);
             tokenInfo.Find();
             return this.tokenInfo;
         }
