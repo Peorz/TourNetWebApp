@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LandscapeInfo.aspx.cs" Inherits="TourWebApp.browser.view.LandscapeInfo" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="TourSelect.aspx.cs" Inherits="TourWebApp.browser.view.TourSelect" %>
 
 <!DOCTYPE html>
 

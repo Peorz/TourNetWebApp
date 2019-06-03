@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace TourWebApp.browser.view
 {
-    public partial class LandscapeInfo : System.Web.UI.Page
+    public partial class TourSelect : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
