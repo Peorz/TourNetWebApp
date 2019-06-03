@@ -73,7 +73,7 @@
     <Content Include="browser\static\js\jquery.min.js" />
     <Content Include="browser\static\js\npm.js" />
     <Content Include="browser\view\Guestbook.aspx" />
-    <Content Include="browser\view\LandscapeInfo.aspx" />
+    <Content Include="browser\view\TourSelect.aspx" />
     <Content Include="browser\view\Login.aspx" />
     <Content Include="browser\view\Personal.aspx" />
     <Content Include="browser\view\Register.aspx" />
@@ -91,12 +91,12 @@
     <Compile Include="browser\view\Guestbook.aspx.designer.cs">
       <DependentUpon>Guestbook.aspx</DependentUpon>
     </Compile>
-    <Compile Include="browser\view\LandscapeInfo.aspx.cs">
-      <DependentUpon>LandscapeInfo.aspx</DependentUpon>
+    <Compile Include="browser\view\TourSelect.aspx.cs">
+      <DependentUpon>TourSelect.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="browser\view\LandscapeInfo.aspx.designer.cs">
-      <DependentUpon>LandscapeInfo.aspx</DependentUpon>
+    <Compile Include="browser\view\TourSelect.aspx.designer.cs">
+      <DependentUpon>TourSelect.aspx</DependentUpon>
     </Compile>
     <Compile Include="browser\view\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
