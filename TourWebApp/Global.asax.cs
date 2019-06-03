@@ -14,13 +14,13 @@ namespace TourWebApp.server.config
             /**
              * 配置数据库
              */
-            SqlHelper.Config("GCM47C2", "TourDataBase");
+            //SqlHelper.Config("GCM47C2", "TourDataBase");
             /**
              * 创建数据表
              */
-            //new DevTest().CreateTable();
-            //new UserInfo().CreateTable();
-            //new TokenInfo().CreateTable();
+            new DevTest().CreateTable();
+            new UserInfo().CreateTable();
+            new TokenInfo().CreateTable();
             /**
              * 配置日志开关
              */

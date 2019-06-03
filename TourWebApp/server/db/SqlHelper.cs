@@ -26,16 +26,25 @@ namespace TourWebApp
         {
             if (connect == null)
             {
-                throw new Exception("未配置数据库连接字符串！");
+                SLog.Out.WriteLine("未配置数据库连接字符串！");
+                return null;
             }
-            if (sqlConnection == null)
+            try
             {
-                sqlConnection = new SqlConnection(connect);
-                sqlConnection.Open();
+                if (sqlConnection == null)
+                {
+                    sqlConnection = new SqlConnection(connect);
+                    sqlConnection.Open();
+                }
+                if (sqlConnection.State == ConnectionState.Closed)
+                {
+                    sqlConnection.Open();
+                }
             }
-            if (sqlConnection.State == ConnectionState.Closed)
+            catch (Exception ex)
             {
-                sqlConnection.Open();
+                SLog.Out.WriteLine(ex.Message);
+                return null;
             }
             return sqlConnection;
         }
@@ -45,6 +54,10 @@ namespace TourWebApp
          */
         public static int ExecuteNonQuery(String sql)
         {
+            if (GetIntance() == null)
+            {
+                return 0;
+            }
             SqlCommand cmd = new SqlCommand(sql, GetIntance());
             return cmd.ExecuteNonQuery();
         }
@@ -54,6 +67,10 @@ namespace TourWebApp
         */
         public static Object ExecuteScalar(String sql)
         {
+            if (GetIntance() == null)
+            {
+                return 0;
+            }
             SqlCommand cmd = new SqlCommand(sql, GetIntance());
             return cmd.ExecuteScalar();
         }
@@ -63,12 +80,20 @@ namespace TourWebApp
         */
         public static SqlDataReader ExecuteReader(String sql)
         {
+            if (GetIntance() == null)
+            {
+                return null;
+            }
             SqlCommand cmd = new SqlCommand(sql, GetIntance());
             return cmd.ExecuteReader();
         }
 
         public static bool ExistTable(String tableName)
         {
+            if (GetIntance() == null)
+            {
+                return false;
+            }
             int result = Convert.ToInt32(ExecuteScalar(String.Format("SELECT Count(*) FROM sysobjects WHERE name='{0}'", tableName)));
             return result == 0 ? false : true;
         }
