@@ -64,9 +64,11 @@
     <Content Include="browser\static\css\index\customize.css" />
     <Content Include="browser\static\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="browser\static\img\16849027.jpeg" />
+    <Content Include="browser\static\img\banner.jpg" />
     <Content Include="browser\static\js\bootstrap.min.js" />
     <Content Include="browser\static\js\jquery.min.js" />
     <Content Include="browser\static\js\npm.js" />
+    <Content Include="browser\view\Login.aspx" />
     <Content Include="browser\view\Register.aspx" />
     <Content Include="browser\view\Test.aspx" />
     <Content Include="extra\tour_database.sql" />
@@ -75,8 +77,15 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="browser\view\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="browser\view\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="browser\view\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="browser\view\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
