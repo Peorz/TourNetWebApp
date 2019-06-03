@@ -10,7 +10,7 @@
 namespace TourWebApp.browser.view {
     
     
-    public partial class Personal {
+    public partial class LandscapeInfo {
         
         /// <summary>
         /// form1 控件。

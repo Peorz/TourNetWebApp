@@ -10,6 +10,19 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <div>
+                <span>留言板</span>
+                <br />
+                <span>欢迎来到留言板</span>
+                <br />
+                <asp:TextBox ID="TextBox1" runat="server" Height="64px" ViewStateMode="Enabled" Width="171px"></asp:TextBox>
+                <br />
+                <asp:Button ID="Button1" runat="server" Text="发送" />
+                <br />
+                <span>留言（<asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>）</span>
+                <br />
+
+            </div>
         </div>
     </form>
 </body>
