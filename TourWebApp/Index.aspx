@@ -20,7 +20,7 @@
                 <div class="row">
                     <div class="col-md-2">
                         <div class="navbar-header">
-                            <a class="navbar-brand" href="#">智慧豪</a>
+                            <a class="navbar-brand" href="#">xxxxx</a>
                         </div>
                     </div>
                     <div class="col-md-7">
