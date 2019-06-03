@@ -171,9 +171,14 @@ namespace TourWebApp
             return SqlHelper.ExecuteNonQuery(sql);
         }
 
-        public static List<T> Select<T>() where T : class, new()
+        public static List<T> Select<T>(Where where) where T : class, new()
         {
-            String sql = String.Format("select * from {0}", ORMUtils.GetTableName(new T()));
+            String whereStr = "";
+            if (where != null)
+            {
+                whereStr = where.Build();
+            }
+            String sql = String.Format("select * from {0} {1}", ORMUtils.GetTableName(new T()), whereStr);
             SqlDataReader dataReader = SqlHelper.ExecuteReader(sql);
             List<T> list = new List<T>();
             if (!dataReader.HasRows)

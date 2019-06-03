@@ -9,49 +9,57 @@ namespace TourWebApp
 {
     public class Where
     {
-        private List<Attr> orList = new List<Attr>();
-        private List<Attr> andList = new List<Attr>();
+        private List<Attr> OrList = new List<Attr>();
+        private List<Attr> AndList = new List<Attr>();
 
-        public void Or(Attr attr)
+        public void Or(String FieldName, String Value)
         {
-            orList.Add(attr);
+            OrList.Add(new Attr(FieldName, String.Format("'{0}'", Value)));
         }
 
-        public void And(Attr attr)
+        public void Or(String FieldName, double Value)
         {
-            andList.Add(attr);
+            OrList.Add(new Attr(FieldName, Value + ""));
+        }
+
+        public void And(String FieldName, String Value)
+        {
+            AndList.Add(new Attr(FieldName, String.Format("'{0}'", Value)));
+        }
+
+        public void And(String FieldName, double Value)
+        {
+            AndList.Add(new Attr(FieldName, Value + ""));
         }
 
         public String Build()
         {
             StringBuilder where = new StringBuilder();
-            if (orList.Count == 0 || andList.Count == 0)
+            if (OrList.Count == 0 || AndList.Count == 0)
             {
                 return where.ToString();
             }
-            where.Append("where ");
-            foreach (Attr attr in andList)
+            where.Append("where");
+            foreach (Attr attr in AndList)
             {
-                where.Append(String.Format(" {0} = {1} and", attr.FieldInfo.Name, attr.Value));
+                where.Append(String.Format(" {0} = {1} and", attr.FieldName, attr.Value));
+            }
+            foreach (Attr attr in OrList)
+            {
+                where.Append(String.Format(" {0} = {1} or", attr.FieldName, attr.Value));
             }
             where.Length = where.Length - 3;
-            foreach (Attr attr in orList)
-            {
-                where.Append(String.Format(" {0} = {1} or", attr.FieldInfo.Name, attr.Value));
-            }
-            where.Length = where.Length - 3;
-            SLog.Out.WriteLine(where.ToString());
             return where.ToString();
         }
 
         public class Attr
         {
-            public FieldInfo FieldInfo;
+            public String FieldName;
             public String Value;
 
-            public Attr(FieldInfo FieldInfo, String Value)
+            public Attr(String FieldName, String Value)
             {
-                this.FieldInfo = FieldInfo;
+                this.FieldName = FieldName;
                 this.Value = Value;
             }
         }
