@@ -18,9 +18,9 @@ namespace TourWebApp.server.config
             /**
              * 创建数据表
              */
-            new DevTest().CreateTable();
-            new UserInfo().CreateTable();
-            new TokenInfo().CreateTable();
+            //new DevTest().CreateTable();
+            //new UserInfo().CreateTable();
+            //new TokenInfo().CreateTable();
             /**
              * 配置日志开关
              */

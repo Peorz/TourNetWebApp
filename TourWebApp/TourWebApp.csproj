@@ -67,6 +67,7 @@
     <Content Include="browser\static\js\bootstrap.min.js" />
     <Content Include="browser\static\js\jquery.min.js" />
     <Content Include="browser\static\js\npm.js" />
+    <Content Include="browser\view\Register.aspx" />
     <Content Include="browser\view\Test.aspx" />
     <Content Include="extra\tour_database.sql" />
     <Content Include="Global.asax" />
@@ -74,6 +75,12 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="browser\view\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="browser\view\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
     <Compile Include="browser\view\Test.aspx.cs">
       <DependentUpon>Test.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
