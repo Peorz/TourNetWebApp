@@ -59,6 +59,10 @@ namespace TourWebApp
 
         public static int ExecuteNonQuery(String sql, SqlParameter[] parameters)
         {
+            if (GetIntance() == null)
+            {
+                return 0;
+            }
             SqlCommand cmd = new SqlCommand(sql, GetIntance());
             if (parameters != null)
             {
@@ -78,6 +82,10 @@ namespace TourWebApp
 
         public static Object ExecuteScalar(String sql, SqlParameter[] parameters)
         {
+            if (GetIntance() == null)
+            {
+                return null;
+            }
             SqlCommand cmd = new SqlCommand(sql, GetIntance());
             if (parameters != null)
             {
@@ -97,6 +105,10 @@ namespace TourWebApp
 
         public static SqlDataReader ExecuteReader(String sql, SqlParameter[] parameters)
         {
+            if (GetIntance() == null)
+            {
+                return null;
+            }
             SqlCommand cmd = new SqlCommand(sql, GetIntance());
             if (parameters != null)
             {

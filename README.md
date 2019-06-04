@@ -5,7 +5,8 @@
 | 登录(Login) |  | 明 | ing |
 | 注册(Register) |  | 珍 | ing |
 | 首页(Index) |  | 豪 | ing |
-| 忘记密码 |  | 珍 |  |
+| 主页(Main) |  | 豪 | ing |
+| 忘记密码 |  | 珍 | ing |
 | 个人中心(Personal) |  | 洲 | ing |
 | 景区详情 |  | 明 |  |
 | 关于我们 |  | 洲 |  |

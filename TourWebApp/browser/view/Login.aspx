@@ -17,19 +17,19 @@
         <%--<img src="#" />--%>
         <h3>登录</h3>
         <form action="#" runat="server" name="loginForm" class="form-horizontal" method="post">
-            <div class="form-group">               
+            <div class="form-group">
                 <div class="col-md-offset-3 col-md-6">
                     <label for="inputUserName" class="control-label">用户名</label>
                     <asp:TextBox class="form-control" ID="inputUserName" runat="server" placeholder="请输入用户名"></asp:TextBox>
                     <asp:RequiredFieldValidator runat="server" ControlToValidate="inputUserName" ErrorMessage="*请输入用户名" ForeColor="Red"></asp:RequiredFieldValidator>
-                    
+
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-md-offset-3 col-md-6">
                     <label for="inputPassword" class="control-label">密码</label>
                     <asp:TextBox class="form-control" ID="inputPassword" runat="server" placeholder="请输入密码"></asp:TextBox>
-                    <asp:RequiredFieldValidator runat="server" ControlToValidate="inputPassword" ErrorMessage="*请输入密码" ForeColor="Red"></asp:RequiredFieldValidator>                    
+                    <asp:RequiredFieldValidator runat="server" ControlToValidate="inputPassword" ErrorMessage="*请输入密码" ForeColor="Red"></asp:RequiredFieldValidator>
                 </div>
             </div>
             <div class="form-group">
@@ -37,9 +37,9 @@
             </div>
             <div class="form-group">
                 <div class="btn-group col-md-offset-3 col-md-6" role="group" aria-label="...">
-                    <asp:Button ID="Button1" class="btn btn-default" runat="server" style="width: 100px" Text="注册" />
-                    <asp:Button ID="Button2" class="btn btn-primary" runat="server" style="width: 100px" Text="登录" />
-                    
+                    <asp:Button ID="Button1" class="btn btn-default" runat="server" Style="width: 100px" Text="注册" />
+                    <asp:Button ID="Button2" class="btn btn-primary" runat="server" Style="width: 100px" Text="登录" />
+
                 </div>
             </div>
         </form>

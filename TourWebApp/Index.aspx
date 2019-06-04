@@ -7,15 +7,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
     <link href="browser/static/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="browser/static/css/card-view.css" rel="stylesheet" />
     <link href="browser/static/css/bootstrap-theme.min.css" rel="stylesheet" />
     <link href="browser/static/css/index/customize.css" rel="stylesheet" />
+    <link href="browser/static/css/main/main.css" rel="stylesheet" />
     <script src="browser/static/js/jquery.min.js"></script>
     <script src="browser/static/js/bootstrap.min.js"></script>
 </head>
 <body>
     <form class="form-horizontal" runat="server" role="form">
         <%-- 导航栏 s --%>
-        <nav class="navbar navbar-default" style="margin: 8px; position: absolute; width: 99%; z-index: 10;">
+        <nav class="navbar navbar-default" style="margin: 12px; position: absolute; width: 98.5%; z-index: 10;">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-2">
@@ -70,11 +72,11 @@
     <script type="text/javascript">
         $(document).ready(function () {
             init();
-            loadView("browser/view/Test.aspx")
+            loadView("browser/view/Main.aspx")
         });
 
         function init() {
-            $("#bg_area").css("height", window.screen.height * 1 / 3);
+            $("#bg_area").css("height", $(window).height() * 2 / 3);
             $("#content").css("padding-top", $("nav").outerHeight(true));
         }
 
