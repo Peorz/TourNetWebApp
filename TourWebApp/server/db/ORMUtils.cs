@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Web;
 using System.Collections;
+using System.Data.SqlClient;
 
 namespace TourWebApp
 {
@@ -17,51 +18,9 @@ namespace TourWebApp
             return obj.GetType().Name;
         }
 
-        /**
-         *模型属性转换成 sql 合法字符串
-         */
-        public static String ConvertSqlString(Object obj, FieldInfo field)
+        public static String GetTableName(Type type)
         {
-            Object value = field.GetValue(obj);
-            if (value == null)
-            {
-                return "null";
-            }
-            String sqlStr = value.ToString();
-            switch (field.FieldType.FullName)
-            {
-                case "System.Decimal":
-                    sqlStr = String.Format("'{0}'", field.GetValue(obj));
-                    break;
-                case "System.String":
-                    field.SetValue(obj, value.ToString());
-                    sqlStr = String.Format("'{0}'", field.GetValue(obj));
-                    break;
-                case "System.Char":
-                    sqlStr = String.Format("'{0}'", field.GetValue(obj));
-                    break;
-                case "System.Guid":
-                    //field.SetValue(obj, value);
-                    break;
-                case "System.Int16":
-                    break;
-                case "System.Int32":
-                    break;
-                case "System.Int64":
-                    break;
-                case "System.Byte[]":
-                    break;
-                case "System.Boolean":
-                    break;
-                case "System.Double":
-                    break;
-                case "System.DateTime":
-                    sqlStr = String.Format("'{0}'", Convert.ToDateTime(value));
-                    break;
-                default:
-                    throw new Exception("类型不匹配:" + field.GetType().FullName);
-            }
-            return sqlStr;
+            return type.Name;
         }
 
         public static bool IsDefaultValue(Object obj, FieldInfo field)
@@ -117,10 +76,27 @@ namespace TourWebApp
             return result;
         }
 
-        /**
-         * 反射设置属性值
-         */
-        public static void SetModelValue(Object obj, FieldInfo field, Object value)
+        public static bool SetModelValue(SqlDataReader dataReader,Object obj)
+        {
+            if (!dataReader.HasRows)
+            {
+                return false;
+            }
+            dataReader.Read();
+            FieldInfo[] fields = obj.GetType().GetFields();
+            foreach (FieldInfo field in fields)
+            {
+                if (field.Name.Equals("ID"))
+                {
+                    continue;
+                }
+                SetFieldValue(obj, field,dataReader[field.Name]);
+            }
+            dataReader.Close();
+            return true;
+        }
+
+        public static void SetFieldValue(Object obj, FieldInfo field,Object value)
         {
             switch (field.FieldType.FullName)
             {
@@ -162,57 +138,20 @@ namespace TourWebApp
             }
         }
 
-        public static void GetColmunInfo(Object obj, out Hashtable fieldMap, out Hashtable colmunMap)
+        public static List<FieldAttribute> GetFieldAttributes(Object obj)
         {
-            fieldMap = new Hashtable();
-            colmunMap = new Hashtable();
+            List<FieldAttribute> attributes = new List<FieldAttribute>();
             Type t = obj.GetType();
             FieldInfo[] fields = t.GetFields();
-            foreach (FieldInfo f in fields)
+            foreach (FieldInfo item in fields)
             {
-                Object[] attrs = f.GetCustomAttributes(false);
-                foreach (Object attrItem in attrs)
+                FieldAttribute attribute = new FieldAttribute(obj, item);
+                if (attribute != null)
                 {
-                    if (!(attrItem is Colmun))
-                    {
-                        continue;
-                    }
-                    Colmun colmun = attrItem as Colmun;
-                    if (colmun.Ignore)
-                    {
-                        continue;
-                    }
-                    if (colmun.Type == null)
-                    {
-                        continue;
-                    }
-                    fieldMap.Add(f.Name, f);
-                    colmunMap.Add(f.Name, attrItem);
+                    attributes.Add(attribute);
                 }
             }
+            return attributes;
         }
-
-        public static FieldAttribute[] GetFieldAttributes(Object obj)
-        {
-            return null;
-        }
-
-        ///**
-        // * 反射设置属性值
-        // */
-        //public static bool SetTValue(Object obj, String fieldName, String value)
-        //{
-        //    try
-        //    {
-        //        Type Ts = obj.GetType();
-        //        object v = Convert.ChangeType(value, Ts.GetField(fieldName).FieldType);
-        //        Ts.GetField(fieldName).SetValue(obj, v);
-        //        return true;
-        //    }
-        //    catch
-        //    {
-        //        return false;
-        //    }
-        //}
     }
 }

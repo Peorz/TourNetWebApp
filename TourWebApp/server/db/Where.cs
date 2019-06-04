@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Web;
+using System.Data.SqlClient;
 
 namespace TourWebApp
 {
@@ -12,42 +13,44 @@ namespace TourWebApp
         private List<Attr> OrList = new List<Attr>();
         private List<Attr> AndList = new List<Attr>();
 
-        public void Or(String FieldName, String Value)
+        public void Or(String FieldName, Object Value)
         {
-            OrList.Add(new Attr(FieldName, String.Format("'{0}'", Value)));
-        }
-
-        public void Or(String FieldName, double Value)
-        {
-            OrList.Add(new Attr(FieldName, Value + ""));
+            OrList.Add(new Attr(FieldName, Value));
         }
 
         public void And(String FieldName, String Value)
         {
-            AndList.Add(new Attr(FieldName, String.Format("'{0}'", Value)));
+            AndList.Add(new Attr(FieldName, Value));
         }
 
-        public void And(String FieldName, double Value)
+        public int Count()
         {
-            AndList.Add(new Attr(FieldName, Value + ""));
+            return OrList.Count + AndList.Count;
         }
 
-        public String Build()
+        public String Build(out SqlParameter[] parameters)
         {
             StringBuilder where = new StringBuilder();
-            if (OrList.Count == 0 || AndList.Count == 0)
+            parameters = new SqlParameter[] { };
+            List<SqlParameter> paramList = parameters.ToList<SqlParameter>();
+            if (OrList.Count == 0 && AndList.Count == 0)
             {
                 return where.ToString();
             }
             where.Append("where");
             foreach (Attr attr in AndList)
             {
-                where.Append(String.Format(" {0} = {1} and", attr.FieldName, attr.Value));
+                String paramName = String.Format("@{0}", attr.FieldName);
+                where.Append(String.Format(" {0} = {1} and", attr.FieldName, paramName));
+                paramList.Add(new SqlParameter(paramName, attr.Value));
             }
             foreach (Attr attr in OrList)
             {
-                where.Append(String.Format(" {0} = {1} or", attr.FieldName, attr.Value));
+                String paramName = String.Format("@{0}", attr.FieldName);
+                where.Append(String.Format(" {0} = {1} or", attr.FieldName, paramName));
+                paramList.Add(new SqlParameter(paramName, attr.Value));
             }
+            parameters = paramList.ToArray<SqlParameter>();
             where.Length = where.Length - 3;
             return where.ToString();
         }
@@ -55,9 +58,9 @@ namespace TourWebApp
         public class Attr
         {
             public String FieldName;
-            public String Value;
+            public Object Value;
 
-            public Attr(String FieldName, String Value)
+            public Attr(String FieldName, Object Value)
             {
                 this.FieldName = FieldName;
                 this.Value = Value;

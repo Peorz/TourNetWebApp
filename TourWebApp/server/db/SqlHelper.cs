@@ -22,28 +22,11 @@ namespace TourWebApp
             connect = String.Format("Data Source={0};Initial Catalog={1};Integrated Security=True", server, dataBase);
         }
 
-        public static bool Verify()
+        public static SqlConnection GetIntance()
         {
             if (connect == null)
             {
                 SLog.Out.WriteLine("未配置数据库连接字符串！");
-                return false;
-            }
-            if (sqlConnection == null)
-            {
-                return false;
-            }
-            if (sqlConnection.State != ConnectionState.Open)
-            {
-                return false;
-            }
-            return true;
-        }
-
-        public static SqlConnection GetIntance()
-        {
-            if (!Verify())
-            {
                 return null;
             }
             try
@@ -71,11 +54,17 @@ namespace TourWebApp
          */
         public static int ExecuteNonQuery(String sql)
         {
-            if (!Verify())
-            {
-                return 0;
-            }
+            return ExecuteNonQuery(sql, null);
+        }
+
+        public static int ExecuteNonQuery(String sql, SqlParameter[] parameters)
+        {
             SqlCommand cmd = new SqlCommand(sql, GetIntance());
+            if (parameters != null)
+            {
+                cmd.Parameters.AddRange(parameters);
+            }
+            SLog.Out.WriteLine(sql);
             return cmd.ExecuteNonQuery();
         }
 
@@ -84,11 +73,17 @@ namespace TourWebApp
         */
         public static Object ExecuteScalar(String sql)
         {
-            if (!Verify())
-            {
-                return 0;
-            }
+            return ExecuteScalar(sql, null);
+        }
+
+        public static Object ExecuteScalar(String sql, SqlParameter[] parameters)
+        {
             SqlCommand cmd = new SqlCommand(sql, GetIntance());
+            if (parameters != null)
+            {
+                cmd.Parameters.AddRange(parameters);
+            }
+            SLog.Out.WriteLine(sql);
             return cmd.ExecuteScalar();
         }
 
@@ -97,20 +92,22 @@ namespace TourWebApp
         */
         public static SqlDataReader ExecuteReader(String sql)
         {
-            if (!Verify())
-            {
-                return null;
-            }
+            return ExecuteReader(sql, null);
+        }
+
+        public static SqlDataReader ExecuteReader(String sql, SqlParameter[] parameters)
+        {
             SqlCommand cmd = new SqlCommand(sql, GetIntance());
+            if (parameters != null)
+            {
+                cmd.Parameters.AddRange(parameters);
+            }
+            SLog.Out.WriteLine(sql);
             return cmd.ExecuteReader();
         }
 
         public static bool ExistTable(String tableName)
         {
-            if (!Verify())
-            {
-                return false;
-            }
             int result = Convert.ToInt32(ExecuteScalar(String.Format("SELECT Count(*) FROM sysobjects WHERE name='{0}'", tableName)));
             return result == 0 ? false : true;
         }

@@ -152,6 +152,7 @@
     <Compile Include="server\db\Colmun.cs" />
     <Compile Include="server\db\FieldType.cs" />
     <Compile Include="server\db\FieldAttribute.cs" />
+    <Compile Include="server\db\ORMFactory.cs" />
     <Compile Include="server\db\ORMSupport.cs" />
     <Compile Include="server\db\ORMUtils.cs" />
     <Compile Include="server\db\SqlHelper.cs" />
