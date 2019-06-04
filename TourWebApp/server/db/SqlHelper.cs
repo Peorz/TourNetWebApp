@@ -22,11 +22,28 @@ namespace TourWebApp
             connect = String.Format("Data Source={0};Initial Catalog={1};Integrated Security=True", server, dataBase);
         }
 
-        public static SqlConnection GetIntance()
+        public static bool Verify()
         {
             if (connect == null)
             {
                 SLog.Out.WriteLine("未配置数据库连接字符串！");
+                return false;
+            }
+            if (sqlConnection == null)
+            {
+                return false;
+            }
+            if (sqlConnection.State != ConnectionState.Open)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public static SqlConnection GetIntance()
+        {
+            if (!Verify())
+            {
                 return null;
             }
             try
@@ -54,7 +71,7 @@ namespace TourWebApp
          */
         public static int ExecuteNonQuery(String sql)
         {
-            if (GetIntance() == null)
+            if (!Verify())
             {
                 return 0;
             }
@@ -67,7 +84,7 @@ namespace TourWebApp
         */
         public static Object ExecuteScalar(String sql)
         {
-            if (GetIntance() == null)
+            if (!Verify())
             {
                 return 0;
             }
@@ -80,7 +97,7 @@ namespace TourWebApp
         */
         public static SqlDataReader ExecuteReader(String sql)
         {
-            if (GetIntance() == null)
+            if (!Verify())
             {
                 return null;
             }
@@ -90,7 +107,7 @@ namespace TourWebApp
 
         public static bool ExistTable(String tableName)
         {
-            if (GetIntance() == null)
+            if (!Verify())
             {
                 return false;
             }

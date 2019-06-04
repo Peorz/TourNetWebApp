@@ -192,6 +192,11 @@ namespace TourWebApp
             }
         }
 
+        public static FieldAttribute[] GetFieldAttributes(Object obj)
+        {
+            return null;
+        }
+
         ///**
         // * 反射设置属性值
         // */

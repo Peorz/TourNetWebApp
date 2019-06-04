@@ -5,7 +5,7 @@ using System.Web;
 
 namespace TourWebApp
 {
-    public class Colmun :Attribute
+    public class Colmun : Attribute
     {
         public bool PrimaryKey;
         public bool Ignore;
