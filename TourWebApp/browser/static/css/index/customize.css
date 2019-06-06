@@ -5,8 +5,12 @@
     position: absolute;
     width: 100%;
     z-index: 0;
-    background-image: url("../../img/bg_area_2.jpg");
+    background-image: url('../../img/bg_area_2.jpg');
     background-repeat: no-repeat;
+    top: 2px;
+    left: 0px;
+    height: 57px;
+    bottom: 389px;
 }
 
 #content {

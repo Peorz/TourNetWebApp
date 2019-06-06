@@ -10,7 +10,7 @@
 namespace TourWebApp.browser.view {
     
     
-    public partial class Main {
+    public partial class AboutUs {
         
         /// <summary>
         /// form1 控件。
