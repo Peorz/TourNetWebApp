@@ -8,6 +8,10 @@
     right:0;
     height:320px;
     width:650px;
+    z-index:10;
+}
+.container-fluid{
+    z-index:5;
 }
 .guestbook_nav > h3 {
         border-bottom: solid 2px #DDDDDD;
@@ -15,4 +19,22 @@
 }
 .container-fluid{
     margin-top:350px;
+}
+.guestbook_img{
+    padding-left:12px;
+    padding-top:8px;
+}
+.guestbook_img img{
+    width:70px;
+    height:70px;
+}
+.row_one{
+    height:40px;
+}
+.row{
+    
+}
+.row_all{
+     margin-bottom:20px;
+     height:120px;
 }
