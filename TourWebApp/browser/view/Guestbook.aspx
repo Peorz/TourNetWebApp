@@ -28,177 +28,98 @@
             <br />
         </div>
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-1">
-                    <span>123</span>
-                </div>
-                <div class="col-md-1">
-                    <span>123</span>
-                </div>
-                <div class="col-md-1">
-                    <span>123</span>
-                </div>
-                <div class="col-md-1">
-                    <span>123</span>
-                </div>
-                <div class="col-md-1">
-                    <span>123</span>
-                </div>
-                <div class="col-md-1">
-                    <span>123</span>
-                </div>
-                <div class="col-md-1">
-                    <span>123</span>
-                </div>
-                <div class="col-md-1">
-                    <span>123</span>
-                </div>
-                <div class="col-md-1">
-                    <span>123</span>
-                </div>
-                <div class="col-md-1">
-                    <span>123</span>
-                </div>
-                <div class="col-md-1">
-                    <span>123</span>
-                </div>
-                <div class="col-md-1">
-                    <span>123</span>
-                </div>
-
-            </div>
-            <div class="row">
+            <div class="row row_one">
                 <div class="col-md-4 col-md-offset-3">
                     <span>留言（<asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>）</span>
                     <br />
                     <br />
                 </div>
             </div>
-            <div class="row">
+            <div class="row row_all">
                 <div class="col-md-1 col-md-offset-3">
-                    <a href="#">
-                        <img src="..." />
-                    </a>
+                    <div class="guestbook_img">
+                        <a href="#">
+                            <img src="..\static\img\guestbook_img.jpg" />
+                        </a>
+                    </div>                   
                 </div>
-                <div class="col-md-6">
-                    <h5>Media heading</h5>
+                <div class="col-md-5 ">
+                    <h4><a href="#"><asp:Label ID="Label2" runat="server" Text="Label"></asp:Label></a></h4>
                     <span>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. 
                           Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
                     </span>
                 </div>
             </div>
-            <div class="row">
+            <div class="row row_all">
                 <div class="col-md-1 col-md-offset-3">
-                    <a href="#">
-                        <img src="..." />
-                    </a>
+                    <div class="guestbook_img">
+                        <a href="#">
+                            <img src="..\static\img\guestbook_img.jpg" />
+                        </a>
+                    </div>                   
                 </div>
-                <div class="col-md-6">
-                    <h5>Media heading</h5>
+                <div class="col-md-5 ">
+                    <h4><a href="#"><asp:Label ID="Label3" runat="server" Text="Label"></asp:Label></a></h4>
                     <span>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. 
                           Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
                     </span>
                 </div>
             </div>
-            <div class="row">
+            <div class="row row_all">
                 <div class="col-md-1 col-md-offset-3">
-                    <a href="#">
-                        <img src="..." />
-                    </a>
+                    <div class="guestbook_img">
+                        <a href="#">
+                            <img src="..\static\img\guestbook_img.jpg" />
+                        </a>
+                    </div>                   
                 </div>
-                <div class="col-md-6">
-                    <h5>Media heading</h5>
+                <div class="col-md-5 ">
+                    <h4><a href="#"><asp:Label ID="Label4" runat="server" Text="Label"></asp:Label></a></h4>
                     <span>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. 
                           Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
                     </span>
                 </div>
             </div>
-            <div class="row">
+            <div class="row row_all">
                 <div class="col-md-1 col-md-offset-3">
-                    <a href="#">
-                        <img src="..." />
-                    </a>
+                    <div class="guestbook_img">
+                        <a href="#">
+                            <img src="..\static\img\guestbook_img.jpg" />
+                        </a>
+                    </div>                   
                 </div>
-                <div class="col-md-6">
-                    <h5>Media heading</h5>
+                <div class="col-md-5 ">
+                    <h4><a href="#"><asp:Label ID="Label5" runat="server" Text="Label"></asp:Label></a></h4>
                     <span>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. 
                           Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
                     </span>
                 </div>
             </div>
-            <div class="row">
+            <div class="row row_all">
                 <div class="col-md-1 col-md-offset-3">
-                    <a href="#">
-                        <img src="..." />
-                    </a>
+                    <div class="guestbook_img">
+                        <a href="#">
+                            <img src="..\static\img\guestbook_img.jpg" />
+                        </a>
+                    </div>                   
                 </div>
-                <div class="col-md-6">
-                    <h5>Media heading</h5>
+                <div class="col-md-5 ">
+                    <h4><a href="#"><asp:Label ID="Label6" runat="server" Text="Label"></asp:Label></a></h4>
                     <span>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. 
                           Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
                     </span>
                 </div>
             </div>
-            <div class="row">
+            <div class="row row_all">
                 <div class="col-md-1 col-md-offset-3">
-                    <a href="#">
-                        <img src="..." />
-                    </a>
+                    <div class="guestbook_img">
+                        <a href="#">
+                            <img src="..\static\img\guestbook_img.jpg" />
+                        </a>
+                    </div>                   
                 </div>
-                <div class="col-md-6">
-                    <h5>Media heading</h5>
-                    <span>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. 
-                          Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    </span>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-1 col-md-offset-3">
-                    <a href="#">
-                        <img src="..." />
-                    </a>
-                </div>
-                <div class="col-md-6">
-                    <h5>Media heading</h5>
-                    <span>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. 
-                          Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    </span>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-1 col-md-offset-3">
-                    <a href="#">
-                        <img src="..." />
-                    </a>
-                </div>
-                <div class="col-md-6">
-                    <h5>Media heading</h5>
-                    <span>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. 
-                          Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    </span>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-1 col-md-offset-3">
-                    <a href="#">
-                        <img src="..." />
-                    </a>
-                </div>
-                <div class="col-md-6">
-                    <h5>Media heading</h5>
-                    <span>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. 
-                          Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    </span>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-1 col-md-offset-3">
-                    <a href="#">
-                        <img src="..." />
-                    </a>
-                </div>
-                <div class="col-md-6">
-                    <h5>Media heading</h5>
+                <div class="col-md-5 ">
+                    <h4><a href="#"><asp:Label ID="Label7" runat="server" Text="Label"></asp:Label></a></h4>
                     <span>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. 
                           Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
                     </span>

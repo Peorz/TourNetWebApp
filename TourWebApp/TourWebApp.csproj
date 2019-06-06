@@ -77,11 +77,13 @@
     <Content Include="browser\static\css\main\main.css" />
     <Content Include="browser\static\css\personal\personal.css" />
     <Content Include="browser\static\css\register\register.css" />
+    <Content Include="browser\static\css\tourselect\tourselect.css" />
     <Content Include="browser\static\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="browser\static\img\16849027.jpeg" />
     <Content Include="browser\static\img\banner.jpg" />
     <Content Include="browser\static\img\bg_area_1.jpg" />
     <Content Include="browser\static\img\bg_area_2.jpg" />
+    <Content Include="browser\static\img\guestbook_img.jpg" />
     <Content Include="browser\static\js\bootstrap.min.js" />
     <Content Include="browser\static\js\jquery.min.js" />
     <Content Include="browser\static\js\npm.js" />
