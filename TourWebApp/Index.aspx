@@ -49,7 +49,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="browser/view/Login.aspx">
                                     <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                                     <span class="sr-only">Error:</span>登录
                                 </a>
@@ -74,11 +74,16 @@
             init();
             loadView("browser/view/Main.aspx")
             $.ajax({
-                type: "PUT",
-                contentType: "application/json",
-                url: "server/controller/Test.ashx?name=123",
+                type: "Post",
+                url: "Index.aspx/Add",
+                data: "{}",
+                contentType: "application/json; chartset=utf-8",
+                dataType: "json",
                 success: function (data) {
                     console.log(data);
+                },
+                error: function (err) {
+                    alert(err);
                 }
             });
         });
@@ -86,6 +91,13 @@
         function init() {
             $("#bg_area").css("height", $(window).height() * 2 / 3);
             $("#content").css("padding-top", $("nav").outerHeight(true));
+            //为 css 样式为 click-link 的元素添加点击监听
+            //去除跳转 将页面填充到该页面下。
+            $(".click-link").on("click", function () {
+                var url = $(this).attr("href");
+                loadView(url);
+                return false;
+            });
         }
 
         //加载页面
