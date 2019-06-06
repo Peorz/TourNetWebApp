@@ -40,7 +40,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="LitJSON, Version=0.10.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>extra\LitJSON.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NetDBLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>extra\NetDBLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -85,6 +93,8 @@
     <Content Include="browser\view\Personal.aspx" />
     <Content Include="browser\view\Register.aspx" />
     <Content Include="browser\view\Test.aspx" />
+    <Content Include="extra\LitJSON.dll" />
+    <Content Include="extra\NetDBLibrary.dll" />
     <Content Include="extra\tour_database.sql" />
     <Content Include="Global.asax" />
     <Content Include="Index.aspx" />
@@ -158,22 +168,14 @@
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="server\extend\ResultFullAPIHttpHandler.cs" />
     <Compile Include="server\controller\Test.ashx.cs">
       <DependentUpon>Test.ashx</DependentUpon>
     </Compile>
-    <Compile Include="server\db\Colmun.cs" />
-    <Compile Include="server\db\FieldType.cs" />
-    <Compile Include="server\db\FieldAttribute.cs" />
-    <Compile Include="server\db\ORMFactory.cs" />
-    <Compile Include="server\db\ORMSupport.cs" />
-    <Compile Include="server\db\ORMUtils.cs" />
-    <Compile Include="server\db\SqlHelper.cs" />
-    <Compile Include="server\db\Where.cs" />
     <Compile Include="server\mode\DevTest.cs" />
     <Compile Include="server\mode\TokenInfo.cs" />
     <Compile Include="server\mode\UserInfo.cs" />
-    <Compile Include="server\utils\SLog.cs" />
-    <Compile Include="server\utils\UUID.cs" />
+    <Compile Include="server\utils\Result.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="browser\static\css\bootstrap-theme.min.css.map" />
@@ -184,7 +186,6 @@
     <Content Include="browser\static\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="extra\旅游网站开发文档.docx" />
     <Content Include="server\controller\Test.ashx" />
-    <Content Include="ClassDiagram1.cd" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

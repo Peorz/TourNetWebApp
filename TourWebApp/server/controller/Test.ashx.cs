@@ -1,28 +1,35 @@
-﻿using System;
+﻿using NetDB.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using TourWebApp.server.extend;
 
 namespace TourWebApp.server.controller
 {
     /// <summary>
     /// Test 的摘要说明
     /// </summary>
-    public class Test : IHttpHandler
+    public class Test : ResultFullAPIHttpHandler
     {
-
-        public void ProcessRequest(HttpContext context)
+        public override string DeleteProcessRequest(HttpContext context, HttpRequest request, HttpResponse response)
         {
-            context.Response.ContentType = "text/plain";
-            context.Response.Write("Hello World");
+            throw new NotImplementedException();
         }
 
-        public bool IsReusable
+        public override string GetProcessRequest(HttpContext context, HttpRequest request, HttpResponse response)
         {
-            get
-            {
-                return false;
-            }
+            throw new NotImplementedException();
+        }
+
+        public override string PostProcessRequest(HttpContext context, HttpRequest request, HttpResponse response)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override string PutProcessRequest(HttpContext context, HttpRequest request, HttpResponse response)
+        {
+            throw new NotImplementedException();
         }
     }
 }

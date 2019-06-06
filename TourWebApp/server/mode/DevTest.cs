@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using NetDB.Core;
+using NetDB.Core.SqlAttribute;
+using System;
 
 namespace TourWebApp
 {

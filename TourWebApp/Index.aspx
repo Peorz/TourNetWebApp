@@ -73,6 +73,14 @@
         $(document).ready(function () {
             init();
             loadView("browser/view/Main.aspx")
+            $.ajax({
+                type: "PUT",
+                contentType: "application/json",
+                url: "server/controller/Test.ashx?name=123",
+                success: function (data) {
+                    console.log(data);
+                }
+            });
         });
 
         function init() {
