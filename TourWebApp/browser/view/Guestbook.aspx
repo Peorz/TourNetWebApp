@@ -18,57 +18,40 @@
         <div class="guestbook_nav">
             <h3>留言板</h3>
             <br />
-            <span>欢迎来到留言板</span>
-            <br />
-            <asp:TextBox ID="TextBox1" runat="server" Height="100px" ViewStateMode="Enabled" Width="500px"></asp:TextBox>
-            <br />
-            <br />
-            <asp:Button ID="Button1" CssClass="btn-success" runat="server" Text="发送" />
-            <br />
-            <br />
+            <div class="guestbook_input">
+                <span>欢迎来到留言板</span>
+                <br />
+                <asp:TextBox ID="TextBox1" runat="server" Height="100px" ViewStateMode="Enabled" Width="100%" TextMode="MultiLine"></asp:TextBox>
+                <br />
+                <br />
+                <asp:Button ID="Button1" CssClass="btn-success" runat="server" Text="发送" />
+            </div>
         </div>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-6 col-md-offset-3 row_num">
+                <div class="col-md-6 col-md-offset-3 row_num guestbook_color">
                     <span>留言（<asp:Label ID="Label1" runat="server" Text="num"></asp:Label>）</span>
                     <br />
                     <br />
                 </div>
             </div>
-            <div class="row row_all">
-                <div class="col-md-1 col-md-offset-3">
-                    <div class="guestbook_img">
+            <div class="row row_all ">
+                <div class="guestbook_color">
+                    <div class="col-md-1 col-md-offset-3 ">
                         <a href="#">
                             <img src="..\static\img\guestbook_img.jpg" />
                         </a>
-                    </div>                   
-                </div>
-                <div class="col-md-5 row_time row_boot">
-                    <h4><a href="#"><asp:Label ID="Label2" runat="server" Text="Label"></asp:Label></a></h4>
-                    <span>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. 
+                    </div>
+                    <div class="col-md-5 row_time row_boot ">
+                        <h4><a href="#">
+                            <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label></a></h4>
+                        <span>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. 
                           Cras purus odio, vestibulum in vulputate at, tempus viverra turpis                                           
-                    </span>
-                    <h5>
-                        <asp:Label ID="Label8" runat="server" Text="time"></asp:Label>
-                    </h5>
-                </div>
-            </div>
-            <div class="row row_all">
-                <div class="col-md-1 col-md-offset-3">
-                    <div class="guestbook_img">
-                        <a href="#">
-                            <img src="..\static\img\guestbook_img.jpg" />
-                        </a>
-                    </div>                   
-                </div>
-                <div class="col-md-5 row_time">
-                    <h4><a href="#"><asp:Label ID="Label3" runat="server" Text="Label"></asp:Label></a></h4>
-                    <span>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. 
-                          Cras purus odio, vestibulum in vulputate at, tempus viverra turpis                                           
-                    </span>
-                    <h5>
-                        <asp:Label ID="Label4" runat="server" Text="time"></asp:Label>
-                    </h5>
+                        </span>
+                        <h5>
+                            <asp:Label ID="Label8" runat="server" Text="time"></asp:Label>
+                        </h5>
+                    </div>
                 </div>
             </div>
         </div>
