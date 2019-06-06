@@ -68,14 +68,14 @@
 
             </div>
             <div class="row">
-                <div class="col-md-4 col-md-offset-4">
+                <div class="col-md-4 col-md-offset-3">
                     <span>留言（<asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>）</span>
                     <br />
                     <br />
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-1 col-md-offset-4">
+                <div class="col-md-1 col-md-offset-3">
                     <a href="#">
                         <img src="..." />
                     </a>
@@ -88,7 +88,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-1 col-md-offset-4">
+                <div class="col-md-1 col-md-offset-3">
                     <a href="#">
                         <img src="..." />
                     </a>
@@ -101,7 +101,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-1 col-md-offset-4">
+                <div class="col-md-1 col-md-offset-3">
                     <a href="#">
                         <img src="..." />
                     </a>
@@ -114,7 +114,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-1 col-md-offset-4">
+                <div class="col-md-1 col-md-offset-3">
                     <a href="#">
                         <img src="..." />
                     </a>
@@ -127,7 +127,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-1 col-md-offset-4">
+                <div class="col-md-1 col-md-offset-3">
                     <a href="#">
                         <img src="..." />
                     </a>
@@ -140,7 +140,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-1 col-md-offset-4">
+                <div class="col-md-1 col-md-offset-3">
                     <a href="#">
                         <img src="..." />
                     </a>
@@ -153,7 +153,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-1 col-md-offset-4">
+                <div class="col-md-1 col-md-offset-3">
                     <a href="#">
                         <img src="..." />
                     </a>
@@ -166,7 +166,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-1 col-md-offset-4">
+                <div class="col-md-1 col-md-offset-3">
                     <a href="#">
                         <img src="..." />
                     </a>
@@ -179,7 +179,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-1 col-md-offset-4">
+                <div class="col-md-1 col-md-offset-3">
                     <a href="#">
                         <img src="..." />
                     </a>
@@ -192,72 +192,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-1 col-md-offset-4">
-                    <a href="#">
-                        <img src="..." />
-                    </a>
-                </div>
-                <div class="col-md-6">
-                    <h5>Media heading</h5>
-                    <span>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. 
-                          Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    </span>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-1 col-md-offset-4">
-                    <a href="#">
-                        <img src="..." />
-                    </a>
-                </div>
-                <div class="col-md-6">
-                    <h5>Media heading</h5>
-                    <span>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. 
-                          Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    </span>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-1 col-md-offset-4">
-                    <a href="#">
-                        <img src="..." />
-                    </a>
-                </div>
-                <div class="col-md-6">
-                    <h5>Media heading</h5>
-                    <span>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. 
-                          Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    </span>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-1 col-md-offset-4">
-                    <a href="#">
-                        <img src="..." />
-                    </a>
-                </div>
-                <div class="col-md-6">
-                    <h5>Media heading</h5>
-                    <span>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. 
-                          Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    </span>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-1 col-md-offset-4">
-                    <a href="#">
-                        <img src="..." />
-                    </a>
-                </div>
-                <div class="col-md-6">
-                    <h5>Media heading</h5>
-                    <span>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. 
-                          Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    </span>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-1 col-md-offset-4">
+                <div class="col-md-1 col-md-offset-3">
                     <a href="#">
                         <img src="..." />
                     </a>
