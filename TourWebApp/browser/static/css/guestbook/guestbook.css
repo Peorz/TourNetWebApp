@@ -28,13 +28,19 @@
     width:70px;
     height:70px;
 }
-.row_one{
-    height:40px;
-}
-.row{
-    
-}
 .row_all{
      margin-bottom:20px;
-     height:120px;
+}
+.row_time h5{  
+    margin-top:28px;
+    margin-bottom:4px;
+}
+.row_num {
+    height:30px;
+    border-bottom: solid 2px #DDDDDD;
+    padding-bottom:3px;
+}
+.row_boot{
+    border-bottom: solid 2px #DDDDDD;
+    padding-bottom:2px;
 }
