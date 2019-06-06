@@ -77,6 +77,7 @@
     <Content Include="browser\static\css\main\main.css" />
     <Content Include="browser\static\css\personal\personal.css" />
     <Content Include="browser\static\css\register\register.css" />
+    <Content Include="browser\static\css\tourselect\tourselect.css" />
     <Content Include="browser\static\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="browser\static\img\16849027.jpeg" />
     <Content Include="browser\static\img\banner.jpg" />
