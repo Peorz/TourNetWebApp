@@ -36,13 +36,33 @@ namespace TourWebApp.server.utils
         public class ResultData
         {
             private int code;
+
+            public int Code
+            {
+                get { return code; }
+                set { code = value; }
+            }
             private long Total;
+
+            public long Total1
+            {
+                get { return Total; }
+                set { Total = value; }
+            }
             private String msg;
+
+            public String Msg
+            {
+                get { return msg; }
+                set { msg = value; }
+            }
             private String data;
 
-            public int Code { get => code; set => code = value; }
-            public string Msg { get => msg; set => msg = value; }
-            public string Data { get => data; set => data = value; }
+            public String Data
+            {
+                get { return data; }
+                set { data = value; }
+            }
 
             public ResultData(int code, String msg)
             {
@@ -69,14 +89,33 @@ namespace TourWebApp.server.utils
         public class ResultRows
         {
             private int code;
+
+            public int Code
+            {
+                get { return code; }
+                set { code = value; }
+            }
             private String msg;
+
+            public String Msg
+            {
+                get { return msg; }
+                set { msg = value; }
+            }
             private long total;
+
+            public long Total
+            {
+                get { return total; }
+                set { total = value; }
+            }
             private Object rows;
 
-            public int Code { get => code; set => code = value; }
-            public string Msg { get => msg; set => msg = value; }
-            public object Rows { get => rows; set => rows = value; }
-            public long Total { get => total; set => total = value; }
+            public Object Rows
+            {
+                get { return rows; }
+                set { rows = value; }
+            }
 
             public ResultRows(int code, String msg, long total, Object rows)
             {
