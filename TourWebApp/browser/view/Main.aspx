@@ -21,8 +21,79 @@
             </div>
             <div id="main_content" class="row">
                 <div class="col-md-10 col-md-offset-1">
-                    <div class="card" style="height: 600px">
+                    <div class="card">
                         <div class="row">
+                            <div class="col-md-4">
+                                <div class="thumbnail">
+                                    <img src="browser/static/img/bg_area_2.jpg" alt="xx">
+                                    <div class="caption">
+                                        <h3>Thumbnail label</h3>
+                                        <p>...</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="thumbnail">
+                                    <img src="browser/static/img/bg_area_2.jpg" alt="xx">
+                                    <div class="caption">
+                                        <h3>Thumbnail label</h3>
+                                        <p>...</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="thumbnail">
+                                    <img src="browser/static/img/bg_area_2.jpg" alt="xx">
+                                    <div class="caption">
+                                        <h3>Thumbnail label</h3>
+                                        <p>...</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 col-md-offset-4">
+                                <asp:Label ID="Label1" runat="server" CssClass="center-block" Style="text-align: center; margin: 48px" Text="旅行胜地" Font-Size="XX-Large" ForeColor="Black"></asp:Label>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 16px">
+                            <div class="col-md-3">
+                                <img src="browser/static/img/bg_area_2.jpg" class="full-img" alt="xx">
+                            </div>
+                            <div class="col-md-3">
+                                <img src="browser/static/img/bg_area_2.jpg" class="full-img" alt="xx">
+                            </div>
+                            <div class="col-md-6">
+                                <img src="browser/static/img/bg_area_2.jpg" class="full-img" alt="xx">
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 16px">
+                            <div class="col-md-6">
+                                <img src="browser/static/img/bg_area_2.jpg" class="full-img" alt="xx">
+                            </div>
+                            <div class="col-md-3">
+                                <img src="browser/static/img/bg_area_2.jpg" class="full-img" alt="xx">
+                            </div>
+                            <div class="col-md-3">
+                                <img src="browser/static/img/bg_area_2.jpg" class="full-img" alt="xx">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 col-md-offset-4">
+                                <asp:Label ID="Label2" runat="server" CssClass="center-block" Style="text-align: center; margin: 48px" Text="关于我们" Font-Size="XX-Large" ForeColor="Black"></asp:Label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4">
+                                <img src="browser/static/img/16849027.jpeg" class="full-img" alt="xx">
+                            </div>
+                            <div class="col-md-4"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4"></div>
                         </div>
                     </div>
                 </div>
