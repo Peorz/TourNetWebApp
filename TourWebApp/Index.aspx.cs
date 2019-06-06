@@ -1,5 +1,7 @@
-﻿using System;
+﻿using NetDB.Core;
+using System;
 using System.Collections.Generic;
+using System.Web.Services;
 using TourWebApp.server.utils;
 
 namespace TourWebApp
@@ -8,6 +10,12 @@ namespace TourWebApp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+        }
+
+        [WebMethod]
+        public static String Add()
+        {
+            return "xlh";
         }
     }
 }
