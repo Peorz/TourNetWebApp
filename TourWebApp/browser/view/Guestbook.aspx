@@ -27,7 +27,138 @@
                 <asp:Button ID="Button1" CssClass="btn-success" runat="server" Text="发送" />
             </div>
         </div>
+
+        
         <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 row_num guestbook_color">
+                    <span>留言（<asp:Label ID="Label1" runat="server" Text="num"></asp:Label>）</span>
+                    <br />
+                    <br />
+                </div>
+            </div>
+        </div>
+
+
+        <div class="guestbook_content">
+            <div class="guestbook_other">
+                <div class="guestbook_img">
+                    <a href="#">
+                        <img src="..\static\img\guestbook_img.png" />
+                    </a>
+                </div>
+                <div class="guestbook_news">
+                    <h4><a href="#"><asp:Label ID="Label2" runat="server" Text="Label"></asp:Label></a></h4>
+                    <span>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. 
+                          Cras purus odio, vestibulum in vulputate at, tempus viverra turpis                                           
+                    </span>
+                    <h5>
+                        <asp:Label ID="Label8" runat="server" Text="time"></asp:Label>
+                    </h5>
+                </div>
+            </div>
+
+            <div class="guestbook_other">
+                <div class="guestbook_img">
+                    <a href="#">
+                        <img src="..\static\img\guestbook_img.png" />
+                    </a>
+                </div>
+                <div class="guestbook_news">
+                    <h4><a href="#"><asp:Label ID="Label3" runat="server" Text="Label"></asp:Label></a></h4>
+                    <span>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. 
+                          Cras purus odio, vestibulum in vulputate at, tempus viverra turpis                                           
+                    </span>
+                    <h5>
+                        <asp:Label ID="Label4" runat="server" Text="time"></asp:Label>
+                    </h5>
+                </div>
+            </div>
+
+            <div class="guestbook_other">
+                <div class="guestbook_img">
+                    <a href="#">
+                        <img src="..\static\img\guestbook_img.png" />
+                    </a>
+                </div>
+                <div class="guestbook_news">
+                    <h4><a href="#"><asp:Label ID="Label5" runat="server" Text="Label"></asp:Label></a></h4>
+                    <span>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. 
+                          Cras purus odio, vestibulum in vulputate at, tempus viverra turpis                                           
+                    </span>
+                    <h5>
+                        <asp:Label ID="Label6" runat="server" Text="time"></asp:Label>
+                    </h5>
+                </div>
+            </div>
+            <div class="guestbook_other">
+                <div class="guestbook_img">
+                    <a href="#">
+                        <img src="..\static\img\guestbook_img.png" />
+                    </a>
+                </div>
+                <div class="guestbook_news">
+                    <h4><a href="#"><asp:Label ID="Label7" runat="server" Text="Label"></asp:Label></a></h4>
+                    <span>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. 
+                          Cras purus odio, vestibulum in vulputate at, tempus viverra turpis                                           
+                    </span>
+                    <h5>
+                        <asp:Label ID="Label9" runat="server" Text="time"></asp:Label>
+                    </h5>
+                </div>
+            </div>
+            <div class="guestbook_other">
+                <div class="guestbook_img">
+                    <a href="#">
+                        <img src="..\static\img\guestbook_img.png" />
+                    </a>
+                </div>
+                <div class="guestbook_news">
+                    <h4><a href="#"><asp:Label ID="Label10" runat="server" Text="Label"></asp:Label></a></h4>
+                    <span>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. 
+                          Cras purus odio, vestibulum in vulputate at, tempus viverra turpis                                           
+                    </span>
+                    <h5>
+                        <asp:Label ID="Label11" runat="server" Text="time"></asp:Label>
+                    </h5>
+                </div>
+            </div>
+            <div class="guestbook_other">
+                <div class="guestbook_img">
+                    <a href="#">
+                        <img src="..\static\img\guestbook_img.png" />
+                    </a>
+                </div>
+                <div class="guestbook_news">
+                    <h4><a href="#"><asp:Label ID="Label12" runat="server" Text="Label"></asp:Label></a></h4>
+                    <span>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. 
+                          Cras purus odio, vestibulum in vulputate at, tempus viverra turpis                                           
+                    </span>
+                    <h5>
+                        <asp:Label ID="Label13" runat="server" Text="time"></asp:Label>
+                    </h5>
+                </div>
+            </div>
+            <div class="guestbook_other">
+                <div class="guestbook_img">
+                    <a href="#">
+                        <img src="..\static\img\guestbook_img.png" />
+                    </a>
+                </div>
+                <div class="guestbook_news">
+                    <h4><a href="#"><asp:Label ID="Label14" runat="server" Text="Label"></asp:Label></a></h4>
+                    <span>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. 
+                          Cras purus odio, vestibulum in vulputate at, tempus viverra turpis                                           
+                    </span>
+                    <h5>
+                        <asp:Label ID="Label15" runat="server" Text="time"></asp:Label>
+                    </h5>
+                </div>
+            </div>
+
+        </div>
+
+        <%--<div class="container-fluid">
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 row_num guestbook_color">
                     <span>留言（<asp:Label ID="Label1" runat="server" Text="num"></asp:Label>）</span>
@@ -54,7 +185,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>--%>
     </form>
 </body>
 </html>
