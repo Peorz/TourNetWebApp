@@ -38,14 +38,22 @@
         </div>
         <hr />
         <div class="container TourSelect_content">
-            <div class="TourSelect_banner col-md-7">
-                <img src="../static/img/banner.jpg" />
-                <img src="../static/img/banner.jpg" />
-                <img src="../static/img/banner.jpg" />
-                <img src="../static/img/banner.jpg" />
-                <img src="../static/img/banner.jpg" />
-                <a href="javascript:;" class="arrow arrow_left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a>
-                <a href="javascript:;" class="arrow arrow_right"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <div class="TourSelect_banner col-md-6">
+                <ul class="img_ul">
+                    <li>
+                        <img src="../static/img/banner.jpg" /></li>
+                    <li>
+                        <img src="../static/img/bg_area_1.jpg" /></li>
+                    <li>
+                        <img src="../static/img/bg_area_2.jpg" /></li>
+                    <li>
+                        <img src="../static/img/banner.jpg" /></li>
+                    <li>
+                        <img src="../static/img/banner.jpg" /></li>
+                </ul>
+
+                <div class="btn btn_left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></div>
+                <div class="btn btn_right"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></div>
             </div>
             <div class="TourSelect_Info col-md-5 ">
                 <h3>城市介绍</h3>
@@ -60,32 +68,80 @@
                 </p>
             </div>
         </div>
+        <hr />
         <div class="container TourSelect_hot">
-            <h1>热门景点</h1>
-
-
-
-        </div>
-        <div class="container TourSelect_hot">
-            <h1>旅游攻略</h1>
-
-
-
-        </div>
-        <div class="container TourSelect_hot">
-            <h1>周边美食</h1>
-
-
-
+            <h1>告诉你怎么玩</h1>
+            <ul class="nav nav-tabs tabs_ul">
+                <li role="presentation" class="myactive"><a href="#">景点</a></li>
+                <li role="presentation"><a href="#">美食</a></li>
+                <li role="presentation"><a href="#">攻略</a></li>
+            </ul>         
         </div>
 
-        <div class="container TourSelect_hot">
+        <div class="container">
             <h1>热门评论</h1>
 
 
 
         </div>
     </form>
+    <script>
+        var index = 0;
+        function autoMove() {
+            //隐藏所有
+            $('.img_ul>li').hide();
+            if (index == $('.img_ul>li').length - 1) {
+                index = 0;
+            } else {
+                index = index + 1;
+            }
+            //设置当前的索引显示
+            $('.img_ul>li:eq(' + index + ')').show();
+        }
 
+        var t = setInterval(autoMove, 2000);
+
+        $('.img_ul').mouseover(function () {
+            //清除定时器
+            clearInterval(t);
+        });
+
+        $('.img_ul').mouseout(function () {
+            t = setInterval(autoMove, 2000);
+        });
+        //上一张
+        $('.btn_left').bind('click', function () {
+
+            //隐藏所有
+            $('.img_ul>li').hide();
+            //获取到当前的索引
+            if (index <= 0) {
+                index = $('.img_ul>li').length - 1;
+            } else {
+                index = index - 1;
+            }
+            //设置当前的索引显示
+            $('.img_ul>li:eq(' + index + ')').show();
+        });
+        //下一张
+        $('.btn_right').bind('click', function () {
+
+            //隐藏所有
+            $('.img_ul>li').hide();
+
+
+            if (index == $('.img_ul>li').length - 1) {
+                index = 0;
+            } else {
+                index = index + 1;
+            }
+            //设置当前的索引显示
+            $('.img_ul>li:eq(' + index + ')').show();
+        });
+
+        $('.tabs_ul>li').mouseover(function () {
+            
+        });
+    </script>
 </body>
 </html>
