@@ -1,8 +1,5 @@
-﻿using NetDB.Core;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Web.Services;
-using TourWebApp.server.utils;
 
 namespace TourWebApp
 {
