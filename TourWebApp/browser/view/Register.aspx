@@ -37,7 +37,7 @@
         </div>
         <div class="hei">
         <div class="col-md-offset-3 col-md-6">
-          <b><asp:Label ID="Labpas1" runat="server" Text="确认密码："></asp:Label></b>
+          <asp:Label ID="Labpas1" runat="server" Text="确认密码："></asp:Label></b>
           <asp:TextBox ID="Tebpas1" runat="server" placeholder="请输入密码" TextMode="Password" Height="30px"></asp:TextBox>
         </div>
         </div>
