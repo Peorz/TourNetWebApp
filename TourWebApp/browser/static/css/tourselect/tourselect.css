@@ -57,12 +57,12 @@
                 width: 480px;
             }
 
-    .TourSelect_banner:hover .btn
+    .TourSelect_banner:hover .img_btn
     {
         display: block;
     }
 
-.btn
+.img_btn
 {
     position: absolute;
     width: 50px;
@@ -102,18 +102,20 @@
         line-height: 26px;
         color: #808080;
     }
+.TourSelect_hot
+{
+    text-align:center;
+}
 .TourSelect_hot h1
 {
     color:#808080;
     height:30px;
     font-size:30px;
-    text-align:center;
 }
 .tabs_ul
 {
-    width:260px;
-    margin:40px auto;
-    padding-left:40px;
+    margin:40px 0px 50px 0px;
+    display:inline-block;
 }
 .myactive
 {

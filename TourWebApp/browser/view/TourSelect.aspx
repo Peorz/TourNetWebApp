@@ -52,8 +52,8 @@
                         <img src="../static/img/banner.jpg" /></li>
                 </ul>
 
-                <div class="btn btn_left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></div>
-                <div class="btn btn_right"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></div>
+                <div class="img_btn btn_left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></div>
+                <div class="img_btn btn_right"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></div>
             </div>
             <div class="TourSelect_Info col-md-5 ">
                 <h3>城市介绍</h3>
@@ -72,10 +72,21 @@
         <div class="container TourSelect_hot">
             <h1>告诉你怎么玩</h1>
             <ul class="nav nav-tabs tabs_ul">
-                <li role="presentation" class="myactive"><a href="#">景点</a></li>
-                <li role="presentation"><a href="#">美食</a></li>
-                <li role="presentation"><a href="#">攻略</a></li>
-            </ul>         
+                <li role="presentation" class="tab-item myactive"><a href="#">景点</a></li>
+                <li role="presentation" class="tab-item "><a href="#">美食</a></li>
+                <li role="presentation" class="tab-item "><a href="#">攻略</a></li>
+            </ul>
+            <div class="row">
+                <div class="col-md-6 col-md-4">
+                    <div class="thumbnail">
+                        <a href="#">
+                            <img src="../static/img/banner.jpg" alt="..." /></a>
+                        <div class="caption">
+                            <a href="#">银滩<span class="btn btn-success" role="button">详情</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="container">
@@ -139,8 +150,9 @@
             $('.img_ul>li:eq(' + index + ')').show();
         });
 
-        $('.tabs_ul>li').mouseover(function () {
-            
+        $('.tab-item').mouseenter(function () {
+            $(this).addClass('myactive').siblings().removeClass('myactive');
+            $(".products .mainCont").eq($(this).index()).show().siblings().hide();
         });
     </script>
 </body>
