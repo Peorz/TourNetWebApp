@@ -76,17 +76,34 @@
                 <li role="presentation" class="tab-item "><a href="#">美食</a></li>
                 <li role="presentation" class="tab-item "><a href="#">攻略</a></li>
             </ul>
-            <div class="row">
-                <div class="col-md-6 col-md-4">
-                    <div class="thumbnail">
-                        <a href="#">
-                            <img src="../static/img/banner.jpg" alt="..." /></a>
-                        <div class="caption">
-                            <a href="#">银滩<span class="btn btn-success" role="button">详情</span></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+            <ul class="TourSelect_img col-md-12">
+                <li>
+                    <a href="#" target="_blank">
+                        <img src="../static/img/banner.jpg" style="width: 255px; height: 180px;" />
+                        <h4>银滩</h4>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" target="_blank">
+                        <img src="../static/img/banner.jpg" style="width: 255px; height: 180px;" />
+                        <h4>银滩</h4>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" target="_blank">
+                        <img src="../static/img/banner.jpg" style="width: 255px; height: 180px;" />
+                        <h4>银滩</h4>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" target="_blank">
+                        <img src="../static/img/banner.jpg" style="width: 255px; height: 180px;" />
+                        <h4>银滩</h4>
+                    </a>
+                </li>
+                 <asp:Button ID="Button1" CssClass="btn btn-success" runat="server" Text="查看更多景点" />
+            </ul>                     
         </div>
 
         <div class="container">

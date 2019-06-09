@@ -121,3 +121,33 @@
 {
     border-bottom:2px solid green; 
 }
+.TourSelect_img
+{
+    list-style:none;
+    color:#eee;
+}
+.TourSelect_img li
+{
+    float:left;
+    width:255px;
+    height:290px;
+    margin:10px;
+}
+    .TourSelect_img li:hover
+    {
+        box-shadow:0px 0px 10px 10px #eee;
+    }
+.TourSelect_img h4
+{
+    font-size:24px;
+    color:black;
+    font-family:'黑体'; 
+}
+    .TourSelect_img h4:hover
+    {
+        color:#808080;
+    }
+    .TourSelect_img a
+    {
+        text-decoration:none;
+    }
