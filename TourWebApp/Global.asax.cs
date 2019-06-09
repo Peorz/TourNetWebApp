@@ -10,7 +10,7 @@ namespace TourWebApp.server.config
             /**
              * 配置数据库
              */
-            SqlHelper.ConfigAuto("TourDataBase");
+            SqlHelper.Config("TourDataBase");
             /**
              * 创建数据表
              */
