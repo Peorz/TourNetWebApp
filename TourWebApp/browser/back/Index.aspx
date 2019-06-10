@@ -7,77 +7,101 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
     <link href="../static/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../static/backcss/index/custom-styles.css" rel="stylesheet" />
     <link href="../static/css/card-view.css" rel="stylesheet" />
-    <link href="../static/backcss/index.css" rel="stylesheet" />
     <link href="../static/css/bootstrap-theme.min.css" rel="stylesheet" />
     <script src="../static/js/jquery.min.js"></script>
     <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/backjs/index/custom-scripts.js"></script>
+    <script src="../static/js/jquery.metisMenu.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="container-fluid" style="margin: 0; padding: 0">
-            <div id="nav_area" style="margin: 0px">
-                <div class="row" style="text-align: center">
-                    <img id="head_img" src="../static/img/16849027.jpeg" alt="..." class="img-circle">
+        <div id="wrapper">
+            <nav class="navbar navbar-default top-navbar" role="navigation">
+                <div class="navbar-header">
+                    <a class="navbar-brand  " href="index.html">
+                        <span>Admin</span>
+                    </a>
                 </div>
-                <div class="row">
-                    <div id="item_list" class="list-group">
-                        <a href="#" class="list-group-item active">
-                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                            <span class="sr-only">Error:</span>
-                            人员信息
-                        </a>
-                        <a href="#" class="list-group-item">
-                            <span class="glyphicon glyphicon-king" aria-hidden="true"></span>
-                            <span class="sr-only">Error:</span>
-                            主页管理
-                        </a>
-                        <a href="#" class="list-group-item">
-                            <span class="glyphicon glyphicon-tree-conifer" aria-hidden="true"></span>
-                            <span class="sr-only">Error:</span>
-                            景区详情
-                        </a>
-                        <a href="#" class="list-group-item">
-                            <span class="glyphicon glyphicon-duplicate" aria-hidden="true"></span>
-                            <span class="sr-only">Error:</span>
-                            留言板
-                        </a>
-                    </div>
+                <div id="side_btn">
+                    <a><span class="glyphicon glyphicon-list"></span></a>
                 </div>
+                <ul class="nav navbar-top-links navbar-right">
+                    <a href="#" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        <i class="glyphicon glyphicon-user"></i>
+                        (未登陆)
+                    <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                </ul>
+            </nav>
+            <!-- Dropdown Structure -->
+
+            <!--/. NAV TOP  -->
+            <nav class="navbar-default navbar-side" role="navigation">
+                <div class="sidebar-collapse">
+                    <ul class="nav" id="main-menu">
+
+                        <li>
+                            <a class="active-menu" href="index.html">
+                                <i class="glyphicon glyphicon-leaf"></i>
+                                人员信息
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html">
+                                <i class="glyphicon glyphicon-leaf"></i>
+                                主页管理
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html">
+                                <i class="glyphicon glyphicon-leaf"></i>
+                                景区管理
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html">
+                                <i class="glyphicon glyphicon-leaf"></i>
+                                留言板
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </nav>
+            <!-- /. NAV SIDE  -->
+
+            <div id="page-wrapper">
             </div>
-            <div id="title_area" style="background-color: azure">
-            </div>
-            <div id="content_area" style="background-color: antiquewhite">
-            </div>
+            <!-- /. PAGE WRAPPER  -->
         </div>
     </form>
     <script type="text/javascript">
         $(document).ready(function () {
-            position();
+            init();
         });
 
-        function position() {
-            var windownWidth = $(window).width();
-            var windownHeight = $(window).height();
-            var nav_area_width = windownWidth / 6;
-            var content_area_width = windownWidth - nav_area_width;
-            var title_area_height = windownHeight / 10;
+        function init() {
+            $(".click-link").on("click", function () {
+                var url = $(this).attr("href");
+                loadView(url);
+                return false;
+            });
+        }
 
-            console.log(nav_area_width);
-            var nav_area = $("#nav_area");
-            nav_area.css("width", nav_area_width);
-            nav_area.css("height", windownHeight);
-
-            var title_area = $("#title_area");
-            title_area.css("width", content_area_width);
-            title_area.css("left", nav_area_width);
-            title_area.css("height", title_area_height);
-
-            var content_area = $("#content_area");
-            content_area.css("width", content_area_width);
-            content_area.css("top", title_area_height);
-            content_area.css("left", nav_area_width);
-            content_area.css("height", windownHeight - title_area_height);
+        function loadView(url) {
+            $.get(url, function (data) {
+                $("#page-wrapper").html(data);//初始化加载界面
+            });
         }
     </script>
 </body>

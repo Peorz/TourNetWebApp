@@ -21,8 +21,10 @@
             <div class="bt"></div>
             <%-- 左侧--%>
             <div class="left">
-                <div class="bg_top"></div>
-                <div class="bg_bom"></div>
+               
+                <div class="bg_bom">
+                  
+                </div>
                 <div class="left_img">
 
                     <a href="#">
@@ -32,6 +34,8 @@
                 </div>
                 <br />
                 <br />
+                <br />
+                  <br />
                 <br />
                 <ul>
                     <li>

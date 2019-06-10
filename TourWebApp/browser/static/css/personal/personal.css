@@ -61,13 +61,9 @@ body {
         width: 250px;
         height: 90px;
         border-radius: 20px;
-        background:url(/browser/static/img/personal_left_bg2.jpg);
+        background:url(/browser/static/img/personal.jpg);
         margin-left: -10px;
-        top:550px;
-        
-        
-        
-        
+        top:550px;      
     }
 
 .left_img {
