@@ -1,27 +1,35 @@
-﻿*{
-	padding:0px;
-	margin:0 auto;
-	
+﻿* {
+    padding: 0px;
+    margin: 0 auto;
+    font-size: 16px;
 }
-body{
-	background:url(../static/img/banner.jpg) no-repeat center center fixed;
-	background-size:cover;
+body {
+    background-image: url('../../img/Register.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
-.login-box{
-	margin:10% auto;
-	width:700px;
-	border:1px solid #CCC;
-	background-color:rgba(255,255,255,0.7);
-	border-radius:20px;
-	height:350px;
+.login-box {
+    margin: 10% auto;
+    width: 700px;
+    border: 1px solid #CCC;
+    /*background-color: rgba(255,255,255,0.7);*/
+    border-radius: 20px;
+    height: 350px;
+    background-color: rgb(243, 234, 226,0.7);
+}
+.login-box h2{
+    line-height:40px;   
 }
 .hei {
-    line-height:50px;
+    line-height: 50px;
 }
-.login-box h3{
+.login-box h2{
 	text-align:center;
-	border-bottom:1px solid #CCC;
-	color:#999;	
+	border-bottom:1px solid #999;
+	color:#808080;	
+}
+.confirm_right a{
+    font-size: 14px;
 }
 
 
