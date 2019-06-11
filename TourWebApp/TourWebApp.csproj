@@ -88,7 +88,9 @@
     <Content Include="browser\static\img\bg_area_3.jpg" />
     <Content Include="browser\static\img\bg_area_1.jpg" />
     <Content Include="browser\static\img\bg_area_2.jpg" />
-    <Content Include="browser\static\img\guestbook_img.jpg" />
+    <Content Include="browser\static\img\guestbook_background1.jpg" />
+    <Content Include="browser\static\img\guestbook_banner.jpg" />
+    <Content Include="browser\static\img\guestbook_img.png" />
     <Content Include="browser\static\img\Register.jpg" />
     <Content Include="browser\static\js\bootstrap.min.js" />
     <Content Include="browser\static\js\jquery.metisMenu.js" />
