@@ -81,6 +81,7 @@
     <Content Include="browser\static\css\personal\personal.css" />
     <Content Include="browser\static\css\register\register.css" />
     <Content Include="browser\static\css\tourselect\tourselect.css" />
+    <Content Include="browser\static\css\toursel\toursel.css" />
     <Content Include="browser\static\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="browser\static\img\16849027.jpeg" />
     <Content Include="browser\static\img\banner.jpg" />
@@ -96,6 +97,7 @@
     <Content Include="browser\view\ForgetPassWrod.aspx" />
     <Content Include="browser\view\Guestbook.aspx" />
     <Content Include="browser\view\Main.aspx" />
+    <Content Include="browser\view\TourSel.aspx" />
     <Content Include="browser\view\TourSelect.aspx" />
     <Content Include="browser\view\Login.aspx" />
     <Content Include="browser\view\Personal.aspx" />
@@ -143,6 +145,13 @@
     </Compile>
     <Compile Include="browser\view\Main.aspx.designer.cs">
       <DependentUpon>Main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="browser\view\TourSel.aspx.cs">
+      <DependentUpon>TourSel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="browser\view\TourSel.aspx.designer.cs">
+      <DependentUpon>TourSel.aspx</DependentUpon>
     </Compile>
     <Compile Include="browser\view\TourSelect.aspx.cs">
       <DependentUpon>TourSelect.aspx</DependentUpon>
