@@ -55,7 +55,6 @@
         function init() {
             $("#login_content").css("padding-top", ($(window).height() - $("#login_content").outerHeight(true)) / 2);
         }
-
     </script>
 </body>
 </html>

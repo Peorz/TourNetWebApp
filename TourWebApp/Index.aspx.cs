@@ -1,4 +1,6 @@
-﻿using System;
+﻿using NetDB.Core;
+using NetDB.Core.Utils;
+using System;
 using System.Web.Services;
 
 namespace TourWebApp

@@ -85,6 +85,7 @@
     <Content Include="browser\static\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="browser\static\img\16849027.jpeg" />
     <Content Include="browser\static\img\banner.jpg" />
+    <Content Include="browser\static\img\bg_area_3.jpg" />
     <Content Include="browser\static\img\bg_area_1.jpg" />
     <Content Include="browser\static\img\bg_area_2.jpg" />
     <Content Include="browser\static\img\guestbook_img.jpg" />
@@ -204,7 +205,7 @@
       <DependentUpon>Test.ashx</DependentUpon>
     </Compile>
     <Compile Include="server\mode\DevTest.cs" />
-    <Compile Include="server\mode\TokenInfo.cs" />
+    <Compile Include="server\mode\LoginToken.cs" />
     <Compile Include="server\mode\UserInfo.cs" />
     <Compile Include="server\utils\Result.cs" />
   </ItemGroup>

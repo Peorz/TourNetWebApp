@@ -1,5 +1,6 @@
 ﻿using NetDB.Core;
 using System;
+using TourWebApp.server.mode;
 
 namespace TourWebApp.server.config
 {
@@ -16,7 +17,7 @@ namespace TourWebApp.server.config
              */
             new DevTest().CreateTable();
             new UserInfo().CreateTable();
-            new TokenInfo().CreateTable();
+            new LoginToken().CreateTable();
             /**
              * 配置日志开关
              */

@@ -1,57 +1,77 @@
 ﻿using NetDB.Core;
 using NetDB.Core.SqlAttribute;
-using NetDB.Core.Utils;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 
-namespace TourWebApp
+namespace TourWebApp.server.mode
 {
     public class UserInfo : ORMSupport
     {
+        private String _Nick;
+
+        private String _PassWord;
+
+        private String _Email;
+
+        private byte _Sex = 1;
+
+        private DateTime _CreateTime = new DateTime();
+
+        private LoginToken _LoginToken;
+
+        [Colmun(Type = "varchar(50)")]
+        public string Nick
+        {
+            get { return _Nick; }
+            set { _Nick = value; }
+        }
+
+        [Colmun(Type = "varchar(32)")]
+        public string PassWord
+        {
+            get { return _PassWord; }
+            set { _PassWord = value; }
+        }
+
         [Colmun(Type = "varchar(255)")]
-        public String Nick;
+        public string Email
+        {
+            get { return _Email; }
+            set { _Email = value; }
+        }
 
-        [Colmun(Type = "int")]
-        public int Sex;
+        [Colmun(Type = "tinyint")]
+        public byte Sex
+        {
+            get { return _Sex; }
+            set { _Sex = value; }
+        }
 
-        [Colmun(Type = "int")]
-        public int Type;
+        [Colmun(Type = "datetime")]
+        public DateTime CreateTime
+        {
+            get { return _CreateTime; }
+            set { _CreateTime = value; }
+        }
 
-        private TokenInfo tokenInfo;
+        public LoginToken LoginToken
+        {
+            get
+            {
+                _LoginToken = new LoginToken();
+                _LoginToken.SetID(ID);
+                _LoginToken.Find();
+                return _LoginToken;
+            }
+            set { _LoginToken = value; }
+        }
 
         public UserInfo()
         {
-
-        }
-
-        public UserInfo(String Nick, int Sex, int Type)
-        {
-            this.Nick = Nick;
-            this.Sex = Sex;
-            this.Type = Type;
-            this.ID = UUID.Get("user");
-        }
-
-        public override int Save()
-        {
-            int result = base.Save();
-            if (result == 1)
-            {
-                this.tokenInfo = new TokenInfo(this.ID);
-                tokenInfo.Save();
-            }
-            else
-            {
-                return 0;
-            }
-            return result;
-        }
-
-        public TokenInfo GetTokenInfo()
-        {
-            this.tokenInfo = new TokenInfo();
-            this.tokenInfo.setId(this.ID);
-            tokenInfo.Find();
-            return this.tokenInfo;
+            _LoginToken = new LoginToken();
+            _LoginToken.UserID = ID;
         }
     }
 }
