@@ -24,7 +24,7 @@
                 <asp:TextBox ID="TextBox1" runat="server" Height="100px" ViewStateMode="Enabled" Width="100%" TextMode="MultiLine"></asp:TextBox>
                 <br />
                 <br />
-                <asp:Button ID="Button1" CssClass="btn-success" runat="server" Text="发送" />
+                <asp:Button ID="Button1" CssClass="btn-success" runat="server" Text="发送" Height="32px" Width="95px" />
             </div>
         </div>
 
