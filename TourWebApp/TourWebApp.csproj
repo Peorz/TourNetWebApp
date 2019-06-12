@@ -75,6 +75,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="browser\back\FileManager.aspx" />
     <Content Include="browser\back\Index.aspx" />
     <Content Include="browser\static\backcss\index\custom-styles.css" />
     <Content Include="browser\static\backjs\index\custom-scripts.js" />
@@ -124,6 +125,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="browser\back\FileManager.aspx.cs">
+      <DependentUpon>FileManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="browser\back\FileManager.aspx.designer.cs">
+      <DependentUpon>FileManager.aspx</DependentUpon>
+    </Compile>
     <Compile Include="browser\back\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -212,6 +220,10 @@
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="server\config\QiniuConfig.cs" />
+    <Compile Include="server\controller\FileManager.ashx.cs">
+      <DependentUpon>FileManager.ashx</DependentUpon>
+    </Compile>
     <Compile Include="server\extend\ResultFullAPIHttpHandler.cs" />
     <Compile Include="server\controller\Test.ashx.cs">
       <DependentUpon>Test.ashx</DependentUpon>
@@ -230,6 +242,7 @@
     <Content Include="browser\static\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="extra\旅游网站开发文档.docx" />
     <Content Include="server\controller\Test.ashx" />
+    <Content Include="server\controller\FileManager.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -73,6 +73,12 @@
                                 留言板
                             </a>
                         </li>
+                        <li>
+                            <a class="click-link" href="FileManager.aspx">
+                                <i class="glyphicon glyphicon-leaf"></i>
+                                资源管理
+                            </a>
+                        </li>
                     </ul>
 
                 </div>
