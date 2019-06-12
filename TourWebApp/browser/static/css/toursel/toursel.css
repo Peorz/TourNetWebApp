@@ -1,2 +1,10 @@
 ﻿@charset "utf-8";
-
+.searchnum h3
+{
+    color:#eee;
+    font-size:24px;
+}
+.searchnum span
+{
+    color:green;
+}

@@ -232,22 +232,7 @@
                 </ul>
 
             </div>
-        </div>
-        <div class="container tourinfo_message">
-            <h1>城市<span class="glyphicon glyphicon-home"></span>印象</h1>
-            <div class="messagebox col-md-10 col-md-offset-1">
-                <div>
-                    <div class="message_img">
-                        <img src="../static/img/16849027.jpeg" />
-                        <h4>旅游者1</h4>
-                    </div>
-                    <div class="meessage_up"><a href="#">赞<span class="glyphicon glyphicon-thumbs-up"></span></a></div>
-                    <div class="message_text"></div>
-                </div>
-            </div>
-
-
-        </div>
+        </div>    
     </form>
     <script>
         $(document).ready(function () {

@@ -181,21 +181,3 @@
     text-align:center;
 
 }
-.tourinfo_message
-{
-    text-align: center;
-    margin-top:50px;
-    margin-bottom:50px;
-}
-
-    .tourinfo_message h1
-    {
-        color: #808080;
-        height: 30px;
-        font-size: 30px;
-    }
-.messagebox
-{
-    min-height:400px;
-    border:1px solid #eee;
-}

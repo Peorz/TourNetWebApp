@@ -15,22 +15,27 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">Brand</a>
+    <nav class="navbar navbar-default navbar-fixed-top" >
+        <div class="container-fluid" style="background-color:rgba(34, 139, 34,0.5);">
+            <div class="col-md-1"><a class="navbar-brand" href="#" style="color:#fff;">Brand</a></div>
+            <div class="navbar-header col-md-8">                        
                 <form class="navbar-form navbar-left" role="search" runat="server">
-                    <div class="form-group">
-                        <asp:TextBox ID="SearchBox" runat="server" CssClass="form-control" placeholder="北海"></asp:TextBox>
+                    <div class="form-group" style="width:600px;">
+                        <asp:TextBox ID="SearchBox" runat="server" CssClass="form-control" placeholder="北海"  style="width:600px;"></asp:TextBox>                      
                     </div>
-                    <asp:Button ID="Button1" runat="server" CssClass="btn btn-success" Text="搜索" />
+                    <asp:Button ID="SearchBtn" runat="server" CssClass="btn btn-success" Text="搜索" />                
                 </form>
             </div>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">登录</a></li>
-                <li><a href="#">注册</a></li>
+            <ul class="nav navbar-nav navbar-right col-md-2 col-md-offset-1">
+                <li><a href="#"style="color:#fff;">登录</a></li>
+                <li><a href="#"style="color:#fff;">注册</a></li>
             </ul>
         </div>
     </nav>
+    <div class="container" style="margin-top:60px;">
+        <div class="searchnum col-md-5">
+            <h3>共为您搜索到<span>N条</span>关于北海的信息</h3>
+        </div>      
+    </div>
 </body>
 </html>
