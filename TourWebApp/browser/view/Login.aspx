@@ -24,11 +24,11 @@
                         </div>
                         <div class="input-group" style="margin-top: 16px">
                             <asp:Label ID="Label1" runat="server" CssClass="input-group-addon" Text="邮箱："></asp:Label>
-                            <asp:TextBox ID="email_tb" CssClass="form-control" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="email_tb" CssClass="form-control" Text="760336282@qq.com" runat="server"></asp:TextBox>
                         </div>
                         <div class="input-group" style="margin-top: 16px; margin-bottom: 8px">
                             <asp:Label ID="Label2" runat="server" CssClass="input-group-addon" Text="密码："></asp:Label>
-                            <asp:TextBox ID="psw_tb" CssClass="form-control" runat="server" TextMode="Password"></asp:TextBox>
+                            <asp:TextBox ID="psw_tb" CssClass="form-control" runat="server" Text="admin" TextMode="Password"></asp:TextBox>
                         </div>
                         <asp:Panel ID="warning_div" CssClass="alert alert-danger" runat="server" Style="margin-top: 8px; margin-bottom: 8px" Visible="False">
                             <asp:Label ID="warning_lb" runat="server" Text="sdfdsfsdfsdfd"></asp:Label>
@@ -40,10 +40,10 @@
                     <div class="row alert alert-warning" style="margin-left: 16px; margin-right: 16px">
                         <div class="col-md-8">
                             <asp:Label ID="Label3" runat="server" Text="没有帐号？"></asp:Label>
-                            <asp:Button ID="reginster_btn" CssClass="btn btn-link" runat="server" Text="点击注册" />
+                            <a href="Register.aspx">点击注册</a>
                         </div>
                         <div class="col-md-4">
-                            <asp:Button ID="forget_psw" CssClass="btn btn-link" runat="server" Text="忘记密码" />
+                            <a href="Register.aspx">忘记密码</a>
                         </div>
                     </div>
                 </div>

@@ -228,6 +228,7 @@
     <Compile Include="server\controller\Test.ashx.cs">
       <DependentUpon>Test.ashx</DependentUpon>
     </Compile>
+    <Compile Include="server\extend\TourInterceptor.cs" />
     <Compile Include="server\mode\DevTest.cs" />
     <Compile Include="server\mode\LoginToken.cs" />
     <Compile Include="server\mode\UserInfo.cs" />

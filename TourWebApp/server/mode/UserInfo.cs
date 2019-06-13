@@ -1,4 +1,5 @@
 ﻿using NetDB.Core;
+using NetDB.Core.Condition;
 using NetDB.Core.SqlAttribute;
 using System;
 using System.Collections.Generic;
@@ -61,8 +62,7 @@ namespace TourWebApp.server.mode
             get
             {
                 _LoginToken = new LoginToken();
-                _LoginToken.SetID(ID);
-                _LoginToken.Find();
+                _LoginToken.Find(new Where().Add("UserID", ID));
                 return _LoginToken;
             }
             set { _LoginToken = value; }

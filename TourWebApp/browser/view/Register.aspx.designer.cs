@@ -22,15 +22,6 @@ namespace TourWebApp.browser.view {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Register_title 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Register_title;
-        
-        /// <summary>
         /// Label1 控件。
         /// </summary>
         /// <remarks>
@@ -40,13 +31,31 @@ namespace TourWebApp.browser.view {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// TextBox1 控件。
+        /// nick_tb 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox nick_tb;
+        
+        /// <summary>
+        /// Label6 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label6;
+        
+        /// <summary>
+        /// TextBox5 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox5;
         
         /// <summary>
         /// Label4 控件。
@@ -58,13 +67,13 @@ namespace TourWebApp.browser.view {
         protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
-        /// TextBox3 控件。
+        /// email_tb 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.WebControls.TextBox email_tb;
         
         /// <summary>
         /// Label2 控件。
@@ -76,13 +85,58 @@ namespace TourWebApp.browser.view {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// TextBox2 控件。
+        /// psw_tb 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox psw_tb;
+        
+        /// <summary>
+        /// Label5 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label5;
+        
+        /// <summary>
+        /// again_psw_tb 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox again_psw_tb;
+        
+        /// <summary>
+        /// warning_div 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel warning_div;
+        
+        /// <summary>
+        /// warning_lb 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label warning_lb;
+        
+        /// <summary>
+        /// register_btn 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button register_btn;
         
         /// <summary>
         /// Label3 控件。

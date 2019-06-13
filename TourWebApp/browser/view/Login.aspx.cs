@@ -1,5 +1,6 @@
 ﻿using NetDB.Core;
 using NetDB.Core.Support;
+using NetDB.Core.Utils;
 using System;
 using System.Web.Services;
 using TourWebApp.server.mode;
@@ -11,7 +12,6 @@ namespace TourWebApp.browser.view
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
         protected void login_btn_Click(object sender, EventArgs e)
@@ -25,12 +25,23 @@ namespace TourWebApp.browser.view
             {
                 warning_div.Visible = true;
                 warning_lb.Text = "该用户不存在！";
+                return;
             }
-            if (!user.Rows[0].PassWord.Equals(Md5Utils.MD5Encrypt(psw)))
+            UserInfo userInfo = user.Rows[0];
+            if (!userInfo.PassWord.Equals(Md5Utils.MD5Encrypt(psw)))
             {
                 warning_div.Visible = true;
                 warning_lb.Text = "密码错误！";
             }
+            userInfo.PassWord = "";
+            Session["user"] = userInfo;
+            LoginToken token = userInfo.LoginToken;
+            token.TokenID = UUID.Get("token");
+            token.LoginTime = DateTime.Now;
+            int ret = token.Update();
+            SLog.Out.WriteLine("Login:" + token.TokenID);
+            Session["token"] = token.TokenID;
+            Response.Redirect("../../Index.aspx");
         }
 
         [WebMethod]

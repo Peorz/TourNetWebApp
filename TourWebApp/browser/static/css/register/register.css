@@ -3,7 +3,7 @@
     margin: 0 auto;
 }
 
-#Register_title {
+.Register_title {
     text-align: center;
 }
 
@@ -21,12 +21,12 @@
 }
 
 .alert-warning {
-    background-color: rgba(252,248,227,0.8);
+    background-color: rgba(252,248,227,0.9);
     line-height:34px;
 }
 
 .card {
-    background-color:rgba(255,255,255,0.7);
+    background-color:rgba(255,255,255,0.9);
 }
 
 body {
@@ -34,36 +34,4 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
-
-
-/*
-body {
-    background-image: url('../../img/Register.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-.login-box {
-    margin: 10% auto;
-    width: 700px;
-    border: 1px solid #CCC;
-    /*background-color: rgba(255,255,255,0.7);*/
-    border-radius: 20px;
-    height: 350px;
-    background-color: rgb(243, 234, 226,0.7);
-}
-.login-box h2{
-    line-height:40px;   
-}
-.hei {
-    line-height: 50px;
-}
-.login-box h2{
-	text-align:center;
-	border-bottom:1px solid #999;
-	color:#808080;	
-}
-.confirm_right a{
-    font-size: 14px;
-}*/
-
 

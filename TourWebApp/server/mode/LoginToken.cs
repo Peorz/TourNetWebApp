@@ -1,5 +1,6 @@
 ﻿using NetDB.Core;
 using NetDB.Core.SqlAttribute;
+using NetDB.Core.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,16 @@ namespace TourWebApp.server.mode
         {
             get { return _UserID; }
             set { _UserID = value; }
+        }
+
+        private String _TokenID = UUID.Get("token");
+
+        [Colmun(Type = "varchar(32)")]
+        public string TokenID 
+        {
+            get { return _TokenID; }
+
+            set { _TokenID = value; }
         }
 
         [Colmun(Type = "datetime")]
