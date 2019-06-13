@@ -43,7 +43,7 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="#">关于我们</a></li>
                             <li>
-                                <a href="#">
+                                <a href="browser/view/Register.aspx">
                                     <span class="glyphicon glyphicon-leaf" aria-hidden="true"></span>
                                     <span class="sr-only">Error:</span>注册
                                 </a>

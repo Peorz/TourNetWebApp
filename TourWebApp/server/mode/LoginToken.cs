@@ -12,7 +12,7 @@ namespace TourWebApp.server.mode
 
         private String _UserID;
 
-        private DateTime _LoginTime;
+        private DateTime _LoginTime = DateTime.Now;
 
         [Colmun(Type = "varchar(32)")]
         public string UserID

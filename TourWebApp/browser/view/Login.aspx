@@ -23,15 +23,18 @@
                             <asp:Label ID="login_title" runat="server" CssClass="center-block" Text="TourProject" Font-Size="XX-Large" ForeColor="Gray"></asp:Label>
                         </div>
                         <div class="input-group" style="margin-top: 16px">
-                            <asp:Label ID="Label1" runat="server" CssClass="input-group-addon" Text="账号："></asp:Label>
-                            <asp:TextBox ID="TextBox1" CssClass="form-control" runat="server"></asp:TextBox>
+                            <asp:Label ID="Label1" runat="server" CssClass="input-group-addon" Text="邮箱："></asp:Label>
+                            <asp:TextBox ID="email_tb" CssClass="form-control" runat="server"></asp:TextBox>
                         </div>
-                        <div class="input-group" style="margin-top: 16px">
+                        <div class="input-group" style="margin-top: 16px; margin-bottom: 8px">
                             <asp:Label ID="Label2" runat="server" CssClass="input-group-addon" Text="密码："></asp:Label>
-                            <asp:TextBox ID="TextBox2" CssClass="form-control" runat="server" TextMode="Password"></asp:TextBox>
+                            <asp:TextBox ID="psw_tb" CssClass="form-control" runat="server" TextMode="Password"></asp:TextBox>
                         </div>
-                        <div class="row center-block" style="margin-top: 16px">
-                            <button type="button" class="btn btn-success" style="width: 100%">登录</button>
+                        <asp:Panel ID="warning_div" CssClass="alert alert-danger" runat="server" Style="margin-top: 8px; margin-bottom: 8px" Visible="False">
+                            <asp:Label ID="warning_lb" runat="server" Text="sdfdsfsdfsdfd"></asp:Label>
+                        </asp:Panel>
+                        <div class="row center-block" style="margin-top: 8px">
+                            <asp:Button ID="login_btn" runat="server" Text="登录" CssClass="btn btn-success" Style="width: 100%" OnClick="login_btn_Click" />
                         </div>
                     </div>
                     <div class="row alert alert-warning" style="margin-left: 16px; margin-right: 16px">

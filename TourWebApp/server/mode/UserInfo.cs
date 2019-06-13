@@ -17,7 +17,7 @@ namespace TourWebApp.server.mode
 
         private byte _Sex = 1;
 
-        private DateTime _CreateTime = new DateTime();
+        private DateTime _CreateTime = DateTime.Now;
 
         private LoginToken _LoginToken;
 
@@ -72,6 +72,14 @@ namespace TourWebApp.server.mode
         {
             _LoginToken = new LoginToken();
             _LoginToken.UserID = ID;
+        }
+
+        public override int Save()
+        {
+            _LoginToken = new LoginToken();
+            _LoginToken.UserID = ID;
+            _LoginToken.Save();
+            return base.Save();
         }
     }
 }

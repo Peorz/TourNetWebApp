@@ -5,6 +5,8 @@ using Qiniu.Storage;
 using Qiniu.Util;
 using System;
 using System.Web.Services;
+using TourWebApp.server.mode;
+using TourWebApp.server.utils;
 
 namespace TourWebApp
 {
@@ -19,5 +21,7 @@ namespace TourWebApp
         {
             return "";
         }
+
+        public string Md5Util { get; set; }
     }
 }
