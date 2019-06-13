@@ -43,7 +43,7 @@
                             <a href="Register.aspx">点击注册</a>
                         </div>
                         <div class="col-md-4">
-                            <a href="Register.aspx">忘记密码</a>
+                            <a href="ForgetPassWrod.aspx">忘记密码</a>
                         </div>
                     </div>
                 </div>

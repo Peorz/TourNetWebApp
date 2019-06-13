@@ -1,35 +1,45 @@
-﻿body {
+﻿* {
+    padding: 0px;
+    margin: 0 auto;
 }
-.drag{
-   width: 300px;
-   height: 30px;
-   line-height: 26px;
-   background-color: #e8e8e8;
-   position: relative;
-   margin-top:20px;
-  }
-  .bg{
-   width:40px;
-   height: 100%;
-   position: absolute;
-   background-color: #75CDF9;
-  }
-  .text{
-   position: absolute;
-   width: 100%;
-   height: 100%;
-   text-align: center;
-   user-select: none;
-  }
-  .btn{
-   width:40px;
-   height: 30px;
-   position: absolute;
-   border:1px solid #ccc;
-   cursor: move;
-   font-family: "宋体";
-   text-align: center;
-   background-color: #fff;
-   user-select: none;
-   color:#666;
-  }
+
+.Register_title {
+    text-align: center;
+}
+
+#Register_btn {
+    margin: 0;
+    padding-left: 0;
+}
+
+#Register_psw {
+    margin: 0;
+}
+
+.container-fluid {
+    margin-top: 11%;
+}
+
+.alert-warning {
+    background-color: rgba(252,248,227,0.9);
+    line-height: 34px;
+}
+
+.card {
+    background-color: rgba(255,255,255,0.9);
+}
+
+body {
+    background-image: url('../../img/Register.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.input {
+    margin-top: 20px;
+}
+
+#messBox{
+    margin-left:40px;
+    font-size:15px;
+}
