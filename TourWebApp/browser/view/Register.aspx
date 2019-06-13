@@ -10,8 +10,8 @@
     <link href="../static/css/card-view.css" rel="stylesheet" />
     <link href="../static/css/css/bootstrap-theme.min.css" rel="stylesheet" />
     <link href="../static/css/register/register.css" rel="stylesheet" />
-    <script src="browser/static/js/jquery.min.js"></script>
-    <script src="browser/static/js/bootstrap.min.js"></script>
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -66,16 +66,16 @@
         </div>
     </form>
     <script>
-        $("#again_psw_tb").blur(function () {
-            var first_pwd = $("psw_tb").val;
-            var again_pwd = $(this).val;
-            if (first_pwd != again_pwd) {
-                alert(123);
-                $("#warning_lb").show();
-                $("#warning_lb").html("两次输入密码不一致");
-            }
+        $(document).ready(function () {
+            $("#again_psw_tb").blur(function () {
+                var first_pwd = $("#psw_tb").val();
+                var again_pwd = $(this).val();
+                if (first_pwd != again_pwd) {
+                    $("#warning_div").show();
+                    $("#warning_lb").html("两次输入密码不一致");
+                }
+            });
         });
-
     </script>
 </body>
 </html>
