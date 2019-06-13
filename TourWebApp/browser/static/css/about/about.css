@@ -1,0 +1,88 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+    background-color: rgba(0,0,0,0.3);
+    padding: 15px;
+    height: 70px;
+}
+
+.box {
+    margin: 0 auto;
+    width: 1400px;
+    height: 650px;
+    margin-top: 60px;
+    /*border:1px solid black;*/
+}
+
+    .box .col-md-4 {
+        width: 450px;
+        height: 320px;
+        text-align: center;
+        /*border:1px solid black;*/
+    }
+
+.conten {
+    padding-left: 30px;
+    margin: 0 auto;
+}
+
+.row {
+    margin: 0 auto;
+}
+
+.nei p {
+    color: #928e8e;
+    line-height: 2.5;
+    text-align: justify;
+}
+
+.bott1 {
+    width: 400px;
+    height: 300px;
+    /*border:2px solid rgba(0,0,0,0.3);*/
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.3);
+    margin: 0 auto;
+}
+
+    .bott1 p {
+        color: #928e8e;
+        line-height: 2.5;
+        text-align: justify;
+    }
+
+#container {
+    width: 400px;
+    height: 280px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+#photo {
+    width: 1200px;
+    animation: switch 5s ease-out infinite;
+}
+
+    #photo > .img {
+        float: left;
+        width: 400px;
+        height: 300px;
+    }
+
+@keyframes switch {
+    0%, 25% {
+        margin-left: 0;
+    }
+
+    35%, 60% {
+        margin-left: -400px;
+    }
+
+    70%, 100% {
+        margin-left: -800px;
+    }
+}
