@@ -11,11 +11,10 @@ namespace TourWebApp.server.config
             /**
              * 配置数据库
              */
-            SqlHelper.Config("TourDataBase");
+            SqlHelper.Config("49.234.13.138", "TourDataBase", "tmpuser", "tmpuser.123");
             /**
              * 创建数据表
              */
-            new DevTest().CreateTable();
             new UserInfo().CreateTable();
             new LoginToken().CreateTable();
             /**
