@@ -293,9 +293,7 @@
 
         $('.tab-item').mouseenter(function () {
             $(this).addClass('myactive').siblings().removeClass('myactive');
-            $(".products .mainCont").eq($(this).index()).show().siblings().hide();
-
-
+            
             var num = $(".tabs_ul>li").index(this);
             $('.imgbox ul').eq(num).show().siblings().hide();
         });

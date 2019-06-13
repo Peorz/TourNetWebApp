@@ -34,7 +34,7 @@
                                     <div class="form-group">
                                         <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control"></asp:TextBox>
                                     </div>
-                                    <asp:Button ID="Button1" runat="server" Text="搜索" CssClass="btn btn-default" />
+                                    <asp:Button ID="SearchBtn" runat="server" Text="搜索" CssClass="btn btn-default" />
                                 </div>
                             </li>
                         </ul>
@@ -106,6 +106,9 @@
                 $("#content").html(data);//初始化加载界面
             });
         }
+        $("#SearchBtn").click(function () {
+            window.location.href = "/browser/view/TourSel.aspx";
+        });
     </script>
 </body>
 </html>

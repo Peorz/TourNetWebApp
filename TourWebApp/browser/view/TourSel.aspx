@@ -41,11 +41,11 @@
         </div>
         <div class="container">
             <ul class="nav nav-pills selecthr col-md-12 ">
-                <li role="presentation" class="active"><a href="#">全部<span class="badge">100</span></a></li>
-                <li role="presentation"><a href="#">景区<span class="badge">100</span></a></li>
-                <li role="presentation"><a href="#">美食<span class="badge">100</span></a></li>
-                <li role="presentation"><a href="#">攻略<span class="badge">100</span></a></li>
-                <li role="presentation"><a href="#">讨论<span class="badge">100</span></a></li>
+                <li role="presentation" class="search_item active"><a href="#">全部<span class="badge">100</span></a></li>
+                <li role="presentation" class="search_item"><a href="#">景区<span class="badge">100</span></a></li>
+                <li role="presentation" class="search_item"><a href="#">美食<span class="badge">100</span></a></li>
+                <li role="presentation" class="search_item"><a href="#">攻略<span class="badge">100</span></a></li>
+                <li role="presentation" class="search_item"><a href="#">讨论<span class="badge">100</span></a></li>
             </ul>
         </div>
         <div class="container">
@@ -169,7 +169,7 @@
                     </li>
                 </ul>
 
-                <nav aria-label="Page navigation" style="text-align:center;">
+                <nav aria-label="Page navigation" style="text-align: center;">
                     <ul class="pagination">
                         <li>
                             <a href="#" aria-label="Previous">
@@ -185,14 +185,22 @@
                             <a href="#" aria-label="Next">
                                 <span aria-hidden="true">&raquo;</span>
                             </a>
-                        </li>                  
+                        </li>
                     </ul>
                 </nav>
             </div>
-
-
         </div>
     </div>
+    <script>
+        $(".search_item").click(function () {
+            $(this).addClass("active").siblings().removeClass("active");
+            $(".products .mainCont").eq($(this).index()).show().siblings().hide();
 
+
+            var num = $(".tabs_ul>li").index(this);
+            $('.imgbox ul').eq(num).show().siblings().hide();
+        });
+
+    </script>
 </body>
 </html>

@@ -27,8 +27,11 @@
                             <asp:TextBox ID="nick_tb" CssClass="form-control" runat="server" placeholder="请输入用户名"></asp:TextBox>
                         </div>
                         <div class="input-group" style="margin-top: 16px">
-                            <asp:Label ID="Label6" runat="server" CssClass="input-group-addon" Text="性&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp别："></asp:Label>
-                            <asp:TextBox ID="TextBox5" CssClass="form-control" runat="server" placeholder="请输入性别"></asp:TextBox>
+                            <asp:Label ID="Label6" runat="server" CssClass="input-group-addon" Text="性&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp别："></asp:Label>                           
+                            <asp:DropDownList ID="DropDownList1" runat="server" CssClass="form-control">
+                                <asp:ListItem Value="1">男</asp:ListItem>
+                                <asp:ListItem Value="0">女</asp:ListItem>
+                            </asp:DropDownList>
                         </div>
                         <div class="input-group" style="margin-top: 16px">
                             <asp:Label ID="Label4" runat="server" CssClass="input-group-addon" Text="邮&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp箱："></asp:Label>
@@ -43,7 +46,7 @@
                             <asp:TextBox ID="again_psw_tb" CssClass="form-control" runat="server" TextMode="Password" placeholder="请输入密码"></asp:TextBox>
                         </div>
                         <asp:Panel ID="warning_div" CssClass="alert alert-danger" runat="server" Style="margin-top: 8px; margin-bottom: 8px" Visible="False">
-                            <asp:Label ID="warning_lb" runat="server" Text="sdfdsfsdfsdfd"></asp:Label>
+                            <asp:Label ID="warning_lb" runat="server" Text=""></asp:Label>
                         </asp:Panel>
                         <div class="row center-block" style="margin-top: 8px">
                             <asp:Button ID="register_btn" runat="server" Text="注册" CssClass="btn btn-success" Style="width: 100%" OnClick="register_btn_Click" />
@@ -62,5 +65,17 @@
             </div>
         </div>
     </form>
+    <script>
+        $("#again_psw_tb").blur(function () {
+            var first_pwd = $("psw_tb").val;
+            var again_pwd = $(this).val;
+            if (first_pwd != again_pwd) {
+                alert(123);
+                $("#warning_lb").show();
+                $("#warning_lb").html("两次输入密码不一致");
+            }
+        });
+
+    </script>
 </body>
 </html>
