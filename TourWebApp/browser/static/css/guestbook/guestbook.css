@@ -1,71 +1,126 @@
 ﻿@charset "utf-8";
-.message_title h1{
-    font-size:30px;
-    color:white;
-}
-.message_show{
-    box-shadow:0px 0px 5px 0px #eee;
-    min-height:800px;
-}
-.message_list{
-    list-style:none;
-}
-.message_list li{
-    height:250px;
-    border-left:3px solid green;
-    margin-top:20px;
-    overflow:hidden;
-}
-.message_top{
-    width:100%;
-    height:60px;
-    margin-top:10px;
-}
-.user_info{
-    padding-left:10px;
-}
-.user_info img{
-    width:50px;
-    height:50px;
-    border-radius:50%;
-}
-.user_info span{
-    float:right;
-    color:#808080;
-    padding-top:18px;
-}
-.user_name{
-    display:inline-block;
-    font-size:20px;
-}
-.user_name i{
 
+.message_title h1
+{
+    font-size: 30px;
+    color: white;
 }
-.user_info h4{
-    float:right;
-    padding-top:8px;
-    margin-right:20px;
+
+.message_show
+{
+    box-shadow: 0px 0px 5px 0px #eee;
+    min-height: 800px;
 }
-.message_text{
-    display:inline-block;
-    padding-left:10px;
-    width:70%;
+
+.message_list
+{
+    list-style: none;
 }
-.message_list_title{
-    overflow:hidden;
+
+    .message_list li
+    {
+        height: 250px;
+        border-left: 3px solid green;
+        margin-top: 20px;
+        overflow: hidden;
+    }
+
+.message_top
+{
+    width: 100%;
+    height: 60px;
+    margin-top: 10px;
 }
-.message_list_content{
-    overflow:hidden;
+
+.user_info
+{
+    padding-left: 10px;
 }
-.message_list_content p{
-    line-height:26px;
+
+    .user_info img
+    {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+
+    .user_info span
+    {
+        float: right;
+        color: #808080;
+        padding-top: 10px;
+    }
+
+.user_name
+{
+    display: inline-table;
+    font-size: 20px;
 }
-.message_list_banner{
-    width:25%;
-  margin-left:30px;
-  float:right;
+
+    .user_name i
+    {
+        display:inline-table;
+        font-size:16px;
+        color:#808080;
+    }
+
+.user_info h4
+{
+    float: right;
+    padding-top: 8px;
+    margin-right: 20px;
 }
-.message_list_banner img{
-    width:100%;
-    height:100%;
+
+.message_text
+{
+    float:left;
+    padding-left: 10px;
+    width: 70%;
+    height:160px;
 }
+
+.message_list_title
+{
+    overflow: hidden;
+}
+    .message_list_title h2
+    {
+        margin-bottom:20px;
+        font-size:24px;
+    }
+
+.message_list_content
+{
+    width:700px;
+}
+
+    .message_list_content p
+    {
+        line-height: 26px;
+        font-size: 14px;
+        color:#808080;
+    }
+
+.message_list_banner
+{
+    margin-left: 30px;
+    float:left;
+}
+.message_list_banner img
+{
+    width:200px;
+    height:150px;
+}
+.user_img
+{
+    padding-top:50px;
+    
+}
+.user_img img
+{
+   width:100px;
+   height:100px;
+   padding-left:20px;
+}
+
+    
