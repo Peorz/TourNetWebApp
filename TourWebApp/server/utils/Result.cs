@@ -30,112 +30,90 @@ namespace TourWebApp.server.utils
             return JsonMapper.ToJson(resultData);
         }
 
-        public class ResultData
+        private class ResultData
         {
-            private int code;
+            private int _code;
 
-            public int Code
+            public int code
             {
-                get { return code; }
-                set { code = value; }
+                get { return _code; }
+                set { _code = value; }
             }
-            private long Total;
 
-            public long Total1
+            private String _msg;
+
+            public String msg
             {
-                get { return Total; }
-                set { Total = value; }
+                get { return _msg; }
+                set { _msg = value; }
             }
-            private String msg;
+            private String _data;
 
-            public String Msg
+            public String data
             {
-                get { return msg; }
-                set { msg = value; }
-            }
-            private String data;
-
-            public String Data
-            {
-                get { return data; }
-                set { data = value; }
+                get { return _data; }
+                set { _data = value; }
             }
 
             public ResultData(int code, String msg)
             {
-                Code = code;
-                Msg = msg;
-                Data = null;
+                _code = code;
+                _msg = msg;
+                _data = null;
             }
 
             public ResultData(String msg, String data)
             {
-                Code = 0;
-                Msg = msg;
-                Data = data;
+                _code = 0;
+                _msg = msg;
+                _data = data;
             }
 
             public ResultData(String data)
             {
-                Code = 0;
-                Msg = "success";
-                Data = data;
+                _code = 0;
+                _msg = "success";
+                _data = data;
             }
         }
 
-        public class ResultRows
+        private class ResultRows : ResultData
         {
-            private int code;
 
-            public int Code
+            private long _total;
+
+            public long total
             {
-                get { return code; }
-                set { code = value; }
+                get { return _total; }
+                set { _total = value; }
             }
-            private String msg;
+            private Object _rows;
 
-            public String Msg
+            public Object rows
             {
-                get { return msg; }
-                set { msg = value; }
-            }
-            private long total;
-
-            public long Total
-            {
-                get { return total; }
-                set { total = value; }
-            }
-            private Object rows;
-
-            public Object Rows
-            {
-                get { return rows; }
-                set { rows = value; }
+                get { return _rows; }
+                set { _rows = value; }
             }
 
             public ResultRows(int code, String msg, long total, Object rows)
+                : base(code, msg)
             {
-                Code = code;
-                Msg = msg;
-                Rows = rows;
-                Total = total;
+                _rows = rows;
+                _total = total;
             }
 
             public ResultRows(String msg, long total, Object rows)
+                : base(0, msg)
             {
-                Code = 0;
-                Msg = msg;
-                Rows = rows;
-                Total = total;
+                _rows = rows;
+                _total = total;
             }
 
             public ResultRows(long total, Object rows)
+                : base(0, "success")
             {
-                Code = 0;
-                Msg = "success";
-                Rows = rows;
-                Total = total;
+                _rows = rows;
+                _total = total;
             }
         }
     }

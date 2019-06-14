@@ -10,15 +10,18 @@
     <link href="../static/backcss/index/custom-styles.css" rel="stylesheet" />
     <link href="../static/css/card-view.css" rel="stylesheet" />
     <link href="../static/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="../static/backcss/bootstrap-table.min.css" rel="stylesheet" />
     <script src="../static/js/jquery.min.js"></script>
     <script src="../static/js/bootstrap.min.js"></script>
     <script src="../static/backjs/index/custom-scripts.js"></script>
     <script src="../static/js/jquery.metisMenu.js"></script>
+    <script src="../static/backjs/bootstrap-table.min.js"></script>
+    <script src="../static/backjs/bootstrap-table-zh-CN.min.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
         <div id="wrapper">
-            <nav class="navbar navbar-default top-navbar" role="navigation">
+            <nav class="navbar navbar-default top-navbar" role="navigation" style="border-radius: 0">
                 <div class="navbar-header">
                     <a class="navbar-brand  " href="index.html">
                         <span>Admin</span>
@@ -50,7 +53,7 @@
                     <ul class="nav" id="main-menu">
 
                         <li>
-                            <a class="active-menu" href="index.html">
+                            <a class="active-menu click-link" href="UserManager.aspx">
                                 <i class="glyphicon glyphicon-leaf"></i>
                                 人员信息
                             </a>
@@ -94,6 +97,7 @@
     <script type="text/javascript">
         $(document).ready(function () {
             init();
+            loadView("UserManager.aspx");
         });
 
         function init() {
