@@ -19,28 +19,71 @@
             <div id="login_content" class="row">
                 <div class="col-md-4 col-md-offset-4">
                     <div class="card">
-                        <div class="row Register_title">
+                        <div class="content">
+                            <div class="web-width">
+                                <div class="for-liucheng">
+                                    <div class="liulist for-cur"></div>
+                                    <div class="liulist"></div>
+                                    <div class="liutextbox">
+                                        <div class="liutext for-cur"><em>1</em><br />
+                                            <strong>填写账户名</strong></div>
+                                        <div class="liutext"><em>3</em><br />
+                                            <strong>设置新密码</strong></div>
+                                    </div>
+                                </div>
+                                <!--for-liucheng/-->
+                                <form action="forgetPwd3.html" method="get" class="forget-pwd">
+                                    <dl>
+                                        <div class="input-group" style="margin-top: 16px">
+                                            <asp:Label ID="Label4" runat="server" CssClass="input-group-addon" Text="邮&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp箱："></asp:Label>
+                                            <asp:TextBox ID="TextBox3" CssClass="form-control" runat="server" placeholder="请输入邮箱" Width="200px"></asp:TextBox>
+                                        </div>
+                                        <div class="clears"></div>
+                                    </dl>
+                                    <dl>
+                                        <div class="input-group" style="margin-top: 16px">
+                                            <asp:Label ID="Label1" runat="server" CssClass="input-group-addon" Text="验证码：" Width="100px" Height="30px"></asp:Label>
+                                            <input id="t1" type="text" name="u" placeholder="验证码" style="height: 30px;" />
+                                            <span id="discode"></span>
+                                            <input type="button" value="换一换" class="c" style="height: 25px;" onclick="createCode()" />
+                                            <span style="color: red; font-weight: bold;" id="messBox"></span>
+                                        </div>
+                                        <div class="clears"></div>
+                                    </dl>
+                                </form>
+                                <!--forget-pwd/-->
+                            </div>
+                            <!--web-width/-->
+                        </div>
+                        <!--content/-->
+
+                        <%--  <div class="row Register_title">
                             <asp:Label runat="server" Text="RetrieveThePassword" Font-Size="XX-Large" ForeColor="Gray"></asp:Label>
                         </div>
 
                         <div class="input-group" style="margin-top: 16px">
                             <asp:Label ID="Label4" runat="server" CssClass="input-group-addon" Text="邮&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp箱："></asp:Label>
                             <asp:TextBox ID="TextBox3" CssClass="form-control" runat="server" placeholder="请输入邮箱"></asp:TextBox>
-                        </div>
+                        </div>--%>
 
                         <%--验证码--%>
-                        <div class="input">
+                        <%--  <div class="input">
                             <input id="t1" type="text" name="u" placeholder="验证码" style="height: 25px;"/>
                             <span id="discode"></span>
                             <input type="button" value="换一换" class="c" style="height: 25px;" onclick="createCode()" />
                             <span  style="color:red;font-weight:bold;" id="messBox"></span>
-                        </div>
+                        </div>--%>
                         <%--验证码--%>
 
                         <div class="row center-block" style="margin-top: 16px">
                             <button id="next_btn" type="button" class="btn btn-success" style="width: 100%">下一步</button>
                         </div>
                     </div>
+
+                    <%--下面复制的，待改--%>
+
+
+                    <%--  跳转界面--%>
                     <div class="row alert alert-warning" style="margin-left: 16px; margin-right: 16px">
                         <div class="col-md-8">
 
@@ -63,7 +106,7 @@
                 var val1 = document.getElementById("t1").value;
                 var val2 = code;
                 if (val1 != val2) {
-                    $("#messBox").html("验证码错误");                 
+                    $("#messBox").html("验证码错误");
                     document.getElementById('t1').value = "";
                 }
                 else {
