@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FileManager.aspx.cs" Inherits="TourWebApp.browser.back.FileManager" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserManager.aspx.cs" Inherits="TourWebApp.browser.back.UserManager" %>
 
 <!DOCTYPE html>
 
@@ -20,38 +20,41 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="alert alert-success" role="alert">资源管理</div>
+        <div>
+            <div class="alert alert-success" role="alert">人员管理</div>
+            <div class="card">
                 <table id="table"></table>
             </div>
         </div>
     </form>
     <script type="text/javascript">
-        $(document).ready(function () {
-            $('#table').bootstrapTable({
-                url: 'data1.json',
-                columns: [{
-                    field: 'id',
-                    title: 'Item ID'
-                }, {
-                    field: 'name',
-                    title: 'Item Name'
-                }, {
-                    field: 'price',
-                    title: 'Item Price'
-                }],
-                data: [{
-                    id: 1,
-                    name: 'Item 1',
-                    price: '$1'
-                }, {
-                    id: 2,
-                    name: 'Item 2',
-                    price: '$2'
-                }]
-            })
-        });
+        $('#table').bootstrapTable({
+            method: "post",
+            url: '../../server/controller/UserManager.ashx',
+            contentType: "application/x-www-form-urlencoded",
+            striped: true,                         //是否显示行间隔色
+            cache: false,
+            sidePagination: "server",
+            pagination: true,
+            columns: [
+                {
+                    field: 'Nick',
+                    title: '昵称'
+                },
+            {
+                field: 'Email',
+                title: '邮件'
+            },
+            {
+                field: 'Sex',
+                title: '性别'
+            },
+            {
+                field: 'CreateTime',
+                title: '注册时间'
+            }
+            ]
+        })
     </script>
 </body>
 </html>

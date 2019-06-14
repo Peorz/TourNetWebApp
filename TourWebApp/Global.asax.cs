@@ -41,7 +41,7 @@ namespace TourWebApp.server.config
             //if (Request.CurrentExecutionFilePathExtension.Equals(".aspx"))
             //{
             //    String view = Request.FilePath;
-            //    if (view.EndsWith("Login.aspx") || view.EndsWith("Register.aspx"))
+            //    if (view.EndsWith("Login.aspx") || view.EndsWith("Register.aspx") || view.EndsWith("ForgetPassWrod.aspx"))
             //    {
             //        return;
             //    }
@@ -80,7 +80,6 @@ namespace TourWebApp.server.config
 
         protected void Application_End(object sender, EventArgs e)
         {
-
         }
     }
 }

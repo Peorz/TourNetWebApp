@@ -7,10 +7,10 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace TourWebApp.browser.view {
+namespace TourWebApp.browser.back {
     
     
-    public partial class Test {
+    public partial class UserManager {
         
         /// <summary>
         /// form1 控件。

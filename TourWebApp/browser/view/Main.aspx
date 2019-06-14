@@ -6,12 +6,12 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
-    <%--<link href="../static/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../static/css/card-view.css" rel="stylesheet" />
     <link href="../static/css/bootstrap-theme.min.css" rel="stylesheet" />
     <link href="../static/css/login/login.css" rel="stylesheet" />
     <script src="../static/js/jquery.min.js"></script>
-    <script src="../static/js/bootstrap.min.js"></script>--%>
+    <script src="../static/js/bootstrap.min.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -47,6 +47,36 @@
                                     <div class="caption">
                                         <h3>Thumbnail label</h3>
                                         <p>...</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 col-md-offset-4">
+                                <asp:Label ID="Label3" runat="server" CssClass="center-block" Style="text-align: center; margin: 48px" Text="旅行胜地" Font-Size="XX-Large" ForeColor="Black"></asp:Label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="row-fluid">
+                                <div class="span12">
+                                    <div class="carousel slide" id="carousel-447297">
+                                        <ol class="carousel-indicators">
+                                            <li data-slide-to="0" data-target="#carousel-447297"></li>
+                                            <li data-slide-to="1" data-target="#carousel-447297" class="active"></li>
+                                            <li data-slide-to="2" data-target="#carousel-447297"></li>
+                                        </ol>
+                                        <div class="carousel-inner">
+                                            <div class="item">
+                                                <img alt="" src="browser/static/img/bg_area_2.jpg" />
+                                            </div>
+                                            <div class="item active">
+                                                <img alt="" src="browser/static/img/bg_area_2.jpg" />
+                                            </div>
+                                            <div class="item">
+                                                <img alt="" src="browser/static/img/bg_area_2.jpg" />
+                                            </div>
+                                        </div>
+                                        <a data-slide="prev" href="#carousel-447297" class="left carousel-control">‹</a> <a data-slide="next" href="#carousel-447297" class="right carousel-control">›</a>
                                     </div>
                                 </div>
                             </div>
@@ -95,6 +125,7 @@
                             <div class="col-md-4"></div>
                             <div class="col-md-4"></div>
                         </div>
+
                     </div>
                 </div>
             </div>
