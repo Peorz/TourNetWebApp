@@ -14,178 +14,176 @@
     <script src="../static/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div class="guestbook_nav">
-            <h3>留言板</h3>
-            <br />
-            <div class="guestbook_input">
-                <span>欢迎来到留言板</span>
-                <br />
-                <asp:TextBox ID="TextBox1" runat="server" Height="100px" ViewStateMode="Enabled" Width="100%" TextMode="MultiLine"></asp:TextBox>
-                <br />
-                <br />
-                <asp:Button ID="Button1" CssClass="btn-success" runat="server" Text="发送" Height="32px" Width="95px" />
-            </div>
-        </div>
-
-        
+    <nav class="navbar navbar-default" style="background-color: rgba(34, 139, 34,0.5);">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-6 col-md-offset-3 row_num guestbook_color">
-                    <span>留言（<asp:Label ID="Label1" runat="server" Text="num"></asp:Label>）</span>
-                    <br />
-                    <br />
+            <div class="navbar-header">
+                <div class="page-header message_title">
+                    <h1>旅游论坛<small>分享心得|寻找攻略|结交伙伴</small></h1>
                 </div>
             </div>
         </div>
-
-
-        <div class="guestbook_content">
-            <div class="guestbook_other">
-                <div class="guestbook_img">
-                    <a href="#">
-                        <img src="..\static\img\guestbook_img.png" />
-                    </a>
-                </div>
-                <div class="guestbook_news">
-                    <h4><a href="#"><asp:Label ID="Label2" runat="server" Text="Label"></asp:Label></a></h4>
-                    <span>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. 
-                          Cras purus odio, vestibulum in vulputate at, tempus viverra turpis                                           
-                    </span>
-                    <h5>
-                        <asp:Label ID="Label8" runat="server" Text="time"></asp:Label>
-                    </h5>
-                </div>
-            </div>
-
-            <div class="guestbook_other">
-                <div class="guestbook_img">
-                    <a href="#">
-                        <img src="..\static\img\guestbook_img.png" />
-                    </a>
-                </div>
-                <div class="guestbook_news">
-                    <h4><a href="#"><asp:Label ID="Label3" runat="server" Text="Label"></asp:Label></a></h4>
-                    <span>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. 
-                          Cras purus odio, vestibulum in vulputate at, tempus viverra turpis                                           
-                    </span>
-                    <h5>
-                        <asp:Label ID="Label4" runat="server" Text="time"></asp:Label>
-                    </h5>
-                </div>
-            </div>
-
-            <div class="guestbook_other">
-                <div class="guestbook_img">
-                    <a href="#">
-                        <img src="..\static\img\guestbook_img.png" />
-                    </a>
-                </div>
-                <div class="guestbook_news">
-                    <h4><a href="#"><asp:Label ID="Label5" runat="server" Text="Label"></asp:Label></a></h4>
-                    <span>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. 
-                          Cras purus odio, vestibulum in vulputate at, tempus viverra turpis                                           
-                    </span>
-                    <h5>
-                        <asp:Label ID="Label6" runat="server" Text="time"></asp:Label>
-                    </h5>
-                </div>
-            </div>
-            <div class="guestbook_other">
-                <div class="guestbook_img">
-                    <a href="#">
-                        <img src="..\static\img\guestbook_img.png" />
-                    </a>
-                </div>
-                <div class="guestbook_news">
-                    <h4><a href="#"><asp:Label ID="Label7" runat="server" Text="Label"></asp:Label></a></h4>
-                    <span>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. 
-                          Cras purus odio, vestibulum in vulputate at, tempus viverra turpis                                           
-                    </span>
-                    <h5>
-                        <asp:Label ID="Label9" runat="server" Text="time"></asp:Label>
-                    </h5>
-                </div>
-            </div>
-            <div class="guestbook_other">
-                <div class="guestbook_img">
-                    <a href="#">
-                        <img src="..\static\img\guestbook_img.png" />
-                    </a>
-                </div>
-                <div class="guestbook_news">
-                    <h4><a href="#"><asp:Label ID="Label10" runat="server" Text="Label"></asp:Label></a></h4>
-                    <span>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. 
-                          Cras purus odio, vestibulum in vulputate at, tempus viverra turpis                                           
-                    </span>
-                    <h5>
-                        <asp:Label ID="Label11" runat="server" Text="time"></asp:Label>
-                    </h5>
-                </div>
-            </div>
-            <div class="guestbook_other">
-                <div class="guestbook_img">
-                    <a href="#">
-                        <img src="..\static\img\guestbook_img.png" />
-                    </a>
-                </div>
-                <div class="guestbook_news">
-                    <h4><a href="#"><asp:Label ID="Label12" runat="server" Text="Label"></asp:Label></a></h4>
-                    <span>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. 
-                          Cras purus odio, vestibulum in vulputate at, tempus viverra turpis                                           
-                    </span>
-                    <h5>
-                        <asp:Label ID="Label13" runat="server" Text="time"></asp:Label>
-                    </h5>
-                </div>
-            </div>
-            <div class="guestbook_other">
-                <div class="guestbook_img">
-                    <a href="#">
-                        <img src="..\static\img\guestbook_img.png" />
-                    </a>
-                </div>
-                <div class="guestbook_news">
-                    <h4><a href="#"><asp:Label ID="Label14" runat="server" Text="Label"></asp:Label></a></h4>
-                    <span>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. 
-                          Cras purus odio, vestibulum in vulputate at, tempus viverra turpis                                           
-                    </span>
-                    <h5>
-                        <asp:Label ID="Label15" runat="server" Text="time"></asp:Label>
-                    </h5>
-                </div>
-            </div>
-
+    </nav>
+    <div class="container">
+        <div class="message_show col-md-12">
+            <ul class="message_list">
+                <li>
+                    <div class="message_top">
+                        <div class="user_info">
+                            <img src="../static/img/bg_area_3.jpg" />
+                            <div class="user_name">远方旅人<i>发表于2019-6-14 15:00</i></div>
+                            <span class="glyphicon glyphicon-thumbs-up">123人点赞</span>
+                            <h4>最后回复时间：2019-6-14 15:00</h4>
+                        </div>
+                    </div>
+                    <div class="message_text">
+                        <div class="message_list_title">
+                            <a href="#">
+                                <h2>中欧，填满我的欧洲旅行拼图</h2>
+                            </a>
+                        </div>
+                        <div class="message_list_content">
+                            <p>
+                                对于所有旅行爱好者来说，欧洲都是一个不会回避的话题。
+                            虽然面积排名在七大洲里差点就垫底了，
+                            但人口数量和国家地区数量却是稳居前三位，再加上欧盟国家签证通用，
+                            各国间交通也方便，欧洲历来是最受国人钟爱的旅行目的地之一。
+                            自己也去过欧洲好几次了，东欧的爱沙尼亚、南欧的保加利亚塞尔维亚、
+                            西欧的法国荷兰、北欧的丹麦……画了一个圈之后，发现唯独中欧还没有涉及。
+                            那么，这一次我们就来填上这最后一块拼图吧！
+                            </p>
+                        </div>
+                    </div>
+                    <div class="message_list_banner">
+                        <img src="../static/img/16849027.jpeg" />
+                    </div>
+                </li>
+                <li>
+                    <div class="message_top">
+                        <div class="user_info">
+                            <img src="../static/img/bg_area_3.jpg" />
+                            <div class="user_name">远方旅人<i>发表于2019-6-14 15:00</i></div>
+                            <span class="glyphicon glyphicon-thumbs-up">123人点赞</span>
+                            <h4>最后回复时间：2019-6-14 15:00</h4>
+                        </div>
+                    </div>
+                    <div class="message_text">
+                        <div class="message_list_title">
+                            <a href="#">
+                                <h2>中欧，填满我的欧洲旅行拼图</h2>
+                            </a>
+                        </div>
+                        <div class="message_list_content">
+                            <p>
+                                对于所有旅行爱好者来说，欧洲都是一个不会回避的话题。
+                            虽然面积排名在七大洲里差点就垫底了，
+                            但人口数量和国家地区数量却是稳居前三位，再加上欧盟国家签证通用，
+                            各国间交通也方便，欧洲历来是最受国人钟爱的旅行目的地之一。
+                            自己也去过欧洲好几次了，东欧的爱沙尼亚、南欧的保加利亚塞尔维亚、
+                            西欧的法国荷兰、北欧的丹麦……画了一个圈之后，发现唯独中欧还没有涉及。
+                            那么，这一次我们就来填上这最后一块拼图吧！
+                            </p>
+                        </div>
+                    </div>
+                    <div class="message_list_banner">
+                        <img src="../static/img/16849027.jpeg" />
+                    </div>
+                </li>
+                <li>
+                    <div class="message_top">
+                        <div class="user_info">
+                            <img src="../static/img/bg_area_3.jpg" />
+                            <div class="user_name">远方旅人<i>发表于2019-6-14 15:00</i></div>
+                            <span class="glyphicon glyphicon-thumbs-up">123人点赞</span>
+                            <h4>最后回复时间：2019-6-14 15:00</h4>
+                        </div>
+                    </div>
+                    <div class="message_text">
+                        <div class="message_list_title">
+                            <a href="#">
+                                <h2>中欧，填满我的欧洲旅行拼图</h2>
+                            </a>
+                        </div>
+                        <div class="message_list_content">
+                            <p>
+                                对于所有旅行爱好者来说，欧洲都是一个不会回避的话题。
+                            虽然面积排名在七大洲里差点就垫底了，
+                            但人口数量和国家地区数量却是稳居前三位，再加上欧盟国家签证通用，
+                            各国间交通也方便，欧洲历来是最受国人钟爱的旅行目的地之一。
+                            自己也去过欧洲好几次了，东欧的爱沙尼亚、南欧的保加利亚塞尔维亚、
+                            西欧的法国荷兰、北欧的丹麦……画了一个圈之后，发现唯独中欧还没有涉及。
+                            那么，这一次我们就来填上这最后一块拼图吧！
+                            </p>
+                        </div>
+                    </div>
+                    <div class="message_list_banner">
+                        <img src="../static/img/16849027.jpeg" />
+                    </div>
+                </li>
+                <li>
+                    <div class="message_top">
+                        <div class="user_info">
+                            <img src="../static/img/bg_area_3.jpg" />
+                            <div class="user_name">远方旅人<i>发表于2019-6-14 15:00</i></div>
+                            <span class="glyphicon glyphicon-thumbs-up">123人点赞</span>
+                            <h4>最后回复时间：2019-6-14 15:00</h4>
+                        </div>
+                    </div>
+                    <div class="message_text">
+                        <div class="message_list_title">
+                            <a href="#">
+                                <h2>中欧，填满我的欧洲旅行拼图</h2>
+                            </a>
+                        </div>
+                        <div class="message_list_content">
+                            <p>
+                                对于所有旅行爱好者来说，欧洲都是一个不会回避的话题。
+                            虽然面积排名在七大洲里差点就垫底了，
+                            但人口数量和国家地区数量却是稳居前三位，再加上欧盟国家签证通用，
+                            各国间交通也方便，欧洲历来是最受国人钟爱的旅行目的地之一。
+                            自己也去过欧洲好几次了，东欧的爱沙尼亚、南欧的保加利亚塞尔维亚、
+                            西欧的法国荷兰、北欧的丹麦……画了一个圈之后，发现唯独中欧还没有涉及。
+                            那么，这一次我们就来填上这最后一块拼图吧！
+                            </p>
+                        </div>
+                    </div>
+                    <div class="message_list_banner">
+                        <img src="../static/img/16849027.jpeg" />
+                    </div>
+                </li>
+                <li>
+                    <div class="message_top">
+                        <div class="user_info">
+                            <img src="../static/img/bg_area_3.jpg" />
+                            <div class="user_name">远方旅人<i>发表于2019-6-14 15:00</i></div>
+                            <span class="glyphicon glyphicon-thumbs-up">123人点赞</span>
+                            <h4>最后回复时间：2019-6-14 15:00</h4>
+                        </div>
+                    </div>
+                    <div class="message_text">
+                        <div class="message_list_title">
+                            <a href="#">
+                                <h2>中欧，填满我的欧洲旅行拼图</h2>
+                            </a>
+                        </div>
+                        <div class="message_list_content">
+                            <p>
+                                对于所有旅行爱好者来说，欧洲都是一个不会回避的话题。
+                            虽然面积排名在七大洲里差点就垫底了，
+                            但人口数量和国家地区数量却是稳居前三位，再加上欧盟国家签证通用，
+                            各国间交通也方便，欧洲历来是最受国人钟爱的旅行目的地之一。
+                            自己也去过欧洲好几次了，东欧的爱沙尼亚、南欧的保加利亚塞尔维亚、
+                            西欧的法国荷兰、北欧的丹麦……画了一个圈之后，发现唯独中欧还没有涉及。
+                            那么，这一次我们就来填上这最后一块拼图吧！
+                            </p>
+                        </div>
+                    </div>
+                    <div class="message_list_banner">
+                        <img src="../static/img/bg_area_1.jpg" />
+                    </div>
+                </li>
+            </ul>
         </div>
+    </div>
 
-        <%--<div class="container-fluid">
-            <div class="row">
-                <div class="col-md-6 col-md-offset-3 row_num guestbook_color">
-                    <span>留言（<asp:Label ID="Label1" runat="server" Text="num"></asp:Label>）</span>
-                    <br />
-                    <br />
-                </div>
-            </div>
-            <div class="row row_all ">
-                <div class="guestbook_color">
-                    <div class="col-md-1 col-md-offset-3 ">
-                        <a href="#">
-                            <img src="..\static\img\guestbook_img.jpg" />
-                        </a>
-                    </div>
-                    <div class="col-md-5 row_time row_boot ">
-                        <h4><a href="#">
-                            <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label></a></h4>
-                        <span>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. 
-                          Cras purus odio, vestibulum in vulputate at, tempus viverra turpis                                           
-                        </span>
-                        <h5>
-                            <asp:Label ID="Label8" runat="server" Text="time"></asp:Label>
-                        </h5>
-                    </div>
-                </div>
-            </div>
-        </div>--%>
-    </form>
 </body>
 </html>

@@ -23,5 +23,11 @@ namespace TourWebApp
         }
 
         public string Md5Util { get; set; }
+
+        protected void SearchBtn_Click(object sender, EventArgs e)
+        {
+            string SearchStr = SearchText.Text;
+            Response.Redirect("browser/view/TourSel.aspx");
+        }
     }
 }

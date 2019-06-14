@@ -32,9 +32,9 @@
                             <li>
                                 <div class="navbar-form navbar-left">
                                     <div class="form-group">
-                                        <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="SearchText" runat="server" CssClass="form-control"></asp:TextBox>
                                     </div>
-                                    <asp:Button ID="SearchBtn" runat="server" Text="搜索" CssClass="btn btn-default" />
+                                    <asp:Button ID="SearchBtn" runat="server" Text="搜索" CssClass="btn btn-default" OnClick="SearchBtn_Click" />
                                 </div>
                             </li>
                         </ul>
