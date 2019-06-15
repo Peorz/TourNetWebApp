@@ -184,6 +184,25 @@
             </ul>
         </div>
     </div>
+    <div class="container">
+        <form runat="server">
 
+            <div class="user_img col-md-2">
+                <img src="../static/img/guestbook_img.png" style="width:100px;height:100px;border-radius:50%;" />
+            </div>
+            <div class="inputbox col-md-10">
+                <div class="input-group" style="margin-top: 16px">
+                    <asp:Label ID="Label1" runat="server" CssClass="input-group-addon" Text="标题"></asp:Label>
+                    <asp:TextBox ID="messtitle" CssClass="form-control" runat="server" placeholder="请输入标题"></asp:TextBox>
+                </div>
+                <div class="input-group" style="margin-top: 16px">
+                    <asp:TextBox ID="messcontent" CssClass="form-control" Rows="8" Columns="150" runat="server" TextMode="MultiLine" placeholder="请输入内容"></asp:TextBox></div>
+                
+            </div>
+            <asp:Button ID="Button1" CssClass="btn btn-success" runat="server" Text="提交" />
+
+
+        </form>
+    </div>
 </body>
 </html>
