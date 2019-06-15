@@ -22,8 +22,21 @@
     <form id="form1" runat="server">
         <div>
             <div class="alert alert-success" role="alert">人员管理</div>
-            <div class="card">
-                <table id="table"></table>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="card" style="margin-bottom: 0">
+                        <div class="btn-group" role="group" aria-label="...">
+                            <button type="button" class="btn btn-primary">新增</button>
+                            <button type="button" class="btn btn-success">修改</button>
+                            <button type="button" class="btn btn-warning">设置</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="card">
+                        <table id="table"></table>
+                    </div>
+                </div>
             </div>
         </div>
     </form>
@@ -41,18 +54,18 @@
                     field: 'Nick',
                     title: '昵称'
                 },
-            {
-                field: 'Email',
-                title: '邮件'
-            },
-            {
-                field: 'Sex',
-                title: '性别'
-            },
-            {
-                field: 'CreateTime',
-                title: '注册时间'
-            }
+                {
+                    field: 'Email',
+                    title: '邮件'
+                },
+                {
+                    field: 'Sex',
+                    title: '性别'
+                },
+                {
+                    field: 'CreateTime',
+                    title: '注册时间'
+                }
             ]
         })
     </script>

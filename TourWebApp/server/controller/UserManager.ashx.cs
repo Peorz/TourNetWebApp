@@ -31,6 +31,11 @@ namespace TourWebApp.server.controller
             String order = request.Params["order"];
             PageList<UserInfo> userList = ORMSupport.PageSelect<UserInfo>()
                 .Select();
+            foreach (UserInfo info in userList.Rows)
+            {
+                info.PassWord = null;
+                info.LoginToken = null;
+            }
             return Result.Ok("", userList.Total, userList.Rows);
         }
 
