@@ -21,6 +21,11 @@ namespace TourWebApp.server.config
              */
             new UserInfo().CreateTable();
             new LoginToken().CreateTable();
+            new FileInfo().CreateTable();
+            new FoodInfo().CreateTable();
+            new ForumRecord().CreateTable();
+            new ForumTopic().CreateTable();
+            new ScenicInfo().CreateTable();
             /**
              * 配置日志开关
              */

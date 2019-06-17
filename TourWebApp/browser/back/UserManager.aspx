@@ -120,7 +120,7 @@
     </form>
     <script type="text/javascript">
         $('#table').bootstrapTable({
-            method: "post",
+            method: "get",
             url: '../../server/controller/UserManager.ashx',
             contentType: "application/x-www-form-urlencoded",
             striped: true,                         //是否显示行间隔色
