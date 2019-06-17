@@ -26,7 +26,8 @@ namespace TourWebApp.server.controller
 
         public override string PostProcessRequest(HttpContext context, HttpRequest request, HttpResponse response)
         {
-            String filePathStr = request["filePath"];
+            //String filePathStr = request["filePath"];
+            String filePathStr = @"C:\Users\PC-913\Desktop\16849027.jpeg";
             Mac mac = new Mac(QiniuConfig.AccessKey, QiniuConfig.SecretKey);
             // 上传文件名
             string key = "doger1";
@@ -41,7 +42,7 @@ namespace TourWebApp.server.controller
             // 上传策略的过期时间(单位:秒)
             putPolicy.SetExpires(3600);
             // 文件上传完毕后，在多少天后自动被删除
-            putPolicy.DeleteAfterDays = 1;
+            putPolicy.DeleteAfterDays = 100;
             // 生成上传token
             string token = Auth.CreateUploadToken(mac, putPolicy.ToJsonString());
             Config config = new Config();
