@@ -10,25 +10,7 @@ using NetDB.Core.SqlAttribute;
 namespace TourWebApp.server.mode
 {
     public class ScenicInfo:ORMSupport
-    {
-        //景区ID
-        private string _ScenicID;
-
-        [Colmun(Type = "varchar(32)")]
-        public string ScenicID
-        {
-            get { return _ScenicID; }
-            set { _ScenicID = value; }
-        }
-        //城市ID
-        private string _CityID;
-
-        [Colmun(Type = "varchar(32)")]
-        public string CityID
-        {
-            get { return _CityID; }
-            set { _CityID = value; }
-        }
+    {       
         //景区名称
         private string _ScenicName;
 

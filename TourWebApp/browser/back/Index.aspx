@@ -65,7 +65,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="index.html">
+                            <a class="click-link" href="ScenicManager.aspx">
                                 <i class="glyphicon glyphicon-leaf"></i>
                                 景区管理
                             </a>
@@ -98,6 +98,7 @@
         $(document).ready(function () {
             init();
             loadView("UserManager.aspx");
+            
         });
 
         function init() {

@@ -38,7 +38,7 @@
                                     <div class="form-group ">
                                         <asp:TextBox ID="SearchText" runat="server" CssClass="form-control"></asp:TextBox>
                                     </div>
-                                    <asp:Button ID="SearchBtn" runat="server" Text="搜索" CssClass="btn btn-default" OnClick="SearchBtn_Click" />
+                                    <asp:Button ID="SearchBtn" runat="server" Text="搜索" CssClass="btn btn-default" OnClick="SearchBtn_Click" placeholder="输入搜索内容"/>
                                 </div>
                             </li>
                         </ul>

@@ -1,4 +1,5 @@
 ﻿using NetDB.Core;
+using NetDB.Core.Support;
 using NetDB.Core.Utils;
 using Qiniu.Http;
 using Qiniu.Storage;
@@ -26,8 +27,11 @@ namespace TourWebApp
 
         protected void SearchBtn_Click(object sender, EventArgs e)
         {
-            string SearchStr = SearchText.Text;
-            Response.Redirect("browser/view/TourSel.aspx");
+            ScenicInfo scenic = new ScenicInfo();
+            PageList<ScenicInfo> list = ORMSupport.PageSelect<ScenicInfo>()
+                .AddWhere("ScenicContent", "like", SearchText.Text)
+                .Select();
+
         }
     }
 }
