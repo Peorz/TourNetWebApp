@@ -110,7 +110,7 @@
                     document.getElementById('t1').value = "";
                 }
                 else {
-                    window.location.href = "Main.aspx";
+                    window.location.href = "ForgetPassWord1.aspx";
                 }
             });
         });

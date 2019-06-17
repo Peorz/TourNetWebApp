@@ -111,6 +111,7 @@
     <Content Include="browser\static\js\jquery.min.js" />
     <Content Include="browser\static\js\npm.js" />
     <Content Include="browser\view\About.aspx" />
+    <Content Include="browser\view\ForgetPassWord1.aspx" />
     <Content Include="browser\view\ForgetPassWrod.aspx" />
     <Content Include="browser\view\Guestbook.aspx" />
     <Content Include="browser\view\Main.aspx" />
@@ -157,6 +158,13 @@
     </Compile>
     <Compile Include="browser\view\About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="browser\view\ForgetPassWord1.aspx.cs">
+      <DependentUpon>ForgetPassWord1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="browser\view\ForgetPassWord1.aspx.designer.cs">
+      <DependentUpon>ForgetPassWord1.aspx</DependentUpon>
     </Compile>
     <Compile Include="browser\view\ForgetPassWrod.aspx.cs">
       <DependentUpon>ForgetPassWrod.aspx</DependentUpon>

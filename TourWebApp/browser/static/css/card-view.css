@@ -1,4 +1,4 @@
-.card {
+ï»¿.card {
     position: relative;
     background-color: #fff;
     transition: box-shadow .25s;
@@ -36,7 +36,7 @@ img{ max-width:100%; height:auto;}
 .fr{float:right;}
 
 
-/*Íü¼ÇÃÜÂë  ±ØÒªÑùÊ½*/
+/*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  ï¿½ï¿½Òªï¿½ï¿½Ê½*/
 .clears{ clear:both;}
 .for-liucheng{width:400px;margin:30px 0; height:50px;padding:20px 0 0 0; position:relative;}
 .liulist{float:left;width:50%; height:7px; background:#ccc;}
