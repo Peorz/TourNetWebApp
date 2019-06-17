@@ -26,6 +26,7 @@ namespace TourWebApp.server.config
             new ForumRecord().CreateTable();
             new ForumTopic().CreateTable();
             new ScenicInfo().CreateTable();
+            new MsgBoard().CreateTable();
             /**
              * 配置日志开关
              */
