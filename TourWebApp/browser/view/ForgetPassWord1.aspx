@@ -25,8 +25,8 @@
                                     <div class="liulist"></div>
                                     <div class="liulist for-cur"></div>
                                     <div class="liutextbox">
-                                        <div class="liutext for-cur"><em>1</em><br /><strong>填写账户名</strong></div>
-                                        <div class="liutext for-cur"><em>3</em><br /><strong>设置新密码</strong></div>
+                                        <div class="liutext"><em>1</em><br /><strong>填写账户名</strong></div>
+                                        <div class="liutext for-cur"><em>2</em><br /><strong>设置新密码</strong></div>
                                     </div>
                                 </div>
                                 <!--for-liucheng/-->
@@ -34,21 +34,21 @@
                                     <dl>
                                         <div class="input-group" style="margin-top: 16px">
                                             <asp:Label ID="Label4" runat="server" CssClass="input-group-addon" Text="手机号："></asp:Label>
-                                            <asp:TextBox ID="TextBox3" CssClass="form-control" runat="server" placeholder="请输入邮箱" Width="200px"></asp:TextBox>
+                                            <asp:TextBox ID="TextBox3" CssClass="form-control" runat="server" placeholder="请输入手机号" Width="200px"></asp:TextBox>
                                         </div>
                                         <div class="clears"></div>
                                     </dl>
                                     <dl>
                                         <div class="input-group" style="margin-top: 16px">
                                             <asp:Label ID="Label1" runat="server" CssClass="input-group-addon" Text="新密码："></asp:Label>
-                                            <asp:TextBox ID="TextBox1" CssClass="form-control" runat="server" placeholder="请输入邮箱" Width="200px"></asp:TextBox>
+                                            <asp:TextBox ID="TextBox1" CssClass="form-control" runat="server" placeholder="请设置密码" Width="200px"></asp:TextBox>
                                         </div>
                                         <div class="clears"></div>
                                     </dl>
                                      <dl>
                                         <div class="input-group" style="margin-top: 16px">
                                             <asp:Label ID="Label2" runat="server" CssClass="input-group-addon" Text="确认密码："></asp:Label>
-                                            <asp:TextBox ID="TextBox2" CssClass="form-control" runat="server" placeholder="请输入邮箱" Width="200px"></asp:TextBox>
+                                            <asp:TextBox ID="TextBox2" CssClass="form-control" runat="server" placeholder="请确认密码" Width="200px"></asp:TextBox>
                                         </div>
                                         <div class="clears"></div>
                                     </dl>

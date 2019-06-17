@@ -11,14 +11,7 @@ namespace TourWebApp.server.mode
 {
     public class CityInfo:ORMSupport
     {
-        //城市ID
-        private string _CityID;
-        [Colmun(Type = "varchar(32)")]
-        public string CityID
-        {
-            get { return _CityID; }
-            set { _CityID = value; }
-        }
+        
 
         //城市名称
         private string _CityName;

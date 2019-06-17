@@ -36,7 +36,7 @@ img{ max-width:100%; height:auto;}
 .fr{float:right;}
 
 
-/*��������  ��Ҫ��ʽ*/
+/*ForgetPassWrod*/
 .clears{ clear:both;}
 .for-liucheng{width:400px;margin:30px 0; height:50px;padding:20px 0 0 0; position:relative;}
 .liulist{float:left;width:50%; height:7px; background:#ccc;}
@@ -58,3 +58,11 @@ img{ max-width:100%; height:auto;}
 .forget-pwd .yanzma{ position:absolute;left:200px;top:2px; height:30px; line-height:30px;width:180px;}
 .subtijiao{padding:0 0 0 110px;}
 .subtijiao input{width:85px; height:32px; background:#f60;color:#fff; font-size:14px; cursor:pointer;}
+.input-group #t1{border:1px solid #ccc; border-radius:4px; padding-left:12px;}
+
+/*UserManager*/
+.modal-body{width:80%; margin:0 auto;}
+.modal-body ul li{margin-top:20px;}
+.modal-body ul li .input-group-addon{width:70px; float:left;display:block;}
+.modal-body ul li input{width:60%; border:1px solid #ddd; height:28px;padding-left:12px; color:#ddd; border-radius:2px;}
+.modal-body ul li #Input_Sex{}
