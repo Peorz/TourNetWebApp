@@ -8,6 +8,8 @@ using TourWebApp.server.config;
 using TourWebApp.server.extend;
 using TourWebApp.server.mode;
 using Qiniu.Storage;
+using NetDB.Core.Support;
+using TourWebApp.server.utils;
 
 namespace TourWebApp.server.controller
 {
@@ -23,7 +25,9 @@ namespace TourWebApp.server.controller
 
         public override string GetProcessRequest(HttpContext context, HttpRequest request, HttpResponse response)
         {
-            throw new NotImplementedException();
+            PageList<mode.FileInfo> pageList = ORMSupport.PageSelect<mode.FileInfo>()
+                .Select();
+            return Result.Ok("", pageList.Total, pageList.Rows);
         }
 
         public override string PostProcessRequest(HttpContext context, HttpRequest request, HttpResponse response)

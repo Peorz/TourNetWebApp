@@ -23,11 +23,6 @@ namespace TourWebApp.server.controller
 
         public override string GetProcessRequest(HttpContext context, HttpRequest request, HttpResponse response)
         {
-            throw new NotImplementedException();
-        }
-
-        public override string PostProcessRequest(HttpContext context, HttpRequest request, HttpResponse response)
-        {
             String order = request.Params["order"];
             PageList<UserInfo> userList = ORMSupport.PageSelect<UserInfo>()
                 .Select();
@@ -37,6 +32,11 @@ namespace TourWebApp.server.controller
                 info.LoginToken = null;
             }
             return Result.Ok("", userList.Total, userList.Rows);
+        }
+
+        public override string PostProcessRequest(HttpContext context, HttpRequest request, HttpResponse response)
+        {
+            return "";
         }
 
         public override string PutProcessRequest(HttpContext context, HttpRequest request, HttpResponse response)
