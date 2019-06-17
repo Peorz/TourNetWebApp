@@ -22,7 +22,7 @@
                 <br />
                 <asp:TextBox ID="TextBox1" runat="server" Height="100px" ViewStateMode="Enabled" Width="100%" TextMode="MultiLine"></asp:TextBox>
                 <br />
-                <asp:Button ID="Button1" CssClass="btn-success" runat="server" Text="发送" Height="28px" Width="95px" />
+                <asp:Button ID="Button1" CssClass="btn-success" runat="server" Text="发送" Height="28px" Width="100%" />
             </div>
         </div>     
 

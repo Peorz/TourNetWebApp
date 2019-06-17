@@ -4,7 +4,11 @@
 }
 
 h3{
-    
+    text-align: center;
+}
+
+#TextBox1{
+    border: solid 1px #9d9d9d;
 }
 
 body {
@@ -13,7 +17,8 @@ body {
     background-attachment: fixed;
 }
 .guestbook_nav {
-    background-image: url('../../img/guestbook_banner.jpg');
+    /*background-image: url('../../img/guestbook_banner.jpg');*/
+    background-color:rgb(255, 255, 255);
     position: fixed;
     top: 0px;
     left: 25%;
@@ -21,10 +26,13 @@ body {
     width: 50%;
     z-index: 10;
     padding-bottom: 10px;
+    border-bottom:solid 1px #aada90;
+    border-left:solid 1px #aada90;
+    border-right:solid 1px #aada90;
 }
 .guestbook_input {
     width: 60%;
-    margin-left:5%;
+    margin:auto;
 }
 .container-fluid {
     
@@ -56,7 +64,7 @@ body {
 .guestbook_news {
     clear: none;
     padding-left: 120px;
-    border-bottom: solid 2px #DDDDDD;
+    border-bottom: solid 1px #b3b1b1;
 }
 .guestbook_news h4{   
     height:35px;
