@@ -20,38 +20,54 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="alert alert-success" role="alert">资源管理</div>
-                <table id="table"></table>
+        <div>
+            <div class="alert alert-success" role="alert">人员管理</div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="card" style="margin-bottom: 0">
+                        <div class="btn-group" role="group" aria-label="...">
+                            <button type="button" class="btn btn-primary">新增</button>
+                            <button type="button" class="btn btn-success">修改</button>
+                            <button type="button" class="btn btn-warning">设置</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="card">
+                        <table id="table"></table>
+                    </div>
+                </div>
             </div>
         </div>
     </form>
     <script type="text/javascript">
-        $(document).ready(function () {
-            $('#table').bootstrapTable({
-                url: 'data1.json',
-                columns: [{
-                    field: 'id',
-                    title: 'Item ID'
-                }, {
-                    field: 'name',
-                    title: 'Item Name'
-                }, {
-                    field: 'price',
-                    title: 'Item Price'
-                }],
-                data: [{
-                    id: 1,
-                    name: 'Item 1',
-                    price: '$1'
-                }, {
-                    id: 2,
-                    name: 'Item 2',
-                    price: '$2'
-                }]
-            })
-        });
+        $('#table').bootstrapTable({
+            method: "post",
+            url: '../../server/controller/UserManager.ashx',
+            contentType: "application/x-www-form-urlencoded",
+            striped: true,                         //是否显示行间隔色
+            cache: false,
+            sidePagination: "server",
+            pagination: true,
+            columns: [
+                {
+                    field: 'Nick',
+                    title: '昵称'
+                },
+                {
+                    field: 'Email',
+                    title: '邮件'
+                },
+                {
+                    field: 'Sex',
+                    title: '性别'
+                },
+                {
+                    field: 'CreateTime',
+                    title: '注册时间'
+                }
+            ]
+        })
     </script>
 </body>
 </html>
