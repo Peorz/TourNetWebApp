@@ -65,7 +65,9 @@ body {
         margin-left: -10px;
         top:550px;      
     }
-
+    .left #username {
+        padding-left:10px;
+    }
 .left_img {
     width: 90px;
     height: 110px;

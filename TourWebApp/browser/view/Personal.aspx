@@ -7,7 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
     <link href="../static/css/personal/personal.css" rel="stylesheet" />
-    
+
     <link href="../static/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../static/css/bootstrap-theme.min.css" rel="stylesheet" />
     <link href="../static/css/index/customize.css" rel="stylesheet" />
@@ -21,9 +21,8 @@
             <div class="bt"></div>
             <%-- 左侧--%>
             <div class="left">
-               
+
                 <div class="bg_bom">
-                  
                 </div>
                 <div class="left_img">
 
@@ -35,7 +34,7 @@
                 <br />
                 <br />
                 <br />
-                  <br />
+                <br />
                 <br />
                 <ul>
                     <li>
@@ -71,7 +70,7 @@
                             <div class="col-md-offset-3 col-md-6">
                                 <b>
                                     <asp:Label ID="Label3" runat="server" Text="用 户 名："></asp:Label>&nbsp;&nbsp;&nbsp; </b>
-                                <asp:TextBox ID="TextBox1" runat="server" placeholder="战三" Height="30px" Width="240px"></asp:TextBox>
+                                <asp:TextBox ID="TextBox1" runat="server" placeholder="张三" Height="30px" Width="240px"></asp:TextBox>
                             </div>
                         </div>
                         <div class="hei">
@@ -85,10 +84,10 @@
                             <div class="col-md-offset-3 col-md-6">
                                 <b>
                                     <asp:Label ID="Label6" runat="server" Text="性 &nbsp &nbsp &nbsp别："></asp:Label>&nbsp;&nbsp;&nbsp; </b>
-                                <asp:RadioButton ID="RadioButton3" runat="server" Text=" 保密" />
+                                <asp:RadioButton ID="RadioButton3" runat="server" Text=" 保密" GroupName="sex" />
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <asp:RadioButton ID="RadioButton1" runat="server" Text=" 男" />
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:RadioButton ID="RadioButton2" runat="server" Text=" 女" />
+                                <asp:RadioButton ID="RadioButton1" runat="server" Text=" 男" GroupName="sex" />
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:RadioButton ID="RadioButton2" runat="server" Text=" 女" GroupName="sex" />
                             </div>
                         </div>
                         <div class="hei">
@@ -100,7 +99,7 @@
                         </div>
                         <div class="hei">
                             <div class="btn-group col-md-offset-3 col-md-6" role="group" aria-label="...">
-                                <asp:Button ID="Button1" class="btn btn-primary" runat="server" Style="width: 100px; margin-left: 70px;" Text="保存" />
+                                <asp:Button ID="Button1" class="btn btn-primary" runat="server" Style="width: 100px; margin-left: 70px;" Text="保存" OnClick="update_click" />
                             </div>
                         </div>
                     </div>
@@ -160,7 +159,6 @@
                 </div>
             </div>
         </div>
-
     </form>
     <script>
         function opens(obj) {

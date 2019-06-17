@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Guestbook.aspx.cs" Inherits="TourWebApp.browser.view.Guestbook" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Discuss.aspx.cs" Inherits="TourWebApp.browser.view.Guestbook" %>
 
 <!DOCTYPE html>
 
@@ -9,7 +9,7 @@
     <link href="../static/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../static/css/card-view.css" rel="stylesheet" />
     <link href="../static/css/css/bootstrap-theme.min.css" rel="stylesheet" />
-    <link href="../static/css/guestbook/guestbook.css" rel="stylesheet" />
+    <link href="../static/css/discuss/discuss.css" rel="stylesheet" />
     <script src="../static/js/jquery.min.js"></script>
     <script src="../static/js/bootstrap.min.js"></script>
 </head>
@@ -31,8 +31,8 @@
                         <div class="user_info">
                             <img src="../static/img/bg_area_3.jpg" />
                             <div class="user_name">远方旅人<i>发表于2019-6-14 15:00</i></div>
-                            <span class="glyphicon glyphicon-thumbs-up">123人点赞</span>
-                            <h4>最后回复时间：2019-6-14 15:00</h4>
+                            <a href="#"><span class="glyphicon glyphicon-thumbs-up">123人点赞</span></a>
+                            
                         </div>
                     </div>
                     <div class="message_text">
@@ -62,8 +62,8 @@
                         <div class="user_info">
                             <img src="../static/img/bg_area_3.jpg" />
                             <div class="user_name">远方旅人<i>发表于2019-6-14 15:00</i></div>
-                            <span class="glyphicon glyphicon-thumbs-up">123人点赞</span>
-                            <h4>最后回复时间：2019-6-14 15:00</h4>
+                            <a href="#"><span class="glyphicon glyphicon-thumbs-up">123人点赞</span></a>
+                            
                         </div>
                     </div>
                     <div class="message_text">
@@ -93,8 +93,8 @@
                         <div class="user_info">
                             <img src="../static/img/bg_area_3.jpg" />
                             <div class="user_name">远方旅人<i>发表于2019-6-14 15:00</i></div>
-                            <span class="glyphicon glyphicon-thumbs-up">123人点赞</span>
-                            <h4>最后回复时间：2019-6-14 15:00</h4>
+                            <a href="#"><span class="glyphicon glyphicon-thumbs-up">123人点赞</span></a>
+                            
                         </div>
                     </div>
                     <div class="message_text">
@@ -124,8 +124,8 @@
                         <div class="user_info">
                             <img src="../static/img/bg_area_3.jpg" />
                             <div class="user_name">远方旅人<i>发表于2019-6-14 15:00</i></div>
-                            <span class="glyphicon glyphicon-thumbs-up">123人点赞</span>
-                            <h4>最后回复时间：2019-6-14 15:00</h4>
+                            <a href="#"><span class="glyphicon glyphicon-thumbs-up">123人点赞</span></a>
+                            
                         </div>
                     </div>
                     <div class="message_text">
@@ -155,8 +155,8 @@
                         <div class="user_info">
                             <img src="../static/img/bg_area_3.jpg" />
                             <div class="user_name">远方旅人<i>发表于2019-6-14 15:00</i></div>
-                            <span class="glyphicon glyphicon-thumbs-up">123人点赞</span>
-                            <h4>最后回复时间：2019-6-14 15:00</h4>
+                            <a href="#"><span class="glyphicon glyphicon-thumbs-up">123人点赞</span></a>
+                            
                         </div>
                     </div>
                     <div class="message_text">
@@ -187,8 +187,8 @@
     <div class="container">
         <form runat="server">
 
-            <div class="user_img col-md-2">
-                <img src="../static/img/guestbook_img.png" style="width:100px;height:100px;border-radius:50%;" />
+            <div class="user_img col-md-1">
+                <img src="../static/img/guestbook_img.png"/>
             </div>
             <div class="inputbox col-md-10">
                 <div class="input-group" style="margin-top: 16px">
@@ -196,10 +196,13 @@
                     <asp:TextBox ID="messtitle" CssClass="form-control" runat="server" placeholder="请输入标题"></asp:TextBox>
                 </div>
                 <div class="input-group" style="margin-top: 16px">
-                    <asp:TextBox ID="messcontent" CssClass="form-control" Rows="8" Columns="150" runat="server" TextMode="MultiLine" placeholder="请输入内容"></asp:TextBox></div>
-                
+                    <asp:TextBox ID="messcontent" CssClass="form-control" Rows="8" Columns="150" runat="server" TextMode="MultiLine" placeholder="请输入内容"></asp:TextBox>
+                </div>
+                <div class="message_btn">
+                    <asp:Button ID="subMessage" CssClass="btn btn-success" runat="server" Text="提交" />
+                </div>
             </div>
-            <asp:Button ID="Button1" CssClass="btn btn-success" runat="server" Text="提交" />
+
 
 
         </form>
