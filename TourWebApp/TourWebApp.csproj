@@ -245,6 +245,7 @@
     </Compile>
     <Compile Include="server\extend\TourInterceptor.cs" />
     <Compile Include="server\mode\DevTest.cs" />
+    <Compile Include="server\mode\FileInfo.cs" />
     <Compile Include="server\mode\LoginToken.cs" />
     <Compile Include="server\mode\UserInfo.cs" />
     <Compile Include="server\utils\Md5Utils.cs" />
