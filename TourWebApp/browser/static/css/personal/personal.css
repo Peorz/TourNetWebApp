@@ -68,6 +68,9 @@ body {
     .left #username {
         padding-left:10px;
     }
+    .left #Label5 {
+        padding-left:10px;
+    }
 .left_img {
     width: 90px;
     height: 110px;
@@ -135,11 +138,11 @@ body {
         font-family: '楷体';
         padding: 3px;
         color: #000;
-        padding-left:220px;
+        padding-left:350px;
         background:url(/browser/static/img/personal_ti.jpg);
     }
     .content li {
-        padding-left:10px;
+        padding-left:20px;
     }
 
         .content ul a {
