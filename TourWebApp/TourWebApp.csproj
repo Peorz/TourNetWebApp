@@ -253,6 +253,9 @@
     <Compile Include="server\controller\FileManager.ashx.cs">
       <DependentUpon>FileManager.ashx</DependentUpon>
     </Compile>
+    <Compile Include="server\controller\MsgBoard.ashx.cs">
+      <DependentUpon>MsgBoard.ashx</DependentUpon>
+    </Compile>
     <Compile Include="server\controller\UserManager.ashx.cs">
       <DependentUpon>UserManager.ashx</DependentUpon>
     </Compile>
@@ -268,6 +271,7 @@
     <Compile Include="server\mode\ForumRecord.cs" />
     <Compile Include="server\mode\ForumTopic.cs" />
     <Compile Include="server\mode\LoginToken.cs" />
+    <Compile Include="server\mode\MsgBoard.cs" />
     <Compile Include="server\mode\ScenicInfo.cs" />
     <Compile Include="server\mode\UserInfo.cs" />
     <Compile Include="server\utils\Md5Utils.cs" />
@@ -284,6 +288,7 @@
     <Content Include="server\controller\Test.ashx" />
     <Content Include="server\controller\FileManager.ashx" />
     <Content Include="server\controller\UserManager.ashx" />
+    <Content Include="server\controller\MsgBoard.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
