@@ -11,14 +11,7 @@ namespace TourWebApp.server.mode
 {
     public class FoodInfo:ORMSupport
     {
-        //美食ID
-        private string _FoodID;
-        [Colmun(Type = "varchar(32)")]
-        public string FoodID
-        {
-            get { return _FoodID; }
-            set { _FoodID = value; }
-        }
+        
         //城市ID
         private string _CityID;
         [Colmun(Type = "varchar(32)")]
