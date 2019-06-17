@@ -25,25 +25,24 @@
                                     <div class="liulist for-cur"></div>
                                     <div class="liulist"></div>
                                     <div class="liutextbox">
-                                        <div class="liutext for-cur"><em>1</em><br />
-                                            <strong>填写账户名</strong></div>
-                                        <div class="liutext"><em>3</em><br />
-                                            <strong>设置新密码</strong></div>
+                                        <div class="liutext for-cur"><em>1</em><br /><strong>填写账户名</strong></div>
+                                        <div class="liutext"><em>2</em><br /><strong>设置新密码</strong></div>
                                     </div>
                                 </div>
                                 <!--for-liucheng/-->
                                 <form action="forgetPwd3.html" method="get" class="forget-pwd">
                                     <dl>
                                         <div class="input-group" style="margin-top: 16px">
-                                            <asp:Label ID="Label4" runat="server" CssClass="input-group-addon" Text="邮&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp箱："></asp:Label>
+                                            <asp:Label ID="Label4" runat="server" CssClass="input-group-addon" Text="邮&nbsp&nbsp&nbsp箱："></asp:Label>
                                             <asp:TextBox ID="TextBox3" CssClass="form-control" runat="server" placeholder="请输入邮箱" Width="200px"></asp:TextBox>
                                         </div>
                                         <div class="clears"></div>
                                     </dl>
                                     <dl>
                                         <div class="input-group" style="margin-top: 16px">
-                                            <asp:Label ID="Label1" runat="server" CssClass="input-group-addon" Text="验证码：" Width="100px" Height="30px"></asp:Label>
-                                            <input id="t1" type="text" name="u" placeholder="验证码" style="height: 30px;" />
+                                            <asp:Label ID="Label1" runat="server" CssClass="input-group-addon" Text="验证码："></asp:Label>
+                                            <%--<input id="t1" type="text" name="u" placeholder="验证码" style="height: 35px; border:1px solid #d7d3d3;"/>--%>
+                                            <asp:TextBox ID="t1"  runat="server" placeholder="请输入验证码" Width="200px" height="35px"></asp:TextBox>
                                             <span id="discode"></span>
                                             <input type="button" value="换一换" class="c" style="height: 25px;" onclick="createCode()" />
                                             <span style="color: red; font-weight: bold;" id="messBox"></span>
@@ -79,8 +78,6 @@
                             <button id="next_btn" type="button" class="btn btn-success" style="width: 100%">下一步</button>
                         </div>
                     </div>
-
-                    <%--下面复制的，待改--%>
 
 
                     <%--  跳转界面--%>
