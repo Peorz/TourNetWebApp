@@ -68,6 +68,14 @@
                     {
                         field: 'FileHash',
                         title: 'FileHash'
+                    },
+                    {
+                        field: "FileKey",
+                        title: "操作",
+                        formatter: function (value, row, index) {
+                            var host = "http://psxrtdro4.bkt.clouddn.com/";
+                            return host + value;
+                        }
                     }
                 ]
             })
