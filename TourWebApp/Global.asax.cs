@@ -21,6 +21,7 @@ namespace TourWebApp.server.config
              */
             new UserInfo().CreateTable();
             new LoginToken().CreateTable();
+            new FileInfo().CreateTable();
             /**
              * 配置日志开关
              */
