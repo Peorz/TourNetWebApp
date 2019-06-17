@@ -37,11 +37,14 @@
                 <br />
                 <br />
                 <ul>
-                    <li>
-                        <asp:Label ID="username" CssClass="glyphicon glyphicon-user" runat="server" Text="   我是小花"></asp:Label></li>
 
                     <li>
-                        <asp:Label ID="Label5" CssClass="glyphicon glyphicon-leaf" runat="server" Text=" 已经该网站入驻5年"></asp:Label></li>
+                        <asp:Label ID="Label8" CssClass="glyphicon glyphicon-user" runat="server"></asp:Label>
+                        <asp:Label ID="username" runat="server" Text="名字"></asp:Label></li>
+
+                    <li>
+                        <asp:Label ID="Label9" CssClass="glyphicon glyphicon-leaf" runat="server"></asp:Label>
+                        <asp:Label ID="Label5" runat="server" Text=" 已经该网站入驻5年"></asp:Label></li>
                 </ul>
             </div>
 
@@ -50,8 +53,8 @@
 
                 <ul class="nav nav-pills">
                     <li onclick="opens(1)" role="presentation "><a href="#">基本信息</a></li>
-                    <li onclick="opens(2)" role="presentation"><a href="#">修改密码</a></li>
-                    <li onclick="opens(3)" role="presentation"><a href="#">关于我们</a></li>
+                    <%--<li onclick="opens(2)" role="presentation"><a href="#">修改密码</a></li>--%>
+                    <li onclick="opens(2)" role="presentation"><a href="#">关于我们</a></li>
                 </ul>
                 <%-- 基本信息--%>
                 <div id="con1">
@@ -84,8 +87,6 @@
                             <div class="col-md-offset-3 col-md-6">
                                 <b>
                                     <asp:Label ID="Label6" runat="server" Text="性 &nbsp &nbsp &nbsp别："></asp:Label>&nbsp;&nbsp;&nbsp; </b>
-                                <asp:RadioButton ID="RadioButton3" runat="server" Text=" 保密" GroupName="sex" />
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <asp:RadioButton ID="RadioButton1" runat="server" Text=" 男" GroupName="sex" />
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:RadioButton ID="RadioButton2" runat="server" Text=" 女" GroupName="sex" />
                             </div>
@@ -100,12 +101,14 @@
                         <div class="hei">
                             <div class="btn-group col-md-offset-3 col-md-6" role="group" aria-label="...">
                                 <asp:Button ID="Button1" class="btn btn-primary" runat="server" Style="width: 100px; margin-left: 70px;" Text="保存" OnClick="update_click" />
+                                 <asp:Label ID="Label10" runat="server"></asp:Label>
                             </div>
+                           
                         </div>
                     </div>
                 </div>
-                <%-- 修改密码--%>
-                <div id="con2" style="display: none;">
+                <%--<%-- 修改密码--%>
+               <%-- <div id="con2" style="display: none;">
                     <div class="login-box">
                         <div class="hei">
                             <div class="col-md-offset-3 col-md-6">
@@ -115,7 +118,7 @@
                         <div class="hei">
                             <div class="col-md-offset-3 col-md-6">
                                 <b>
-                                    <asp:Label ID="Labem" runat="server" Text="原始密码："></asp:Label>&nbsp;&nbsp;&nbsp;</b><asp:TextBox ID="Tebem" runat="server" placeholder="123456789@qq.com" Height="30px"></asp:TextBox>
+                                    <asp:Label ID="Labem" runat="server" Text="原始密码："></asp:Label>&nbsp;&nbsp;&nbsp;</b><asp:TextBox ID="Tebem" runat="server" placeholder="原始密码" Height="30px"></asp:TextBox>
                             </div>
                         </div>
                         <div class="hei">
@@ -138,9 +141,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>--%>
                 <%--关于我们--%>
-                <div id="con3" style="display: none;">
+                <div id="con2" style="display: none;">
                     <h3 style="text-align: center;">关于我们</h3>
                     <p style="margin-left: 110px; margin-right: 110px;">
                         <span style="font-size: 25px; padding: 12px;">南</span>宁师范大学（Nanning Normal University），简称“南宁师大”，坐落于广西壮族自治区首府南宁市，
@@ -153,9 +156,6 @@
                         设有22个教学学院，6个教辅单位，有普通本科专业66个；有专任教师1018人，
                         全日制普通本科生16690人，硕士研究生1466人，专科生422人。
                     </p>
-
-
-
                 </div>
             </div>
         </div>

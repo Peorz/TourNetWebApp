@@ -29,7 +29,7 @@ namespace TourWebApp.server.mode
 
         private DateTime _PostTime;
 
-        [Colmun(Type = "datatime")]
+        [Colmun(Type = "datetime")]
         public DateTime PostTime
         {
             get { return _PostTime; }

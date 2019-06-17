@@ -144,5 +144,20 @@
 
         </div>
     </form>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.ajax({
+                type: "GET",
+                url: "../../server/controller/MsgBoard.ashx",
+                contentType: "application/x-www-form-urlencoded; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    console.log(data);
+                },
+                error: function (err) {
+                }
+            });
+        });
+    </script>
 </body>
 </html>
