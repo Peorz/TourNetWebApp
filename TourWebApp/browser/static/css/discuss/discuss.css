@@ -64,11 +64,8 @@
         color:#808080;
     }
 
-.user_info h4
-{
-    float: right;
-    padding-top: 8px;
-    margin-right: 20px;
+.user_info span:hover{
+    color:green;
 }
 
 .message_text
@@ -113,14 +110,17 @@
 }
 .user_img
 {
-    padding-top:50px;
+    padding-top:70px;
     
 }
 .user_img img
 {
-   width:100px;
-   height:100px;
-   padding-left:20px;
+   width:80px;
+   height:80px;
+   border-radius:50%;
 }
-
+.message_btn{
+    float:right;
+    margin-top:20px;
+}
     
