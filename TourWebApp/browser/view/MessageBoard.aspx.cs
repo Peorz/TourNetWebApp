@@ -14,4 +14,36 @@ namespace TourWebApp.browser.view
 
         }
     }
+
+    public class MBUser
+    {
+        private int _ID;
+
+        public int ID
+        {
+            get { return _ID; }
+            set { _ID = value; }
+        }
+        private string _UserName;
+
+        public string UserName
+        {
+            get { return _UserName; }
+            set { _UserName = value; }
+        }
+        private string _Content;
+
+        public string Content
+        {
+            get { return _Content; }
+            set { _Content = value; }
+        }
+        private DateTime _postime;
+
+        public DateTime Postime
+        {
+            get { return _postime; }
+            set { _postime = value; }
+        }
+    }
 }
