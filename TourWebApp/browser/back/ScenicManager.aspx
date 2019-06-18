@@ -49,15 +49,47 @@
                         <span class="input-group-addon" id="scenic_content">景区介绍</span>
                         <input type="text" class="form-control" placeholder="请输入景区介绍" aria-describedby="scenic_content"/>
                     </div>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="scenic_address">景区地址</span>
+                        <input type="text" class="form-control" placeholder="请输入景区地址" aria-describedby="scenic_address"/>
+                    </div>
+                    <div class="input-group picList">
+                        <span class="input-group-addon" id="scenic_pic">景区图片</span>                                                                     
+                        <input type="file" id="upload_pic" aria-describedby="scenic_pic" />
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                    <button type="button" class="btn btn-primary">添加</button>
+                    <button type="button" id="subScenicInfo" class="btn btn-primary" data-dismiss="modal">添加</button>
+                    
+                    
                 </div>
             </div>
             <!-- /.modal-content -->
         </div>
         <!-- /.modal -->
     </div>
+
+    <script>
+        $("#upload_pic").bind('change', addfile);
+        function addfile() {
+            var imgUrl = $("#upload_pic").val();
+            var extStart = imgUrl.lastIndexOf(".");
+            var ext = imgUrl.substring(extStart, imgUrl.length).toUpperCase();
+
+            if (ext != ".BMP" && ext != ".PNG" && ext != ".GIF" && ext != ".JPG" && ext != ".JPEG") {
+                alert("图片限于bmp,png,gif,jpeg,jpg格式");
+                return false;
+            }
+            showimg(imgUrl);
+        }
+           
+       
+        function showimg(url) {
+            var img = '<img src="' + url + '"/>';
+            $(".picList").append(img);
+        }
+
+    </script>
 </body>
 </html>

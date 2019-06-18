@@ -13,5 +13,10 @@ namespace TourWebApp.browser.back
         {
 
         }
+
+        protected void subScenicInfo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
