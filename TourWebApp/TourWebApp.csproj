@@ -1,10 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion></ProductVersion>
+    <ProductVersion>
+    </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{78E8216A-0A73-4F6C-8839-1A6766479ACF}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
@@ -75,7 +76,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="browser\back\FileManager.aspx" />
-    <Content Include="browser\back\FileUp.aspx" />
     <Content Include="browser\back\Index.aspx" />
     <Content Include="browser\back\ScenicManager.aspx" />
     <Content Include="browser\back\UserManager.aspx" />
@@ -143,13 +143,6 @@
     </Compile>
     <Compile Include="browser\back\FileManager.aspx.designer.cs">
       <DependentUpon>FileManager.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="browser\back\FileUp.aspx.cs">
-      <DependentUpon>FileUp.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="browser\back\FileUp.aspx.designer.cs">
-      <DependentUpon>FileUp.aspx</DependentUpon>
     </Compile>
     <Compile Include="browser\back\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
@@ -339,7 +332,8 @@
           <IISUrl>http://localhost:51606/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl></CustomServerUrl>
+          <CustomServerUrl>
+          </CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>

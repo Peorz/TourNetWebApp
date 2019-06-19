@@ -17,6 +17,7 @@
     <script src="../static/js/jquery.metisMenu.js"></script>
     <script src="../static/backjs/bootstrap-table.min.js"></script>
     <script src="../static/backjs/bootstrap-table-zh-CN.min.js"></script>
+    <script src="../static/js/qiniu.min.js"></script>
 </head>
 <body>
     <div id="modal_div" class="modal fade" tabindex="-1" role="dialog">
@@ -79,6 +80,18 @@
                     }
                 ]
             })
+        });
+        $.ajax({
+            type: "Get",
+            url: "../../server/controller/FileUp.ashx",
+            contentType: "application/x-www-form-urlencoded; charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+                var qiniu = require('qiniu-js')
+                console.log(qiniu);
+            },
+            error: function (err) {
+            }
         });
     </script>
 </body>

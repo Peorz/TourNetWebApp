@@ -16,16 +16,19 @@ namespace TourWebApp.server.controller
     /// <summary>
     /// ScenicManager 的摘要说明
     /// </summary>
-    public class ScenicManager : IHttpHandler
+    public class ScenicManager : ResultFullAPIHttpHandler
     {
-
-        public void ProcessRequest(HttpContext context)
+        public override string GetProcessRequest(HttpContext context, HttpRequest request, HttpResponse response)
         {
-            
-            
+            String order = request.Params["order"];
+            PageList<ScenicInfo> scenicList = ORMSupport.PageSelect<ScenicInfo>()
+                .Select();
+
+            return Result.Ok("", scenicList.Total, scenicList.Rows);
         }
-        public string PostProcessRequest(HttpContext context, HttpRequest request, HttpResponse response)
-        {          
+
+        public override string PostProcessRequest(HttpContext context, HttpRequest request, HttpResponse response)
+        {
             ScenicInfo scenic = new ScenicInfo();
             scenic.ScenicName = HttpContext.Current.Request["Name"];
             scenic.ScenicTitle = HttpContext.Current.Request["Title"];
@@ -35,22 +38,17 @@ namespace TourWebApp.server.controller
             scenic.ScenicBrowse = 0;
             scenic.ScenicUploadTime = DateTime.Now;
             scenic.Save();
-            return "";
+            return Result.Ok("","");
         }
-        public string GetProcessRequest(HttpContext context, HttpRequest request, HttpResponse response)
+
+        public override string PutProcessRequest(HttpContext context, HttpRequest request, HttpResponse response)
         {
-            String order = request.Params["order"];
-            PageList<ScenicInfo> scenicList = ORMSupport.PageSelect<ScenicInfo>()
-                .Select();
-            
-            return Result.Ok("", scenicList.Total, scenicList.Rows);
+            throw new NotImplementedException();
         }
-        public bool IsReusable
+
+        public override string DeleteProcessRequest(HttpContext context, HttpRequest request, HttpResponse response)
         {
-            get
-            {
-                return false;
-            }
+            throw new NotImplementedException();
         }
     }
 }

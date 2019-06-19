@@ -94,15 +94,18 @@
             $.ajax({
                 type: "post",                  //提交方式
                 url: "../../server/controller/ScenicManager.ashx",  //提交路径
+                dataType: "json",
                 data: {
                     Name: $("#scenic_name").val(),
                     Title: $("#scenic_title").val(),
                     Content: $("#scenic_content").val(),
                     Address: $("#scenic_address").val(),
                 },//参数
-                success: function (result, status)//成功函数
+                success: function (result)//成功函数
                 {
-                    alert("数据库保存成功！");
+                    if (result.code == 0) {
+                        $("#table").bootstrapTable('refresh');
+                    }
                    
                 },
                 error: function () { alert("添加失败，程序异常！"); return; }
