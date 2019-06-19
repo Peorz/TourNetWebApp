@@ -76,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="browser\back\FileManager.aspx" />
+    <Content Include="browser\back\FileUp.aspx" />
     <Content Include="browser\back\Index.aspx" />
     <Content Include="browser\back\ScenicManager.aspx" />
     <Content Include="browser\back\UserManager.aspx" />
@@ -112,6 +113,7 @@
     <Content Include="browser\static\js\jquery.metisMenu.js" />
     <Content Include="browser\static\js\jquery.min.js" />
     <Content Include="browser\static\js\npm.js" />
+    <Content Include="browser\static\js\qiniu.min.js" />
     <Content Include="browser\view\About.aspx" />
     <Content Include="browser\view\ForgetPassWord1.aspx" />
     <Content Include="browser\view\ForgetPassWrod.aspx" />
@@ -140,6 +142,13 @@
     </Compile>
     <Compile Include="browser\back\FileManager.aspx.designer.cs">
       <DependentUpon>FileManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="browser\back\FileUp.aspx.cs">
+      <DependentUpon>FileUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="browser\back\FileUp.aspx.designer.cs">
+      <DependentUpon>FileUp.aspx</DependentUpon>
     </Compile>
     <Compile Include="browser\back\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
@@ -261,6 +270,9 @@
     <Compile Include="server\controller\FileManager.ashx.cs">
       <DependentUpon>FileManager.ashx</DependentUpon>
     </Compile>
+    <Compile Include="server\controller\FIleUp.ashx.cs">
+      <DependentUpon>FIleUp.ashx</DependentUpon>
+    </Compile>
     <Compile Include="server\controller\MsgBoard.ashx.cs">
       <DependentUpon>MsgBoard.ashx</DependentUpon>
     </Compile>
@@ -296,6 +308,7 @@
     <Content Include="server\controller\FileManager.ashx" />
     <Content Include="server\controller\UserManager.ashx" />
     <Content Include="server\controller\MsgBoard.ashx" />
+    <Content Include="server\controller\FIleUp.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

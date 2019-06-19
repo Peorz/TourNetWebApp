@@ -31,7 +31,6 @@ namespace TourWebApp
             PageList<ScenicInfo> list = ORMSupport.PageSelect<ScenicInfo>()
                 .AddWhere("ScenicContent", "like", SearchText.Text)
                 .Select();
-
         }
     }
 }
