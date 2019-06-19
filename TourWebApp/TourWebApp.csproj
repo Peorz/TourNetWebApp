@@ -131,7 +131,9 @@
     <Content Include="extra\tour_database.sql" />
     <Content Include="Global.asax" />
     <Content Include="Index.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="browser\back\FileManager.aspx.cs">
@@ -264,6 +266,9 @@
     <Compile Include="server\controller\MsgBoard.ashx.cs">
       <DependentUpon>MsgBoard.ashx</DependentUpon>
     </Compile>
+    <Compile Include="server\controller\ScenicManager.ashx.cs">
+      <DependentUpon>ScenicManager.ashx</DependentUpon>
+    </Compile>
     <Compile Include="server\controller\UserManager.ashx.cs">
       <DependentUpon>UserManager.ashx</DependentUpon>
     </Compile>
@@ -296,6 +301,7 @@
     <Content Include="server\controller\FileManager.ashx" />
     <Content Include="server\controller\UserManager.ashx" />
     <Content Include="server\controller\MsgBoard.ashx" />
+    <Content Include="server\controller\ScenicManager.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

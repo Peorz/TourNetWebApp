@@ -22,10 +22,9 @@
             </ol>
         </div>
         <div class="container">
-            <div class="tourinfo_title col-md-5">
-                <h1>北海</h1>
-                <span>BeiHai</span>
-
+            <div class="tourinfo_title col-md-5">             
+                <asp:Label ID="scenic_name" CssClass="scenic_name" runat="server" Text="北海"></asp:Label>
+                <asp:Label ID="scenic_py" CssClass="scenic_py" runat="server" Text="BeiHai"></asp:Label>
             </div>
             <div class="tourinfo_icon col-lg-5 col-md-offset-2">
                 <ul>
