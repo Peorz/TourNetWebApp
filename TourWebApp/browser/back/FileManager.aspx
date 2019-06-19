@@ -36,7 +36,6 @@
                     <div class="card" style="margin-bottom: 0">
                         <div class="btn-group" role="group" aria-label="...">
                             <a data-toggle="modal" class="btn btn-primary" href="FileManager.aspx" data-target="#modal_div">Click me</a>
-                            <button type="button" class="btn btn-primary">新增</button>
                             <button type="button" class="btn btn-success">修改</button>
                             <button type="button" class="btn btn-warning">设置</button>
                         </div>
