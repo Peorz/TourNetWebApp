@@ -38,31 +38,31 @@
                 </div>
                 <div class="modal-body">
                     <div class="input-group">
-                        <span class="input-group-addon" id="scenic_name">景区名称</span>
-                        <input type="text" class="form-control" placeholder="请输入景区名称" aria-describedby="scenic_name"/>
+                        <span class="input-group-addon" id="scenic_name_span">景区名称</span>
+                        <input type="text" class="form-control" id="scenic_name" placeholder="请输入景区名称" aria-describedby="scenic_name_span" />
                     </div>
                     <div class="input-group">
-                        <span class="input-group-addon" id="scenic_title">景区标题</span>
-                        <input type="text" class="form-control" placeholder="请输入景区标题" aria-describedby="scenic_title"/>
+                        <span class="input-group-addon" id="scenic_title_span">景区标题</span>
+                        <input type="text" class="form-control" id="scenic_title" placeholder="请输入景区标题" aria-describedby="scenic_title_span" />
                     </div>
                     <div class="input-group">
-                        <span class="input-group-addon" id="scenic_content">景区介绍</span>
-                        <input type="text" class="form-control" placeholder="请输入景区介绍" aria-describedby="scenic_content"/>
+                        <span class="input-group-addon" id="scenic_content_span">景区介绍</span>
+                        <input type="text" class="form-control" id="scenic_content" placeholder="请输入景区介绍" aria-describedby="scenic_content_span" />
                     </div>
                     <div class="input-group">
-                        <span class="input-group-addon" id="scenic_address">景区地址</span>
-                        <input type="text" class="form-control" placeholder="请输入景区地址" aria-describedby="scenic_address"/>
+                        <span class="input-group-addon" id="scenic_address_span">景区地址</span>
+                        <input type="text" class="form-control" id="scenic_address" placeholder="请输入景区地址" aria-describedby="scenic_address_span" />
                     </div>
                     <div class="input-group picList">
-                        <span class="input-group-addon" id="scenic_pic">景区图片</span>                                                                     
-                        <input type="file" id="upload_pic" aria-describedby="scenic_pic" />
+                        <span class="input-group-addon" id="scenic_pic_span">景区图片</span>
+                        <input type="file" id="upload_pic"  aria-describedby="scenic_pic_span" />
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
                     <button type="button" id="subScenicInfo" class="btn btn-primary" data-dismiss="modal">添加</button>
-                    
-                    
+
+
                 </div>
             </div>
             <!-- /.modal-content -->
@@ -83,13 +83,62 @@
             }
             showimg(imgUrl);
         }
-           
-       
+
+
         function showimg(url) {
             var img = '<img src="' + url + '"/>';
             $(".picList").append(img);
         }
 
+        $("#subScenicInfo").click(function () {
+            $.ajax({
+                type: "post",                  //提交方式
+                url: "../../server/controller/ScenicManager.ashx",  //提交路径
+                data: {
+                    Name: $("#scenic_name").val(),
+                    Title: $("#scenic_title").val(),
+                    Content: $("#scenic_content").val(),
+                    Address: $("#scenic_address").val(),
+                },//参数
+                success: function (result, status)//成功函数
+                {
+                    alert("数据库保存成功！");
+                   
+                },
+                error: function () { alert("添加失败，程序异常！"); return; }
+            });           
+        });
+        $('#table').bootstrapTable({
+            method: "get",
+            url: '../../server/controller/ScenicManager.ashx',
+            contentType: "application/x-www-form-urlencoded",
+            striped: true,                         //是否显示行间隔色
+            cache: false,
+            sidePagination: "server",
+            pagination: true,
+            columns: [
+                {
+                    field: 'ScenicName',
+                    title: '景区名称'
+                },            
+                {
+                    field: 'ScenicAddress',
+                    title: '景区地址'
+                },
+                {
+                    field: 'ScenicBrowse',
+                    title: '景区点击量'
+                },
+                {
+                    field: 'ScenicUploadTime',
+                    title: '景区信息更新时间'
+                },
+                {
+                    field: '',
+                    title: '操作'
+                }
+            ]
+        })
     </script>
 </body>
 </html>

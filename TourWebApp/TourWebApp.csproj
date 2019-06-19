@@ -308,7 +308,10 @@
     <Content Include="server\controller\FileManager.ashx" />
     <Content Include="server\controller\UserManager.ashx" />
     <Content Include="server\controller\MsgBoard.ashx" />
+<<<<<<< HEAD
     <Content Include="server\controller\FIleUp.ashx" />
+=======
+>>>>>>> 5673ea7c388275011d24400eadf8b06c892df76b
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
