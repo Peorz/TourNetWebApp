@@ -6,7 +6,7 @@ namespace TourWebApp.server.utils
     public class Result
     {
 
-        public static String Ok(String msg, String data)
+        public static String Ok(String msg, Object data)
         {
             ResultData resultData = new ResultData(msg, data);
             return JsonMapper.ToJson(resultData);
