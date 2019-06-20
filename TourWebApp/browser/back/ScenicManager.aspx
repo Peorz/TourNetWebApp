@@ -133,6 +133,14 @@
                         <span class="input-group-addon" id="scenic_pic_span_show">景区图片</span>
                         <input type="file" id="upload_pic_show" class="scenic_pic_btn" />
                     </div>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="scenic_browse_span_show">浏览数量</span>
+                        <input type="text" class="form-control" id="scenic_browse_show" aria-describedby="scenic_browse_span_show" />
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="scenic_time_span_show">景区地址</span>
+                        <input type="text" class="form-control" id="scenic_time_show" aria-describedby="scenic_time_span_show" />
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
@@ -153,37 +161,11 @@
             }
             showimg(imgUrl);
         }
-
-
         function showimg(url) {
             var img = '<img src="' + url + '"/>';
             $(".picList").append(img);
         }
-
-        $("#subScenicInfo").click(function () {
-            $.ajax({               
-                url: "ScenicManager.aspx/AddScenicInfo",
-                contentType: "application/json",
-                type: "POST",
-                datatype: "json",
-                data: JSON.stringify({
-                    Name: $("#scenic_name").val(),
-                    Title: $("#scenic_title").val(),
-                    Content: $("#scenic_content").val(),
-                    Address: $("#scenic_address").val(),
-                }),//参数
-                success: function (result)//成功函数
-                {
-                    var data = JSON.parse(result.d);
-                    if (data.code == 0) {
-
-                        $("#ScenicInfoTb").bootstrapTable('refresh');
-                    }
-
-                },
-                error: function () { alert("添加失败，程序异常！"); return; }
-            });
-        });
+        //表格数据加载
         $('#ScenicInfoTb').bootstrapTable({
             method: "get",
             url: '../../server/controller/ScenicManager.ashx',
@@ -217,9 +199,7 @@
                     field: 'ID',
                     title: '操作',
                     formatter: actionFormatter
-
                 },
-
             ]
         })
         //操作栏的格式化
@@ -229,41 +209,128 @@
             result += "<button type='button' class='btn btn-xs btn-warning' data-toggle='modal' onclick=\"ShowByIds('" + id + "')\" data-target='#ShowView'><span class='glyphicon glyphicon-search'></span></button>";
             result += "<button type='button' class='btn btn-xs btn-success' data-toggle='modal' onclick=\"EditByIds('" + id + "')\" data-target='#EditView'><span class='glyphicon glyphicon-pencil'></span></button>";
             result += "<button type='button' class='btn btn-xs btn-danger' data-toggle='modal' onclick=\"DeleteByIds('" + id + "')\" ><span class='glyphicon glyphicon-remove'></span></button>";
-
-
-
             return result;
         }
+        //新增数据
+        $("#subScenicInfo").click(function () {
+            $.ajax({
+                url: "ScenicManager.aspx/AddScenicInfo",
+                contentType: "application/json",
+                type: "POST",
+                datatype: "json",
+                data: JSON.stringify({
+                    Name: $("#scenic_name").val(),
+                    Title: $("#scenic_title").val(),
+                    Content: $("#scenic_content").val(),
+                    Address: $("#scenic_address").val(),
+                }),//参数
+                success: function (result)//成功函数
+                {
+                    var data = JSON.parse(result.d);
+                    if (data.code == 0) {
+                        $("#ScenicInfoTb").bootstrapTable('refresh');
+                    }
+                },
+                error: function () { alert("添加失败，程序异常！"); return; }
+            });
+        });
+        //详细数据
         function ShowByIds(ID) {
-
+            var detailedId = ID;
+            $.ajax({
+                url: "ScenicManager.aspx/DetailedInfo",
+                contentType: "application/json",
+                type: "POST",
+                datatype: "json",
+                data: JSON.stringify({
+                    DetailedID: detailedId
+                }),//参数
+                success: function (result)//成功函数
+                {
+                    var data = JSON.parse(result.d);
+                    if (data.code == 0) {
+                        $("#scenic_name_show").val(data.data.ScenicName);
+                        $("#scenic_title_show").val(data.data.ScenicTitle);
+                        $("#scenic_content_show").val(data.data.ScenicContent);
+                        $("#scenic_address_show").val(data.data.ScenicAddress);
+                        $("#scenic_browse_show").val(data.data.ScenicBrowse);
+                        $("#scenic_time_show").val(data.data.ScenicUploadTime);                      
+                    }
+                },
+                error: function () { alert("显示失败，程序异常！"); return; }
+            });
         }
-        function EditViewById(ID) {
+        
+        //更新数据
+        function EditByIds(ID) {
+            var editId = ID;
+            $.ajax({
+                url: "ScenicManager.aspx/EditInfo",
+                contentType: "application/json",
+                type: "POST",
+                datatype: "json",
+                data: JSON.stringify({
+                    EditID: editId
+                }),//参数
+                success: function (result)//成功函数
+                {
+                    var data = JSON.parse(result.d);
+                    if (data.code == 0) {
+                        $("#scenic_name_edit").val(data.data.ScenicName);
+                        $("#scenic_title_edit").val(data.data.ScenicTitle);
+                        $("#scenic_content_edit").val(data.data.ScenicContent);
+                        $("#scenic_address_edit").val(data.data.ScenicAddress);
+                        $("#UpdataInfo").click(function () {
+                            $.ajax({
+                                url: "ScenicManager.aspx/EditUp",
+                                contentType: "application/json",
+                                type: "POST",
+                                datatype: "json",
+                                data: JSON.stringify({
+                                    EditID: editId,
+                                    EditName: $("#scenic_name_edit").val(),
+                                    EditTitle: $("#scenic_title_edit").val(),
+                                    EditContent: $("#scenic_content_edit").val(),
+                                    EditAddress: $("#scenic_address_edit").val(),
+                                }),//参数
+                                success: function (result)//成功函数
+                                {
+                                    var data = JSON.parse(result.d);
+                                    if (data.code == 0) {
+                                        $("#ScenicInfoTb").bootstrapTable('refresh')
+                                    }
+                                },
+                                error: function () { alert("更新失败，程序异常！"); return; }
+                            });
 
+                        });
+                    }
+                },
+                error: function () { alert("显示失败，程序异常！"); return; }
+            });
         }
+        //单条数据删除
         function DeleteByIds(ID) {
-            var deleteId = ID;
+            var deleteId = ID;            
             if (confirm("确定删除该条信息")) {
                 $.ajax({
                     url: "ScenicManager.aspx/DeleteScenicInfo",
                     contentType: "application/json",
                     type: "POST",
                     datatype: "json",
-                    data: {
+                    data: JSON.stringify({
                         DeleteID: deleteId
-
-                    },//参数
+                    }),//参数
                     success: function (result)//成功函数
                     {
-                        if (result.code == 0) {
-                            $("#table").bootstrapTable('refresh');
+                        var data = JSON.parse(result.d);
+                        if (data.code == 0) {
+                            $("#ScenicInfoTb").bootstrapTable('refresh');
                         }
-
                     },
                     error: function () { alert("删除失败，程序异常！"); return; }
                 });
-
             }
-            
         }
     </script>
 </body>

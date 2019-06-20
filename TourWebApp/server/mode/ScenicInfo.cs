@@ -70,7 +70,7 @@ namespace TourWebApp.server.mode
             set { _ScenicBrowse = value; }
         }
 
-        //景区信息添加时间
+        //景区信息更新时间时间
         private DateTime _ScenicUploadTime;
 
         [Colmun(Type = "datetime")]
