@@ -276,6 +276,9 @@
     <Compile Include="server\controller\FIleUp.ashx.cs">
       <DependentUpon>FIleUp.ashx</DependentUpon>
     </Compile>
+    <Compile Include="server\controller\MainTourColumn.ashx.cs">
+      <DependentUpon>MainTourColumn.ashx</DependentUpon>
+    </Compile>
     <Compile Include="server\controller\MsgBoard.ashx.cs">
       <DependentUpon>MsgBoard.ashx</DependentUpon>
     </Compile>
@@ -316,6 +319,7 @@
     <Content Include="server\controller\UserManager.ashx" />
     <Content Include="server\controller\MsgBoard.ashx" />
     <Content Include="server\controller\ScenicManager.ashx" />
+    <Content Include="server\controller\MainTourColumn.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
