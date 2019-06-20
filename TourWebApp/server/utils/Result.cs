@@ -47,9 +47,9 @@ namespace TourWebApp.server.utils
                 get { return _msg; }
                 set { _msg = value; }
             }
-            private String _data;
+            private Object _data;
 
-            public String data
+            public Object data
             {
                 get { return _data; }
                 set { _data = value; }
@@ -62,14 +62,14 @@ namespace TourWebApp.server.utils
                 _data = null;
             }
 
-            public ResultData(String msg, String data)
+            public ResultData(String msg, Object data)
             {
                 _code = 0;
                 _msg = msg;
                 _data = data;
             }
 
-            public ResultData(String data)
+            public ResultData(Object data)
             {
                 _code = 0;
                 _msg = "success";
