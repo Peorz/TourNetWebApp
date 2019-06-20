@@ -20,9 +20,17 @@
     z-index: 1;
     overflow: auto;
 }
-.col-md-3 img {
+.col-md-3 .rl {
+    display:block;/*注册/登录显示*/
+}
+.col-md-3 .head_img{
+    padding-right:70px;
+    padding-top:3px; 
+    display:none;/*头像隐藏*/
+}
+.col-md-3 .head_img img {
     width:45px;
     height:45px;
-    border-radius:50px;
-    
+    border-radius:50px;       
 }
+

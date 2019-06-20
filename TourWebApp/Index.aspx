@@ -45,19 +45,19 @@
                     </div>
                     <div class="col-md-3">
                         <ul class="nav navbar-nav navbar-right" >
-                            <li>
+                            <li class="rl">
                                 <a href="browser/view/Register.aspx">
                                     <span class="glyphicon glyphicon-leaf" aria-hidden="true"></span>
                                     <span class="sr-only">Error:</span>注册
                                 </a>
                             </li>
-                            <li>
+                            <li class="rl">
                                 <a href="browser/view/Login.aspx">
                                     <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                                     <span class="sr-only">Error:</span>登录
                                 </a>
                             </li>
-                            <li style="display:none ;padding-right:70px;padding-top:3px;" >
+                            <li class="head_img"  >
                                 <img class="img-thumbnail btn-default dropdown-toggle" data-toggle="dropdown"  src="browser/static/img/bg_area_1.jpg"  />
                                 <ul class="dropdown-menu">
                                     <li><a href="#">个人中心</a></li>                     
