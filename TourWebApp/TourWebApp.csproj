@@ -79,6 +79,7 @@
     <Content Include="browser\back\Index.aspx" />
     <Content Include="browser\back\ScenicManager.aspx" />
     <Content Include="browser\back\UserManager.aspx" />
+    <Content Include="browser\back\UserMesBoard.aspx" />
     <Content Include="browser\static\backcss\bootstrap-table.min.css" />
     <Content Include="browser\static\backjs\bootstrap-table-zh-CN.min.js" />
     <Content Include="browser\static\backjs\bootstrap-table.min.js" />
@@ -165,6 +166,13 @@
     </Compile>
     <Compile Include="browser\back\UserManager.aspx.designer.cs">
       <DependentUpon>UserManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="browser\back\UserMesBoard.aspx.cs">
+      <DependentUpon>UserMesBoard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="browser\back\UserMesBoard.aspx.designer.cs">
+      <DependentUpon>UserMesBoard.aspx</DependentUpon>
     </Compile>
     <Compile Include="browser\view\About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
