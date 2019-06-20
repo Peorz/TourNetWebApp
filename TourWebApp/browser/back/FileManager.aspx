@@ -30,7 +30,7 @@
                         <div class="btn-group" role="group" aria-label="...">
                             <button type="button" id="add_file" class="btn btn-primary">上传</button>
                             <button type="button" class="btn btn-success">修改</button>
-                            <button type="button" class="btn btn-warning">设置</button>
+                            <button type="button" class="btn btn-warning" onclick="getSelections()">设置</button>
                         </div>
                     </div>
                 </div>
@@ -73,6 +73,9 @@
                 pagination: true,
                 columns: [
                     {
+                        checkbox: true,
+                    },
+                    {
                         field: 'FileKey',
                         title: '预览',
                         align: 'center',
@@ -104,6 +107,10 @@
                     }
                 ]
             });
+        }
+
+        function getSelections() {
+            return row = $('#table').bootstrapTable("getSelections");
         }
     </script>
 </body>
