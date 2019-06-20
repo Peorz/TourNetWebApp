@@ -27,7 +27,7 @@ namespace TourWebApp.server.controller
         public override string GetProcessRequest(HttpContext context, HttpRequest request, HttpResponse response)
         {
             PageList<mode.FileInfo> pageList = ORMSupport.PageSelect<mode.FileInfo>()
-                .AddOrder("UpTime",SortType.DESC)
+                //.AddOrder("UpTime",SortType.DESC)
                 .Select();
             return Result.Ok("", pageList.Total, pageList.Rows);
         }
