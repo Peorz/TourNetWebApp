@@ -161,20 +161,23 @@
         }
 
         $("#subScenicInfo").click(function () {
-            $.ajax({
-                type: "post",                  //提交方式
-                url: "../../server/controller/ScenicManager.ashx",  //提交路径
-                dataType: "json",
-                data: {
+            $.ajax({               
+                url: "ScenicManager.aspx/AddScenicInfo",
+                contentType: "application/json",
+                type: "POST",
+                datatype: "json",
+                data: JSON.stringify({
                     Name: $("#scenic_name").val(),
                     Title: $("#scenic_title").val(),
                     Content: $("#scenic_content").val(),
                     Address: $("#scenic_address").val(),
-                },//参数
+                }),//参数
                 success: function (result)//成功函数
                 {
-                    if (result.code == 0) {
-                        $("#table").bootstrapTable('refresh');
+                    var data = JSON.parse(result.d);
+                    if (data.code == 0) {
+
+                        $("#ScenicInfoTb").bootstrapTable('refresh');
                     }
 
                 },
@@ -241,9 +244,10 @@
             var deleteId = ID;
             if (confirm("确定删除该条信息")) {
                 $.ajax({
-                    type: "post",                  //提交方式
-                    url: "../../server/controller/ScenicManager.ashx",  //提交路径
-                    dataType: "json",
+                    url: "ScenicManager.aspx/DeleteScenicInfo",
+                    contentType: "application/json",
+                    type: "POST",
+                    datatype: "json",
                     data: {
                         DeleteID: deleteId
 

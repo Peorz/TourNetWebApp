@@ -29,16 +29,7 @@ namespace TourWebApp.server.controller
 
         public override string PostProcessRequest(HttpContext context, HttpRequest request, HttpResponse response)
         {
-            ScenicInfo scenic = new ScenicInfo();
-            scenic.ScenicName = HttpContext.Current.Request["Name"];
-            scenic.ScenicTitle = HttpContext.Current.Request["Title"];
-            scenic.ScenicContent = HttpContext.Current.Request["Content"];
-            scenic.ScenicAddress = HttpContext.Current.Request["Address"];
-            scenic.ScenicPic = "";
-            scenic.ScenicBrowse = 0;
-            scenic.ScenicUploadTime = DateTime.Now;
-            scenic.Save();
-            return Result.Ok("","");
+            return "";
         }
 
         public override string PutProcessRequest(HttpContext context, HttpRequest request, HttpResponse response)
