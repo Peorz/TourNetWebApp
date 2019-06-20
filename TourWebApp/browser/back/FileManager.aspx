@@ -18,17 +18,9 @@
     <script src="../static/backjs/bootstrap-table.min.js"></script>
     <script src="../static/backjs/bootstrap-table-zh-CN.min.js"></script>
     <script src="../static/js/qiniu.min.js"></script>
+    <script src="../static/js/myfileup.js"></script>
 </head>
 <body>
-    <div id="modal_div" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-            </div>
-            <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-    </div>
-    <!-- /.modal -->
     <form id="form1" runat="server">
         <div>
             <div class="alert alert-success" role="alert">人员管理</div>
@@ -36,8 +28,7 @@
                 <div class="row">
                     <div class="card" style="margin-bottom: 0">
                         <div class="btn-group" role="group" aria-label="...">
-                            <a data-toggle="modal" class="btn btn-primary" href="FileManager.aspx" data-target="#modal_div">Click me</a>
-                            <a data-toggle="modal" class="btn btn-primary" href="FileUp.aspx" data-target="#modal_div">新增</a>
+                            <button type="button" id="add_file" class="btn btn-primary">上传</button>
                             <button type="button" class="btn btn-success">修改</button>
                             <button type="button" class="btn btn-warning">设置</button>
                         </div>
@@ -53,6 +44,25 @@
     </form>
     <script type="text/javascript">
         $(document).ready(function () {
+            loadTable();
+            var param = {
+                btn: "#add_file",
+                url: "../../server/controller/FileUp.ashx",
+                progress: function (res) {
+                    console.log(res);
+                },
+                success: function (res) {
+                    console.log(res);
+                    $('#table').bootstrapTable("refresh");
+                },
+                error: function (msg) {
+                    console.log(msg);
+                }
+            };
+            fileup(param);
+        });
+
+        function loadTable() {
             $('#table').bootstrapTable({
                 method: "get",
                 url: '../../server/controller/FileManager.ashx',
@@ -64,6 +74,16 @@
                 columns: [
                     {
                         field: 'FileKey',
+                        title: '预览',
+                        align: 'center',
+                        formatter: function (value, row, index) {
+                            var host = "http://psxrtdro4.bkt.clouddn.com/";
+                            var img = '<img src="' + host + value + "-default" + '">';
+                            return img;
+                        }
+                    },
+                    {
+                        field: 'FileKey',
                         title: 'FileKey'
                     },
                     {
@@ -71,28 +91,20 @@
                         title: 'FileHash'
                     },
                     {
+                        field: 'UpTime',
+                        title: '上传时间'
+                    },
+                    {
                         field: "FileKey",
-                        title: "操作",
+                        title: "外链",
                         formatter: function (value, row, index) {
                             var host = "http://psxrtdro4.bkt.clouddn.com/";
                             return host + value;
                         }
                     }
                 ]
-            })
-        });
-        $.ajax({
-            type: "Get",
-            url: "../../server/controller/FileUp.ashx",
-            contentType: "application/x-www-form-urlencoded; charset=utf-8",
-            dataType: "json",
-            success: function (data) {
-                var qiniu = require('qiniu-js')
-                console.log(qiniu);
-            },
-            error: function (err) {
-            }
-        });
+            });
+        }
     </script>
 </body>
 </html>

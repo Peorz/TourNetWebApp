@@ -37,7 +37,21 @@ namespace TourWebApp.server.controller
 
         public override string PostProcessRequest(HttpContext context, HttpRequest request, HttpResponse response)
         {
-            throw new NotImplementedException();
+            String Hash = request.Params["hash"];
+            String Key = request.Params["key"];
+            mode.FileInfo fileInfo = new mode.FileInfo();
+            fileInfo.FileHash = Hash;
+            fileInfo.FileKey = Key;
+            fileInfo.UpTime = DateTime.Now;
+            int ret = fileInfo.Save();
+            if (ret == 1)
+            {
+                return Result.Ok("", Key);
+            }
+            else
+            {
+                return Result.Error("");
+            }
         }
 
         public override string PutProcessRequest(HttpContext context, HttpRequest request, HttpResponse response)

@@ -40,5 +40,21 @@ namespace TourWebApp.server.mode
                 _FileHash = value;
             }
         }
+
+        private DateTime _UpTime;
+
+        [Colmun(Type = "datetime")]
+        public DateTime UpTime
+        {
+            get
+            {
+                return _UpTime;
+            }
+
+            set
+            {
+                _UpTime = value;
+            }
+        }
     }
 }

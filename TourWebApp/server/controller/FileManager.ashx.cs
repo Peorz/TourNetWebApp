@@ -10,6 +10,7 @@ using TourWebApp.server.mode;
 using Qiniu.Storage;
 using NetDB.Core.Support;
 using TourWebApp.server.utils;
+using NetDB.Core.Condition;
 
 namespace TourWebApp.server.controller
 {
@@ -26,6 +27,7 @@ namespace TourWebApp.server.controller
         public override string GetProcessRequest(HttpContext context, HttpRequest request, HttpResponse response)
         {
             PageList<mode.FileInfo> pageList = ORMSupport.PageSelect<mode.FileInfo>()
+                .AddOrder("UpTime",SortType.DESC)
                 .Select();
             return Result.Ok("", pageList.Total, pageList.Rows);
         }
