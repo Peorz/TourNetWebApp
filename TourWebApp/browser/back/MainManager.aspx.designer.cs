@@ -10,7 +10,7 @@
 namespace TourWebApp.browser.back {
     
     
-    public partial class FileManager {
+    public partial class MainManager {
         
         /// <summary>
         /// form1 控件。

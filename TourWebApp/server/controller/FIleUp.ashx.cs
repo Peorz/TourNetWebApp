@@ -1,4 +1,6 @@
-﻿using Qiniu.Storage;
+﻿using NetDB.Core;
+using NetDB.Core.Condition;
+using Qiniu.Storage;
 using Qiniu.Util;
 using System;
 using System.Collections.Generic;
@@ -39,18 +41,27 @@ namespace TourWebApp.server.controller
         {
             String Hash = request.Params["hash"];
             String Key = request.Params["key"];
-            mode.FileInfo fileInfo = new mode.FileInfo();
-            fileInfo.FileHash = Hash;
-            fileInfo.FileKey = Key;
-            fileInfo.UpTime = DateTime.Now;
-            int ret = fileInfo.Save();
-            if (ret == 1)
+
+            long count = ORMSupport.Count(new mode.FileInfo(), new Where().Add("FileKey", Key));
+            if (count <= 0)
             {
-                return Result.Ok("", Key);
+                mode.FileInfo fileInfo = new mode.FileInfo();
+                fileInfo.FileHash = Hash;
+                fileInfo.FileKey = Key;
+                fileInfo.UpTime = DateTime.Now;
+                int ret = fileInfo.Save();
+                if (ret == 1)
+                {
+                    return Result.Ok("", Key);
+                }
+                else
+                {
+                    return Result.Error("");
+                }
             }
             else
             {
-                return Result.Error("");
+                return Result.Ok("", Key);
             }
         }
 
