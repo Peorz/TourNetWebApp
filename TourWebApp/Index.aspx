@@ -31,41 +31,41 @@
                             <li><a href="#">关于我们</a></li>
                             <li><a href="#">旅游资讯</a></li>
                             <li><a href="#">周边美食</a></li>
-                            <li><a href="#">讨论</a></li> 
-                            <li><a href="#">联系我们</a></li>               
+                            <li><a href="#">讨论</a></li>
+                            <li><a href="#">联系我们</a></li>
                             <li>
                                 <div class="navbar-form navbar-left">
                                     <div class="form-group ">
                                         <asp:TextBox ID="SearchText" runat="server" CssClass="form-control"></asp:TextBox>
                                     </div>
-                                    <asp:Button ID="SearchBtn" runat="server" Text="搜索" CssClass="btn btn-default" OnClick="SearchBtn_Click" placeholder="输入搜索内容"/>
+                                    <asp:Button ID="SearchBtn" runat="server" Text="搜索" CssClass="btn btn-default" OnClick="SearchBtn_Click" placeholder="输入搜索内容" />
                                 </div>
                             </li>
                         </ul>
                     </div>
                     <div class="col-md-3">
-                        <ul class="nav navbar-nav navbar-right">                       
-                            <%--<li>
+                        <ul class="nav navbar-nav navbar-right" >
+                            <li class="rl">
                                 <a href="browser/view/Register.aspx">
                                     <span class="glyphicon glyphicon-leaf" aria-hidden="true"></span>
                                     <span class="sr-only">Error:</span>注册
                                 </a>
                             </li>
-                            <li>
+                            <li class="rl">
                                 <a href="browser/view/Login.aspx">
                                     <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                                     <span class="sr-only">Error:</span>登录
                                 </a>
-                            </li>--%>
-                            <li>                             
-                                 <img src="browser/static/img/bg_area_1.jpg" style="width:50px;height:50px;border-radius:50%;" />                              
                             </li>
-                            <li>
-                                 <a href="#">
-                                    <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span>
-                                    <span class="sr-only">Error:</span>退出
-                                </a>
+                            <li class="head_img"  >
+                                <img class="img-thumbnail btn-default dropdown-toggle" data-toggle="dropdown"  src="browser/static/img/bg_area_1.jpg"  />
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">个人中心</a></li>                     
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">退出</a></li>
+                                </ul>
                             </li>
+                            
                         </ul>
                     </div>
                 </div>

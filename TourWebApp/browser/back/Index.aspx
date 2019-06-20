@@ -59,7 +59,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="index.html">
+                            <a class="click-link" href="MainManager.aspx">
                                 <i class="glyphicon glyphicon-leaf"></i>
                                 主页管理
                             </a>

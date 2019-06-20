@@ -77,10 +77,12 @@
   <ItemGroup>
     <Content Include="browser\back\FileManager.aspx" />
     <Content Include="browser\back\Index.aspx" />
+    <Content Include="browser\back\MainManager.aspx" />
     <Content Include="browser\back\ScenicManager.aspx" />
     <Content Include="browser\back\UserManager.aspx" />
     <Content Include="browser\back\UserMesBoard.aspx" />
     <Content Include="browser\static\backcss\bootstrap-table.min.css" />
+    <Content Include="browser\static\backcss\scenic\scenic.css" />
     <Content Include="browser\static\backjs\bootstrap-table-zh-CN.min.js" />
     <Content Include="browser\static\backjs\bootstrap-table.min.js" />
     <Content Include="browser\static\backcss\index\custom-styles.css" />
@@ -152,6 +154,13 @@
     </Compile>
     <Compile Include="browser\back\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="browser\back\MainManager.aspx.cs">
+      <DependentUpon>MainManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="browser\back\MainManager.aspx.designer.cs">
+      <DependentUpon>MainManager.aspx</DependentUpon>
     </Compile>
     <Compile Include="browser\back\ScenicManager.aspx.cs">
       <DependentUpon>ScenicManager.aspx</DependentUpon>
@@ -276,6 +285,9 @@
     <Compile Include="server\controller\FIleUp.ashx.cs">
       <DependentUpon>FIleUp.ashx</DependentUpon>
     </Compile>
+    <Compile Include="server\controller\MainTourColumn.ashx.cs">
+      <DependentUpon>MainTourColumn.ashx</DependentUpon>
+    </Compile>
     <Compile Include="server\controller\MsgBoard.ashx.cs">
       <DependentUpon>MsgBoard.ashx</DependentUpon>
     </Compile>
@@ -296,6 +308,7 @@
     <Compile Include="server\mode\ForumRecord.cs" />
     <Compile Include="server\mode\ForumTopic.cs" />
     <Compile Include="server\mode\LoginToken.cs" />
+    <Compile Include="server\mode\MainTourColumn.cs" />
     <Compile Include="server\mode\MsgBoard.cs" />
     <Compile Include="server\mode\ScenicInfo.cs" />
     <Compile Include="server\mode\UserInfo.cs" />
@@ -315,6 +328,7 @@
     <Content Include="server\controller\UserManager.ashx" />
     <Content Include="server\controller\MsgBoard.ashx" />
     <Content Include="server\controller\ScenicManager.ashx" />
+    <Content Include="server\controller\MainTourColumn.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
