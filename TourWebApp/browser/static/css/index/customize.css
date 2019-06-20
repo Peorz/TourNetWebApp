@@ -21,12 +21,12 @@
     overflow: auto;
 }
 .col-md-3 .rl {
-    display:block;/*注册/登录显示*/
+    display:none;/*注册/登录显示*/
 }
 .col-md-3 .head_img{
-    padding-right:70px;
+    padding-right:20px;
     padding-top:3px; 
-    display:none;/*头像隐藏*/
+    display:block;/*头像隐藏*/
 }
 .col-md-3 .head_img img {
     width:45px;
