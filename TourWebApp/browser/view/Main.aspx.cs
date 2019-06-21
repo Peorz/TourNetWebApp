@@ -15,9 +15,17 @@ namespace TourWebApp.browser.view
         }
 
         [WebMethod]
-        public static String GetTourData(String name)
+        public static String GetTourData()
         {
             PageList<MainTourColumn> page = ORMSupport.PageSelect<MainTourColumn>()
+                .Select();
+            return Result.Ok("", page.Total, page.Rows);
+        }
+
+        [WebMethod]
+        public static String GetRotationData()
+        {
+            PageList<MainRotation> page = ORMSupport.PageSelect<MainRotation>()
                 .Select();
             return Result.Ok("", page.Total, page.Rows);
         }

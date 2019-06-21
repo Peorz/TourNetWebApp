@@ -114,7 +114,6 @@
                 type: "POST",
                 datatype: "json",
                 data: JSON.stringify({
-                    name: "232323"
                 }),//格式为 "{a:1,b:2}"
                 success: function (result) {
                     var data = JSON.parse(result.d);
@@ -133,6 +132,29 @@
                                '</div>' +
                           '</div>');
                             $("#tour_content_div").append(col);
+                        }
+                    }
+                }
+            })
+
+            $.ajax({
+                url: "browser/view/Main.aspx/GetRotationData",
+                contentType: "application/json",
+                type: "POST",
+                datatype: "json",
+                data: JSON.stringify({
+                }),//格式为 "{a:1,b:2}"
+                success: function (result) {
+                    var data = JSON.parse(result.d);
+                    console.log(data);
+                    if (data.code == 0) {
+                        var host = "http://psxrtdro4.bkt.clouddn.com/";
+                        for (var i = 0; i < data.rows.length; i++) {
+                            var item = data.rows[i];
+                            var col = $('<div class="item">' +
+                                                '<img alt="" src="' + host + item.Img + '" />' +
+                                            '</div>');
+                            $(".carousel-inner").append(col);
                         }
                     }
                 }
