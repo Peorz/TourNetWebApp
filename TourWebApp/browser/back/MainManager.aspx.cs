@@ -31,5 +31,18 @@ namespace TourWebApp.browser.back
             }
             return Result.Ok("","");
         }
+
+        [WebMethod]
+        public static String AddRotation(String key)
+        {
+            MainRotation col = new MainRotation();
+            col.Img = key;
+            int ret = col.Save();
+            if (ret == 0)
+            {
+                return Result.Error("");
+            }
+            return Result.Ok("", "");
+        }
     }
 }

@@ -28,6 +28,7 @@ namespace TourWebApp.server.config
             new ScenicInfo().CreateTable();
             new MsgBoard().CreateTable();
             new MainTourColumn().CreateTable();
+            new MainRotation().CreateTable();
             /**
              * 配置日志开关
              */

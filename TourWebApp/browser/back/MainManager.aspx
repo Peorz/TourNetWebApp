@@ -23,9 +23,9 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <div class="alert alert-success" role="alert">景区咨询栏目</div>
             <div class="container-fluid">
                 <div class="row">
+                    <div class="alert alert-success" role="alert">景区咨询栏目</div>
                     <div id="tour_modal" class="modal fade" tabindex="-1" role="dialog">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
@@ -67,10 +67,45 @@
                             <button type="button" class="btn btn-warning">设置</button>
                         </div>
                     </div>
-                </div>
-                <div class="row">
                     <div class="card">
                         <table id="tour_table">
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="alert alert-success" role="alert">轮播图管理</div>
+                    <div id="rotation_modal" class="modal fade" tabindex="-1" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title">添加</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">图片key：</span>
+                                        <input type="text" id="rotation_key_input" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                    <button type="button" id="rotation_add_btn" class="btn btn-primary">添加</button>
+                                </div>
+                            </div>
+                            <!-- /.modal-content -->
+                        </div>
+                        <!-- /.modal-dialog -->
+                    </div>
+                    <!-- /.modal -->
+                    <div class="card" style="margin-bottom: 0">
+                        <div class="btn-group" role="group" aria-label="...">
+                            <button type="button" id="add_rotation_btn" class="btn btn-primary">新增</button>
+                            <button type="button" id="update_user_btn" class="btn btn-success">修改</button>
+                            <button type="button" class="btn btn-warning">设置</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <table id="rotation_table">
                         </table>
                     </div>
                 </div>
@@ -81,6 +116,7 @@
         $(document).ready(function () {
             init();
             loadTourTable();
+            loadRotation();
         });
 
         function init() {
@@ -128,36 +164,65 @@
                         title: '标题'
                     },
                     {
+                        field: 'Img',
+                        title: 'key'
+                    },
+                    {
                         field: 'Summary',
                         title: '内容'
                     }
                 ]
             });
 
-            $("#add_tour_btn").on("click", function () {
-                $("#tour_modal").modal("show");
+            $("#add_rotation_btn").on("click", function () {
+                $("#rotation_modal").modal("show");
             });
 
-            $("#tour_add_btn").on("click", function () {
+            $("#rotation_add_btn").on("click", function () {
                 $.ajax({
-                    url: "MainManager.aspx/AddTour",
+                    url: "MainManager.aspx/AddRotation",
                     contentType: "application/json",
                     type: "POST",
-                    datatype:"json",
+                    datatype: "json",
                     data: JSON.stringify({
-                        title: $("#tour_title_input").val(),
-                        summary: $("#tour_summary_input").val(),
-                        key: $("#tour_img_input").val(),
+                        key: $("#rotation_key_input").val(),
                     }),//格式为 "{a:1,b:2}"
                     success: function (result) {
                         var data = JSON.parse(result.d);
                         if (data.code == 0) {
-                            $('#tour_table').bootstrapTable("refresh");
-                            $("#tour_modal").modal("hide");
+                            $('#rotation_table').bootstrapTable("refresh");
+                            $("#rotation_modal").modal("hide");
                         }
                     }
                 })
             });
+        }
+
+        function loadRotation() {
+
+            $('#rotation_table').bootstrapTable({
+                method: "get",
+                url: '../../server/controller/MainRotation.ashx',
+                contentType: "application/x-www-form-urlencoded",
+                striped: true,                         //是否显示行间隔色
+                cache: false,
+                sidePagination: "server",
+                pagination: true,
+                columns: [
+                    {
+                        field: 'Img',
+                        title: '预览',
+                        width: 120,
+                        align: 'center',
+                        formatter: function (value, row, index) {
+                            var host = "http://psxrtdro4.bkt.clouddn.com/";
+                            var img = '<img src="' + host + value + "-default" + '">';
+                            return img;
+                        }
+                    }
+                ]
+            });
+
         }
 
     </script>

@@ -98,18 +98,6 @@
                     alert(err);
                 }
             });
-            $.ajax({
-                type: "Post",
-                url: "server/controller/FileManager.ashx",
-                data: { "filePath": "C:\Users\PC-913\Desktop\16849027.jpeg" },
-                contentType: "application/x-www-form-urlencoded; charset=utf-8",
-                dataType: "json",
-                success: function (data) {
-                    console.log(data);
-                },
-                error: function (err) {
-                }
-            });
         });
 
         function init() {

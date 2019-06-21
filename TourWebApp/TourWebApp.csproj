@@ -285,6 +285,9 @@
     <Compile Include="server\controller\FIleUp.ashx.cs">
       <DependentUpon>FIleUp.ashx</DependentUpon>
     </Compile>
+    <Compile Include="server\controller\MainRotation.ashx.cs">
+      <DependentUpon>MainRotation.ashx</DependentUpon>
+    </Compile>
     <Compile Include="server\controller\MainTourColumn.ashx.cs">
       <DependentUpon>MainTourColumn.ashx</DependentUpon>
     </Compile>
@@ -308,6 +311,7 @@
     <Compile Include="server\mode\ForumRecord.cs" />
     <Compile Include="server\mode\ForumTopic.cs" />
     <Compile Include="server\mode\LoginToken.cs" />
+    <Compile Include="server\mode\MainRotation.cs" />
     <Compile Include="server\mode\MainTourColumn.cs" />
     <Compile Include="server\mode\MsgBoard.cs" />
     <Compile Include="server\mode\ScenicInfo.cs" />
@@ -329,6 +333,7 @@
     <Content Include="server\controller\MsgBoard.ashx" />
     <Content Include="server\controller\ScenicManager.ashx" />
     <Content Include="server\controller\MainTourColumn.ashx" />
+    <Content Include="server\controller\MainRotation.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

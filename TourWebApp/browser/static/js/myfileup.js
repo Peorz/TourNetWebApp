@@ -6,7 +6,7 @@ function fileup(p) {
     param = p;
     btn = $(param.btn);
     btn_origin_name = btn.html();
-    var file_input = $('<input type="file" style="display:none" />');
+    var file_input = $('<input type="file" style="display:none" accept="image/*" />');
     btn.before(file_input);
     btn.on("click", function () {
         file_input.click();

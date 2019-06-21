@@ -22,34 +22,7 @@
             <div id="main_content" class="row">
                 <div class="col-md-10 col-md-offset-1">
                     <div class="card">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="thumbnail">
-                                    <img src="browser/static/img/bg_area_2.jpg" alt="xx">
-                                    <div class="caption">
-                                        <h3>Thumbnail label</h3>
-                                        <p>...</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="thumbnail">
-                                    <img src="browser/static/img/bg_area_2.jpg" alt="xx">
-                                    <div class="caption">
-                                        <h3>Thumbnail label</h3>
-                                        <p>...</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="thumbnail">
-                                    <img src="browser/static/img/bg_area_2.jpg" alt="xx">
-                                    <div class="caption">
-                                        <h3>Thumbnail label</h3>
-                                        <p>...</p>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="row" id="tour_content_div">
                         </div>
                         <div class="row">
                             <div class="col-md-4 col-md-offset-4">
@@ -134,6 +107,37 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $("#title_row").css("margin-top", $(window).height() * 1 / 3);
+
+            $.ajax({
+                url: "browser/view/Main.aspx/GetTourData",
+                contentType: "application/json",
+                type: "POST",
+                datatype: "json",
+                data: JSON.stringify({
+                    name: "232323"
+                }),//格式为 "{a:1,b:2}"
+                success: function (result) {
+                    var data = JSON.parse(result.d);
+                    console.log(data);
+                    if (data.code == 0) {
+                        var host = "http://psxrtdro4.bkt.clouddn.com/";
+                        for (var i = 0; i < data.rows.length; i++) {
+                            var item = data.rows[i];
+                            var col = $('<div class="col-md-4">' +
+                               '<div class="thumbnail">' +
+                                   '<img src="' + host + item.Img + '" alt="xx" style="height:150px">' +
+                                   '<div class="caption">' +
+                                       '<h3>' + item.Title + '</h3>' +
+                                       '<p>' + item.Summary + '</p>' +
+                                  '</div>' +
+                               '</div>' +
+                          '</div>');
+                            $("#tour_content_div").append(col);
+                        }
+                    }
+                }
+            })
+
         });
     </script>
 </body>
