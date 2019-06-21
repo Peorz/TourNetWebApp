@@ -11,4 +11,17 @@
 .header_color{
     background-color:rgba(34, 139, 34,0.5);
 }
+.img_upload_box{
+    border:1px solid #808080;
+    border-radius:10px;
+}
+.picList{
+    height:200px;
+    margin:20px;
+}
+.newImg{
+    width:320px;
+    height:200px;
+}
+
 

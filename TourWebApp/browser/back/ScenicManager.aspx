@@ -7,6 +7,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
     <link href="../static/backcss/scenic/scenic.css" rel="stylesheet" />
+    <script src="../static/js/qiniu.min.js"></script>
+    <script src="../static/js/myfileup.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -14,14 +16,10 @@
             <div class="alert alert-success" role="alert">景区管理</div>
             <div class="container-fluid">
                 <div class="row">
-                    <div class="card" style="margin-bottom: 0">
-                        <div class="btn-group" role="group" aria-label="...">
+                    <div class="card">
+                        <div class="btn-group" role="group" aria-label="..." style="margin-bottom: 20px;">
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#scenicAdd">新增</button>
                         </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="card">
                         <table id="ScenicInfoTb"></table>
                     </div>
                 </div>
@@ -53,17 +51,19 @@
                         <span class="input-group-addon" id="scenic_address_span">景区地址</span>
                         <input type="text" class="form-control" id="scenic_address" placeholder="请输入景区地址" aria-describedby="scenic_address_span" />
                     </div>
-                    <div class="input-group picList">
+                    <div class="input-group">
                         <span class="input-group-addon" id="scenic_pic_span">景区图片</span>
-                        <input type="file" id="upload_pic" class="scenic_pic_btn" />
+                        <div class="img_upload_box" aria-describedby="scenic_pic_span">
+                        </div>
+                        <button type="button" id="upload_pic" class="btn btn-primary" aria-describedby="scenic_pic_span" style="margin-top:10px;">上传</button>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                    <button type="button" id="subScenicInfo" class="btn btn-primary" data-dismiss="modal">添加</button>
-                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" id="subScenicInfo" class="btn btn-primary" data-dismiss="modal">添加</button>
             </div>
         </div>
+    </div>
     </div>
 
     <!--景区信息编辑模态框-->
@@ -149,59 +149,72 @@
         </div>
     </div>
     <script>
-        $("#upload_pic").bind('change', addfile);
-        function addfile() {
-            var imgUrl = $("#upload_pic").val();
-            var extStart = imgUrl.lastIndexOf(".");
-            var ext = imgUrl.substring(extStart, imgUrl.length).toUpperCase();
 
-            if (ext != ".BMP" && ext != ".PNG" && ext != ".GIF" && ext != ".JPG" && ext != ".JPEG") {
-                alert("图片限于bmp,png,gif,jpeg,jpg格式");
-                return false;
-            }
-            showimg(imgUrl);
-        }
+        $(document).ready(function () {
+            loadTable();
+
+            var param = {
+                btn: "#upload_pic",
+                url: "../../server/controller/FileUp.ashx",
+                progress: function (res) {
+                    console.log(res);
+                },
+                success: function (res) {
+                    console.log(res);
+                    var host = "http://psxrtdro4.bkt.clouddn.com/";
+                    var imgUrl = host + res.data;
+                    showimg(imgUrl);
+                },
+                error: function (msg) {
+                    console.log(msg);
+                }
+            };
+            fileup(param);
+        });       
+
         function showimg(url) {
-            var img = '<img src="' + url + '"/>';
-            $(".picList").append(img);
+            $(".img_upload_box").append("<div class='picList'></div>");
+            $(".picList").append("<img class='newImg'  src='" + url + "'/>");
         }
         //表格数据加载
-        $('#ScenicInfoTb').bootstrapTable({
-            method: "get",
-            url: '../../server/controller/ScenicManager.ashx',
-            contentType: "application/x-www-form-urlencoded",
-            striped: true,                         //是否显示行间隔色
-            cache: false,
-            sidePagination: "server",
-            pagination: true,
-            columns: [
-                {
-                    checkbox: true,
-                    visible: true                  //是否显示复选框  
-                },
-                {
-                    field: 'ScenicName',
-                    title: '景区名称'
-                },
-                {
-                    field: 'ScenicAddress',
-                    title: '景区地址'
-                },
-                {
-                    field: 'ScenicBrowse',
-                    title: '景区点击量'
-                },
-                {
-                    field: 'ScenicUploadTime',
-                    title: '景区信息更新时间'
-                },
-                {
-                    field: 'ID',
-                    title: '操作',
-                    formatter: actionFormatter
-                },
-            ]
-        })
+        function loadTable() {
+            $('#ScenicInfoTb').bootstrapTable({
+                method: "get",
+                url: '../../server/controller/ScenicManager.ashx',
+                contentType: "application/x-www-form-urlencoded",
+                striped: true,                         //是否显示行间隔色
+                cache: false,
+                sidePagination: "server",
+                pagination: true,
+                columns: [
+                    {
+                        checkbox: true,
+                        visible: true                  //是否显示复选框  
+                    },
+                    {
+                        field: 'ScenicName',
+                        title: '景区名称'
+                    },
+                    {
+                        field: 'ScenicAddress',
+                        title: '景区地址'
+                    },
+                    {
+                        field: 'ScenicBrowse',
+                        title: '景区点击量'
+                    },
+                    {
+                        field: 'ScenicUploadTime',
+                        title: '景区信息更新时间'
+                    },
+                    {
+                        field: 'ID',
+                        title: '操作',
+                        formatter: actionFormatter
+                    },
+                ]
+            })
+        }
         //操作栏的格式化
         function actionFormatter(value, row, index) {
             var id = value;
@@ -213,7 +226,7 @@
         }
         //新增数据
         $("#subScenicInfo").click(function () {
-            $.ajax({
+             $.ajax({
                 url: "ScenicManager.aspx/AddScenicInfo",
                 contentType: "application/json",
                 type: "POST",
@@ -223,6 +236,7 @@
                     Title: $("#scenic_title").val(),
                     Content: $("#scenic_content").val(),
                     Address: $("#scenic_address").val(),
+                    PicUrl: $('.newImg').attr('src')
                 }),//参数
                 success: function (result)//成功函数
                 {
@@ -254,13 +268,13 @@
                         $("#scenic_content_show").val(data.data.ScenicContent);
                         $("#scenic_address_show").val(data.data.ScenicAddress);
                         $("#scenic_browse_show").val(data.data.ScenicBrowse);
-                        $("#scenic_time_show").val(data.data.ScenicUploadTime);                      
+                        $("#scenic_time_show").val(data.data.ScenicUploadTime);
                     }
                 },
                 error: function () { alert("显示失败，程序异常！"); return; }
             });
         }
-        
+
         //更新数据
         function EditByIds(ID) {
             var editId = ID;
@@ -311,7 +325,7 @@
         }
         //单条数据删除
         function DeleteByIds(ID) {
-            var deleteId = ID;            
+            var deleteId = ID;
             if (confirm("确定删除该条信息")) {
                 $.ajax({
                     url: "ScenicManager.aspx/DeleteScenicInfo",

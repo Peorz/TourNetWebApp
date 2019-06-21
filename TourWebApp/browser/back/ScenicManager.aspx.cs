@@ -21,7 +21,7 @@ namespace TourWebApp.browser.back
         }
 
         [WebMethod]
-        public static String AddScenicInfo(string Name, string Title, string Content, string Address)
+        public static String AddScenicInfo(string Name, string Title, string Content, string Address, string PicUrl)
         {
             ScenicInfo addInfo = new ScenicInfo();
             addInfo.ScenicName = Name;
@@ -29,7 +29,7 @@ namespace TourWebApp.browser.back
             addInfo.ScenicContent = Content;
             addInfo.ScenicAddress = Address;
             addInfo.ScenicBrowse = 0;
-            addInfo.ScenicPic = "";
+            addInfo.ScenicPic = PicUrl;
             addInfo.ScenicUploadTime = DateTime.Now;
             int res = addInfo.Save();
             if (res == 0)
