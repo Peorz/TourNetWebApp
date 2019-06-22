@@ -95,6 +95,7 @@
     <Content Include="browser\static\css\discuss\discuss.css" />
     <Content Include="browser\static\css\index\customize.css" />
     <Content Include="browser\static\css\login\login.css" />
+    <Content Include="browser\static\css\main\about.css" />
     <Content Include="browser\static\css\main\main.css" />
     <Content Include="browser\static\css\message\message.css" />
     <Content Include="browser\static\css\personal\personal.css" />

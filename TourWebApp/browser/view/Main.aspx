@@ -10,6 +10,7 @@
     <link href="../static/css/card-view.css" rel="stylesheet" />
     <link href="../static/css/bootstrap-theme.min.css" rel="stylesheet" />
     <link href="../static/css/login/login.css" rel="stylesheet" />
+    <link href="../static/css/main/about.css" rel="stylesheet" />
     <script src="../static/js/jquery.min.js"></script>
     <script src="../static/js/bootstrap.min.js"></script>--%>
 </head>
@@ -93,19 +94,75 @@
                                 <a href="#" class="w3_agileits_sign_up2 popup-with-zoom-anim ab scroll">进入</a>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4 col-md-offset-4">
-                            <asp:Label ID="Label2" runat="server" CssClass="center-block" Style="text-align: center; margin: 48px" Text="关于我们" Font-Size="XX-Large" ForeColor="Black"></asp:Label>
+                        <div class="row">
+                            <div class="col-md-4 col-md-offset-4">
+                                <asp:Label ID="Label2" runat="server" CssClass="center-block" Style="text-align: center; margin: 60px" Text="关于我们" Font-Size="XX-Large" ForeColor="Black"></asp:Label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 col-md-offset-2 about_title">
+                                <h3>联系我们</h3>
+                            </div>
+                            <div class="col-md-5 col-md-offset-1">
+                                <h3>联系方式</h3>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row about">
+                            <div class="col-md-4 col-md-offset-2 about_title">
+                                <asp:TextBox ID="nick_tb" CssClass="form-control" runat="server" placeholder="Name"></asp:TextBox><br />
+                                <asp:TextBox ID="TextBox1" CssClass="form-control" runat="server" placeholder="Email"></asp:TextBox><br />
+                                <asp:TextBox ID="TextBox2" CssClass="form-control" runat="server" placeholder="Phone"></asp:TextBox><br />
+                                <asp:TextBox ID="TextBox3" CssClass="form-control" runat="server" Height="100px" TextMode="MultiLine" placeholder="Message..."></asp:TextBox><br />
+                                <asp:Button ID="register_btn" runat="server" Text="提交" CssClass="btn btn-success" Style="width: 100px" />
+                            </div>
+                            <div class="col-md-5 col-md-offset-1">
+                                <br />
+                                <div class="about_p">
+                                    <div class="about_pht">
+                                        <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+                                    </div>
+                                    <div style="padding-top: 10px; margin-left: 60px;">
+                                        <span style="font-size: 14px;">南宁师范大学</span>
+                                    </div>
+                                </div>
+                                <br />
+                                <br />
+                                <div class="about_p">
+                                    <div class="about_pht">
+                                        <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                                    </div>
+                                    <div style="padding-top: 10px; margin-left: 60px;">
+                                        <span style="font-size: 14px;">88888888@163.com</span>
+                                    </div>
+                                </div>
+                                <br />
+                                <br />
+                                <div class="about_p">
+                                    <div class="about_pht">
+                                        <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
+                                    </div>
+                                    <div style="padding-top: 10px; margin-left: 60px;">
+                                        <span style="font-size: 14px;">88+88888888</span>
+                                    </div>
+                                </div>
+
+
+                                <div></div>
+                                <div></div>
+                            </div>
                         </div>
                     </div>
-                    <div class="row">
+
+                    <%--<div class="row">
                         <div class="col-md-4"></div>
                         <div class="col-md-4">
                             <img src="browser/static/img/16849027.jpeg" class="full-img" alt="xx">
                         </div>
                         <div class="col-md-4"></div>
-                    </div>
+                    </div>--%>
+
+
                     <div class="row">
                         <div class="col-md-4"></div>
                         <div class="col-md-4"></div>

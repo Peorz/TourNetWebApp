@@ -11,6 +11,7 @@
     <link href="browser/static/css/bootstrap-theme.min.css" rel="stylesheet" />
     <link href="browser/static/css/index/customize.css" rel="stylesheet" />
     <link href="browser/static/css/main/main.css" rel="stylesheet" />
+    <link href="browser/static/css/main/about.css" rel="stylesheet" />
     <script src="browser/static/js/jquery.min.js"></script>
     <script src="browser/static/js/bootstrap.min.js"></script>
 </head>

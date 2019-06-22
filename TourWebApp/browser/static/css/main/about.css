@@ -1,0 +1,28 @@
+﻿.about{
+    height:300px;
+    margin-bottom:30px;
+}
+.about_title {
+    padding-left: 32px;
+}
+.about_right {
+    padding-right:32px;
+    height: 88px;
+    word-break: break-word;
+}
+.about_right p{
+    font-size:14px;
+}
+.about_pht {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgb(22, 174, 95);
+    text-align: center;
+    padding-top: 10px;
+    float:left;
+}
+.about_p {
+    height: 40px;
+    margin: 0 auto
+}
