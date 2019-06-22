@@ -70,7 +70,7 @@
                             </a>
                         </li>
                         <li class="manager_item">
-                            <a href="index.html">
+                            <a class="click-link" href="UserMesBoard.aspx">
                                 <i class="glyphicon glyphicon-leaf"></i>
                                 留言板
                             </a>
