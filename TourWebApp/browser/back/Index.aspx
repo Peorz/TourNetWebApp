@@ -51,32 +51,31 @@
             <nav class="navbar-default navbar-side" role="navigation">
                 <div class="sidebar-collapse">
                     <ul class="nav" id="main-menu">
-
-                        <li>
-                            <a class="active-menu click-link" href="UserManager.aspx">
+                        <li class="manager_item active-menu">
+                            <a class="click-link" href="UserManager.aspx">
                                 <i class="glyphicon glyphicon-leaf"></i>
                                 人员信息
                             </a>
                         </li>
-                        <li>
+                        <li class="manager_item">
                             <a class="click-link" href="MainManager.aspx">
                                 <i class="glyphicon glyphicon-leaf"></i>
                                 主页管理
                             </a>
                         </li>
-                        <li>
+                        <li class="manager_item">
                             <a class="click-link" href="ScenicManager.aspx">
                                 <i class="glyphicon glyphicon-leaf"></i>
                                 景区管理
                             </a>
                         </li>
-                        <li>
+                        <li class="manager_item">
                             <a href="index.html">
                                 <i class="glyphicon glyphicon-leaf"></i>
                                 留言板
                             </a>
                         </li>
-                        <li>
+                        <li class="manager_item">
                             <a class="click-link" href="FileManager.aspx">
                                 <i class="glyphicon glyphicon-leaf"></i>
                                 资源管理
@@ -114,6 +113,11 @@
                 $("#page-wrapper").html(data);//初始化加载界面
             });
         }
+        
+        $(".manager_item").click(function () {
+            $(this).addClass("active-menu").siblings().removeClass("active-menu");                  
+        });
+  
     </script>
 </body>
 </html>

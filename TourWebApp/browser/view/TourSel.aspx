@@ -194,8 +194,6 @@
     <script>
         $(".search_item").click(function () {
             $(this).addClass("active").siblings().removeClass("active");
-            $(".products .mainCont").eq($(this).index()).show().siblings().hide();
-
 
             var num = $(".tabs_ul>li").index(this);
             $('.imgbox ul').eq(num).show().siblings().hide();
