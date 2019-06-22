@@ -23,9 +23,9 @@
             <div class="navbar-header col-md-8">
                 <form class="navbar-form navbar-left" role="search" runat="server">
                     <div class="form-group">
-                        <asp:TextBox ID="SearchBox" runat="server" CssClass="form-control" placeholder="北海" Style="width: 600px;"></asp:TextBox>
+                        <input id="SearchBox" class="form-control" style="width: 600px;" />
                     </div>
-                    <asp:Button ID="SearchBtn" runat="server" CssClass="btn btn-success" Text="搜索" />
+                    <button id="SearchBtn" type="button" class="btn btn-success"><span class="glyphicon glyphicon-search"></span></button>
                 </form>
             </div>
             <ul class="nav navbar-nav navbar-right col-md-2 col-md-offset-1">
@@ -38,7 +38,7 @@
 
         <div class="container">
             <div class="searchnum col-md-5">
-                <h3>共为您搜索到<span class="label label-success">1000</span>条关于北海的信息</h3>
+                <h3>共为您搜索到<span id="resNum" class="label label-success"></span>条关于<span id="resKey" style="font-size: 30px;"></span>的信息</h3>
             </div>
         </div>
         <div class="container">
@@ -53,17 +53,15 @@
         <div class="container">
             <div class="infobox col-md-12">
                 <ul class="infoul">
-                    
-                    
                     <li>
                         <div class="list_box">
                             <div class="list_img">
-                                <a href="#" target="_blank">
+                                <a href="#" class="tourInfo" target="_blank">
                                     <img src="../static/img/banner.jpg" alt="pic" /></a>
                             </div>
                             <div class="list_text">
                                 <div class="list_title">
-                                    <a href="#" target="_blank">
+                                    <a href="#" class="tourInfo" target="_blank">
                                         <h4><span class="label label-success">风景</span>北海汉闾文化园、海底世界、海洋之窗、嘉和·冠山海</h4>
                                     </a>
                                 </div>
@@ -111,7 +109,8 @@
     </div>
     <script>
         $(document).ready(function () {
-            loadList();
+            var scenicKey = GetQueryString("param");
+            loadList(scenicKey);
         })
 
         function GetQueryString(name) {
@@ -123,7 +122,6 @@
             //返回参数值  
             if (r != null) return decodeURI(r[2]);
             return null;
-
         }
         $(".search_item").click(function () {
             $(this).addClass("active").siblings().removeClass("active");
@@ -131,36 +129,38 @@
             var num = $(".tabs_ul>li").index(this);
             $('.imgbox ul').eq(num).show().siblings().hide();
         });
-        function loadList() {         
-            var scenicKey = GetQueryString("param");
-            console.log(scenicKey);
+        function loadList(getKey) {
+            console.log(getKey);
             $.ajax({
                 url: "TourSel.aspx/DisplayList",
                 contentType: "application/json",
                 type: "POST",
                 datatype: "json",
                 data: JSON.stringify({
-                    ScenicKey: scenicKey
+                    ScenicKey: getKey
                 }),//格式为 "{a:1,b:2}"
                 success: function (result) {
                     var data = JSON.parse(result.d);
                     console.log(data);
-                    if (data.code == 0) {                     
+                    if (data.code == 0) {
                         console.log(data);
                         var host = "http://psxrtdro4.bkt.clouddn.com/";
+                        $("#resNum").text(data.total);
+                        $("#resKey").text(getKey);
+                        $("#SearchBox").val(getKey);
                         for (var i = 0; i < data.rows.length; i++) {
                             var item = data.rows[i];
                             var dom = $('<li>' +
                         '<div class="list_box">' +
                             '<div class="list_img">' +
-                               ' <a href="#" target="_blank">' +
-                                    '<img src="' + host + item.ScenicPic + '" alt="pic" /></a>' +
+                               ' <a href="TourInfo.aspx?id=' + item.ID + '" target="_blank">' +
+                                    '<img src="' + host + item.ScenicPic + '" alt="pic" />' + '</a>' +
                             '</div>' +
                             '<div class="list_text">' +
                                 '<div class="list_title">' +
-                                    '<a href="#" target="_blank">' +
-                                        '<h4>'+
-                                        '<span class="label label-success">风景</span>'+item.ScenicTitle+'</h4>' +
+                                    '<a href="TourInfo.aspx?id=' + item.ID + '" target="_blank">' +
+                                        '<h4>' +
+                                        '<span class="label label-success">风景</span>' + item.ScenicTitle + '</h4>' +
                                     '</a>' +
                                 '</div>' +
                                 '<div class="list_content">' +
@@ -178,8 +178,12 @@
                 },
                 error: function () { alert("显示失败，程序异常！"); return; }
             })
-        
         }
+        $("#SearchBtn").click(function () {
+            var val = $("#SearchBox").val();
+            loadList(val);
+        });
+
     </script>
 </body>
 </html>

@@ -22,9 +22,9 @@
             </ol>
         </div>
         <div class="container">
-            <div class="tourinfo_title col-md-5">             
-                <asp:Label ID="scenic_name" CssClass="scenic_name" runat="server" Text="北海"></asp:Label>
-                <asp:Label ID="scenic_py" CssClass="scenic_py" runat="server" Text="BeiHai"></asp:Label>
+            <div class="tourinfo_title col-md-5">
+                <asp:Label ID="scenic_name" CssClass="scenic_name" runat="server" Text=""></asp:Label>
+                <asp:Label ID="scenic_py" CssClass="scenic_py" runat="server" Text=""></asp:Label>
             </div>
             <div class="tourinfo_icon col-lg-5 col-md-offset-2">
                 <ul>
@@ -54,8 +54,8 @@
                 <div class="img_btn btn_right"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></div>
             </div>
             <div class="tourinfo_Info col-md-5 ">
-                <h3>城市介绍</h3>
-                <p>
+                <h3>景区介绍</h3>
+                <span id="scenicTxt">
                     北海市拥有4A级景区9家，分别为：银滩国家旅游度假区、
                     涠洲岛鳄鱼山景区、北海老城景区、
                     金海湾红树林生态旅游区、北海园博园、
@@ -63,7 +63,7 @@
                     此外还有3A级景区8家，以及星岛湖旅游度假区、“世外桃源”斜阳岛、
                     冠头岭国家森林公园、山口国家级红树林自然保护区、儒艮（美人鱼）
                     国家自然保护区等一批旅游景点景区。
-                </p>
+                </span>
             </div>
         </div>
         <hr />
@@ -231,11 +231,13 @@
                 </ul>
 
             </div>
-        </div>    
+        </div>
     </form>
     <script>
         $(document).ready(function () {
             $(".imgbox .tourinfo_img:gt(0)").hide();
+            var getID = GetQueryString("id");
+            loadInfo(getID);
         });
         var index = 0;
         function autoMove() {
@@ -292,10 +294,43 @@
 
         $('.tab-item').mouseenter(function () {
             $(this).addClass('myactive').siblings().removeClass('myactive');
-            
             var num = $(".tabs_ul>li").index(this);
             $('.imgbox ul').eq(num).show().siblings().hide();
         });
+        function GetQueryString(ID) {
+            //构造一个含有目标参数的正则表达式对象  
+            var reg = new RegExp("(^|&)" + ID + "=([^&]*)(&|$)");
+            //匹配目标参数  
+            var r = window.location.search.substr(1).match(reg);
+            //alert(r);
+            //返回参数值  
+            if (r != null) return decodeURI(r[2]);
+            return null;
+        }
+        function loadInfo(getID) {
+            console.log(getID);
+            $.ajax({
+                url: "TourInfo.aspx/DisplayInfo",
+                contentType: "application/json",
+                type: "POST",
+                datatype: "json",
+                data: JSON.stringify({
+                    GetID: getID
+                }),//格式为 "{a:1,b:2}"
+                success: function (result) {
+                    var data = JSON.parse(result.d);
+                    console.log(data);
+                    if (data.code == 0) {
+                        console.log(data);
+                        var host = "http://psxrtdro4.bkt.clouddn.com/";
+                        $("#scenic_name").text(data.rows[0].ScenicName);
+                        $("#scenic_py").text(data.rows[0].ScenicEnglish);
+                        $("#scenicTxt").text(data.rows[0].ScenicContent);                       
+                    }
+                },
+                error: function () { alert("显示失败，程序异常！"); return; }
+            })
+        }
     </script>
 </body>
 </html>

@@ -336,6 +336,7 @@
     <Compile Include="server\mode\MainTourColumn.cs" />
     <Compile Include="server\mode\MsgBoard.cs" />
     <Compile Include="server\mode\ScenicInfo.cs" />
+    <Compile Include="server\mode\ScenicRecord.cs" />
     <Compile Include="server\mode\UserInfo.cs" />
     <Compile Include="server\utils\Md5Utils.cs" />
     <Compile Include="server\utils\Result.cs" />

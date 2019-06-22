@@ -21,10 +21,11 @@ namespace TourWebApp.browser.back
         }
 
         [WebMethod]
-        public static String AddScenicInfo(string Name, string Title, string Content, string Address, string PicUrl)
+        public static String AddScenicInfo(string Name,string English, string Title, string Content, string Address, string PicUrl)
         {
             ScenicInfo addInfo = new ScenicInfo();
             addInfo.ScenicName = Name;
+            addInfo.ScenicEnglish = English;
             addInfo.ScenicTitle = Title;
             addInfo.ScenicContent = Content;
             addInfo.ScenicAddress = Address;
@@ -79,10 +80,11 @@ namespace TourWebApp.browser.back
         }
 
         [WebMethod]
-        public static String EditUp(string EditID, string EditName, string EditTitle, string EditContent, string EditAddress)
+        public static String EditUp(string EditID, string EditEnglish, string EditName, string EditTitle, string EditContent, string EditAddress)
         {
             ScenicInfo editInfo = new ScenicInfo();
             editInfo.ScenicName = EditName;
+            editInfo.ScenicEnglish = EditEnglish;
             editInfo.ScenicTitle = EditTitle;
             editInfo.ScenicContent = EditContent;
             editInfo.ScenicAddress = EditAddress;

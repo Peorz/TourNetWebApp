@@ -22,10 +22,10 @@ namespace TourWebApp.browser.view
         [WebMethod]
         public static String DisplayList(string ScenicKey)
         {
-            PageList<ScenicInfo> info = ORMSupport.PageSelect<ScenicInfo>()
+            PageList<ScenicInfo> loadInfo = ORMSupport.PageSelect<ScenicInfo>()
            .AddWhere("ScenicContent", "like", "%" + ScenicKey + "%")
            .Select();
-            return Result.Ok("", info.Total, info.Rows);
-        }
+            return Result.Ok("", loadInfo.Total, loadInfo.Rows);
+        }          
     }
 }
