@@ -45,28 +45,38 @@
                         </ul>
                     </div>
                     <div class="col-md-3">
-                        <ul class="nav navbar-nav navbar-right" >
-                            <li class="rl">
+                        <ul class="nav navbar-nav navbar-right">
+                            <%
+                                String outStr = "";
+                                String inStr = "style='display:none'";
+                                TourWebApp.server.mode.UserInfo user = Session["user"] as TourWebApp.server.mode.UserInfo;
+                                if (user != null)
+                                {
+                                    outStr = "style='display:none'";
+                                    inStr = "";
+                                }
+                                %>
+                            <li  <% Response.Write(outStr);%>>
                                 <a href="browser/view/Register.aspx">
                                     <span class="glyphicon glyphicon-leaf" aria-hidden="true"></span>
                                     <span class="sr-only">Error:</span>注册
                                 </a>
                             </li>
-                            <li class="rl">
+                            <li  <% Response.Write(outStr);%>>
                                 <a href="browser/view/Login.aspx">
                                     <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                                     <span class="sr-only">Error:</span>登录
                                 </a>
                             </li>
-                            <li class="head_img"  >
-                                <img class="img-thumbnail btn-default dropdown-toggle" data-toggle="dropdown"  src="browser/static/img/bg_area_1.jpg"  />
+                            <li class="head_img" <% Response.Write(inStr);%>>
+                                <img class="img-thumbnail btn-default dropdown-toggle" data-toggle="dropdown" src="browser/static/img/16849027.jpeg" />
                                 <ul class="dropdown-menu">
-                                    <li><a href="browser/view/Personal.aspx">个人中心</a></li>                     
+                                    <li><a href="browser/view/Personal.aspx">个人中心</a></li>
                                     <li role="separator" class="divider"></li>
                                     <li><a href="browser/view/Login.aspx">退出</a></li>
                                 </ul>
                             </li>
-                            
+
                         </ul>
                     </div>
                 </div>

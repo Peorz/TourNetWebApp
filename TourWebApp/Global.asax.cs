@@ -49,7 +49,7 @@ namespace TourWebApp.server.config
             if (Request.CurrentExecutionFilePathExtension.Equals(".aspx"))
             {
                 String view = Request.FilePath;
-                if (view.EndsWith("Login.aspx") || view.EndsWith("Register.aspx") || view.EndsWith("ForgetPassWrod.aspx"))
+                if (view.EndsWith("Main.aspx") || view.EndsWith("Index.aspx") || view.EndsWith("Login.aspx") || view.EndsWith("Register.aspx") || view.EndsWith("ForgetPassWrod.aspx"))
                 {
                     return;
                 }
