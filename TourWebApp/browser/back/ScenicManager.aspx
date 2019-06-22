@@ -129,11 +129,11 @@
                         <span class="input-group-addon" id="scenic_address_span_show">景区地址</span>
                         <input type="text" class="form-control" id="scenic_address_show" aria-describedby="scenic_address_span_show" />
                     </div>
-                    <div class="input-group picList">
+                    <div class="input-group">
                         <span class="input-group-addon" id="scenic_pic_span_show">景区图片</span>
                         <div class="img_upload_box" aria-describedby="scenic_pic_span_show">
                             <div class="picList">
-                                <img src="#" class="newImg" />
+                                <img src="#" class="newImg"  />
                             </div>
                         </div>
                     </div>
@@ -142,7 +142,7 @@
                         <input type="text" class="form-control" id="scenic_browse_show" aria-describedby="scenic_browse_span_show" />
                     </div>
                     <div class="input-group">
-                        <span class="input-group-addon" id="scenic_time_span_show">景区地址</span>
+                        <span class="input-group-addon" id="scenic_time_span_show">更新时间</span>
                         <input type="text" class="form-control" id="scenic_time_show" aria-describedby="scenic_time_span_show" />
                     </div>
                 </div>
@@ -266,14 +266,13 @@
                 success: function (result)//成功函数
                 {
                     var data = JSON.parse(result.d);
-                    if (data.code == 0) {
-                        console.log(data);
+                    if (data.code == 0) {                  
                         $("#scenic_name_show").val(data.data.ScenicName);
                         $("#scenic_title_show").val(data.data.ScenicTitle);
                         $("#scenic_content_show").val(data.data.ScenicContent);
                         $("#scenic_address_show").val(data.data.ScenicAddress);
-                        $("#scenic_browse_show").val(data.data.ScenicBrowse);
-                        $('.newImg').attr(data.data.ScenicPic);
+                        $("#scenic_browse_show").val(data.data.ScenicBrowse);                      
+                        $('.newImg').attr('src',data.data.ScenicPic);
                         $("#scenic_time_show").val(data.data.ScenicUploadTime);
 
                     }

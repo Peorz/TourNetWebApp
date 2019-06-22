@@ -12,6 +12,8 @@
     <link href="../static/css/toursel/toursel.css" rel="stylesheet" />
     <script src="../static/js/jquery.min.js"></script>
     <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/qiniu.min.js"></script>
+    <script src="../static/js/myfileup.js"></script>
 </head>
 <body>
 
@@ -51,6 +53,8 @@
         <div class="container">
             <div class="infobox col-md-12">
                 <ul class="infoul">
+                    
+                    
                     <li>
                         <div class="list_box">
                             <div class="list_img">
@@ -80,93 +84,7 @@
                             </div>
                         </div>
                     </li>
-                    <li>
-                        <div class="list_box">
-                            <div class="list_img">
-                                <a href="#" target="_blank">
-                                    <img src="../static/img/banner.jpg" alt="pic" /></a>
-                            </div>
-                            <div class="list_text">
-                                <div class="list_title">
-                                    <a href="#" target="_blank">
-                                        <h4><span class="label label-success">风景</span>北海汉闾文化园、海底世界、海洋之窗、嘉和·冠山海</h4>
-                                    </a>
-                                </div>
-                                <div class="list_content">
-                                    <p>
-                                        北海市拥有4A级景区9家，分别为：银滩国家旅游度假区、
-                                涠洲岛鳄鱼山景区、北海老城景区、
-                                金海湾红树林生态旅游区、北海园博园、
-                                北海汉闾文化园、海底世界、海洋之窗、嘉和·冠山海；
-                                此外还有3A级景区8家，以及星岛湖旅游度假区、“世外桃源”斜阳岛、
-                                冠头岭国家森林公园、山口国家级红树林自然保护区、儒艮（美人鱼）
-                                国家自然保护区等一批旅游景点景区。
-                                    </p>
-                                </div>
-                                <div class="list_icon">
-                                    <p>上传时间：<span class="createtime">2019-6-6 </span><span class="glyphicon glyphicon-eye-open" style="margin-left: 10px;"><i>1000</i></span></p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="list_box">
-                            <div class="list_img">
-                                <a href="#" target="_blank">
-                                    <img src="../static/img/banner.jpg" alt="pic" /></a>
-                            </div>
-                            <div class="list_text">
-                                <div class="list_title">
-                                    <a href="#" target="_blank">
-                                        <h4><span class="label label-success">风景</span>北海汉闾文化园、海底世界、海洋之窗、嘉和·冠山海</h4>
-                                    </a>
-                                </div>
-                                <div class="list_content">
-                                    <p>
-                                        北海市拥有4A级景区9家，分别为：银滩国家旅游度假区、
-                                涠洲岛鳄鱼山景区、北海老城景区、
-                                金海湾红树林生态旅游区、北海园博园、
-                                北海汉闾文化园、海底世界、海洋之窗、嘉和·冠山海；
-                                此外还有3A级景区8家，以及星岛湖旅游度假区、“世外桃源”斜阳岛、
-                                冠头岭国家森林公园、山口国家级红树林自然保护区、儒艮（美人鱼）
-                                国家自然保护区等一批旅游景点景区。
-                                    </p>
-                                </div>
-                                <div class="list_icon">
-                                    <p>上传时间：<span class="createtime">2019-6-6 </span><span class="glyphicon glyphicon-eye-open" style="margin-left: 10px;"><i>1000</i></span></p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="list_box">
-                            <div class="list_img">
-                                <a href="#" target="_blank">
-                                    <img src="../static/img/banner.jpg" alt="pic" /></a>
-                            </div>
-                            <div class="list_text">
-                                <div class="list_title">
-                                    <a href="#" target="_blank">
-                                        <h4><span class="label label-success">风景</span>北海汉闾文化园、海底世界、海洋之窗、嘉和·冠山海</h4>
-                                    </a>
-                                </div>
-                                <div class="list_content">
-                                    <p>
-                                        北海市拥有4A级景区9家，分别为：银滩国家旅游度假区、
-                                涠洲岛鳄鱼山景区、北海老城景区、
-                                金海湾红树林生态旅游区、北海园博园、
-                                北海汉闾文化园、海底世界、海洋之窗、嘉和·冠山海；
-                                此外还有3A级景区8家，以及星岛湖旅游度假区、“世外桃源”斜阳岛、
-                                冠头岭国家森林公园、山口国家级红树林自然保护区、儒艮（美人鱼）
-                                国家自然保护区等一批旅游景点景区。
-                                    </p>
-                                </div>
-                                <div class="list_icon">
-                                    <p>上传时间：<span class="createtime">2019-6-6 </span><span class="glyphicon glyphicon-eye-open" style="margin-left: 10px;"><i>1000</i></span></p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
+
                 </ul>
 
                 <nav aria-label="Page navigation" style="text-align: center;">
@@ -192,13 +110,76 @@
         </div>
     </div>
     <script>
+        $(document).ready(function () {
+            loadList();
+        })
+
+        function GetQueryString(name) {
+            //构造一个含有目标参数的正则表达式对象  
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            //匹配目标参数  
+            var r = window.location.search.substr(1).match(reg);
+            //alert(r);
+            //返回参数值  
+            if (r != null) return decodeURI(r[2]);
+            return null;
+
+        }
         $(".search_item").click(function () {
             $(this).addClass("active").siblings().removeClass("active");
 
             var num = $(".tabs_ul>li").index(this);
             $('.imgbox ul').eq(num).show().siblings().hide();
         });
-
+        function loadList() {         
+            var scenicKey = GetQueryString("param");
+            console.log(scenicKey);
+            $.ajax({
+                url: "TourSel.aspx/DisplayList",
+                contentType: "application/json",
+                type: "POST",
+                datatype: "json",
+                data: JSON.stringify({
+                    ScenicKey: scenicKey
+                }),//格式为 "{a:1,b:2}"
+                success: function (result) {
+                    var data = JSON.parse(result.d);
+                    console.log(data);
+                    if (data.code == 0) {                     
+                        console.log(data);
+                        var host = "http://psxrtdro4.bkt.clouddn.com/";
+                        for (var i = 0; i < data.rows.length; i++) {
+                            var item = data.rows[i];
+                            var dom = $('<li>' +
+                        '<div class="list_box">' +
+                            '<div class="list_img">' +
+                               ' <a href="#" target="_blank">' +
+                                    '<img src="' + host + item.ScenicPic + '" alt="pic" /></a>' +
+                            '</div>' +
+                            '<div class="list_text">' +
+                                '<div class="list_title">' +
+                                    '<a href="#" target="_blank">' +
+                                        '<h4>'+
+                                        '<span class="label label-success">风景</span>'+item.ScenicTitle+'</h4>' +
+                                    '</a>' +
+                                '</div>' +
+                                '<div class="list_content">' +
+                                    '<p>' + item.ScenicContent + '</p>' +
+                                '</div>' +
+                                '<div class="list_icon">' +
+                                    '<p>上传时间：<span class="createtime">' + item.ScenicUploadTime + '</span><span class="glyphicon glyphicon-eye-open" style="margin-left: 10px;"><i>' + item.ScenicBrowse + '</i></span></p>' +
+                                '</div>' +
+                            '</div>' +
+                        '</div>' +
+                    '</li>');
+                            $(".infoul").append(dom);
+                        }
+                    }
+                },
+                error: function () { alert("显示失败，程序异常！"); return; }
+            })
+        
+        }
     </script>
 </body>
 </html>

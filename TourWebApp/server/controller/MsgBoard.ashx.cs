@@ -26,7 +26,7 @@ namespace TourWebApp.server.controller
                 .Select();
             foreach (mode.MsgBoard msg in page.Rows)
             {
-                _ = msg.UserInfo;
+                //_ = msg.UserInfo;
             }
             return Result.Ok("", page.Total, page.Rows);
         }
