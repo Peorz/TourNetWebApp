@@ -69,13 +69,8 @@
                                 景区管理
                             </a>
                         </li>
-<<<<<<< HEAD
                         <li class="manager_item">
                             <a href="index.html">
-=======
-                        <li>
-                            <a class="click-link" href="UserMesBoard.aspx">
->>>>>>> 491c17898835d6a2fa407e159eb321d265d3e6dd
                                 <i class="glyphicon glyphicon-leaf"></i>
                                 留言板
                             </a>
