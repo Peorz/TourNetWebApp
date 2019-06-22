@@ -73,7 +73,7 @@
                         var rows = data.rows;
                         for (var i = 0; i < rows.length; i++) {
                             var item = data.rows[i];
-                            var dom = $('< div class= "guestbook_other" > ' +
+                            var dom = $('<div class= "guestbook_other" > ' +
                                 '<div class="guestbook_img">' +
                                 '<img src="..\static\img\guestbook_img.png" />' +
                                 '</div>' +
