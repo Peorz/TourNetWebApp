@@ -55,15 +55,7 @@
             </div>
             <div class="tourinfo_Info col-md-5 ">
                 <h3>景区介绍</h3>
-                <span id="scenicTxt">
-                    北海市拥有4A级景区9家，分别为：银滩国家旅游度假区、
-                    涠洲岛鳄鱼山景区、北海老城景区、
-                    金海湾红树林生态旅游区、北海园博园、
-                    北海汉闾文化园、海底世界、海洋之窗、嘉和·冠山海；
-                    此外还有3A级景区8家，以及星岛湖旅游度假区、“世外桃源”斜阳岛、
-                    冠头岭国家森林公园、山口国家级红树林自然保护区、儒艮（美人鱼）
-                    国家自然保护区等一批旅游景点景区。
-                </span>
+                <span id="scenicTxt"></span>
             </div>
         </div>
         <hr />
@@ -329,6 +321,30 @@
                     }
                 },
                 error: function () { alert("显示失败，程序异常！"); return; }
+            })
+
+            $.ajax({
+                url: "TourInfo.aspx/RotaryPic",
+                contentType: "application/json",
+                type: "POST",
+                datatype: "json",
+                data: JSON.stringify({
+                    GetID: getID
+                }),//格式为 "{a:1,b:2}"
+                success: function (result) {
+                    var data = JSON.parse(result.d);
+                    console.log(data);
+                    if (data.code == 0) {
+                        var host = "http://psxrtdro4.bkt.clouddn.com/";
+                        for (var i = 0; i < data.rows.length; i++) {
+                            var item = data.rows[i];
+                            var imgList = $('<li>' +
+                                '<img alt="" src="' + host + item.ScenicImg + '" />' +
+                                '</li>');                                                  
+                            $(".img_ul").append(imgList);
+                        }
+                    }
+                }
             })
         }
     </script>

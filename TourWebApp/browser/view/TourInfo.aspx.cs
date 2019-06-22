@@ -21,5 +21,15 @@ namespace TourWebApp.browser.view
            .Select();
             return Result.Ok("", loadInfo.Total, loadInfo.Rows);
         }
+
+        [WebMethod]
+        public static String RotaryPic(string GetID)
+        {
+            PageList<ScenicPic> loadImg = ORMSupport.PageSelect<ScenicPic>()
+           .AddWhere("Scenic", GetID)
+           .Select();
+            return Result.Ok("", loadImg.Total, loadImg.Rows);
+        }
+        
     }
 }

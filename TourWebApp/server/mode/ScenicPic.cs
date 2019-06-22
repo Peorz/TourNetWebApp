@@ -9,7 +9,7 @@ using NetDB.Core.SqlAttribute;
 
 namespace TourWebApp.server.mode
 {
-    public class ScenicRecord:ORMSupport
+    public class ScenicPic:ORMSupport
     {
         private string _ScenicID;
         [Colmun(Type = "varchar(32)")]

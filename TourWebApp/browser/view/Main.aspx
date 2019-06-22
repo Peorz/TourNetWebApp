@@ -62,33 +62,33 @@
                         </div>
                         <div class="row" style="margin-top: 16px">
                             <div class="col-md-3 package1">
-                                <img src="browser/static/img/main_bg1.jpg" class="full-img" alt="xx">
+                                <img src="browser/static/img/main_bg1.jpg" class="full-img" alt="xx"/>
                                 <h4>北海银滩之旅</h4>
                                 <h5>888元</h5>
                                 <a href="#" class="w3_agileits_sign_up2 popup-with-zoom-anim ab scroll">进入</a>
                             </div>
                             <div class="col-md-3 package1">
-                                <img src="browser/static/img/main_bg2.jpg" class="full-img" alt="xx">
+                                <img src="browser/static/img/main_bg2.jpg" class="full-img" alt="xx"/>
                                 <h4>桂林山水之旅</h4>
                                 <h5>1888元</h5>
                                 <a href="#" class="w3_agileits_sign_up2 popup-with-zoom-anim ab scroll">进入</a>
                             </div>
                             <div class="col-md-6 package2">
-                                <img src="browser/static/img/main_bg5.jpg" class="full-img" alt="xx">
+                                <img src="browser/static/img/main_bg5.jpg" class="full-img" alt="xx"/>
                             </div>
                         </div>
                         <div class="row" style="margin-top: 16px">
                             <div class="col-md-6 package2">
-                                <img src="browser/static/img/main_bg6.jpg" class="full-img" alt="xx">
+                                <img src="browser/static/img/main_bg6.jpg" class="full-img" alt="xx"/>
                             </div>
                             <div class="col-md-3 package1">
-                                <img src="browser/static/img/main_bg3.jpg" class="full-img" alt="xx">
+                                <img src="browser/static/img/main_bg3.jpg" class="full-img" alt="xx"/>
                                 <h4>伦敦之旅</h4>
                                 <h5>2888元</h5>
                                 <a href="#" class="w3_agileits_sign_up2 popup-with-zoom-anim ab scroll">进入</a>
                             </div>
                             <div class="col-md-3 package1">
-                                <img src="browser/static/img/main_bg4.jpg" class="full-img" alt="xx">
+                                <img src="browser/static/img/main_bg4.jpg" class="full-img" alt="xx"/>
                                 <h4>巴黎之旅</h4>
                                 <h5>3888元</h5>
                                 <a href="#" class="w3_agileits_sign_up2 popup-with-zoom-anim ab scroll">进入</a>

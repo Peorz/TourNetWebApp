@@ -69,6 +69,12 @@
                                 景区管理
                             </a>
                         </li>
+                         <li class="manager_item">
+                            <a class="click-link" href="ScenicMesPic.aspx">
+                                <i class="glyphicon glyphicon-leaf"></i>
+                                景区图片轮播管理
+                            </a>
+                        </li>
                         <li class="manager_item">
                             <a class="click-link" href="UserMesBoard.aspx">
                                 <i class="glyphicon glyphicon-leaf"></i>

@@ -10,7 +10,7 @@
 namespace TourWebApp.browser.back {
     
     
-    public partial class Index {
+    public partial class ScenicMesPic {
         
         /// <summary>
         /// form1 控件。

@@ -79,6 +79,7 @@
     <Content Include="browser\back\Index.aspx" />
     <Content Include="browser\back\MainManager.aspx" />
     <Content Include="browser\back\ScenicManager.aspx" />
+    <Content Include="browser\back\ScenicMesPic.aspx" />
     <Content Include="browser\back\UserManager.aspx" />
     <Content Include="browser\back\UserMesBoard.aspx" />
     <Content Include="browser\static\backcss\bootstrap-table.min.css" />
@@ -190,6 +191,13 @@
     </Compile>
     <Compile Include="browser\back\ScenicManager.aspx.designer.cs">
       <DependentUpon>ScenicManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="browser\back\ScenicMesPic.aspx.cs">
+      <DependentUpon>ScenicMesPic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="browser\back\ScenicMesPic.aspx.designer.cs">
+      <DependentUpon>ScenicMesPic.aspx</DependentUpon>
     </Compile>
     <Compile Include="browser\back\UserManager.aspx.cs">
       <DependentUpon>UserManager.aspx</DependentUpon>
@@ -322,6 +330,9 @@
     <Compile Include="server\controller\UserManager.ashx.cs">
       <DependentUpon>UserManager.ashx</DependentUpon>
     </Compile>
+    <Compile Include="server\controller\ScenicMesPic.ashx.cs">
+      <DependentUpon>ScenicMesPic.ashx</DependentUpon>
+    </Compile>
     <Compile Include="server\extend\ResultFullAPIHttpHandler.cs" />
     <Compile Include="server\controller\Test.ashx.cs">
       <DependentUpon>Test.ashx</DependentUpon>
@@ -337,7 +348,7 @@
     <Compile Include="server\mode\MainTourColumn.cs" />
     <Compile Include="server\mode\MsgBoard.cs" />
     <Compile Include="server\mode\ScenicInfo.cs" />
-    <Compile Include="server\mode\ScenicRecord.cs" />
+    <Compile Include="server\mode\ScenicPic.cs" />
     <Compile Include="server\mode\UserInfo.cs" />
     <Compile Include="server\utils\Md5Utils.cs" />
     <Compile Include="server\utils\Result.cs" />
@@ -357,6 +368,7 @@
     <Content Include="server\controller\ScenicManager.ashx" />
     <Content Include="server\controller\MainTourColumn.ashx" />
     <Content Include="server\controller\MainRotation.ashx" />
+    <Content Include="server\controller\ScenicMesPic.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
