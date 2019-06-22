@@ -27,35 +27,28 @@
         </div>
 
         <div class="guestbook_content">
-            <div class="guestbook_other">
-                <div class="guestbook_img">
-                    <img src="..\static\img\guestbook_img.png" />
-                </div>
-                <div class="guestbook_news">
-                    <h4><a href="#">Label</a></h4>
-                    <span>content</span>
-                    <h5>time</h5>
-                </div>
-            </div>
         </div>
     </form>
     <script type="text/javascript">
         $(document).ready(function () {
             load();
-            $.ajax({
-                url: "MessageBoard.aspx/Add",
-                contentType: "application/json",
-                type: "POST",
-                datatype: "json",
-                data: JSON.stringify({
-                    key: $("#TextBox1").val(),
-                }),//格式为 "{a:1,b:2}"
-                success: function (result) {
-                    var data = JSON.parse(result.d);
-                    if (data.code == 0) {
+            $("#Button1").on("click", function () {
+                $.ajax({
+                    url: "MessageBoard.aspx/Add",
+                    contentType: "application/json",
+                    type: "POST",
+                    datatype: "json",
+                    data: JSON.stringify({
+                        Content: $("#TextBox1").val(),
+                    }),//格式为 "{a:1,b:2}"
+                    success: function (result) {
+                        var data = JSON.parse(result.d);
+                        if (data.code == 0) {
+                            load();
+                        }
                     }
-                }
-            })
+                })
+            });
         });
 
         function load() {
@@ -71,6 +64,7 @@
                     console.log(data);
                     if (data.code == 0) {
                         var rows = data.rows;
+                        $(".guestbook_content").html("");
                         for (var i = 0; i < rows.length; i++) {
                             var item = data.rows[i];
                             var dom = $('<div class= "guestbook_other" > ' +
@@ -78,16 +72,15 @@
                                 '<img src="..\static\img\guestbook_img.png" />' +
                                 '</div>' +
                                 '<div class="guestbook_news">' +
-                                '<h4><a href="#">Label</a></h4>' +
-                                '<span>content</span>' +
-                                '<h5>time</h5>' +
+                                '<h4><a href="#">' + item.UserInfo.Nick + '</a></h4>' +
+                                '<span>' + item.Content + '</span>' +
+                                '<h5>' + item.PostTime + '</h5>' +
                                 '</div></div > ');
                             $(".guestbook_content").append(dom);
                         }
                     }
                 }
             })
-
 
         };
     </script>

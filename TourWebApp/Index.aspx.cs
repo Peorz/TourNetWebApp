@@ -27,14 +27,8 @@ namespace TourWebApp
 
         protected void SearchBtn_Click(object sender, EventArgs e)
         {
-            ScenicInfo scenic = new ScenicInfo();
-            PageList<ScenicInfo> list = ORMSupport.PageSelect<ScenicInfo>()
-                .AddWhere("ScenicContent", "like", SearchText.Text)
-                .Select();
-            if (list.Total > 0)
-            {
-                Console.WriteLine("1111");
-            }
+            String val = SearchText.Text;
+            Response.Redirect("browser/view/TourSel.aspx?param=" + val);
         }
     }
 }
