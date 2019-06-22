@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using TourWebApp.server.extend;
-using TourWebApp.server.mode;
+using TourWebApp.server;
 using TourWebApp.server.utils;
 
 namespace TourWebApp.server.controller
@@ -22,9 +22,13 @@ namespace TourWebApp.server.controller
 
         public override string GetProcessRequest(HttpContext context, HttpRequest request, HttpResponse response)
         {
-            PageList<UserInfo> userList = ORMSupport.PageSelect<UserInfo>()
+            PageList<mode.MsgBoard> page = ORMSupport.PageSelect<mode.MsgBoard>()
                 .Select();
-            return Result.Ok("", userList.Total, userList.Rows);
+            foreach (mode.MsgBoard msg in page.Rows)
+            {
+                _ = msg.UserInfo;
+            }
+            return Result.Ok("", page.Total, page.Rows);
         }
 
         public override string PostProcessRequest(HttpContext context, HttpRequest request, HttpResponse response)

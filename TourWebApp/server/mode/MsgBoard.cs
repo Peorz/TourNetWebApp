@@ -35,5 +35,23 @@ namespace TourWebApp.server.mode
             get { return _PostTime; }
             set { _PostTime = value; }
         }
+
+        private UserInfo _UserInfo;
+
+        public UserInfo UserInfo
+        {
+            get
+            {
+                _UserInfo = new UserInfo();
+                _UserInfo.ID = UserID;
+                _UserInfo.Find();
+                _UserInfo.PassWord = "";
+                _UserInfo.Nick = "xxxxx";
+                return _UserInfo;
+            }
+
+            set { _UserInfo = value; }
+        }
+
     }
 }
