@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
     <link href="../static/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../static/backcss/index/custom-styles.css" rel="stylesheet" />
@@ -17,23 +17,20 @@
     <script src="../static/js/jquery.metisMenu.js"></script>
     <script src="../static/backjs/bootstrap-table.min.js"></script>
     <script src="../static/backjs/bootstrap-table-zh-CN.min.js"></script>
-    <script src="../static/js/qiniu.min.js"></script>
-    <script src="../static/js/myfileup.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
+        <div>
             <div class="alert alert-success" role="alert">留言板管理</div>
             <div class="container-fluid">
-                <%--<div class="row">
+                <div class="row">
                     <div class="card" style="margin-bottom: 0">
                         <div class="btn-group" role="group" aria-label="...">
-                            <button type="button" id="add_file" class="btn btn-primary">回复</button>
-                            <button type="button" class="btn btn-success">修改</button>
+                            <button type="button" id="del_btn" class="btn btn-success">删除</button>
                             <button type="button" class="btn btn-warning" onclick="getSelections()">设置</button>
                         </div>
                     </div>
-                </div>--%>
+                </div>
                 <div class="row">
                     <div class="card">
                         <table id="table"></table>
@@ -45,27 +42,31 @@
     <script type="text/javascript">
         $(document).ready(function () {
             loadTable();
-            var param = {
-                btn: "#add_file",
-                url: "../../server/controller/FileUp.ashx",
-                progress: function (res) {
-                    console.log(res);
-                },
-                success: function (res) {
-                    console.log(res);
-                    $('#table').bootstrapTable("refresh");
-                },
-                error: function (msg) {
-                    console.log(msg);
-                }
-            };
-            fileup(param);
+            $("#del_btn").on("click", function () {
+                var row = getSelections();
+                var id = row[0].ID;
+                $.ajax({
+                    url: "UserMesBoard.aspx/Del",
+                    contentType: "application/json",
+                    type: "POST",
+                    datatype: "json",
+                    data: JSON.stringify({
+                        ID: id,
+                    }),//格式为 "{a:1,b:2}"
+                    success: function (result) {
+                        var data = JSON.parse(result.d);
+                        if (data.code == 0) {
+                            $('#table').bootstrapTable("refresh");
+                        }
+                    }
+                })
+            });
         });
 
         function loadTable() {
             $('#table').bootstrapTable({
                 method: "get",
-                url: '../../server/controller/UserMesBoard.ashx',
+                url: '../../server/controller/MsgBoard.ashx',
                 contentType: "application/x-www-form-urlencoded",
                 striped: true,                         //是否显示行间隔色
                 cache: false,
@@ -76,34 +77,20 @@
                         checkbox: true,
                     },
                     {
-                        field: 'FileKey',
-                        title: '标题',
-                        align: 'center',
+                        field: 'UserInfo',
+                        title: '发表人',
                         formatter: function (value, row, index) {
-                            var host = "http://psxrtdro4.bkt.clouddn.com/";
-                            var img = '<img src="' + host + value + "-default" + '">';
-                            return img;
+                            var nick = value.Nick;
+                            return nick;
                         }
                     },
                     {
-                        field: 'FileKey',
-                        title: '发表人'
+                        field: 'Content',
+                        title: '内容'
                     },
                     {
-                        field: 'FileHash',
+                        field: 'PostTime',
                         title: '发表时间'
-                    },
-                    {
-                        field: 'UpTime',
-                        title: '发表内容'
-                    },
-                    {
-                        field: "FileKey",
-                        title: "操作",
-                        formatter: function (value, row, index) {
-                            var host = "http://psxrtdro4.bkt.clouddn.com/";
-                            return host + value;
-                        }
                     }
                 ]
             });
