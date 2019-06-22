@@ -60,49 +60,63 @@
                             </div>
                         </div>
                         <div class="row" style="margin-top: 16px">
-                            <div class="col-md-3">
-                                <img src="browser/static/img/bg_area_2.jpg" class="full-img" alt="xx">
+                            <div class="col-md-3 package1">
+                                <img src="browser/static/img/main_bg1.jpg" class="full-img" alt="xx">
+                                <h4>北海银滩之旅</h4>
+                                <h5>888元</h5>
+                                <a href="#" class="w3_agileits_sign_up2 popup-with-zoom-anim ab scroll">进入</a>
                             </div>
-                            <div class="col-md-3">
-                                <img src="browser/static/img/bg_area_2.jpg" class="full-img" alt="xx">
+                            <div class="col-md-3 package1">
+                                <img src="browser/static/img/main_bg2.jpg" class="full-img" alt="xx">
+                                <h4>桂林山水之旅</h4>
+                                <h5>1888元</h5>
+                                <a href="#" class="w3_agileits_sign_up2 popup-with-zoom-anim ab scroll">进入</a>
                             </div>
-                            <div class="col-md-6">
-                                <img src="browser/static/img/bg_area_2.jpg" class="full-img" alt="xx">
+                            <div class="col-md-6 package2">
+                                <img src="browser/static/img/main_bg5.jpg" class="full-img" alt="xx">
                             </div>
                         </div>
                         <div class="row" style="margin-top: 16px">
-                            <div class="col-md-6">
-                                <img src="browser/static/img/bg_area_2.jpg" class="full-img" alt="xx">
+                            <div class="col-md-6 package2">
+                                <img src="browser/static/img/main_bg6.jpg" class="full-img" alt="xx">
                             </div>
-                            <div class="col-md-3">
-                                <img src="browser/static/img/bg_area_2.jpg" class="full-img" alt="xx">
+                            <div class="col-md-3 package1">
+                                <img src="browser/static/img/main_bg3.jpg" class="full-img" alt="xx">
+                                <h4>伦敦之旅</h4>
+                                <h5>2888元</h5>
+                                <a href="#" class="w3_agileits_sign_up2 popup-with-zoom-anim ab scroll">进入</a>
                             </div>
-                            <div class="col-md-3">
-                                <img src="browser/static/img/bg_area_2.jpg" class="full-img" alt="xx">
+                            <div class="col-md-3 package1">
+                                <img src="browser/static/img/main_bg4.jpg" class="full-img" alt="xx">
+                                <h4>巴黎之旅</h4>
+                                <h5>3888元</h5>
+                                <a href="#" class="w3_agileits_sign_up2 popup-with-zoom-anim ab scroll">进入</a>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-4 col-md-offset-4">
-                                <asp:Label ID="Label2" runat="server" CssClass="center-block" Style="text-align: center; margin: 48px" Text="关于我们" Font-Size="XX-Large" ForeColor="Black"></asp:Label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4"></div>
-                            <div class="col-md-4">
-                                <img src="browser/static/img/16849027.jpeg" class="full-img" alt="xx">
-                            </div>
-                            <div class="col-md-4"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4"></div>
-                            <div class="col-md-4"></div>
-                            <div class="col-md-4"></div>
-                        </div>
-
                     </div>
+                    <div class="row">
+                        <div class="col-md-4 col-md-offset-4">
+                            <asp:Label ID="Label2" runat="server" CssClass="center-block" Style="text-align: center; margin: 48px" Text="关于我们" Font-Size="XX-Large" ForeColor="Black"></asp:Label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4">
+                            <img src="browser/static/img/16849027.jpeg" class="full-img" alt="xx">
+                        </div>
+                        <div class="col-md-4"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4"></div>
+                    </div>
+
                 </div>
             </div>
         </div>
+        </div>
+   
     </form>
     <script type="text/javascript">
         $(document).ready(function () {
@@ -123,14 +137,14 @@
                         for (var i = 0; i < data.rows.length; i++) {
                             var item = data.rows[i];
                             var col = $('<div class="col-md-4">' +
-                               '<div class="thumbnail">' +
-                                   '<img src="' + host + item.Img + '" alt="xx" style="height:150px">' +
-                                   '<div class="caption">' +
-                                       '<h3>' + item.Title + '</h3>' +
-                                       '<p>' + item.Summary + '</p>' +
-                                  '</div>' +
-                               '</div>' +
-                          '</div>');
+                                '<div class="thumbnail">' +
+                                '<img src="' + host + item.Img + '" alt="xx" style="height:150px">' +
+                                '<div class="caption">' +
+                                '<h3>' + item.Title + '</h3>' +
+                                '<p>' + item.Summary + '</p>' +
+                                '</div>' +
+                                '</div>' +
+                                '</div>');
                             $("#tour_content_div").append(col);
                         }
                     }
@@ -152,8 +166,8 @@
                         for (var i = 0; i < data.rows.length; i++) {
                             var item = data.rows[i];
                             var col = $('<div class="item">' +
-                                                '<img alt="" src="' + host + item.Img + '" />' +
-                                            '</div>');
+                                '<img alt="" src="' + host + item.Img + '" />' +
+                                '</div>');
                             $(".carousel-inner").append(col);
                         }
                     }
