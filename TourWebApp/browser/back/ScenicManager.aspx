@@ -131,7 +131,11 @@
                     </div>
                     <div class="input-group picList">
                         <span class="input-group-addon" id="scenic_pic_span_show">景区图片</span>
-                        <input type="file" id="upload_pic_show" class="scenic_pic_btn" />
+                        <div class="img_upload_box" aria-describedby="scenic_pic_span_show">
+                            <div class="picList">
+                                <img src="#" class="newImg" />
+                            </div>
+                        </div>
                     </div>
                     <div class="input-group">
                         <span class="input-group-addon" id="scenic_browse_span_show">浏览数量</span>
@@ -263,12 +267,15 @@
                 {
                     var data = JSON.parse(result.d);
                     if (data.code == 0) {
+                        console.log(data);
                         $("#scenic_name_show").val(data.data.ScenicName);
                         $("#scenic_title_show").val(data.data.ScenicTitle);
                         $("#scenic_content_show").val(data.data.ScenicContent);
                         $("#scenic_address_show").val(data.data.ScenicAddress);
                         $("#scenic_browse_show").val(data.data.ScenicBrowse);
+                        $('.newImg').attr(data.data.ScenicPic);
                         $("#scenic_time_show").val(data.data.ScenicUploadTime);
+
                     }
                 },
                 error: function () { alert("显示失败，程序异常！"); return; }

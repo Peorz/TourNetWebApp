@@ -585,15 +585,11 @@ div#sideNav:hover {
         padding-top: 4px;
     }
 
-.active-menu,
-.active-menu i {
-    background-color: #233342 !important;
-    color: #fff !important;
+.active-menu{
+    background-color: #233342;
+    color: #fff;
 }
 
-    .active-menu i {
-        color: #f44336 !important;
-    }
 
 .arrow {
     float: right;
