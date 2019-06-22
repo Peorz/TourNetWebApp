@@ -20,6 +20,14 @@ namespace TourWebApp.server.mode
             get { return _ScenicName; }
             set { _ScenicName = value; }
         }
+        //景区别名
+        private string _ScenicEnglish;
+        [Colmun(Type = "varchar(50)")]
+        public string ScenicEnglish
+        {
+            get { return _ScenicEnglish; }
+            set { _ScenicEnglish = value; }
+        }
         //景区标题
         private string _ScenicTitle;
 

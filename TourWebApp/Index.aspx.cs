@@ -8,6 +8,7 @@ using System;
 using System.Web.Services;
 using TourWebApp.server.mode;
 using TourWebApp.server.utils;
+using System.Web;
 
 namespace TourWebApp
 {
@@ -28,7 +29,7 @@ namespace TourWebApp
         protected void SearchBtn_Click(object sender, EventArgs e)
         {
             String val = SearchText.Text;
-            Response.Redirect("browser/view/TourSel.aspx?param=" + val);
+            Response.Redirect("browser/view/TourSel.aspx?param=" + HttpUtility.UrlEncode(val));
         }
     }
 }

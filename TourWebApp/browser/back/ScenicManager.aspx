@@ -40,6 +40,10 @@
                         <input type="text" class="form-control" id="scenic_name" placeholder="请输入景区名称" aria-describedby="scenic_name_span" />
                     </div>
                     <div class="input-group">
+                        <span class="input-group-addon" id="scenic_english_span">景区别名</span>
+                        <input type="text" class="form-control" id="scenic_english" placeholder="景区别名" aria-describedby="scenic_english_span" />
+                    </div>
+                    <div class="input-group">
                         <span class="input-group-addon" id="scenic_title_span">景区标题</span>
                         <input type="text" class="form-control" id="scenic_title" placeholder="请输入景区标题" aria-describedby="scenic_title_span" />
                     </div>
@@ -80,6 +84,10 @@
                         <input type="text" class="form-control" id="scenic_name_edit" aria-describedby="scenic_name_span_edit" />
                     </div>
                     <div class="input-group">
+                        <span class="input-group-addon" id="scenic_english_span_edit">景区别名</span>
+                        <input type="text" class="form-control" id="scenic_english_edit" placeholder="景区别名" aria-describedby="scenic_english_span_edit" />
+                    </div>
+                    <div class="input-group">
                         <span class="input-group-addon" id="scenic_title_span_edit">景区标题</span>
                         <input type="text" class="form-control" id="scenic_title_edit" aria-describedby="scenic_title_span_edit" />
                     </div>
@@ -118,6 +126,10 @@
                         <input type="text" class="form-control" id="scenic_name_show" aria-describedby="scenic_name_span_show" />
                     </div>
                     <div class="input-group">
+                        <span class="input-group-addon" id="scenic_english_span_show">景区别名</span>
+                        <input type="text" class="form-control" id="scenic_english_show" placeholder="景区别名" aria-describedby="scenic_english_span_show" />
+                    </div>
+                    <div class="input-group">
                         <span class="input-group-addon" id="scenic_title_span_show">景区标题</span>
                         <input type="text" class="form-control" id="scenic_title_show" aria-describedby="scenic_title_span_show" />
                     </div>
@@ -129,11 +141,11 @@
                         <span class="input-group-addon" id="scenic_address_span_show">景区地址</span>
                         <input type="text" class="form-control" id="scenic_address_show" aria-describedby="scenic_address_span_show" />
                     </div>
-                    <div class="input-group picList">
+                    <div class="input-group">
                         <span class="input-group-addon" id="scenic_pic_span_show">景区图片</span>
                         <div class="img_upload_box" aria-describedby="scenic_pic_span_show">
                             <div class="picList">
-                                <img src="#" class="newImg" />
+                                <img src="#" class="newImg"  />
                             </div>
                         </div>
                     </div>
@@ -142,7 +154,7 @@
                         <input type="text" class="form-control" id="scenic_browse_show" aria-describedby="scenic_browse_span_show" />
                     </div>
                     <div class="input-group">
-                        <span class="input-group-addon" id="scenic_time_span_show">景区地址</span>
+                        <span class="input-group-addon" id="scenic_time_span_show">更新时间</span>
                         <input type="text" class="form-control" id="scenic_time_show" aria-describedby="scenic_time_span_show" />
                     </div>
                 </div>
@@ -200,6 +212,10 @@
                         title: '景区名称'
                     },
                     {
+                        field: 'ScenicEnglish',
+                        title: '景区别名'
+                    },
+                    {
                         field: 'ScenicAddress',
                         title: '景区地址'
                     },
@@ -237,6 +253,7 @@
                 datatype: "json",
                 data: JSON.stringify({
                     Name: $("#scenic_name").val(),
+                    English: $("#scenic_english").val(),
                     Title: $("#scenic_title").val(),
                     Content: $("#scenic_content").val(),
                     Address: $("#scenic_address").val(),
@@ -266,14 +283,14 @@
                 success: function (result)//成功函数
                 {
                     var data = JSON.parse(result.d);
-                    if (data.code == 0) {
-                        console.log(data);
+                    if (data.code == 0) {                  
                         $("#scenic_name_show").val(data.data.ScenicName);
+                        $("#scenic_english_show").val(data.data.ScenicEnglish);
                         $("#scenic_title_show").val(data.data.ScenicTitle);
                         $("#scenic_content_show").val(data.data.ScenicContent);
                         $("#scenic_address_show").val(data.data.ScenicAddress);
-                        $("#scenic_browse_show").val(data.data.ScenicBrowse);
-                        $('.newImg').attr(data.data.ScenicPic);
+                        $("#scenic_browse_show").val(data.data.ScenicBrowse);                      
+                        $('.newImg').attr('src',data.data.ScenicPic);
                         $("#scenic_time_show").val(data.data.ScenicUploadTime);
 
                     }
@@ -298,6 +315,7 @@
                     var data = JSON.parse(result.d);
                     if (data.code == 0) {
                         $("#scenic_name_edit").val(data.data.ScenicName);
+                        $("#scenic_english_edit").val(data.data.ScenicEnglish);
                         $("#scenic_title_edit").val(data.data.ScenicTitle);
                         $("#scenic_content_edit").val(data.data.ScenicContent);
                         $("#scenic_address_edit").val(data.data.ScenicAddress);
@@ -310,6 +328,7 @@
                                 data: JSON.stringify({
                                     EditID: editId,
                                     EditName: $("#scenic_name_edit").val(),
+                                    EditEnglish: $("#scenic_english_edit").val(),
                                     EditTitle: $("#scenic_title_edit").val(),
                                     EditContent: $("#scenic_content_edit").val(),
                                     EditAddress: $("#scenic_address_edit").val(),
