@@ -41,13 +41,13 @@
                                         </ol>
                                         <div class="carousel-inner">
                                             <div class="item">
-                                                <img alt="" src="browser/static/img/bg_area_2.jpg" />
+                                                <img alt="" style="height: 400px; width: 100%" src="browser/static/img/bg_area_1.jpg" />
                                             </div>
                                             <div class="item active">
-                                                <img alt="" src="browser/static/img/bg_area_2.jpg" />
+                                                <img alt="" style="height: 400px; width: 100%" src="browser/static/img/bg_area_3.jpg" />
                                             </div>
                                             <div class="item">
-                                                <img alt="" src="browser/static/img/bg_area_2.jpg" />
+                                                <img alt="" style="height: 400px; width: 100%" src="browser/static/img/bg_area_2.jpg" />
                                             </div>
                                         </div>
                                         <a data-slide="prev" href="#carousel-447297" class="left carousel-control">‹</a> <a data-slide="next" href="#carousel-447297" class="right carousel-control">›</a>
@@ -57,7 +57,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-4 col-md-offset-4">
-                                <asp:Label ID="Label1" runat="server" CssClass="center-block" Style="text-align: center; margin: 48px" Text="旅行胜地" Font-Size="XX-Large" ForeColor="Black"></asp:Label>
+                                <asp:Label ID="Label1" runat="server" CssClass="center-block" Style="text-align: center; margin: 48px" Text="旅行资讯" Font-Size="XX-Large" ForeColor="Black"></asp:Label>
                             </div>
                         </div>
                         <div class="row" style="margin-top: 16px">
@@ -96,7 +96,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-4 col-md-offset-4">
-                                <asp:Label ID="Label2" runat="server" CssClass="center-block" Style="text-align: center; margin: 60px" Text="关于我们" Font-Size="XX-Large" ForeColor="Black"></asp:Label>
+                                <asp:Label ID="Label2" runat="server" CssClass="center-block" Style="text-align: center; margin: 60px" Text="联系我们" Font-Size="XX-Large" ForeColor="Black"></asp:Label>
                             </div>
                         </div>
                         <div class="row">
@@ -146,34 +146,19 @@
                                         <span style="font-size: 14px;">88+88888888</span>
                                     </div>
                                 </div>
-
-
                                 <div></div>
                                 <div></div>
                             </div>
                         </div>
                     </div>
-
-                    <%--<div class="row">
-                        <div class="col-md-4"></div>
-                        <div class="col-md-4">
-                            <img src="browser/static/img/16849027.jpeg" class="full-img" alt="xx">
-                        </div>
-                        <div class="col-md-4"></div>
-                    </div>--%>
-
-
                     <div class="row">
                         <div class="col-md-4"></div>
                         <div class="col-md-4"></div>
                         <div class="col-md-4"></div>
                     </div>
-
                 </div>
             </div>
         </div>
-        </div>
-   
     </form>
     <script type="text/javascript">
         $(document).ready(function () {
