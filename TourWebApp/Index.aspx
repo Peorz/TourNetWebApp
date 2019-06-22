@@ -60,9 +60,9 @@
                             <li class="head_img"  >
                                 <img class="img-thumbnail btn-default dropdown-toggle" data-toggle="dropdown"  src="browser/static/img/bg_area_1.jpg"  />
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">个人中心</a></li>                     
+                                    <li><a href="browser/view/Personal.aspx">个人中心</a></li>                     
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="#">退出</a></li>
+                                    <li><a href="browser/view/Login.aspx">退出</a></li>
                                 </ul>
                             </li>
                             

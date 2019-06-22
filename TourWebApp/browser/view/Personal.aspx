@@ -60,16 +60,6 @@
                 <div id="con1">
                     <div class="login-box">
                         <div class="hei">
-                            <br />
-                            <div class="col-md-offset-3 col-md-6">
-                                <b>
-                                    <asp:Label ID="Label1" runat="server" Text="头像："></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
-                                <asp:Image ID="Image2" runat="server" ImageUrl="~/browser/static/img/personal_z1.jpeg" Width="100px" ImageAlign="Top" />
-                                <asp:Label ID="Label2" runat="server" Text="换一换"></asp:Label>
-                                <asp:Button ID="Button3" class="btn btn-primary" runat="server" Style="width: 90px;" Text="上传图片" />
-                            </div>
-                        </div>
-                        <div class="hei">
                             <div class="col-md-offset-3 col-md-6">
                                 <b>
                                     <asp:Label ID="Label3" runat="server" Text="用 户 名："></asp:Label>&nbsp;&nbsp;&nbsp; </b>

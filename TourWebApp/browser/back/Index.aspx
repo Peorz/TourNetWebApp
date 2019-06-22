@@ -18,7 +18,7 @@
     <script src="../static/backjs/bootstrap-table.min.js"></script>
     <script src="../static/backjs/bootstrap-table-zh-CN.min.js"></script>
 </head>
-<body>
+<body style="background-color:#1F2837">
     <form id="form1" runat="server">
         <div id="wrapper">
             <nav class="navbar navbar-default top-navbar" role="navigation" style="border-radius: 0">
