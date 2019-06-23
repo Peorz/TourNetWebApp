@@ -64,7 +64,7 @@
                         <div class="btn-group" role="group" aria-label="...">
                             <button type="button" id="add_tour_btn" class="btn btn-primary">新增</button>
                             <%--<button type="button" id="update_user_btn" class="btn btn-success">修改</button>--%>
-                            <%--<button type="button" class="btn btn-warning">设置</button>--%>
+                            <button type="button" id="tour_del_btn" class="btn btn-warning">删除</button>
                         </div>
                     </div>
                     <div class="card">
@@ -117,6 +117,27 @@
             init();
             loadTourTable();
             loadRotation();
+
+            $("#tour_del_btn").on("click", function () {
+                var row = getSelections("#tour_table");
+                var id = row[0].ID;
+                $.ajax({
+                    url: "MainManager.aspx/Del",
+                    contentType: "application/json",
+                    type: "POST",
+                    datatype: "json",
+                    data: JSON.stringify({
+                        ID: id,
+                    }),//格式为 "{a:1,b:2}"
+                    success: function (result) {
+                        var data = JSON.parse(result.d);
+                        if (data.code == 0) {
+                            $('#tour_table').bootstrapTable("refresh");
+                        }
+                    }
+                })
+            });
+
         });
 
         function init() {
@@ -148,6 +169,9 @@
                 sidePagination: "server",
                 pagination: true,
                 columns: [
+                    {
+                        checkbox: true,
+                    },
                     {
                         field: 'Img',
                         title: '预览',
@@ -198,7 +222,7 @@
                     }
                 })
             });
-      
+
         }
 
         function loadRotation() {
@@ -248,6 +272,10 @@
                     }
                 })
             });
+        }
+
+        function getSelections(table) {
+            return row = $(table).bootstrapTable("getSelections");
         }
 
     </script>
