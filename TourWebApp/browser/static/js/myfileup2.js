@@ -1,45 +1,45 @@
-var param;
-var btn_origin_name;
-var btn;
+var param2;
+var btn_origin_name2;
+var btn2;
 
 function fileup2(p) {
-    param = p;
-    btn = $(param.btn);
-    btn_origin_name = btn.html();
+    param2 = p;
+    btn2 = $(param2.btn);
+    btn_origin_name2 = btn2.html();
     var file_input = $('<input type="file" style="display:none" accept="image/*" />');
-    btn.before(file_input);
-    btn.on("click", function () {
+    btn2.before(file_input);
+    btn2.on("click", function () {
         file_input.click();
     });
     file_input.change(function () {
         if (this.files.lenght <= 0) {
             return;
         }
-        gettoken(this);
+        gettoken2(this);
     });
 }
 
-function gettoken(file) {
+function gettoken2(file) {
     $.ajax({
         type: "Get",
-        url: param.url,
+        url: param2.url,
         contentType: "application/x-www-form-urlencoded; charset=utf-8",
         dataType: "json",
         async: false,
         success: function (data) {
             if (data.code == 0) {
-                up(data.data, file);
+                up2(data.data, file);
             } else {
-                param.error(" token 获取失败！");
+                param2.error(" token 获取失败！");
             }
         },
         error: function (err) {
-            param.error(" token 获取失败！");
+            param2.error(" token 获取失败！");
         }
     });
 }
 
-function up(token, file) {
+function up2(token, file) {
     var config = {
         useCdnDomain: true,
         region: qiniu.region.z2
@@ -52,34 +52,34 @@ function up(token, file) {
     var observable = qiniu.upload(file.files[0], file.files[0].name, token, putExtra, config)
     var observer = {
         next(res) {
-            btn.html("正在上传...(" + res.total.percent + "%)");
-            param.progress(res);
+            btn2.html("正在上传...(" + res.total.percent + "%)");
+            param2.progress(res);
         },
         error(err) {
-            param.error(this.error);
+            param2.error(this.error);
         },
         complete(res) {
-            upmyserver(res);
+            upmyserver2(res);
         }
     }
     var subscription = observable.subscribe(observer) // 上传开始
 }
 
-function upmyserver(res) {
+function upmyserver2(res) {
     $.ajax({
         type: "Post",
-        url: param.url,
+        url: param2.url,
         contentType: "application/x-www-form-urlencoded; charset=utf-8",
         dataType: "json",
         data: { hash: res.hash, key: res.key },
         success: function (data) {
             setTimeout(function () {
-                btn.html(btn_origin_name);
+                btn2.html(btn_origin_name2);
             }, 1000);
-            param.success(data);
+            param2.success(data);
         },
         error: function (err) {
-            param.error(err);
+            param2.error(err);
         }
     });
 }
