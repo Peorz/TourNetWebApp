@@ -26,8 +26,11 @@ namespace TourWebApp.server.controller
 
         public override string GetProcessRequest(HttpContext context, HttpRequest request, HttpResponse response)
         {
+            long offset = Convert.ToInt32(request.Params["offset"]) ;
+            long limit = Convert.ToInt32(request.Params["limit"]) ;
             PageList<mode.FileInfo> pageList = ORMSupport.PageSelect<mode.FileInfo>()
-                //.AddOrder("UpTime",SortType.DESC)
+                .AddOrder("UpTime", SortType.DESC)
+                .AddPage(offset, limit)
                 .Select();
             return Result.Ok("", pageList.Total, pageList.Rows);
         }

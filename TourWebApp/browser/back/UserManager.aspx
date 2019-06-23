@@ -65,12 +65,12 @@
                     <h4 class="modal-title">修改信息</h4>
                 </div>
                 <div class="modal-body">
-                   <ul>
+                    <ul>
                         <li>
                             <asp:Label ID="Label5" runat="server" CssClass="input-group-addon" Text="昵称："></asp:Label>
                             <input id="Input_Nick1" placeholder="请输入昵称" type="text" />
                         </li>
-                        
+
                         <li>
                             <asp:Label ID="Label7" runat="server" CssClass="input-group-addon" Text="邮箱："></asp:Label>
                             <input id="Input_Emil1" placeholder="请输入邮箱" type="text" />
@@ -138,7 +138,10 @@
                 },
                 {
                     field: 'Sex',
-                    title: '性别'
+                    title: '性别',
+                    formatter: function (value, row, index) {
+                        return value == 1 ? "男" : "女";
+                    }
                 },
                 {
                     field: 'CreateTime',
