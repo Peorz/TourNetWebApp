@@ -30,7 +30,7 @@
                 <div id="side_btn">
                     <a><span class="glyphicon glyphicon-list"></span></a>
                 </div>
-                <ul class="nav navbar-top-links navbar-right">
+                <%--<ul class="nav navbar-top-links navbar-right">
                     <a href="#" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                         <i class="glyphicon glyphicon-user"></i>
                         (未登陆)
@@ -43,7 +43,7 @@
                         <li role="separator" class="divider"></li>
                         <li><a href="#">Separated link</a></li>
                     </ul>
-                </ul>
+                </ul>--%>
             </nav>
             <!-- Dropdown Structure -->
 

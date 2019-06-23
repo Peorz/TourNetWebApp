@@ -101,8 +101,8 @@
                     <div class="card" style="margin-bottom: 0">
                         <div class="btn-group" role="group" aria-label="...">
                             <button type="button" id="add_user_btn" class="btn btn-primary">新增</button>
-                            <button type="button" id="update_user_btn" class="btn btn-success">修改</button>
-                            <button type="button" class="btn btn-warning">设置</button>
+                            <%--<button type="button" id="update_user_btn" class="btn btn-success">修改</button>--%>
+                            <%--<button type="button" class="btn btn-warning">设置</button>--%>
                         </div>
                     </div>
                 </div>
