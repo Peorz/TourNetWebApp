@@ -38,7 +38,7 @@ namespace TourWebApp.browser.view
             LoginToken token = userInfo.LoginToken;
             token.TokenID = UUID.Get("token");
             token.LoginTime = DateTime.Now;
-            //int ret = token.Update();
+            int ret = token.Update();
             SLog.Out.WriteLine("Login:" + token.TokenID);
             Session["token"] = token.TokenID;
             Response.Redirect("../../Index.aspx");
