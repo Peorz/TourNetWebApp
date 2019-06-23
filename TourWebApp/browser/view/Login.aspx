@@ -24,7 +24,7 @@
                         </div>
                         <div class="input-group" style="margin-top: 16px">
                             <asp:Label ID="Label1" runat="server" CssClass="input-group-addon" Text="邮箱："></asp:Label>
-                            <asp:TextBox ID="email_tb" CssClass="form-control" Text="760336282@qq.com" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="email_tb" CssClass="form-control" Text="12345@qq.com" runat="server"></asp:TextBox>
                         </div>
                         <div class="input-group" style="margin-top: 16px; margin-bottom: 8px">
                             <asp:Label ID="Label2" runat="server" CssClass="input-group-addon" Text="密码："></asp:Label>

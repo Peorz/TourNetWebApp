@@ -55,15 +55,19 @@
                                 {
                                     outStr = "style='display:none'";
                                     inStr = "";
+                                    if (user.Type == 2)
+                                    {
+                                        admin = "";
+                                    }
                                 }
                                 %>
-                            <li  <% Response.Write(outStr);%>>
+                            <li <% Response.Write(outStr);%>>
                                 <a href="browser/view/Register.aspx">
                                     <span class="glyphicon glyphicon-leaf" aria-hidden="true"></span>
                                     <span class="sr-only">Error:</span>注册
                                 </a>
                             </li>
-                            <li  <% Response.Write(outStr);%>>
+                            <li <% Response.Write(outStr);%>>
                                 <a href="browser/view/Login.aspx">
                                     <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                                     <span class="sr-only">Error:</span>登录
@@ -72,6 +76,9 @@
                             <li class="head_img" <% Response.Write(inStr);%>>
                                 <img class="btn-default dropdown-toggle" data-toggle="dropdown" src="browser/static/img/16849027.jpeg" />
                                 <ul class="dropdown-menu">
+                                    <li role="separator" class="divider"></li>
+                                    <li <% Response.Write(admin);%>><a href="browser/back/Index.aspx">后台管理</a></li>
+                                    <li role="separator" class="divider"></li>
                                     <li><a href="browser/view/Personal.aspx">个人中心</a></li>
                                     <li role="separator" class="divider"></li>
                                     <li><a href="browser/view/Login.aspx">退出</a></li>
