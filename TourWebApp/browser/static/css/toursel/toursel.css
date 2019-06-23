@@ -61,6 +61,8 @@ body { padding-top: 70px; }
 .list_content p{
     line-height:26px;
     color:#808080;
+    height:80px;
+    overflow:hidden;
 }
 .list_icon p{
     color:#808080;

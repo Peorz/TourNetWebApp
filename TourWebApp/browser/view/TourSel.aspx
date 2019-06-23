@@ -52,37 +52,7 @@
         </div>
         <div class="container">
             <div class="infobox col-md-12">
-                <ul class="infoul">
-                    <li>
-                        <div class="list_box">
-                            <div class="list_img">
-                                <a href="#" class="tourInfo" target="_blank">
-                                    <img src="../static/img/banner.jpg" alt="pic" /></a>
-                            </div>
-                            <div class="list_text">
-                                <div class="list_title">
-                                    <a href="#" class="tourInfo" target="_blank">
-                                        <h4><span class="label label-success">风景</span>北海汉闾文化园、海底世界、海洋之窗、嘉和·冠山海</h4>
-                                    </a>
-                                </div>
-                                <div class="list_content">
-                                    <p>
-                                        北海市拥有4A级景区9家，分别为：银滩国家旅游度假区、
-                                涠洲岛鳄鱼山景区、北海老城景区、
-                                金海湾红树林生态旅游区、北海园博园、
-                                北海汉闾文化园、海底世界、海洋之窗、嘉和·冠山海；
-                                此外还有3A级景区8家，以及星岛湖旅游度假区、“世外桃源”斜阳岛、
-                                冠头岭国家森林公园、山口国家级红树林自然保护区、儒艮（美人鱼）
-                                国家自然保护区等一批旅游景点景区。
-                                    </p>
-                                </div>
-                                <div class="list_icon">
-                                    <p>上传时间：<span class="createtime">2019-6-6 </span><span class="glyphicon glyphicon-eye-open" style="margin-left: 10px;"><i>1000</i></span></p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-
+                <ul class="infoul">                 
                 </ul>
 
                 <nav aria-label="Page navigation" style="text-align: center;">
