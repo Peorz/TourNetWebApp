@@ -77,7 +77,7 @@
                                 <img class="btn-default dropdown-toggle" data-toggle="dropdown" src="browser/static/img/16849027.jpeg" />
                                 <ul class="dropdown-menu">
                                     <li role="separator" class="divider"></li>
-                                    <li <% Response.Write(admin);%>><a href="browser/back/Index.aspx">后台管理</a></li>
+                                    <li <% Response.Write(admin);%>><a target="_blank" href="browser/back/Index.aspx">后台管理</a></li>
                                     <li <% Response.Write(admin);%> role="separator" class="divider"></li>
                                     <li><a href="browser/view/Personal.aspx">个人中心</a></li>
                                     <li role="separator" class="divider"></li>

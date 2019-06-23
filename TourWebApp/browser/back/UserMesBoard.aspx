@@ -27,7 +27,7 @@
                     <div class="card" style="margin-bottom: 0">
                         <div class="btn-group" role="group" aria-label="...">
                             <button type="button" id="del_btn" class="btn btn-success">删除</button>
-                            <button type="button" class="btn btn-warning" onclick="getSelections()">设置</button>
+                            <%--<button type="button" class="btn btn-warning" onclick="getSelections()">设置</button>--%>
                         </div>
                     </div>
                 </div>

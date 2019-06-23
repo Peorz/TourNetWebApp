@@ -63,8 +63,8 @@
                     <div class="card" style="margin-bottom: 0">
                         <div class="btn-group" role="group" aria-label="...">
                             <button type="button" id="add_tour_btn" class="btn btn-primary">新增</button>
-                            <button type="button" id="update_user_btn" class="btn btn-success">修改</button>
-                            <button type="button" class="btn btn-warning">设置</button>
+                            <%--<button type="button" id="update_user_btn" class="btn btn-success">修改</button>--%>
+                            <%--<button type="button" class="btn btn-warning">设置</button>--%>
                         </div>
                     </div>
                     <div class="card">
@@ -100,8 +100,8 @@
                     <div class="card" style="margin-bottom: 0">
                         <div class="btn-group" role="group" aria-label="...">
                             <button type="button" id="add_rotation_btn" class="btn btn-primary">新增</button>
-                            <button type="button" id="update_user_btn" class="btn btn-success">修改</button>
-                            <button type="button" class="btn btn-warning">设置</button>
+                            <%--<button type="button" id="update_user_btn" class="btn btn-success">修改</button>--%>
+                            <%--<button type="button" class="btn btn-warning">设置</button>--%>
                         </div>
                     </div>
                     <div class="card">
@@ -174,28 +174,31 @@
                 ]
             });
 
-            $("#add_rotation_btn").on("click", function () {
-                $("#rotation_modal").modal("show");
+            $("#add_tour_btn").on("click", function () {
+                $("#tour_modal").modal("show");
             });
 
-            $("#rotation_add_btn").on("click", function () {
+            $("#tour_add_btn").on("click", function () {
                 $.ajax({
-                    url: "MainManager.aspx/AddRotation",
+                    url: "MainManager.aspx/AddTour",
                     contentType: "application/json",
                     type: "POST",
                     datatype: "json",
                     data: JSON.stringify({
-                        key: $("#rotation_key_input").val(),
+                        title: $("#tour_title_input").val(),
+                        summary: $("#tour_summary_input").val(),
+                        key: $("#tour_img_input").val(),
                     }),//格式为 "{a:1,b:2}"
                     success: function (result) {
                         var data = JSON.parse(result.d);
                         if (data.code == 0) {
-                            $('#rotation_table').bootstrapTable("refresh");
-                            $("#rotation_modal").modal("hide");
+                            $('#tour_table').bootstrapTable("refresh");
+                            $("#tour_modal").modal("hide");
                         }
                     }
                 })
             });
+      
         }
 
         function loadRotation() {
@@ -223,6 +226,28 @@
                 ]
             });
 
+            $("#add_rotation_btn").on("click", function () {
+                $("#rotation_modal").modal("show");
+            });
+
+            $("#rotation_add_btn").on("click", function () {
+                $.ajax({
+                    url: "MainManager.aspx/AddRotation",
+                    contentType: "application/json",
+                    type: "POST",
+                    datatype: "json",
+                    data: JSON.stringify({
+                        key: $("#rotation_key_input").val(),
+                    }),//格式为 "{a:1,b:2}"
+                    success: function (result) {
+                        var data = JSON.parse(result.d);
+                        if (data.code == 0) {
+                            $('#rotation_table').bootstrapTable("refresh");
+                            $("#rotation_modal").modal("hide");
+                        }
+                    }
+                })
+            });
         }
 
     </script>
