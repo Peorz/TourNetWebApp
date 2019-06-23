@@ -38,6 +38,7 @@ namespace TourWebApp.server.config
 
         protected void Session_Start(object sender, EventArgs e)
         {
+            Session.Timeout = 30;
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)

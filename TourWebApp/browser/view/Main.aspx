@@ -180,7 +180,7 @@
                             var item = data.rows[i];
                             var col = $('<div class="col-md-4">' +
                                 '<div class="thumbnail">' +
-                                '<img src="' + host + item.Img + '" alt="xx" style="height:150px">' +
+                                '<img src="' + host + item.Img + '" alt="xx" style="height:150px;width:100%">' +
                                 '<div class="caption">' +
                                 '<h3>' + item.Title + '</h3>' +
                                 '<p>' + item.Summary + '</p>' +
