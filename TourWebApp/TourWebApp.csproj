@@ -136,6 +136,7 @@
     <Content Include="browser\static\js\bootstrap.min.js" />
     <Content Include="browser\static\js\jquery.metisMenu.js" />
     <Content Include="browser\static\js\jquery.min.js" />
+    <Content Include="browser\static\js\myfileup2.js" />
     <Content Include="browser\static\js\myfileup.js" />
     <Content Include="browser\static\js\npm.js" />
     <Content Include="browser\static\js\qiniu.min.js" />

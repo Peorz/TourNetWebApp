@@ -44,5 +44,13 @@ namespace TourWebApp.browser.back
             }
             return Result.Ok("", "");
         }
+
+        [WebMethod]
+        public static String Del(String ID)
+        {
+            MainTourColumn msg = new MainTourColumn();
+            msg.ID = ID;
+            return msg.Delete() == 1 ? Result.Ok("", "") : Result.Error("");
+        }
     }
 }
