@@ -103,13 +103,16 @@
 {
     height: 300px;
     padding: 30px;
+    overflow-y :auto;
+    
 }
 
-    .tourinfo_Info p
+    .tourinfo_Info span
     {
         font-size: 16px;
         line-height: 26px;
         color: #808080;
+        
     }
 
 .tourinfo_hot
@@ -177,5 +180,4 @@
     height:50px;
     font-size:20px;
     text-align:center;
-
 }
