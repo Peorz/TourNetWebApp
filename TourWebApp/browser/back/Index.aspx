@@ -53,31 +53,31 @@
                     <ul class="nav" id="main-menu">
                         <li class="manager_item active-menu">
                             <a class="click-link" href="UserManager.aspx">
-                                <i class="glyphicon glyphicon-leaf"></i>
+                                <i class="glyphicon glyphicon-user"></i>
                                 人员信息
                             </a>
                         </li>
                         <li class="manager_item">
                             <a class="click-link" href="MainManager.aspx">
-                                <i class="glyphicon glyphicon-leaf"></i>
+                                <i class="glyphicon glyphicon-home"></i>
                                 主页管理
                             </a>
                         </li>
                         <li class="manager_item">
                             <a class="click-link" href="ScenicManager.aspx">
-                                <i class="glyphicon glyphicon-leaf"></i>
+                                <i class="glyphicon glyphicon-tree-deciduous"></i>
                                 景区管理
                             </a>
                         </li>
                         <li class="manager_item">
                             <a class="click-link" href="UserMesBoard.aspx">
-                                <i class="glyphicon glyphicon-leaf"></i>
+                                <i class="glyphicon glyphicon-comment"></i>
                                 留言板
                             </a>
                         </li>
                         <li class="manager_item">
                             <a class="click-link" href="FileManager.aspx">
-                                <i class="glyphicon glyphicon-leaf"></i>
+                                <i class="glyphicon glyphicon-cloud"></i>
                                 资源管理
                             </a>
                         </li>
