@@ -9,6 +9,7 @@
     <link href="../static/backcss/scenic/scenic.css" rel="stylesheet" />
     <script src="../static/js/qiniu.min.js"></script>
     <script src="../static/js/myfileup.js"></script>
+      <script src="../static/js/myfileup2.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -111,11 +112,7 @@
                     <div class="input-group">
                         <span class="input-group-addon" id="scenic_address_span_edit">景区地址</span>
                         <input type="text" class="form-control" id="scenic_address_edit" aria-describedby="scenic_address_span_edit" />
-                    </div>
-                    <div class="input-group picList">
-                        <span class="input-group-addon" id="scenic_pic_span_edit">景区图片</span>
-                        <input type="file" id="upload_pic_edit" class="scenic_pic_btn" />
-                    </div>
+                    </div>                  
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
@@ -194,7 +191,7 @@
                     </div>
                     <div class="input-group">
                         <span class="input-group-addon" id="ScenicPic_span">景区图片</span>
-                        <input type="text" class="form-control" id="scenic_pic" aria-describedby="ScenicPic_span" style="width:70%" />
+                        <input type="text" class="form-control" id="scenic_pic" aria-describedby="ScenicPic_span" style="width: 70%" />
                         <button type="button" id="scenic_pic_add" class="btn btn-primary" aria-describedby="scenic_pic_span">上传</button>
                     </div>
                 </div>
@@ -214,17 +211,16 @@
             upWheelPic();
         });
         //景区图片上传
-        function upScenicPic() {
+        function upScenicPic(){
             var param = {
                 btn: "#upload_pic",
                 url: "../../server/controller/FileUp.ashx",
-                progress: function (res) {
-                    console.log(res);
+                progress: function (list) {
+                    console.log(list);
                 },
-                success: function (res) {
-                    console.log(res);
+                success: function (list) {
                     var host = "http://psxrtdro4.bkt.clouddn.com/";
-                    var imgUrl = host + res.data;
+                    var imgUrl = host + list.data;
                     showimg(imgUrl);
                 },
                 error: function (msg) {
@@ -234,7 +230,8 @@
             fileup(param);
         }
         //轮播图上传
-        function upWheelPic() {
+        function upWheelPic(){
+
             var upPic = {
                 btn: "#scenic_pic_add",
                 url: "../../server/controller/FileUp.ashx",
@@ -251,7 +248,7 @@
                     console.log(msg);
                 }
             };
-            fileup(upPic);
+            fileup2(upPic);
         }
         //上传图片显示
         function showimg(url) {
@@ -312,7 +309,7 @@
                 cache: false,
                 singleSelect: true,                     // 单选checkbox
                 sidePagination: "server",
-                pagination: true,          
+                pagination: true,
                 columns: [
                     {
                         checkbox: true,
@@ -347,7 +344,7 @@
         //轮播图操作栏的格式化
         function imgFormatter(value, row, index) {
             var id = value;
-            var result = "";           
+            var result = "";
             result += "<button type='button' class='btn btn-xs btn-danger' data-toggle='modal' onclick=\"DeleteByImg('" + id + "')\" ><span class='glyphicon glyphicon-remove'></span></button>";
             return result;
         }
@@ -362,7 +359,7 @@
             }
             $("#scenic_sel_name").val(selectContent[0]['ScenicName']);
             $("#scenic_sel_id").val(selectContent[0]['ID']);
-        });       
+        });
         //轮播图添加
         $("#subScenicPic").click(function () {
             $.ajax({
@@ -372,7 +369,7 @@
                 datatype: "json",
                 data: JSON.stringify({
                     ID: $("#scenic_sel_id").val(),
-                    ImgUrl: $("#scenic_pic").val(),                    
+                    ImgUrl: $("#scenic_pic").val(),
                 }),//参数
                 success: function (result)//成功函数
                 {
@@ -385,7 +382,7 @@
             });
         });
         //景区信息新增数据
-        $("#subScenicInfo").click(function () {
+        $("#subScenicInfo").click(function () {        
             $.ajax({
                 url: "ScenicManager.aspx/AddScenicInfo",
                 contentType: "application/json",
@@ -534,6 +531,9 @@
                 });
             }
         }
+        $('@scenicInfoAdd').on('hidden.bs.modal', '.modal', function () {
+            $(this).removeData('bs.modal');
+        });
     </script>
 </body>
 </html>
