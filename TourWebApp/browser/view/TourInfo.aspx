@@ -37,17 +37,7 @@
         <hr />
         <div class="container tourinfo_content">
             <div class="tourinfo_banner col-md-6">
-                <ul class="img_ul">
-                    <li>
-                        <img src="../static/img/banner.jpg" /></li>
-                    <li>
-                        <img src="../static/img/bg_area_1.jpg" /></li>
-                    <li>
-                        <img src="../static/img/bg_area_2.jpg" /></li>
-                    <li>
-                        <img src="../static/img/banner.jpg" /></li>
-                    <li>
-                        <img src="../static/img/banner.jpg" /></li>
+                <ul class="img_ul">                   
                 </ul>
 
                 <div class="img_btn btn_left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></div>
@@ -335,11 +325,10 @@
                     var data = JSON.parse(result.d);
                     console.log(data);
                     if (data.code == 0) {
-                        var host = "http://psxrtdro4.bkt.clouddn.com/";
                         for (var i = 0; i < data.rows.length; i++) {
                             var item = data.rows[i];
                             var imgList = $('<li>' +
-                                '<img alt="" src="' + host + item.ScenicImg + '" />' +
+                                '<img alt="" src="' + item.ScenicImg + '" />' +
                                 '</li>');                                                  
                             $(".img_ul").append(imgList);
                         }

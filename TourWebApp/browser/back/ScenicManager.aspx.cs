@@ -98,5 +98,33 @@ namespace TourWebApp.browser.back
             return Result.Ok("", "");
 
         }
+
+        [WebMethod]
+        public static String AddScenicPic(string ID, string ImgUrl)
+        {
+            ScenicPic addPic = new ScenicPic();
+            addPic.ScenicID = ID;
+            addPic.ScenicImg = ImgUrl;
+            int res = addPic.Save();
+            if (res == 0)
+            {
+                return Result.Error("");
+            }
+            return Result.Ok("", "");
+
+        }
+
+        [WebMethod]
+        public static String DeleteScenicImg(string DeleteID)
+        {
+            ScenicPic delPic = new ScenicPic();
+            delPic.ID = DeleteID;
+            int res = delPic.Delete();
+            if (res == 0)
+            {
+                return Result.Error("");
+            }
+            return Result.Ok("", "");
+        }
     }
 }

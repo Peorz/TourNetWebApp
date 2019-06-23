@@ -13,12 +13,12 @@ namespace TourWebApp.server.mode
     {
         
         //用户ID
-        private string _ID;
+        private string _UserID;
         [Colmun(Type = "varchar(32)")]
-        public string ID
+        public string UserID
         {
-            get { return _ID; }
-            set { _ID = value; }
+            get { return _UserID; }
+            set { _UserID = value; }
         }
         //帖子ID
         private string _TopicID;

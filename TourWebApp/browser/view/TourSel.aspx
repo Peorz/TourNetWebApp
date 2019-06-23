@@ -142,9 +142,7 @@
                 success: function (result) {
                     var data = JSON.parse(result.d);
                     console.log(data);
-                    if (data.code == 0) {
-                        console.log(data);
-                        var host = "http://psxrtdro4.bkt.clouddn.com/";
+                    if (data.code == 0) {                       
                         $("#resNum").text(data.total);
                         $("#resKey").text(getKey);
                         $("#SearchBox").val(getKey);
@@ -154,7 +152,7 @@
                         '<div class="list_box">' +
                             '<div class="list_img">' +
                                ' <a href="TourInfo.aspx?id=' + item.ID + '" target="_blank">' +
-                                    '<img src="' + host + item.ScenicPic + '" alt="pic" />' + '</a>' +
+                                    '<img src="' + item.ScenicPic + '" alt="pic" />' + '</a>' +
                             '</div>' +
                             '<div class="list_text">' +
                                 '<div class="list_title">' +

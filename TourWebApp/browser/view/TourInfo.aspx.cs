@@ -26,7 +26,7 @@ namespace TourWebApp.browser.view
         public static String RotaryPic(string GetID)
         {
             PageList<ScenicPic> loadImg = ORMSupport.PageSelect<ScenicPic>()
-           .AddWhere("Scenic", GetID)
+           .AddWhere("ScenicID", GetID)
            .Select();
             return Result.Ok("", loadImg.Total, loadImg.Rows);
         }

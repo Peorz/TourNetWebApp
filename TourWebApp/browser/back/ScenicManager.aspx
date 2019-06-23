@@ -18,16 +18,29 @@
                 <div class="row">
                     <div class="card">
                         <div class="btn-group" role="group" aria-label="..." style="margin-bottom: 20px;">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#scenicAdd">新增</button>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#scenicInfoAdd">新增</button>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="..." style="margin-bottom: 20px;">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#scenicPicAdd" id="AddPic">新增轮播图</button>
                         </div>
                         <table id="ScenicInfoTb"></table>
                     </div>
                 </div>
             </div>
         </div>
+        <div>
+            <div class="alert alert-success" role="alert">景区详情图片轮播管理</div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="card">
+                        <table id="ScenicPicTb"></table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </form>
     <!--景区信息添加模态框-->
-    <div class="modal fade" id="scenicAdd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="scenicInfoAdd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header header_color">
@@ -59,15 +72,15 @@
                         <span class="input-group-addon" id="scenic_pic_span">景区图片</span>
                         <div class="img_upload_box" aria-describedby="scenic_pic_span">
                         </div>
-                        <button type="button" id="upload_pic" class="btn btn-primary" aria-describedby="scenic_pic_span" style="margin-top:10px;">上传</button>
+                        <button type="button" id="upload_pic" class="btn btn-primary" aria-describedby="scenic_pic_span" style="margin-top: 10px;">上传</button>
                     </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                <button type="button" id="subScenicInfo" class="btn btn-primary" data-dismiss="modal">添加</button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" id="subScenicInfo" class="btn btn-primary" data-dismiss="modal">添加</button>
+                </div>
             </div>
         </div>
-    </div>
     </div>
 
     <!--景区信息编辑模态框-->
@@ -145,7 +158,7 @@
                         <span class="input-group-addon" id="scenic_pic_span_show">景区图片</span>
                         <div class="img_upload_box" aria-describedby="scenic_pic_span_show">
                             <div class="picList">
-                                <img src="#" class="newImg"  />
+                                <img src="#" class="newImg" />
                             </div>
                         </div>
                     </div>
@@ -164,11 +177,44 @@
             </div>
         </div>
     </div>
+
+    <!--景区轮播图添加-->
+    <div class="modal fade" id="scenicPicAdd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header header_color">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title title_color" id="H1">景区轮播图信息添加</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group">
+                        <span class="input-group-addon" id="selScenic">景区名称</span>
+                        <input type="text" class="form-control" id="scenic_sel_name" aria-describedby="selScenic" />
+                        <input type="text" id="scenic_sel_id" hidden="hidden" />
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="ScenicPic_span">景区图片</span>
+                        <input type="text" class="form-control" id="scenic_pic" aria-describedby="ScenicPic_span" style="width:70%" />
+                        <button type="button" id="scenic_pic_add" class="btn btn-primary" aria-describedby="scenic_pic_span">上传</button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" id="subScenicPic" class="btn btn-primary" data-dismiss="modal">添加</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script>
-
+        //页面初始加载
         $(document).ready(function () {
-            loadTable();
-
+            ScenicInfoTb();
+            ScenicPicTb();
+            upScenicPic();
+            upWheelPic();
+        });
+        //景区图片上传
+        function upScenicPic() {
             var param = {
                 btn: "#upload_pic",
                 url: "../../server/controller/FileUp.ashx",
@@ -186,20 +232,41 @@
                 }
             };
             fileup(param);
-        });       
-
+        }
+        //轮播图上传
+        function upWheelPic() {
+            var upPic = {
+                btn: "#scenic_pic_add",
+                url: "../../server/controller/FileUp.ashx",
+                progress: function (res) {
+                    console.log(res);
+                },
+                success: function (res) {
+                    console.log(res);
+                    var host = "http://psxrtdro4.bkt.clouddn.com/";
+                    var imgUrl = host + res.data;
+                    $("#scenic_pic").val(imgUrl);
+                },
+                error: function (msg) {
+                    console.log(msg);
+                }
+            };
+            fileup(upPic);
+        }
+        //上传图片显示
         function showimg(url) {
             $(".img_upload_box").append("<div class='picList'></div>");
             $(".picList").append("<img class='newImg'  src='" + url + "'/>");
         }
-        //表格数据加载
-        function loadTable() {
+        //景区信息表格数据加载
+        function ScenicInfoTb() {
             $('#ScenicInfoTb').bootstrapTable({
                 method: "get",
                 url: '../../server/controller/ScenicManager.ashx',
                 contentType: "application/x-www-form-urlencoded",
                 striped: true,                         //是否显示行间隔色
                 cache: false,
+                singleSelect: true,                     // 单选checkbox
                 sidePagination: "server",
                 pagination: true,
                 columns: [
@@ -235,7 +302,40 @@
                 ]
             })
         }
-        //操作栏的格式化
+        //景区轮播表格数据加载
+        function ScenicPicTb() {
+            $('#ScenicPicTb').bootstrapTable({
+                method: "get",
+                url: '../../server/controller/ScenicMesPic.ashx',
+                contentType: "application/x-www-form-urlencoded",
+                striped: true,                         //是否显示行间隔色
+                cache: false,
+                singleSelect: true,                     // 单选checkbox
+                sidePagination: "server",
+                pagination: true,          
+                columns: [
+                    {
+                        checkbox: true,
+                        visible: true                  //是否显示复选框  
+                    },
+                    {
+                        field: 'ScenicID',
+                        title: '景区ID'
+                    },
+                    {
+                        field: 'ScenicImg',
+                        title: '图片地址'
+                    },
+                    {
+                        field: 'ID',
+                        title: '操作',
+                        formatter: imgFormatter
+                    },
+                ]
+
+            })
+        }
+        //景区信息操作栏的格式化
         function actionFormatter(value, row, index) {
             var id = value;
             var result = "";
@@ -244,9 +344,49 @@
             result += "<button type='button' class='btn btn-xs btn-danger' data-toggle='modal' onclick=\"DeleteByIds('" + id + "')\" ><span class='glyphicon glyphicon-remove'></span></button>";
             return result;
         }
-        //新增数据
+        //轮播图操作栏的格式化
+        function imgFormatter(value, row, index) {
+            var id = value;
+            var result = "";           
+            result += "<button type='button' class='btn btn-xs btn-danger' data-toggle='modal' onclick=\"DeleteByImg('" + id + "')\" ><span class='glyphicon glyphicon-remove'></span></button>";
+            return result;
+        }
+        //选择行信息获取
+        $("#AddPic").click(function () {
+            $("#scenic_pic").val("");
+            var selectContent = $("#ScenicInfoTb").bootstrapTable('getSelections');
+            console.log(selectContent);
+            if (selectContent.length == 0) {
+                alert("未选中行");
+                return false;
+            }
+            $("#scenic_sel_name").val(selectContent[0]['ScenicName']);
+            $("#scenic_sel_id").val(selectContent[0]['ID']);
+        });       
+        //轮播图添加
+        $("#subScenicPic").click(function () {
+            $.ajax({
+                url: "ScenicManager.aspx/AddScenicPic",
+                contentType: "application/json",
+                type: "POST",
+                datatype: "json",
+                data: JSON.stringify({
+                    ID: $("#scenic_sel_id").val(),
+                    ImgUrl: $("#scenic_pic").val(),                    
+                }),//参数
+                success: function (result)//成功函数
+                {
+                    var data = JSON.parse(result.d);
+                    if (data.code == 0) {
+                        $("#ScenicPicTb").bootstrapTable('refresh');
+                    }
+                },
+                error: function () { alert("添加失败，程序异常！"); return; }
+            });
+        });
+        //景区信息新增数据
         $("#subScenicInfo").click(function () {
-             $.ajax({
+            $.ajax({
                 url: "ScenicManager.aspx/AddScenicInfo",
                 contentType: "application/json",
                 type: "POST",
@@ -269,7 +409,7 @@
                 error: function () { alert("添加失败，程序异常！"); return; }
             });
         });
-        //详细数据
+        //景区详细信息显示
         function ShowByIds(ID) {
             var detailedId = ID;
             $.ajax({
@@ -283,14 +423,14 @@
                 success: function (result)//成功函数
                 {
                     var data = JSON.parse(result.d);
-                    if (data.code == 0) {                  
+                    if (data.code == 0) {
                         $("#scenic_name_show").val(data.data.ScenicName);
                         $("#scenic_english_show").val(data.data.ScenicEnglish);
                         $("#scenic_title_show").val(data.data.ScenicTitle);
                         $("#scenic_content_show").val(data.data.ScenicContent);
                         $("#scenic_address_show").val(data.data.ScenicAddress);
-                        $("#scenic_browse_show").val(data.data.ScenicBrowse);                      
-                        $('.newImg').attr('src',data.data.ScenicPic);
+                        $("#scenic_browse_show").val(data.data.ScenicBrowse);
+                        $('.newImg').attr('src', data.data.ScenicPic);
                         $("#scenic_time_show").val(data.data.ScenicUploadTime);
 
                     }
@@ -298,7 +438,6 @@
                 error: function () { alert("显示失败，程序异常！"); return; }
             });
         }
-
         //更新数据
         function EditByIds(ID) {
             var editId = ID;
@@ -349,7 +488,7 @@
                 error: function () { alert("显示失败，程序异常！"); return; }
             });
         }
-        //单条数据删除
+        //景区信息单条数据删除
         function DeleteByIds(ID) {
             var deleteId = ID;
             if (confirm("确定删除该条信息")) {
@@ -366,6 +505,29 @@
                         var data = JSON.parse(result.d);
                         if (data.code == 0) {
                             $("#ScenicInfoTb").bootstrapTable('refresh');
+                        }
+                    },
+                    error: function () { alert("删除失败，程序异常！"); return; }
+                });
+            }
+        }
+        //轮播图单条数据删除
+        function DeleteByImg(ID) {
+            var deleteId = ID;
+            if (confirm("确定删除该条信息")) {
+                $.ajax({
+                    url: "ScenicManager.aspx/DeleteScenicImg",
+                    contentType: "application/json",
+                    type: "POST",
+                    datatype: "json",
+                    data: JSON.stringify({
+                        DeleteID: deleteId
+                    }),//参数
+                    success: function (result)//成功函数
+                    {
+                        var data = JSON.parse(result.d);
+                        if (data.code == 0) {
+                            $("#ScenicPicTb").bootstrapTable('refresh');
                         }
                     },
                     error: function () { alert("删除失败，程序异常！"); return; }
