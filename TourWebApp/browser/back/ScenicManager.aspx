@@ -9,7 +9,7 @@
     <link href="../static/backcss/scenic/scenic.css" rel="stylesheet" />
     <script src="../static/js/qiniu.min.js"></script>
     <script src="../static/js/myfileup.js"></script>
-      <script src="../static/js/myfileup2.js"></script>
+    <script src="../static/js/myfileup2.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -112,7 +112,7 @@
                     <div class="input-group">
                         <span class="input-group-addon" id="scenic_address_span_edit">景区地址</span>
                         <input type="text" class="form-control" id="scenic_address_edit" aria-describedby="scenic_address_span_edit" />
-                    </div>                  
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
@@ -209,9 +209,18 @@
             ScenicPicTb();
             upScenicPic();
             upWheelPic();
+
+            $('#scenicInfoAdd').on('hidden.bs.modal', function (e) {
+                $("#scenic_name").val("");
+                $("#scenic_english").val("");
+                $("#scenic_title").val("");
+                $("#scenic_content").val("");
+                $("#scenic_address").val("");
+                $(".img_upload_box").html("");
+            })
         });
         //景区图片上传
-        function upScenicPic(){
+        function upScenicPic() {
             var param = {
                 btn: "#upload_pic",
                 url: "../../server/controller/FileUp.ashx",
@@ -230,7 +239,7 @@
             fileup(param);
         }
         //轮播图上传
-        function upWheelPic(){
+        function upWheelPic() {
 
             var upPic = {
                 btn: "#scenic_pic_add",
@@ -382,7 +391,7 @@
             });
         });
         //景区信息新增数据
-        $("#subScenicInfo").click(function () {        
+        $("#subScenicInfo").click(function () {
             $.ajax({
                 url: "ScenicManager.aspx/AddScenicInfo",
                 contentType: "application/json",
