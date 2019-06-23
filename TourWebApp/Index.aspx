@@ -69,7 +69,7 @@
                                 </a>
                             </li>
                             <li class="head_img" <% Response.Write(inStr);%>>
-                                <img class="img-thumbnail btn-default dropdown-toggle" data-toggle="dropdown" src="browser/static/img/16849027.jpeg" />
+                                <img class="btn-default dropdown-toggle" data-toggle="dropdown" src="browser/static/img/16849027.jpeg" />
                                 <ul class="dropdown-menu">
                                     <li><a href="browser/view/Personal.aspx">个人中心</a></li>
                                     <li role="separator" class="divider"></li>
