@@ -49,6 +49,7 @@
                             <%
                                 String outStr = "";
                                 String inStr = "style='display:none'";
+                                String admin = "style='display:none'";
                                 TourWebApp.server.mode.UserInfo user = Session["user"] as TourWebApp.server.mode.UserInfo;
                                 if (user != null)
                                 {

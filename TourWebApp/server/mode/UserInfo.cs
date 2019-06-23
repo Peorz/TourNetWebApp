@@ -16,9 +16,9 @@ namespace TourWebApp.server.mode
 
         private String _Email;
 
-        private byte _Sex = 1;
+        private byte _Sex;
 
-        private DateTime _CreateTime = DateTime.Now;
+        private DateTime _CreateTime;
 
         private LoginToken _LoginToken;
 
@@ -55,6 +55,16 @@ namespace TourWebApp.server.mode
         {
             get { return _CreateTime; }
             set { _CreateTime = value; }
+        }
+
+        private int _Type;
+
+        [Colmun(Type = "int")]
+        public int Type
+        {
+            get { return _Type; }
+
+            set { _Type = value; }
         }
 
         public LoginToken LoginToken

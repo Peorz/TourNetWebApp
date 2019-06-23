@@ -32,6 +32,9 @@ namespace TourWebApp.browser.view
             userInfo.Nick = nick;
             userInfo.Email = email;
             userInfo.PassWord = psw;
+            userInfo.Sex = 1;
+            userInfo.Type = 1;
+            userInfo.CreateTime = DateTime.Now;
             userInfo.Save();
             Response.Redirect("Login.aspx");
         }
