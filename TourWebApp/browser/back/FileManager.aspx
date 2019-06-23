@@ -23,7 +23,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <div class="alert alert-success" role="alert">人员管理</div>
+            <div class="alert alert-success" role="alert">资源管理</div>
             <div class="container-fluid">
                 <div class="row">
                     <div class="card" style="margin-bottom: 0">
@@ -104,13 +104,50 @@
                             var host = "http://psxrtdro4.bkt.clouddn.com/";
                             return host + value;
                         }
-                    }
+                    },
+                    {
+                        field: 'ID',
+                        title: '操作',
+                        formatter: actionFormatter
+                    },
+
+
                 ]
             });
         }
 
         function getSelections() {
             return row = $('#table').bootstrapTable("getSelections");
+        }
+        //操作栏的格式化
+        function actionFormatter(value, row, index) {
+            var id = value;
+            var result = "";
+            result += "<button type='button' class='btn btn-xs btn-danger' data-toggle='modal' onclick=\"DeleteByImg('" + id + "')\" ><span class='glyphicon glyphicon-remove'></span></button>";
+            return result;
+        }
+        //单条数据删除
+        function DeleteByImg(ID) {
+            var deleteId = ID;
+            if (confirm("确定删除该条信息")) {
+                $.ajax({
+                    url: "FileManager.aspx/DeleteFileInfo",
+                    contentType: "application/json",
+                    type: "POST",
+                    datatype: "json",
+                    data: JSON.stringify({
+                        DeleteID: deleteId
+                    }),//参数
+                    success: function (result)//成功函数
+                    {
+                        var data = JSON.parse(result.d);
+                        if (data.code == 0) {
+                            $("#table").bootstrapTable('refresh');
+                        }
+                    },
+                    error: function () { alert("删除失败，程序异常！"); return; }
+                });
+            }
         }
     </script>
 </body>

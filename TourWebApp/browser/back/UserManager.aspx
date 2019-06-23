@@ -146,7 +146,12 @@
                 {
                     field: 'CreateTime',
                     title: '注册时间'
-                }
+                },
+                 {
+                     field: 'ID',
+                     title: '操作',
+                     formatter: actionFormatter
+                 },
             ]
         })
 
@@ -156,6 +161,36 @@
         $("#update_user_btn").on("click", function () {
             $("#modal_test1").modal("show");
         });
+        //操作栏的格式化
+        function actionFormatter(value, row, index) {
+            var id = value;
+            var result = "";
+            result += "<button type='button' class='btn btn-xs btn-danger' data-toggle='modal' onclick=\"DeleteByImg('" + id + "')\" ><span class='glyphicon glyphicon-remove'></span></button>";
+            return result;
+        }
+        //单条数据删除
+        function DeleteByImg(ID) {
+            var deleteId = ID;
+            if (confirm("确定删除该条信息")) {
+                $.ajax({
+                    url: "UserManager.aspx/DeleteUserInfo",
+                    contentType: "application/json",
+                    type: "POST",
+                    datatype: "json",
+                    data: JSON.stringify({
+                        DeleteID: deleteId
+                    }),//参数
+                    success: function (result)//成功函数
+                    {
+                        var data = JSON.parse(result.d);
+                        if (data.code == 0) {
+                            $("#table").bootstrapTable('refresh');
+                        }
+                    },
+                    error: function () { alert("删除失败，程序异常！"); return; }
+                });
+            }
+        }
     </script>
 </body>
 </html>
