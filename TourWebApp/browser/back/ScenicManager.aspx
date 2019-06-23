@@ -531,9 +531,9 @@
                 });
             }
         }
-        $('@scenicInfoAdd').on('hidden.bs.modal', '.modal', function () {
-            $(this).removeData('bs.modal');
-        });
+        //$('@scenicInfoAdd').on('hidden.bs.modal', '.modal', function () {
+        //    $(this).removeData('bs.modal');
+        //});
     </script>
 </body>
 </html>
