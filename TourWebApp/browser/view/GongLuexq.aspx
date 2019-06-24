@@ -4,12 +4,11 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-   
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" type="text/css" href="css/stylepc.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     l<link href="../static/css/discuss/GongLuexq.css" rel="stylesheet" type="text/css" />
-    <script src="browser/static/js/jquery-latest.js"></script>
+    <script src="../static/js/jquery-latest.js"></script>
+    <script src="../static/js/pc.js"></script>
     <script src="/demos/googlegg.js"></script>
     <script type="text/javascript" src="browser/static/js/pc.js"></script>
     <title></title>

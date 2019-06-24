@@ -136,11 +136,13 @@
     <Content Include="browser\static\img\personal_z1.jpeg" />
     <Content Include="browser\static\img\Register.jpg" />
     <Content Include="browser\static\js\bootstrap.min.js" />
+    <Content Include="browser\static\js\jquery-latest.js" />
     <Content Include="browser\static\js\jquery.metisMenu.js" />
     <Content Include="browser\static\js\jquery.min.js" />
     <Content Include="browser\static\js\myfileup2.js" />
     <Content Include="browser\static\js\myfileup.js" />
     <Content Include="browser\static\js\npm.js" />
+    <Content Include="browser\static\js\pc.js" />
     <Content Include="browser\static\js\qiniu.min.js" />
     <Content Include="browser\view\About.aspx" />
     <Content Include="browser\view\ForgetPassWord1.aspx" />
