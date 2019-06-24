@@ -204,7 +204,7 @@
                         for (var i = 0; i < temp; i++) {
                             var item = data.rows[i];
                             var dom = $('<li class="more_scenic_list">' +
-                        '<a href="#" target="_blank">' +
+                        '<a href="TourInfo.aspx?keyid=' + item.ID + '" target="_blank">' +
                             '<img src="' + item.ScenicPic + '" style="width: 255px; height: 180px;" />' +
                             '<div class="more_scenic_name">' +
                                 '<h4>' + item.ScenicName + '</h4>' +
@@ -217,6 +217,7 @@
                     '</li>');
                             $(".tourinfo_img").append(dom);
                         }
+                       
                     }
                 },
                 error: function () { alert("显示失败，程序异常！"); return; }

@@ -36,6 +36,7 @@ namespace TourWebApp.browser.view
         {
             PageList<ScenicInfo> moreInfo = ORMSupport.PageSelect<ScenicInfo>()
             .AddWhere("ScenicContent", "like", "%" + LoadKey + "%")
+            .AddWhere("ScenicName","!=",LoadKey)
            .Select();
             return Result.Ok("", moreInfo.Total, moreInfo.Rows);
         }
