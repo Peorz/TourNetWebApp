@@ -30,6 +30,15 @@ namespace TourWebApp.browser.view
            .Select();
             return Result.Ok("", loadImg.Total, loadImg.Rows);
         }
+
+        [WebMethod]
+        public static String DisplayMore(string LoadKey)
+        {
+            PageList<ScenicInfo> moreInfo = ORMSupport.PageSelect<ScenicInfo>()
+            .AddWhere("ScenicContent", "like", "%" + LoadKey + "%")
+           .Select();
+            return Result.Ok("", moreInfo.Total, moreInfo.Rows);
+        }
         
     }
 }

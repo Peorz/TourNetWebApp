@@ -19,12 +19,11 @@
 
     .message_list li
     {
-        height: 250px;
+        height: 170px;
         border-left: 3px solid green;
         margin-top: 20px;
         overflow: hidden;
     }
-
 
 
 .message_top
