@@ -52,6 +52,7 @@
             <div class="content">
 
                 <ul class="nav nav-pills">
+                    <li role="presentation "><a href="../../Index.aspx">首页</a></li>
                     <li onclick="opens(1)" role="presentation "><a href="#">基本信息</a></li>
                     <%--<li onclick="opens(2)" role="presentation"><a href="#">修改密码</a></li>--%>
                     <li onclick="opens(2)" role="presentation"><a href="#">关于我们</a></li>
