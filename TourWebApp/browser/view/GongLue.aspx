@@ -144,14 +144,30 @@
     <div class="container">
         <form runat="server">
 
-            <div class="user_img col-md-1">
-                <img src="../static/img/guestbook_img.png"/>
-            </div>
             
 
 
 
         </form>
+          <nav aria-label="Page navigation" style="text-align: center;">
+                    <ul class="pagination">
+                        <li>
+                            <a href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li>
+                            <a href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
     </div>
 </body>
 </html>
