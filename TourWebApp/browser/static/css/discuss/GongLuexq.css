@@ -13,9 +13,8 @@
 
 	.container .menu{
 		width: 240px;
-		margin-left: 130px;
+		margin-left: 0px;
 		float: left;
-		border-right: 1px solid #aaa;
 	}
 /*position 菜单背景图标*/
 	.positionIicon{
@@ -41,8 +40,11 @@
 
 
 	.container .menu h3{
-		font-size: 20px;
+		font-size: 25px;
 		cursor: pointer;
+        color:rgba(34, 139, 34,0.8);
+        font-family:"微软雅黑";
+        font-weight:700;
 	}
     .container .menu ul{
         display: none;
@@ -50,15 +52,20 @@
 	.container .menu ul li{
 		height: 28px;
 		line-height: 28px;
+        margin:20px 0;
 	}
-
+    .container .menu ul li a{
+        color:#808080;
+        font-size:18px;
+    }
 	.container .menu ul li a:hover{
-		background: #9FB6CD;
+		background:rgba(34, 139, 34,0.5);
 		border-radius: 14px;
 		-webkit-border-radius: 14px;
 		-moz-border-radius: 14px;
 		-moz-border-radius:14px;
 		color:#fff;
+        text-decoration:none;
 	
 	}
 
@@ -77,8 +84,9 @@
 	}
 
 	.container .menu .selected{
-		background: #ccc;
+		background:rgba(34, 139, 34,0.5);
 		border-radius: 14px;
+        color:#fff;
 	}
 
 
@@ -86,7 +94,7 @@
 	.container .content{
 		margin-top: 15px;
 		width: 860px;
-		margin-left: 400px;
+		margin-left: 300px;
 	}
 
 	.container .content .get-menu{
@@ -97,11 +105,12 @@
 		display: inline-block;
 		font-size: 15px;
 	    height: 40px;
+        color:green;
 	}
 
 	.container .content .get-menu a:last-child{
 		margin-left: -8px;
-		color: #7D9EC0;
+		color: green;
 	}
 
 	.container .content .get-menu span{
@@ -119,15 +128,31 @@
 	}
 
 	.container .content .menu1 .tab p{
-		font-size: 14px;
-		line-height: 20px;
+		font-size: 16px;
 		color: rgba(0,0,0,1);
         word-break:break-all;
+        line-height:30px;
+        text-indent:2em;
 	}
 
 	.container .content .menu1 .tab .tt{
-		font-size: 14px;
+		font-size: 25px;
 		font-weight: bold;
+        text-align: center;
+        margin-bottom:30px;
+
+	}
+    .container .content .menu1 .tab img{width:80%;}
+     .container .content .menu1 .tab h4{
+         margin:30px 0;
+        font-weight:700;
+
+	}
+    .container .content .menu1 .tab .dd{
+		font-size: 16px;
+		font-weight: bold;
+        margin-bottom:30px;
+        font-weight:700;
 
 	}
 /*第二个菜单下的文档内容*/
