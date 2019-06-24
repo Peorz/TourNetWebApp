@@ -91,6 +91,8 @@
     <Content Include="browser\static\css\bootstrap-theme.min.css" />
     <Content Include="browser\static\css\bootstrap.min.css" />
     <Content Include="browser\static\css\card-view.css" />
+    <Content Include="browser\static\css\discuss\discuss1.css" />
+    <Content Include="browser\static\css\discuss\GongLuexq.css" />
     <Content Include="browser\static\css\forgetpsw\forgetpsw.css" />
     <Content Include="browser\static\css\discuss\discuss.css" />
     <Content Include="browser\static\css\index\customize.css" />
@@ -144,6 +146,8 @@
     <Content Include="browser\view\ForgetPassWord1.aspx" />
     <Content Include="browser\view\ForgetPassWrod.aspx" />
     <Content Include="browser\view\Discuss.aspx" />
+    <Content Include="browser\view\GongLue.aspx" />
+    <Content Include="browser\view\GongLuexq.aspx" />
     <Content Include="browser\view\Main.aspx" />
     <Content Include="browser\view\MessageBoard.aspx" />
     <Content Include="browser\view\TourSel.aspx" />
@@ -233,6 +237,20 @@
     </Compile>
     <Compile Include="browser\view\Discuss.aspx.designer.cs">
       <DependentUpon>Discuss.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="browser\view\GongLue.aspx.cs">
+      <DependentUpon>GongLue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="browser\view\GongLue.aspx.designer.cs">
+      <DependentUpon>GongLue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="browser\view\GongLuexq.aspx.cs">
+      <DependentUpon>GongLuexq.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="browser\view\GongLuexq.aspx.designer.cs">
+      <DependentUpon>GongLuexq.aspx</DependentUpon>
     </Compile>
     <Compile Include="browser\view\Main.aspx.cs">
       <DependentUpon>Main.aspx</DependentUpon>
@@ -369,7 +387,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="browser\static\css\App_LocalResources\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

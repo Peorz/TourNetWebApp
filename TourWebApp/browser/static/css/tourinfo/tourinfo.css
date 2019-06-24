@@ -101,18 +101,18 @@
 
 .tourinfo_Info
 {
-    height: 300px;
-    padding: 30px;
-    overflow-y :auto;
-    
+    height: 300px;   
 }
 
     .tourinfo_Info span
     {
         font-size: 16px;
         line-height: 26px;
-        color: #808080;
-        
+        color: #808080;       
+    }
+    .tourinfo_txt{
+        height: 230px;
+        overflow-y:auto;
     }
 
 .tourinfo_hot
@@ -142,6 +142,9 @@
 {
     list-style: none;
     color: #eee;
+    display:block;
+    min-height:300px;
+    margin-top:50px;
 }
 
     .tourinfo_img li
@@ -180,4 +183,35 @@
     height:50px;
     font-size:20px;
     text-align:center;
+}
+.more_scenic_list h4{
+    float:left;
+    font-size:20px;
+}
+.more_scenic_name{
+    height:30px;
+    display:block;
+}
+.scenic_price{
+    font-size:16px;
+    color:black;
+    margin-top:10px;
+    float:right;
+}
+.scenic_price i{
+    color:red;
+}
+.scenic_title{
+    text-align:left;
+    color:#808080;
+    font-size:16px;
+    float:left;
+    width:250px;
+}
+.more_scenic_list{
+    margin-top:10px;
+}
+.more_scenic_btn{
+    width:100%;
+    margin-bottom:30px;
 }

@@ -14,12 +14,12 @@
     <link href="../static/css/about/about.css" rel="stylesheet" />
     <script src="../static/js/jquery.min.js"></script>
     <script src="../static/js/bootstrap.min.js"></script>
-
-
 </head>
 <body>
     <form id="form1" runat="server">
-        <h1>关于我们</h1>
+
+        <h1>关于我们 </h1>
+        <a style="padding-left: 10px;" href="../../Index.aspx">>>返回首页</a>
         <div class="box">
             <div class="conten">
                 <div class="row">
@@ -27,12 +27,11 @@
                         <div class="nei">
                             <asp:Image ID="Image1" runat="server" ImageUrl="~/browser/static/img/about_1.png" Width="90px" />
                             <p>
-                                南宁师范大学位于广西壮族自治区首府南宁市，是自治区人民政府举办的本科师范院校。
-                                南宁地处亚热带、北回归线以南，是北部湾城市群核心城市、中国面向东盟十国国际大通道、西南出海综合交通枢纽城市，
-                                国家“一带一路”海上丝绸之路有机衔接的重要门户城市，是全国文明城市，这里满城皆绿、四季常青，被誉为“中国绿城”。
+                                XXX，中国年轻一代用得更多的旅游网站。
+                                得益于“内容 + 交易” 的核心优势，
+                                XXX更理解年轻人的偏好让复杂的旅游决策、预订和体验，变得简单、高效和便捷。
                             </p>
                         </div>
-
                     </div>
                     <%--轮播图--%>
                     <div class="col-md-4">
@@ -50,9 +49,9 @@
                         <div class="nei">
                             <asp:Image ID="Image5" runat="server" ImageUrl="~/browser/static/img/about_2.png" Width="90px" />
                             <p>
-                                南宁师范大学位于广西壮族自治区首府南宁市，是自治区人民政府举办的本科师范院校。
-                                南宁地处亚热带、北回归线以南，是北部湾城市群核心城市、中国面向东盟十国国际大通道、西南出海综合交通枢纽城市，
-                                国家“一带一路”海上丝绸之路有机衔接的重要门户城市，是全国文明城市，这里满城皆绿、四季常青，被誉为“中国绿城”。
+                                经大量旅行者自主分享，
+                                XXX社区的信息内容不断丰富和完善，
+                                成为年轻一代首选的“旅游神器”。
                             </p>
                         </div>
                     </div>
@@ -63,30 +62,27 @@
                         <div class="bott1">
                             <asp:Image ID="Image6" runat="server" ImageUrl="~/browser/static/img/about_3.png" Width="90px" />
                             <p>
-                                南宁师范大学位于广西壮族自治区首府南宁市，是自治区人民政府举办的本科师范院校。
-                                南宁地处亚热带、北回归线以南，是北部湾城市群核心城市、中国面向东盟十国国际大通道、西南出海综合交通枢纽城市，
-                                国家“一带一路”海上丝绸之路有机衔接的重要门户城市，是全国文明城市，这里满城皆绿、四季常青，被誉为“中国绿城”。
+                                与其他旅游网站相比，
+                                XXX更潮、更酷，深谙“年轻一代的选择”，
+                                帮助他们从不同角度，重新发现世界。
                             </p>
                         </div>
 
                     </div>
                     <div class="col-md-4">
-                         <div class="bott1">
-                             <asp:Image ID="Image7" runat="server" ImageUrl="~/browser/static/img/about_4.png" Width="90px" />
+                        <div class="bott1">
+                            <asp:Image ID="Image7" runat="server" ImageUrl="~/browser/static/img/about_4.png" Width="90px" />
                             <p>
-                                南宁师范大学位于广西壮族自治区首府南宁市，是自治区人民政府举办的本科师范院校。
-                                南宁地处亚热带、北回归线以南，是北部湾城市群核心城市、中国面向东盟十国国际大通道、西南出海综合交通枢纽城市，
-                                国家“一带一路”海上丝绸之路有机衔接的重要门户城市，是全国文明城市，这里满城皆绿、四季常青，被誉为“中国绿城”。
+                                我们旅游网站规模化的运营不仅可以为会员提供更多优质的旅行选择，
+                                还保障了服务的标准化，确保服务质量，并降低运营成本。
                             </p>
                         </div>
                     </div>
                     <div class="col-md-4">
-                         <div class="bott1">
-                             <asp:Image ID="Image8" runat="server" ImageUrl="~/browser/static/img/about_5.png" Width="90px" />
+                        <div class="bott1">
+                            <asp:Image ID="Image8" runat="server" ImageUrl="~/browser/static/img/about_5.png" Width="90px" />
                             <p>
-                                南宁师范大学位于广西壮族自治区首府南宁市，是自治区人民政府举办的本科师范院校。
-                                南宁地处亚热带、北回归线以南，是北部湾城市群核心城市、中国面向东盟十国国际大通道、西南出海综合交通枢纽城市，
-                                国家“一带一路”海上丝绸之路有机衔接的重要门户城市，是全国文明城市，这里满城皆绿、四季常青，被誉为“中国绿城”。
+                                我们旅游网站依托景域集团的产业链优势，XXX致力于让游客“自由而有尊严地行走”，要成为“游客心中的第一”。
                             </p>
                         </div>
                     </div>

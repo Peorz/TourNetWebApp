@@ -37,7 +37,7 @@
         <hr />
         <div class="container tourinfo_content">
             <div class="tourinfo_banner col-md-6">
-                <ul class="img_ul">                   
+                <ul class="img_ul">
                 </ul>
 
                 <div class="img_btn btn_left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></div>
@@ -45,177 +45,22 @@
             </div>
             <div class="tourinfo_Info col-md-5 ">
                 <h3>景区介绍</h3>
-                <span id="scenicTxt"></span>
+                <div class="tourinfo_txt"><span id="scenicTxt"></span></div>
             </div>
         </div>
         <hr />
         <div class="container tourinfo_hot">
-            <h1>告诉你怎么玩</h1>
-            <ul class="nav nav-tabs tabs_ul">
-                <li role="presentation" class="tab-item myactive"><a href="#">景点</a></li>
-                <li role="presentation" class="tab-item "><a href="#">美食</a></li>
-                <li role="presentation" class="tab-item "><a href="#">攻略</a></li>
-            </ul>
+            <h1>告诉你怎么玩,附近更多的景点</h1>
             <div class="imgbox col-md-12">
-                <ul class="tourinfo_img">
-                    <li>
-                        <a href="#" target="_blank">
-                            <img src="../static/img/banner.jpg" style="width: 255px; height: 180px;" />
-                            <h4>银滩</h4>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">
-                            <img src="../static/img/banner.jpg" style="width: 255px; height: 180px;" />
-                            <h4>银滩</h4>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">
-                            <img src="../static/img/banner.jpg" style="width: 255px; height: 180px;" />
-                            <h4>银滩</h4>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">
-                            <img src="../static/img/banner.jpg" style="width: 255px; height: 180px;" />
-                            <h4>银滩</h4>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">
-                            <img src="../static/img/banner.jpg" style="width: 255px; height: 180px;" />
-                            <h4>银滩</h4>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">
-                            <img src="../static/img/banner.jpg" style="width: 255px; height: 180px;" />
-                            <h4>银滩</h4>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">
-                            <img src="../static/img/banner.jpg" style="width: 255px; height: 180px;" />
-                            <h4>银滩</h4>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">
-                            <img src="../static/img/banner.jpg" style="width: 255px; height: 180px;" />
-                            <h4>银滩</h4>
-                        </a>
-                    </li>
-                    <asp:Button ID="btnTour" CssClass="btn btn-success btn_tour" runat="server" Text="查看更多景点" />
-
+                <ul class="tourinfo_img">                   
                 </ul>
-                <ul class="tourinfo_img">
-                    <li>
-                        <a href="#" target="_blank">
-                            <img src="../static/img/banner.jpg" style="width: 255px; height: 180px;" />
-                            <h4>鱿鱼丝</h4>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">
-                            <img src="../static/img/banner.jpg" style="width: 255px; height: 180px;" />
-                            <h4>鱿鱼丝</h4>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">
-                            <img src="../static/img/banner.jpg" style="width: 255px; height: 180px;" />
-                            <h4>鱿鱼丝</h4>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">
-                            <img src="../static/img/banner.jpg" style="width: 255px; height: 180px;" />
-                            <h4>鱿鱼丝</h4>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">
-                            <img src="../static/img/banner.jpg" style="width: 255px; height: 180px;" />
-                            <h4>鱿鱼丝</h4>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">
-                            <img src="../static/img/banner.jpg" style="width: 255px; height: 180px;" />
-                            <h4>鱿鱼丝</h4>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">
-                            <img src="../static/img/banner.jpg" style="width: 255px; height: 180px;" />
-                            <h4>鱿鱼丝</h4>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">
-                            <img src="../static/img/banner.jpg" style="width: 255px; height: 180px;" />
-                            <h4>鱿鱼丝</h4>
-                        </a>
-                    </li>
-                    <asp:Button ID="btnFood" CssClass="btn btn-success btn_tour" runat="server" Text="查看更多美食" />
-                </ul>
-                <ul class="tourinfo_img">
-                    <li>
-                        <a href="#" target="_blank">
-                            <img src="../static/img/banner.jpg" style="width: 255px; height: 180px;" />
-                            <h4>攻略1</h4>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">
-                            <img src="../static/img/banner.jpg" style="width: 255px; height: 180px;" />
-                            <h4>攻略1</h4>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">
-                            <img src="../static/img/banner.jpg" style="width: 255px; height: 180px;" />
-                            <h4>攻略1</h4>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">
-                            <img src="../static/img/banner.jpg" style="width: 255px; height: 180px;" />
-                            <h4>攻略1</h4>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">
-                            <img src="../static/img/banner.jpg" style="width: 255px; height: 180px;" />
-                            <h4>攻略1</h4>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">
-                            <img src="../static/img/banner.jpg" style="width: 255px; height: 180px;" />
-                            <h4>攻略1</h4>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">
-                            <img src="../static/img/banner.jpg" style="width: 255px; height: 180px;" />
-                            <h4>攻略1</h4>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">
-                            <img src="../static/img/banner.jpg" style="width: 255px; height: 180px;" />
-                            <h4>攻略1</h4>
-                        </a>
-                    </li>
-                    <asp:Button ID="btnStrategy" CssClass="btn btn-success btn_tour" runat="server" Text="查看更多攻略" />
-                </ul>
-
+                <div class="more_scenic_btn">
+                    <asp:Button ID="btnTour" CssClass="btn btn-success btn_tour" runat="server" Text="查看更多景点" /></div>
             </div>
         </div>
     </form>
     <script>
+        //页面初始化加载
         $(document).ready(function () {
             $(".imgbox .tourinfo_img:gt(0)").hide();
             var getID = GetQueryString("id");
@@ -289,8 +134,8 @@
             if (r != null) return decodeURI(r[2]);
             return null;
         }
+        //加载数据
         function loadInfo(getID) {
-            console.log(getID);
             $.ajax({
                 url: "TourInfo.aspx/DisplayInfo",
                 contentType: "application/json",
@@ -303,11 +148,10 @@
                     var data = JSON.parse(result.d);
                     console.log(data);
                     if (data.code == 0) {
-                        console.log(data);
-                        var host = "http://psxrtdro4.bkt.clouddn.com/";
                         $("#scenic_name").text(data.rows[0].ScenicName);
                         $("#scenic_py").text(data.rows[0].ScenicEnglish);
-                        $("#scenicTxt").text(data.rows[0].ScenicContent);                       
+                        $("#scenicTxt").text(data.rows[0].ScenicContent);
+                        moreScenic();
                     }
                 },
                 error: function () { alert("显示失败，程序异常！"); return; }
@@ -329,11 +173,53 @@
                             var item = data.rows[i];
                             var imgList = $('<li>' +
                                 '<img alt="" src="' + item.ScenicImg + '" />' +
-                                '</li>');                                                  
+                                '</li>');
                             $(".img_ul").append(imgList);
                         }
                     }
                 }
+            })
+        }
+        //更多景点显示
+        function moreScenic() {
+            var key = $("#scenic_name").html();
+            console.log(key);
+            $.ajax({
+                url: "TourInfo.aspx/DisplayMore",
+                contentType: "application/json",
+                type: "POST",
+                datatype: "json",
+                data: JSON.stringify({
+                    LoadKey: key
+                }),//格式为 "{a:1,b:2}"
+                success: function (result) {
+                    var data = JSON.parse(result.d);
+                    if (data.code == 0) {
+                        var temp;
+                        if (data.rows.length > 4) {
+                            temp = 4;
+                        } else {
+                            temp = data.rows.length;
+                        }
+                        for (var i = 0; i < temp; i++) {
+                            var item = data.rows[i];
+                            var dom = $('<li class="more_scenic_list">' +
+                        '<a href="#" target="_blank">' +
+                            '<img src="' + item.ScenicPic + '" style="width: 255px; height: 180px;" />' +
+                            '<div class="more_scenic_name">' +
+                                '<h4>' + item.ScenicName + '</h4>' +
+                                '<span class="scenic_price">门票：<i>888</i>元</span>' +
+                            '</div>' +
+                            '<div class="more_scenic_title">' +
+                                '<span class="scenic_title">' + item.ScenicTitle + '</span>' +
+                            '</div>' +
+                        '</a>' +
+                    '</li>');
+                            $(".tourinfo_img").append(dom);
+                        }
+                    }
+                },
+                error: function () { alert("显示失败，程序异常！"); return; }
             })
         }
     </script>
