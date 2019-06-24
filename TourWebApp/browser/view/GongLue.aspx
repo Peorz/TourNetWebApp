@@ -30,7 +30,7 @@
                     
                     <div class="message_text">
                         <div class="message_list_title">
-                            <a href="#">
+                            <a href="GongLuexq.aspx#DL">
                                 <h2>云南大理，仗剑走天涯</h2>
                             </a>
                         </div>
