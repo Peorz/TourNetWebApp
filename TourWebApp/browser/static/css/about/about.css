@@ -39,6 +39,7 @@ h1 {
     color: #928e8e;
     line-height: 2.5;
     text-align: justify;
+    text-indent:40px;
 }
 
 .bott1 {
@@ -53,6 +54,8 @@ h1 {
         color: #928e8e;
         line-height: 2.5;
         text-align: justify;
+        text-indent:40px;
+        
     }
 
 #container {
