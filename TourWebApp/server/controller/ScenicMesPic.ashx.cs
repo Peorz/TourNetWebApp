@@ -21,7 +21,10 @@ namespace TourWebApp.server.controller
         {
             PageList<ScenicPic> picList = ORMSupport.PageSelect<ScenicPic>()
                 .Select();
-
+            foreach(ScenicPic scenic in picList.Rows)
+            {
+                //_ = scenic.ScenicInfo;
+            }
             return Result.Ok("", picList.Total, picList.Rows);
         }
 

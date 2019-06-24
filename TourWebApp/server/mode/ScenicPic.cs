@@ -9,7 +9,7 @@ using NetDB.Core.SqlAttribute;
 
 namespace TourWebApp.server.mode
 {
-    public class ScenicPic:ORMSupport
+    public class ScenicPic : ORMSupport
     {
         private string _ScenicID;
         [Colmun(Type = "varchar(32)")]
@@ -18,12 +18,31 @@ namespace TourWebApp.server.mode
             get { return _ScenicID; }
             set { _ScenicID = value; }
         }
+
         private string _ScenicImg;
         [Colmun(Type = "varchar(255)")]
         public string ScenicImg
         {
             get { return _ScenicImg; }
             set { _ScenicImg = value; }
+        }
+
+        private ScenicInfo _ScenicInfo;
+
+        public ScenicInfo ScenicInfo
+        {
+            get
+            {
+                _ScenicInfo = new ScenicInfo();
+                _ScenicInfo.ID = ScenicID;
+                _ScenicInfo.Find();
+                return _ScenicInfo;
+            }
+
+            set
+            {
+                _ScenicInfo = value;
+            }
         }
     }
 }
