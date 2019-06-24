@@ -9,13 +9,17 @@ namespace TourWebApp.browser.view
         protected void Page_Load(object sender, EventArgs e)
         {
             Find();
-        } 
+        }
         //显示信息
         public void Find()
         {
             if (!Page.IsPostBack)
             {
                 UserInfo user = Session["user"] as UserInfo;
+                if (user == null)
+                {
+                    return;
+                }
                 user.Find();
                 TextBox1.Text = user.Nick;//用户名
                 username.Text = user.Nick;
@@ -44,7 +48,7 @@ namespace TourWebApp.browser.view
                 user.Sex = 1;
             }
             //user.Sex = 1;
-            user.Update();           
+            user.Update();
             Response.AddHeader("Refresh", "0");
         }
     }

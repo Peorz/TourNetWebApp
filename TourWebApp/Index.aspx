@@ -28,18 +28,15 @@
                     </div>
                     <div class="col-md-7">
                         <ul class="nav navbar-nav">
-                            <li><a href="#">首页</a></li>
-                            <li><a href="#">关于我们</a></li>
-                            <li><a href="#">旅游资讯</a></li>
-                            <li><a href="#">周边美食</a></li>
-                            <li><a href="#">讨论</a></li>
-                            <li><a href="#">联系我们</a></li>
+                            <li><a href="browser/view/TourSel.aspx">旅游景区</a></li>
+                            <li><a href="browser/view/MessageBoard.aspx">留言板</a></li>
+                            <li><a href="browser/view/Personal.aspx">关于我们</a></li>
                             <li>
                                 <div class="navbar-form navbar-left">
                                     <div class="form-group ">
-                                        <asp:TextBox ID="SearchText" runat="server" CssClass="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="SearchText" runat="server" CssClass="form-control" placeholder="输入搜索内容"></asp:TextBox>
                                     </div>
-                                    <asp:Button ID="SearchBtn" runat="server" Text="搜索" CssClass="btn btn-default" OnClick="SearchBtn_Click" placeholder="输入搜索内容" />
+                                    <asp:Button ID="SearchBtn" runat="server" Text="搜索" CssClass="btn btn-default" OnClick="SearchBtn_Click"  />
                                 </div>
                             </li>
                         </ul>

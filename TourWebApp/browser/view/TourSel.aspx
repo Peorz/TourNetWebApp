@@ -28,7 +28,7 @@
                     <button id="SearchBtn" type="button" class="btn btn-success"><span class="glyphicon glyphicon-search"></span></button>
                 </form>
             </div>
-            <ul class="nav navbar-nav navbar-right col-md-2 col-md-offset-1">
+            <ul class="nav navbar-nav navbar-right col-md-2 col-md-offset-1" style="display:none">
                 <li><a href="#" style="color: #fff;">登录</a></li>
                 <li><a href="#" style="color: #fff;">注册</a></li>
             </ul>
@@ -135,7 +135,7 @@
                                     '<p>' + item.ScenicContent + '</p>' +
                                 '</div>' +
                                 '<div class="list_icon">' +
-                                    '<p>上传时间：<span class="createtime">' + item.ScenicUploadTime + '</span><span class="glyphicon glyphicon-eye-open" style="margin-left: 10px;"><i>' + item.ScenicBrowse + '</i></span></p>' +
+                                    '<p>更新时间：<span class="createtime">' + item.ScenicUploadTime + '</span><span class="glyphicon glyphicon-eye-open" style="margin-left: 10px;"><i>' + item.ScenicBrowse + '</i></span></p>' +
                                 '</div>' +
                             '</div>' +
                         '</div>' +

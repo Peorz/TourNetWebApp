@@ -110,10 +110,10 @@
                         <br />
                         <div class="row about">
                             <div class="col-md-4 col-md-offset-2 about_title">
-                                <asp:TextBox ID="nick_tb" CssClass="form-control" runat="server" placeholder="Name"></asp:TextBox><br />
-                                <asp:TextBox ID="TextBox1" CssClass="form-control" runat="server" placeholder="Email"></asp:TextBox><br />
-                                <asp:TextBox ID="TextBox2" CssClass="form-control" runat="server" placeholder="Phone"></asp:TextBox><br />
-                                <asp:TextBox ID="TextBox3" CssClass="form-control" runat="server" Height="100px" TextMode="MultiLine" placeholder="Message..."></asp:TextBox><br />
+                                <asp:TextBox ID="nick_tb" CssClass="form-control" runat="server" placeholder="姓名"></asp:TextBox><br />
+                                <asp:TextBox ID="TextBox1" CssClass="form-control" runat="server" placeholder="邮箱"></asp:TextBox><br />
+                                <asp:TextBox ID="TextBox2" CssClass="form-control" runat="server" placeholder="电话"></asp:TextBox><br />
+                                <asp:TextBox ID="TextBox3" CssClass="form-control" runat="server" Height="100px" TextMode="MultiLine" placeholder="内容..."></asp:TextBox><br />
                                 <asp:Button ID="register_btn" runat="server" Text="提交" CssClass="btn btn-success" Style="width: 100px" />
                             </div>
                             <div class="col-md-5 col-md-offset-1">
