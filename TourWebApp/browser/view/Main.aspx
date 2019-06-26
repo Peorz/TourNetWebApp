@@ -83,14 +83,14 @@
                             </div>
                             <div class="col-md-3 package1">
                                 <img src="browser/static/img/main_bg3.jpg" class="full-img" alt="xx"/>
-                                <h4>参考价：伦敦之旅</h4>
-                                <h5>2888元</h5>
+                                <h4>伦敦之旅</h4>
+                                <h5>参考价：2888元</h5>
                                 <a href="/browser/view/TourInfo.aspx?id=cdef706d88e14f788312467f043150e3" target="_blank" class="w3_agileits_sign_up2 popup-with-zoom-anim ab scroll">进入</a>
                             </div>
                             <div class="col-md-3 package1">
                                 <img src="browser/static/img/main_bg4.jpg" class="full-img" alt="xx"/>
-                                <h4>参考价：巴黎之旅</h4>
-                                <h5>3888元</h5>
+                                <h4>巴黎之旅</h4>
+                                <h5>参考价：3888元</h5>
                                 <a href="/browser/view/TourInfo.aspx?id=69455e7225cc4bd49c3428d42ab4c00a" target="_blank" class="w3_agileits_sign_up2 popup-with-zoom-anim ab scroll">进入</a>
                             </div>
                         </div>
