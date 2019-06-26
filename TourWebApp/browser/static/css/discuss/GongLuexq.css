@@ -165,15 +165,32 @@
 	}
 
 	.container .content .menu2 .tab p{
-		font-size: 14px;
-		line-height: 20px;
-		color: rgba(0,0,0,0.8);
+		font-size: 16px;
+		color: rgba(0,0,0,1);
         word-break:break-all;
+        line-height:30px;
+        text-indent:2em;
 	}
 
 	.container .content .menu2 .tab .tt{
-		font-size: 14px;
+		font-size: 25px;
 		font-weight: bold;
+        text-align: center;
+        margin-bottom:30px;
+
+	}
+    .container .content .menu2 .tab img{width:80%;}
+
+    .container .content .menu2 .tab .dd{
+		font-size: 16px;
+		font-weight: bold;
+        margin-bottom:30px;
+        font-weight:700;
+
+	}
+     .container .content .menu2 .tab h4{
+         margin:30px 0;
+        font-weight:700;
 
 	}
 /*第三个菜单下的文档内容*/
@@ -186,14 +203,68 @@
 	}
 
 	.container .content .menu3 .tab p{
-		font-size: 14px;
-		line-height: 20px;
-		color: rgba(0,0,0,0.8);
+		font-size: 16px;
+		color: rgba(0,0,0,1);
         word-break:break-all;
+        line-height:30px;
+        text-indent:2em;
 	}
 
 	.container .content .menu3 .tab .tt{
-		font-size: 13px;
+		font-size: 25px;
 		font-weight: bold;
+        text-align: center;
+        margin-bottom:30px;
+
+	}
+    .container .content .menu3 .tab .dd{
+		font-size: 16px;
+		font-weight: bold;
+        margin-bottom:30px;
+        font-weight:700;
+
+	}
+     .container .content .menu3 .tab img{width:80%;}
+      .container .content .menu3 .tab h4{
+         margin:30px 0;
+        font-weight:700;
+
+	}
+
+      /*第4个菜单下的文档内容*/
+	.container .content .menu3 .tab {
+		display: none;
+	}
+
+	.container .content .menu3 .active{
+		display: block;
+	}
+
+	.container .content .menu3 .tab p{
+		font-size: 16px;
+		color: rgba(0,0,0,1);
+        word-break:break-all;
+        line-height:30px;
+        text-indent:2em;
+	}
+
+	.container .content .menu3 .tab .tt{
+		font-size: 25px;
+		font-weight: bold;
+        text-align: center;
+        margin-bottom:30px;
+
+	}
+    .container .content .menu3 .tab .dd{
+		font-size: 16px;
+		font-weight: bold;
+        margin-bottom:30px;
+        font-weight:700;
+
+	}
+     .container .content .menu3 .tab img{width:80%;}
+      .container .content .menu3 .tab h4{
+         margin:30px 0;
+        font-weight:700;
 
 	}

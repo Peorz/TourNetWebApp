@@ -26,6 +26,7 @@ $(document).ready(function () {
     myfunction($(".container .menu .ulmenu1 li"), $(".container .ulmenu1 li a"), $(".container .content .menu1 .tab"));
     myfunction($(".container .menu .ulmenu2 li"), $(".container .ulmenu2 li a"), $(".container .content .menu2 .tab"));
     myfunction($(".container .menu .ulmenu3 li"), $(".container .ulmenu3 li a"), $(".container .content .menu3 .tab"));
+    myfunction($(".container .menu .ulmenu4 li"), $(".container .ulmenu4 li a"), $(".container .content .menu4 .tab"));
 
 
     // var li1=$(".container .menu ul li");
