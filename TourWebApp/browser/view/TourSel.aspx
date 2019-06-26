@@ -28,7 +28,7 @@
                     <button id="SearchBtn" type="button" class="btn btn-success"><span class="glyphicon glyphicon-search"></span></button>
                 </form>
             </div>
-            <ul class="nav navbar-nav navbar-right col-md-2 col-md-offset-1" style="display:none">
+            <ul class="nav navbar-nav navbar-right col-md-2 col-md-offset-1" style="display: none">
                 <li><a href="#" style="color: #fff;">登录</a></li>
                 <li><a href="#" style="color: #fff;">注册</a></li>
             </ul>
@@ -38,10 +38,16 @@
 
         <div class="container">
             <div class="searchnum col-md-5">
-                <h3>共为您搜索到<span id="resNum" class="label label-success"></span>条关于<span id="resKey" style="font-size: 30px;"></span>的信息</h3>
+                <div class="container">
+                    <ol class="breadcrumb">
+                        <li><a href="#">首页</a></li>
+                        <li class="active">景区信息</li>
+                    </ol>
+                </div>
+                <h3></h3>
             </div>
         </div>
-        <div class="container">
+        <%--<div class="container">
             <ul class="nav nav-pills selecthr col-md-12 ">
                 <li role="presentation" class="search_item active"><a href="#">全部<span class="badge">100</span></a></li>
                 <li role="presentation" class="search_item"><a href="#">景区<span class="badge">100</span></a></li>
@@ -49,10 +55,10 @@
                 <li role="presentation" class="search_item"><a href="#">攻略<span class="badge">100</span></a></li>
                 <li role="presentation" class="search_item"><a href="#">讨论<span class="badge">100</span></a></li>
             </ul>
-        </div>
+        </div>--%>
         <div class="container">
             <div class="infobox col-md-12">
-                <ul class="infoul">                 
+                <ul class="infoul">
                 </ul>
 
                 <nav aria-label="Page navigation" style="text-align: center;">
@@ -112,10 +118,15 @@
                 success: function (result) {
                     var data = JSON.parse(result.d);
                     console.log(data);
-                    if (data.code == 0) {                       
-                        $("#resNum").text(data.total);
-                        $("#resKey").text(getKey);
-                        $("#SearchBox").val(getKey);
+                    if (data.code == 0) {
+                        var txt;
+                        if (getKey.length == 0) {
+                            txt = "";
+                        } else {
+                            txt = '关于<span class="label label-success">' + getKey + '</span>的';
+                        }
+                        var total_info = '共为您搜索到<span class="label label-success">' + data.total + '</span>条' + txt + '信息</div>';
+                        $(".searchnum h3").html(total_info);
                         for (var i = 0; i < data.rows.length; i++) {
                             var item = data.rows[i];
                             var dom = $('<li>' +
