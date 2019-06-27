@@ -50,7 +50,7 @@
                     
                     <div class="message_text">
                         <div class="message_list_title">
-                            <a href="#">
+                            <a href="GongLuexq.aspx#LJ">
                                 <h2>丽江，艳遇之都</h2>
                             </a>
                         </div>
@@ -70,7 +70,7 @@
                    
                     <div class="message_text">
                         <div class="message_list_title">
-                            <a href="#">
+                            <a href="GongLuexq.aspx#GL">
                                 <h2>桂林</h2>
                             </a>
                         </div>
@@ -94,7 +94,7 @@
                    
                     <div class="message_text">
                         <div class="message_list_title">
-                            <a href="#">
+                            <a href="GongLuexq.aspx#MPYC">
                                 <h2>玛旁雍措</h2>
                             </a>
                         </div>
@@ -118,7 +118,7 @@
                    
                     <div class="message_text">
                         <div class="message_list_title">
-                            <a href="#">
+                            <a href="GongLuexq.aspx#BL">
                                 <h2>中欧，填满我的欧洲旅行拼图</h2>
                             </a>
                         </div>

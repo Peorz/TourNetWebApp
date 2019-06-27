@@ -1,270 +1,280 @@
-﻿body{
-		margin: 0;
-		padding:0;
-	}	
+﻿body {
+    margin: 0;
+    padding: 0;
+}
 
-	.container{
-		font-family: 微软雅黑;
-		background: #fff;
-		padding: 30px;
-		margin:50px auto;
-        overflow: hidden;
-	}
+.container {
+    font-family: 微软雅黑;
+    background: #fff;
+    padding: 30px;
+    margin: 50px auto;
+    overflow: hidden;
+}
 
-	.container .menu{
-		width: 240px;
-		margin-left: 0px;
-		float: left;
-	}
+    .container .menu {
+        width: 240px;
+        margin-left: 0px;
+        float: left;
+    }
 /*position 菜单背景图标*/
-	.positionIicon{
-		display: inline block;
-		width: 32px;
-		height: 32px;
-		margin: 0px 4px;
-		float: left;
-		margin-right: 10px;
-	}
+.positionIicon {
+    display: inline block;
+    width: 32px;
+    height: 32px;
+    margin: 0px 4px;
+    float: left;
+    margin-right: 10px;
+}
 /*menu图标*/
-	.q-menu-img{
-		background: url("../img/iconfont-kuaisulu.png");
-	}
-	
-	.q-menu-doit{
-		background: url("../img/iconfont-0bangzhushouce.png");
-	}
+.q-menu-img {
+    background: url("../img/iconfont-kuaisulu.png");
+}
 
-	.q-menu-three{
-		background: url("../img/iconfont-wenti.png");
-	}
+.q-menu-doit {
+    background: url("../img/iconfont-0bangzhushouce.png");
+}
+
+.q-menu-three {
+    background: url("../img/iconfont-wenti.png");
+}
 
 
-	.container .menu h3{
-		font-size: 25px;
-		cursor: pointer;
-        color:rgba(34, 139, 34,0.8);
-        font-family:"微软雅黑";
-        font-weight:700;
-	}
-    .container .menu ul{
+.container .menu h3 {
+    font-size: 25px;
+    cursor: pointer;
+    color: rgba(34, 139, 34,0.8);
+    font-family: "微软雅黑";
+    font-weight: 700;
+}
+
+.container .menu ul {
+    display: none;
+}
+
+    .container .menu ul li {
+        height: 28px;
+        line-height: 28px;
+        margin: 20px 0;
+    }
+
+        .container .menu ul li a {
+            color: #808080;
+            font-size: 16px;
+        }
+
+            .container .menu ul li a:hover {
+                background: rgba(34, 139, 34,0.5);
+                border-radius: 14px;
+                -webkit-border-radius: 14px;
+                -moz-border-radius: 14px;
+                -moz-border-radius: 14px;
+                color: #fff;
+                text-decoration: none;
+            }
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+    display: block;
+    width: 180px;
+    height: 26px;
+    padding-left: 10px;
+}
+
+.container .menu .selected {
+    background: rgba(34, 139, 34,0.5);
+    border-radius: 14px;
+    color: #fff;
+}
+
+
+
+.container .content {
+    margin-top: 15px;
+    width: 860px;
+    margin-left: 300px;
+}
+
+    .container .content .get-menu {
+        margin-left: -10px;
+    }
+
+        .container .content .get-menu a {
+            display: inline-block;
+            font-size: 15px;
+            height: 40px;
+            color: green;
+        }
+
+            .container .content .get-menu a:last-child {
+                margin-left: -8px;
+                color: green;
+            }
+
+        .container .content .get-menu span {
+            display: inline-block;
+            height: 40px;
+            margin-left: -110px;
+        }
+
+    .container .content .menu1 .tab {
         display: none;
     }
-	.container .menu ul li{
-		height: 28px;
-		line-height: 28px;
-        margin:20px 0;
-	}
-    .container .menu ul li a{
-        color:#808080;
-        font-size:16px;
+
+    .container .content .menu1 .active {
+        display: block;
     }
-	.container .menu ul li a:hover{
-		background:rgba(34, 139, 34,0.5);
-		border-radius: 14px;
-		-webkit-border-radius: 14px;
-		-moz-border-radius: 14px;
-		-moz-border-radius:14px;
-		color:#fff;
-        text-decoration:none;
-	
-	}
 
-	ul{
-		list-style: none;
-	}
+    .container .content .menu1 .tab p {
+        font-size: 16px;
+        color: rgba(0,0,0,1);
+        word-break: break-all;
+        line-height: 30px;
+        text-indent: 2em;
+    }
 
-	a{
-		text-decoration: none;
-		color: #000;
-		font-size: 14px;
-		display: block;
-		width: 180px;
-		height: 26px;
-		padding-left: 10px;
-	}
-
-	.container .menu .selected{
-		background:rgba(34, 139, 34,0.5);
-		border-radius: 14px;
-        color:#fff;
-	}
-
-
-
-	.container .content{
-		margin-top: 15px;
-		width: 860px;
-		margin-left: 300px;
-	}
-
-	.container .content .get-menu{
-		margin-left: -10px;
-	}
-
-	.container .content .get-menu a{
-		display: inline-block;
-		font-size: 15px;
-	    height: 40px;
-        color:green;
-	}
-
-	.container .content .get-menu a:last-child{
-		margin-left: -8px;
-		color: green;
-	}
-
-	.container .content .get-menu span{
-		display: inline-block;
-	    height: 40px;
-	    margin-left: -110px;
-	}
-
-	.container .content .menu1 .tab {
-		display: none;
-	}
-
-	.container .content .menu1 .active{
-		display: block;
-	}
-
-	.container .content .menu1 .tab p{
-		font-size: 16px;
-		color: rgba(0,0,0,1);
-        word-break:break-all;
-        line-height:30px;
-        text-indent:2em;
-	}
-
-	.container .content .menu1 .tab .tt{
-		font-size: 25px;
-		font-weight: bold;
+    .container .content .menu1 .tab .tt {
+        font-size: 25px;
+        font-weight: bold;
         text-align: center;
-        margin-bottom:30px;
+        margin-bottom: 30px;
+    }
 
-	}
-    .container .content .menu1 .tab img{width:80%;}
-     .container .content .menu1 .tab h4{
-         margin:30px 0;
-        font-weight:700;
+    .container .content .menu1 .tab img {
+        width: 100%;
+    }
 
-	}
-    .container .content .menu1 .tab .dd{
-		font-size: 16px;
-		font-weight: bold;
-        margin-bottom:30px;
-        font-weight:700;
+    .container .content .menu1 .tab h4 {
+        margin: 30px 0;
+        font-weight: 700;
+    }
 
-	}
-/*第二个菜单下的文档内容*/
-	.container .content .menu2 .tab {
-		display: none;
-	}
+    .container .content .menu1 .tab .dd {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 30px;
+        font-weight: 700;
+    }
+    /*第二个菜单下的文档内容*/
+    .container .content .menu2 .tab {
+        display: none;
+    }
 
-	.container .content .menu2 .active{
-		display: block;
-	}
+    .container .content .menu2 .active {
+        display: block;
+    }
 
-	.container .content .menu2 .tab p{
-		font-size: 16px;
-		color: rgba(0,0,0,1);
-        word-break:break-all;
-        line-height:30px;
-        text-indent:2em;
-	}
+    .container .content .menu2 .tab p {
+        font-size: 16px;
+        color: rgba(0,0,0,1);
+        word-break: break-all;
+        line-height: 30px;
+        text-indent: 2em;
+    }
 
-	.container .content .menu2 .tab .tt{
-		font-size: 25px;
-		font-weight: bold;
+    .container .content .menu2 .tab .tt {
+        font-size: 25px;
+        font-weight: bold;
         text-align: center;
-        margin-bottom:30px;
+        margin-bottom: 30px;
+    }
 
-	}
-    .container .content .menu2 .tab img{width:80%;}
+    .container .content .menu2 .tab img {
+        width: 80%;
+    }
 
-    .container .content .menu2 .tab .dd{
-		font-size: 16px;
-		font-weight: bold;
-        margin-bottom:30px;
-        font-weight:700;
+    .container .content .menu2 .tab .dd {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 30px;
+        font-weight: 700;
+    }
 
-	}
-     .container .content .menu2 .tab h4{
-         margin:30px 0;
-        font-weight:700;
+    .container .content .menu2 .tab h4 {
+        margin: 30px 0;
+        font-weight: 700;
+    }
+    /*第三个菜单下的文档内容*/
+    .container .content .menu3 .tab {
+        display: none;
+    }
 
-	}
-/*第三个菜单下的文档内容*/
-	.container .content .menu3 .tab {
-		display: none;
-	}
+    .container .content .menu3 .active {
+        display: block;
+    }
 
-	.container .content .menu3 .active{
-		display: block;
-	}
+    .container .content .menu3 .tab p {
+        font-size: 16px;
+        color: rgba(0,0,0,1);
+        word-break: break-all;
+        line-height: 30px;
+        text-indent: 2em;
+    }
 
-	.container .content .menu3 .tab p{
-		font-size: 16px;
-		color: rgba(0,0,0,1);
-        word-break:break-all;
-        line-height:30px;
-        text-indent:2em;
-	}
-
-	.container .content .menu3 .tab .tt{
-		font-size: 25px;
-		font-weight: bold;
+    .container .content .menu3 .tab .tt {
+        font-size: 25px;
+        font-weight: bold;
         text-align: center;
-        margin-bottom:30px;
+        margin-bottom: 30px;
+    }
 
-	}
-    .container .content .menu3 .tab .dd{
-		font-size: 16px;
-		font-weight: bold;
-        margin-bottom:30px;
-        font-weight:700;
+    .container .content .menu3 .tab .dd {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 30px;
+        font-weight: 700;
+    }
 
-	}
-     .container .content .menu3 .tab img{width:80%;}
-      .container .content .menu3 .tab h4{
-         margin:30px 0;
-        font-weight:700;
+    .container .content .menu3 .tab img {
+        width: 80%;
+    }
 
-	}
+    .container .content .menu3 .tab h4 {
+        margin: 30px 0;
+        font-weight: 700;
+    }
 
-      /*第4个菜单下的文档内容*/
-	.container .content .menu4 .tab {
-		display: none;
-	}
+    /*第4个菜单下的文档内容*/
+    .container .content .menu4 .tab {
+        display: none;
+    }
 
-	.container .content .menu4 .active{
-		display: block;
-	}
+    .container .content .menu4 .active {
+        display: block;
+    }
 
-	.container .content .menu4 .tab p{
-		font-size: 16px;
-		color: rgba(0,0,0,1);
-        word-break:break-all;
-        line-height:30px;
-        text-indent:2em;
-	}
+    .container .content .menu4 .tab p {
+        font-size: 16px;
+        color: rgba(0,0,0,1);
+        word-break: break-all;
+        line-height: 30px;
+        text-indent: 2em;
+    }
 
-	.container .content .menu4 .tab .tt{
-		font-size: 25px;
-		font-weight: bold;
+    .container .content .menu4 .tab .tt {
+        font-size: 25px;
+        font-weight: bold;
         text-align: center;
-        margin-bottom:30px;
+        margin-bottom: 30px;
+    }
 
-	}
-    .container .content .menu4 .tab .dd{
-		font-size: 16px;
-		font-weight: bold;
-        margin-bottom:30px;
-        font-weight:700;
+    .container .content .menu4 .tab .dd {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 30px;
+        font-weight: 700;
+    }
 
-	}
-     .container .content .menu4 .tab img{width:80%;}
-      .container .content .menu4 .tab h4{
-         margin:30px 0;
-        font-weight:700;
+    .container .content .menu4 .tab img {
+        width: 80%;
+    }
 
-	}
+    .container .content .menu4 .tab h4 {
+        margin: 30px 0;
+        font-weight: 700;
+    }
