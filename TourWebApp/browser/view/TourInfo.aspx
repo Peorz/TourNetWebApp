@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title></title>
+    <title>景区详情</title>
     <link href="../static/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../static/css/bootstrap-theme.min.css" rel="stylesheet" />
     <link href="../static/css/index/customize.css" rel="stylesheet" />
@@ -28,9 +28,9 @@
             </div>
             <div class="tourinfo_icon col-lg-5 col-md-offset-2">
                 <ul>
-                    <li><a href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true">想去</span></a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-edit" aria-hidden="true">评价</span></a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-hand-right" aria-hidden="true">攻略</span></a></li>
+                    <%--<li><a href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true">想去</span></a></li>--%>
+                    <li><a href="#"><%--<span class="glyphicon glyphicon-edit" aria-hidden="true">评价</span>--%></a></li>
+                    <li><a href="GongLuexq.aspx"><span class="glyphicon glyphicon-hand-right" aria-hidden="true">攻略</span></a></li>
                 </ul>
             </div>
         </div>

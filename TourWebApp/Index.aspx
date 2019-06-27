@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title></title>
+    <title>Tour首页</title>
     <link href="browser/static/css/bootstrap.min.css" rel="stylesheet" />
     <link href="browser/static/css/card-view.css" rel="stylesheet" />
     <link href="browser/static/css/bootstrap-theme.min.css" rel="stylesheet" />
@@ -23,21 +23,21 @@
                 <div class="row">
                     <div class="col-md-2">
                         <div class="navbar-header">
-                            <a class="navbar-brand" href="#">xxxxx</a>
+                            <a class="navbar-brand" href="#">Tour</a>
                         </div>
                     </div>
                     <div class="col-md-7">
                         <ul class="nav navbar-nav">
-                            <li><a href="browser/view/TourSel.aspx?param=">旅游景区</a></li>
-                            <li><a href="browser/view/GongLue.aspx">景区攻略</a></li>
-                            <li><a href="browser/view/MessageBoard.aspx">留言板</a></li>
-                            <li><a href="browser/view/About.aspx">关于我们</a></li>
+                            <li><a href="browser/view/TourSel.aspx?param=" target="_blank">旅游景区</a></li>
+                            <li><a href="browser/view/GongLue.aspx" target="_blank">景区攻略</a></li>
+                            <li><a href="browser/view/MessageBoard.aspx" target="_blank">留言板</a></li>
+                            <li><a href="browser/view/About.aspx" target="_blank">关于我们</a></li>
                             <li>
                                 <div class="navbar-form navbar-left">
                                     <div class="form-group ">
                                         <asp:TextBox ID="SearchText" runat="server" CssClass="form-control" placeholder="输入搜索内容"></asp:TextBox>
                                     </div>
-                                    <asp:Button ID="SearchBtn" runat="server" Text="搜索" CssClass="btn btn-default" OnClick="SearchBtn_Click"  />
+                                    <asp:Button ID="SearchBtn" runat="server" Text="搜索" CssClass="btn btn-default" OnClick="SearchBtn_Click" />
                                 </div>
                             </li>
                         </ul>

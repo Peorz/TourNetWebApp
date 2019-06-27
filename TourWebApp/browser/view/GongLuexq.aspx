@@ -13,7 +13,7 @@
     <link href="../static/css/bootstrap.min.css" rel="stylesheet" />
     <script src="../static/js/jquery-latest.js"></script>
     <script src="../static/js/pc.js"></script>
-    <title></title>
+    <title>攻略详情</title>
 </head>
 <body style="padding-top: 0">
     <%--    <nav class="navbar navbar-default navbar-fixed-top" style="margin-bottom: 10px;">

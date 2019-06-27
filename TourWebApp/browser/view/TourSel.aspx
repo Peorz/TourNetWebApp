@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title></title>
+    <title>旅游景区</title>
     <link href="../static/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../static/css/bootstrap-theme.min.css" rel="stylesheet" />
     <link href="../static/css/index/customize.css" rel="stylesheet" />
@@ -19,7 +19,7 @@
 
     <nav class="navbar navbar-default navbar-fixed-top" style="margin-bottom: 10px;">
         <div class="container-fluid" style="background-color: rgba(34, 139, 34,0.5);">
-            <div class="col-md-1"><a class="navbar-brand" href="#" style="color: #fff;">Brand</a></div>
+            <div class="col-md-1"><a class="navbar-brand" href="#" style="color: #fff;">搜索</a></div>
             <div class="navbar-header col-md-8">
                 <form class="navbar-form navbar-left" role="search" runat="server">
                     <div class="form-group">
