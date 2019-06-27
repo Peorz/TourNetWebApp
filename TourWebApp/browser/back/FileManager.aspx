@@ -46,16 +46,16 @@
         $(document).ready(function () {
             loadTable();
             var param = {
-                btn: "#add_file",
-                url: "../../server/controller/FileUp.ashx",
-                progress: function (res) {
+                btn: "#add_file",//上传图片的按钮
+                url: "../../server/controller/FileUp.ashx",//上传图片的接口
+                progress: function (res) {//上传进度的回调
                     console.log(res);
                 },
-                success: function (res) {
+                success: function (res) {//上传成功的回调
                     console.log(res);
                     $('#table').bootstrapTable("refresh");
                 },
-                error: function (msg) {
+                error: function (msg) {//失败的回调
                     console.log(msg);
                 }
             };
