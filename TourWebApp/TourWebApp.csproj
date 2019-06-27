@@ -382,6 +382,7 @@
     <Content Include="server\controller\MainTourColumn.ashx" />
     <Content Include="server\controller\MainRotation.ashx" />
     <Content Include="server\controller\ScenicMesPic.ashx" />
+    <Content Include="extra\简约创意毕业设计答辩PPT模板2.pptx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
