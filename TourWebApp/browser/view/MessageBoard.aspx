@@ -69,7 +69,7 @@
                             var item = data.rows[i];
                             var dom = $('<div class= "guestbook_other" > ' +
                                 '<div class="guestbook_img">' +
-                                '<img src="..\static\img\guestbook_img.png" />' +
+                                '<img src="..\\static\\img\\guestbook_img.png" />' +
                                 '</div>' +
                                 '<div class="guestbook_news">' +
                                 '<h4><a href="#">' + item.UserInfo.Nick + '</a></h4>' +

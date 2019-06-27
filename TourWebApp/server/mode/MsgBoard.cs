@@ -46,7 +46,6 @@ namespace TourWebApp.server.mode
                 _UserInfo.ID = UserID;
                 _UserInfo.Find();
                 _UserInfo.PassWord = "";
-                _UserInfo.Nick = "xxxxx";
                 return _UserInfo;
             }
 
