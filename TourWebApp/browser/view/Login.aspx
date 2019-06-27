@@ -20,7 +20,7 @@
                 <div class="col-md-4 col-md-offset-4">
                     <div class="card">
                         <div class="row">
-                            <asp:Label ID="login_title" runat="server" CssClass="center-block" Text="TourProject" Font-Size="XX-Large" ForeColor="Gray"></asp:Label>
+                            <asp:Label ID="login_title" runat="server" CssClass="center-block" Text="登录" Font-Size="XX-Large" ForeColor="Gray"></asp:Label>
                         </div>
                         <div class="input-group" style="margin-top: 16px">
                             <asp:Label ID="Label1" runat="server" CssClass="input-group-addon" Text="邮箱："></asp:Label>

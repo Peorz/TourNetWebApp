@@ -20,7 +20,7 @@
                 <div class="col-md-4 col-md-offset-4">
                     <div class="card">
                         <div class="row Register_title">
-                            <asp:Label runat="server" Text="Register" Font-Size="XX-Large" ForeColor="Gray"></asp:Label>
+                            <asp:Label runat="server" Text="加入我们" Font-Size="XX-Large" ForeColor="Gray"></asp:Label>
                         </div>
                         <div class="input-group" style="margin-top: 16px">
                             <asp:Label ID="Label1" runat="server" CssClass="input-group-addon" Text="&nbsp用&nbsp户&nbsp名："></asp:Label>
