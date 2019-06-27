@@ -19,7 +19,10 @@ namespace TourWebApp.server.controller
     {
         public override string GetProcessRequest(HttpContext context, HttpRequest request, HttpResponse response)
         {
+            long offset = Convert.ToInt32(request.Params["offset"]);
+            long limit = Convert.ToInt32(request.Params["limit"]);
             PageList<ScenicPic> picList = ORMSupport.PageSelect<ScenicPic>()
+                .AddPage(offset,limit)
                 .Select();
             foreach(ScenicPic scenic in picList.Rows)
             {

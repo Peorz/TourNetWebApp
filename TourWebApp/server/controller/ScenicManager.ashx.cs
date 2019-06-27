@@ -21,7 +21,10 @@ namespace TourWebApp.server.controller
         public override string GetProcessRequest(HttpContext context, HttpRequest request, HttpResponse response)
         {
             String order = request.Params["order"];
+            long offset = Convert.ToInt32(request.Params["offset"]);
+            long limit = Convert.ToInt32(request.Params["limit"]);
             PageList<ScenicInfo> scenicList = ORMSupport.PageSelect<ScenicInfo>()
+                   .AddPage(offset, limit)
                 .Select();
 
             return Result.Ok("", scenicList.Total, scenicList.Rows);
