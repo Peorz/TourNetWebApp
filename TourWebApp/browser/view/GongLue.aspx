@@ -43,7 +43,7 @@
                         </div>
                     </div>
                     <div class="message_list_banner">
-                        <img src="../static/img/16849027.jpeg" />
+                        <img src="http://psxrtdro4.bkt.clouddn.com/丽江古城3.jpg" />
                     </div>
                 </li>
                 <li>
@@ -63,7 +63,55 @@
                         </div>
                     </div>
                     <div class="message_list_banner">
-                        <img src="../static/img/16849027.jpeg" />
+                        <img src="http://psxrtdro4.bkt.clouddn.com/丽江古城2.jpg" />
+                    </div>
+                </li>
+                <li>
+                   
+                    <div class="message_text">
+                        <div class="message_list_title">
+                            <a href="#">
+                                <h2>桂林</h2>
+                            </a>
+                        </div>
+                        <div class="message_list_content">
+                            <p>
+                                对于所有旅行爱好者来说，欧洲都是一个不会回避的话题。
+                            虽然面积排名在七大洲里差点就垫底了，
+                            但人口数量和国家地区数量却是稳居前三位，再加上欧盟国家签证通用，
+                            各国间交通也方便，欧洲历来是最受国人钟爱的旅行目的地之一。
+                            自己也去过欧洲好几次了，东欧的爱沙尼亚、南欧的保加利亚塞尔维亚、
+                            西欧的法国荷兰、北欧的丹麦……画了一个圈之后，发现唯独中欧还没有涉及。
+                            那么，这一次我们就来填上这最后一块拼图吧！
+                            </p>
+                        </div>
+                    </div>
+                    <div class="message_list_banner">
+                        <img src="http://psxrtdro4.bkt.clouddn.com/桂林猫儿山2.jpg" />
+                    </div>
+                </li>
+                <li>
+                   
+                    <div class="message_text">
+                        <div class="message_list_title">
+                            <a href="#">
+                                <h2>玛旁雍措</h2>
+                            </a>
+                        </div>
+                        <div class="message_list_content">
+                            <p>
+                                对于所有旅行爱好者来说，欧洲都是一个不会回避的话题。
+                            虽然面积排名在七大洲里差点就垫底了，
+                            但人口数量和国家地区数量却是稳居前三位，再加上欧盟国家签证通用，
+                            各国间交通也方便，欧洲历来是最受国人钟爱的旅行目的地之一。
+                            自己也去过欧洲好几次了，东欧的爱沙尼亚、南欧的保加利亚塞尔维亚、
+                            西欧的法国荷兰、北欧的丹麦……画了一个圈之后，发现唯独中欧还没有涉及。
+                            那么，这一次我们就来填上这最后一块拼图吧！
+                            </p>
+                        </div>
+                    </div>
+                    <div class="message_list_banner">
+                        <img src="http://psxrtdro4.bkt.clouddn.com/玛旁雍错湖2.jpg" />
                     </div>
                 </li>
                 <li>
@@ -87,55 +135,7 @@
                         </div>
                     </div>
                     <div class="message_list_banner">
-                        <img src="../static/img/16849027.jpeg" />
-                    </div>
-                </li>
-                <li>
-                   
-                    <div class="message_text">
-                        <div class="message_list_title">
-                            <a href="#">
-                                <h2>中欧，填满我的欧洲旅行拼图</h2>
-                            </a>
-                        </div>
-                        <div class="message_list_content">
-                            <p>
-                                对于所有旅行爱好者来说，欧洲都是一个不会回避的话题。
-                            虽然面积排名在七大洲里差点就垫底了，
-                            但人口数量和国家地区数量却是稳居前三位，再加上欧盟国家签证通用，
-                            各国间交通也方便，欧洲历来是最受国人钟爱的旅行目的地之一。
-                            自己也去过欧洲好几次了，东欧的爱沙尼亚、南欧的保加利亚塞尔维亚、
-                            西欧的法国荷兰、北欧的丹麦……画了一个圈之后，发现唯独中欧还没有涉及。
-                            那么，这一次我们就来填上这最后一块拼图吧！
-                            </p>
-                        </div>
-                    </div>
-                    <div class="message_list_banner">
-                        <img src="../static/img/16849027.jpeg" />
-                    </div>
-                </li>
-                <li>
-                   
-                    <div class="message_text">
-                        <div class="message_list_title">
-                            <a href="#">
-                                <h2>中欧，填满我的欧洲旅行拼图</h2>
-                            </a>
-                        </div>
-                        <div class="message_list_content">
-                            <p>
-                                对于所有旅行爱好者来说，欧洲都是一个不会回避的话题。
-                            虽然面积排名在七大洲里差点就垫底了，
-                            但人口数量和国家地区数量却是稳居前三位，再加上欧盟国家签证通用，
-                            各国间交通也方便，欧洲历来是最受国人钟爱的旅行目的地之一。
-                            自己也去过欧洲好几次了，东欧的爱沙尼亚、南欧的保加利亚塞尔维亚、
-                            西欧的法国荷兰、北欧的丹麦……画了一个圈之后，发现唯独中欧还没有涉及。
-                            那么，这一次我们就来填上这最后一块拼图吧！
-                            </p>
-                        </div>
-                    </div>
-                    <div class="message_list_banner">
-                        <img src="../static/img/bg_area_1.jpg" />
+                        <img src="http://psxrtdro4.bkt.clouddn.com/巴黎卢浮宫2.jpg" />
                     </div>
                 </li>
             </ul>
