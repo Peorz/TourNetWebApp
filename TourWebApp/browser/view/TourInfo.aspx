@@ -28,8 +28,8 @@
             </div>
             <div class="tourinfo_icon col-lg-5 col-md-offset-2">
                 <ul>
-                    <%--<li><a href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true">想去</span></a></li>--%>
-                    <li><a href="#"><%--<span class="glyphicon glyphicon-edit" aria-hidden="true">评价</span>--%></a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true">想去</span></a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-edit" aria-hidden="true">评价</span></a></li>
                     <li><a href="GongLuexq.aspx"><span class="glyphicon glyphicon-hand-right" aria-hidden="true">攻略</span></a></li>
                 </ul>
             </div>
