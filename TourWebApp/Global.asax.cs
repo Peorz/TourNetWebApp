@@ -47,30 +47,30 @@ namespace TourWebApp.server.config
 
         protected void Application_PostRequestHandlerExecute(object sender, EventArgs e)
         {
-            if (Request.CurrentExecutionFilePathExtension.Equals(".aspx"))
-            {
-                String view = Request.FilePath;
-                if (view.EndsWith("Main.aspx") || view.EndsWith("Index.aspx") || view.EndsWith("Login.aspx") || view.EndsWith("Register.aspx") || view.EndsWith("ForgetPassWrod.aspx"))
-                {
-                    return;
-                }
-                UserInfo userInfo = Session["user"] as UserInfo;
-                String token = Session["token"] as String;
-                if (userInfo == null || token == null)
-                {
-                    Response.Redirect(url);
-                    return;
-                }
-                LoginToken loginToken = userInfo.LoginToken;
-                SLog.Out.WriteLine("Global:" + loginToken.TokenID);
-                if (!loginToken.TokenID.Equals(token))
-                {
-                    Session.Remove("user");
-                    Session.Remove("token");
-                    Response.Redirect(url);
-                    return;
-                }
-            }
+            //if (Request.CurrentExecutionFilePathExtension.Equals(".aspx"))
+            //{
+            //    String view = Request.FilePath;
+            //    if (view.EndsWith("Main.aspx") || view.EndsWith("Index.aspx") || view.EndsWith("Login.aspx") || view.EndsWith("Register.aspx") || view.EndsWith("ForgetPassWrod.aspx"))
+            //    {
+            //        return;
+            //    }
+            //    UserInfo userInfo = Session["user"] as UserInfo;
+            //    String token = Session["token"] as String;
+            //    if (userInfo == null || token == null)
+            //    {
+            //        Response.Redirect(url);
+            //        return;
+            //    }
+            //    LoginToken loginToken = userInfo.LoginToken;
+            //    SLog.Out.WriteLine("Global:" + loginToken.TokenID);
+            //    if (!loginToken.TokenID.Equals(token))
+            //    {
+            //        Session.Remove("user");
+            //        Session.Remove("token");
+            //        Response.Redirect(url);
+            //        return;
+            //    }
+            //}
         }
 
         protected void Application_AuthenticateRequest(object sender, EventArgs e)

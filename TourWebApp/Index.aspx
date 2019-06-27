@@ -29,6 +29,7 @@
                     <div class="col-md-7">
                         <ul class="nav navbar-nav">
                             <li><a href="browser/view/TourSel.aspx?param=">旅游景区</a></li>
+                            <li><a href="browser/view/GongLue.aspx">景区攻略</a></li>
                             <li><a href="browser/view/MessageBoard.aspx">留言板</a></li>
                             <li><a href="browser/view/About.aspx">关于我们</a></li>
                             <li>
